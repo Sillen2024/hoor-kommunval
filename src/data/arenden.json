@@ -1,6 +1,6 @@
 {
   "senast_uppdaterad": "2026-08-17",
-  "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa. Sedan 2026-08-17 ingår även ett urval beslut från facknämnderna (barn- och utbildningsnämnden, socialnämnden och VA-nämnden), hämtade och verifierade på samma sätt som fullmäktigeprotokollen. Samtliga sex facknämnders protokoll 2023–2026 har genomsökts. Alla voteringar med namngiven röstlängd i de tre nämnda nämnderna är med. Två avgränsningar är gjorda: tillstånds- och tillsynsnämndens två bygglovsvoteringar har utelämnats eftersom de rör myndighetsutövning mot enskilda, medan nämnden för kultur, arbete och folkhälsas tre voteringsärenden lades till 2026-08-17 i en andra omgång. Nämndernas röstsiffror redovisas per ärende med namngiven röstlängd i källan; de räknas inte in i partisidornas fullmäktigestatistik, eftersom nämndgrupperna är för små för statistik.",
+  "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa. Sedan 2026-08-17 ingår även ett urval beslut från facknämnderna (barn- och utbildningsnämnden, socialnämnden och VA-nämnden), hämtade och verifierade på samma sätt som fullmäktigeprotokollen. Samtliga sex facknämnders protokoll 2023–2026 har genomsökts. Alla voteringar med namngiven röstlängd i de tre nämnda nämnderna är med. Två avgränsningar är gjorda: tillstånds- och tillsynsnämndens två bygglovsvoteringar har utelämnats eftersom de rör myndighetsutövning mot enskilda, medan nämnden för kultur, arbete och folkhälsas tre voteringsärenden lades till 2026-08-17 i en andra omgång. Nämndernas röstsiffror redovisas per ärende med namngiven röstlängd i källan; de räknas inte in i partisidornas fullmäktigestatistik, eftersom nämndgrupperna är för små för statistik. Samma dag genomsöktes kommunstyrelsens samtliga protokoll 2023–2026: alla 27 voteringar med namngiven röstlängd extraherades och kontrollräknades. De redovisas i två former. Voteringar i ärenden som inte tidigare fanns i listan har fått egna poster, och kommunstyrelsens behandling av redan bevakade ärenden har vävts in i de befintliga posterna med käll-PDF. KS-voteringar som bara upprepar ett redan redovisat mönster — främst budgetärendenas återkommande 9–4-uppställning och en procedurvotering om en föredragningslista — har inte fått egna poster; protokollen är publicerade och voteringarna kan tillkomma.",
   "arenden": [
     {
       "typ": "arende",
@@ -100,7 +100,7 @@
       "datum_not": "Datumet avser kommunfullmäktiges omröstning om motionen, KF 2025-08-27 § 99 (protokollet nedan). Skånska Dagbladets artikel om omröstningen publicerades 2025-10-14, vilket i en tidigare version av den här sidan felaktigt angavs som beslutsdatum. Styret meddelade senare (rapporterat av SKD 2026-06-08) att man ändrat ståndpunkt. Reformen ('Busskort från 70 år') ingick sedan formellt i kommunstyrelsens budgetförslag för 2027 och antogs av kommunfullmäktige 2026-06-10 (§58, se budget.json).",
       "politikomrade": "Trafik / äldreomsorg",
       "forslagsstallare": "Kent Staaf (S), Olle Krabbe (V) och Roger Orwén (MP) (tredje motionsförsöket, röstades ner). Styret (Alliansen: M, L, C, KD) meddelade sedan att man ändrat ståndpunkt och drev igenom reformen som del av Budget 2027.",
-      "beskrivning": "Frågan om fri kollektivtrafik för äldre invånare har återkommit flera gånger i Höörs kommunalpolitik. Kent Staaf (S), Olle Krabbe (V) och Roger Orwén (MP) lade för tredje gången fram en motion om ett seniorkort för fri kollektivtrafik för alla över 70 år. Omröstningen slutade 19–19 — och det ovanliga hände att Sverigedemokraternas grupp sprack: sex av nio närvarande SD-ledamöter röstade med oppositionen för motionen, tre med styret emot. Vid lika röstetal har ordföranden utslagsröst enligt kommunallagen, och ordförande Anders Netterheim (M) fällde avgörandet mot. Reformen föll alltså på en enda röst — ordförandens — trots att en majoritet av de närvarande SD-ledamöterna ville ha den. Mindre än ett år senare meddelade styret genom kommunalrådet Johan Svahnberg (M) att man ändrat ståndpunkt, och posten 'Busskort från 70 år' (0,4 mnkr) togs in i kommunstyrelsens budgetförslag för 2027, som kommunfullmäktige antog 2026-06-10.",
+      "beskrivning": "Frågan om fri kollektivtrafik för äldre invånare har återkommit flera gånger i Höörs kommunalpolitik. Kent Staaf (S), Olle Krabbe (V) och Roger Orwén (MP) lade för tredje gången fram en motion om ett seniorkort för fri kollektivtrafik för alla över 70 år. Omröstningen slutade 19–19 — och det ovanliga hände att Sverigedemokraternas grupp sprack: sex av nio närvarande SD-ledamöter röstade med oppositionen för motionen, tre med styret emot. Vid lika röstetal har ordföranden utslagsröst enligt kommunallagen, och ordförande Anders Netterheim (M) fällde avgörandet mot. Reformen föll alltså på en enda röst — ordförandens — trots att en majoritet av de närvarande SD-ledamöterna ville ha den. Mindre än ett år senare meddelade styret genom kommunalrådet Johan Svahnberg (M) att man ändrat ståndpunkt, och posten 'Busskort från 70 år' (0,4 mnkr) togs in i kommunstyrelsens budgetförslag för 2027, som kommunfullmäktige antog 2026-06-10. Sprickan i SD syntes redan i kommunstyrelsen två veckor före. Där föll motionen 8–5. En SD-ledamot röstade med S, V och MP, och både S+MP och V lämnade skriftliga reservationer (2025-08-12, § 184).",
       "resultat": "Motionen avslogs 2025-08-27 (§ 99) efter 19–19 där ordförandens utslagsröst fällde avgörandet. Reformen ingår sedan i Budget 2027, antagen av kommunfullmäktige 2026-06-10 (§58) — alltså formellt beslutad, men träder i kraft först 2027, inte redan genomförd under innevarande mandatperiod.",
       "rostning": [
         {
@@ -134,6 +134,8 @@
       "kalla_url_2": "https://www.skd.se/hoor/ovantade-inviten-till-pensionarerna-har-blivit-stoppad-pa-byn",
       "kalla_url_2_beskrivning": "Skånska Dagbladet, 2026-06-08, om att styret genom kommunalrådet Johan Svahnberg (M) meddelat att man ändrat ståndpunkt och planerar införa fri kollektivtrafik för 70+ från 2027.",
       "kalla_url_3_beskrivning": "Primärkälla: kommunstyrelsens budgetförslag för 2027 (src/data/protokoll_ksf/budget2027/KS_forslag_budget2027.pdf, sid. 28), som under Kommunstyrelsens nämndsram listar 'Busskort ska införas för alla kommuninvånare över 70 år' med 0,4 mnkr avsatt för 2027. Bekräftas även av Socialdemokraternas eget budgetförslag för 2027 (S_budget2027.txt), som kommenterar att 'den styrande minoriteten äntligen insett behovet av att införa fri kollektivtrafik för 70+ ... från 2027' (src/data/protokoll_ksf/budget2027/S_budget2027.pdf).",
+      "kalla_url_5": "/kallor/protokoll/Protokoll_KS_250812.pdf",
+      "kalla_url_5_beskrivning": "Kommunstyrelsens protokoll 2025-08-12, § 184, med namngiven röstlängd och två skriftliga reservationer (PDF).",
       "urvalsmotivering": "Ett tydligt exempel på hur blockgränserna inte är fasta i praktiken: ett förslag från oppositionen (S) röstades ner av styret med utslagsröst, för att mindre än ett år senare i praktiken adopteras av samma styre och röstas igenom som del av Budget 2027 — och sammanfaller med en punkt (gratis kollektivtrafik för pensionärer 70+) som återfinns i MP:s eget 2026-manifest, inte M:s."
     },
     {
@@ -161,7 +163,7 @@
       "datum_not": "Datum för det slutgiltiga rivningsbeslutet: KF 2025-12-17 § 148, 'Rivning av Magasinet (Bävern 10)'. En tidigare version av den här sidan angav att paragraf och röstsiffror inte kunnat verifieras — protokollet är numera hämtat och länkat nedan.",
       "politikomrade": "Kultur och stadsutveckling",
       "forslagsstallare": null,
-      "beskrivning": "Kvarnen/Magasinet är Höörs äldsta bevarade industribyggnad, uppförd i slutet av 1800-talet, och har varit föremål för bevarandeförsök under lång tid — bland annat en ansökan om byggnadsminnesförklaring som Länsstyrelsen avslog 2022, samt en lokal bevarandeförening. En flerårig fråga om byggnadens framtid utan att någon egentlig lösning funnits i sikte. Det som till slut fällde avgörandet var att en entreprenör dök upp med konkreta planer på ett nytt synthmuseum ('Elektrish') på platsen — entreprenören försökte enligt egen utsago i fullmäktigedebatten först foga in ett bevarande av den gamla byggnaden i planen, men konstaterade att det inte var möjligt. Efter återremiss 2021 och fortsatt utredning beslutade kommunfullmäktige den 17 december 2025 att riva byggnaden och bereda plats för nybygget. Återremissen 2021 var enligt Socialdemokraternas egen redogörelse deras — syftet uppges ha varit att tillfråga större byggföretag som kunde renovera Magasinet och samtidigt bygga nya hyreslägenheter på fastigheten intill, som en fortsättning på Västra stationsområdet. Kommunfullmäktiges protokoll från 2021 ligger före sammanträdesportalens täckning (som börjar 2023-05-24) och har därför inte kunnat kontrolleras mot primärkälla; uppgiften står för partiet. Fyra år senare röstade S-gruppen i tre delar när rivningen avgjordes.",
+      "beskrivning": "Kvarnen/Magasinet är Höörs äldsta bevarade industribyggnad, uppförd i slutet av 1800-talet, och har varit föremål för bevarandeförsök under lång tid — bland annat en ansökan om byggnadsminnesförklaring som Länsstyrelsen avslog 2022, samt en lokal bevarandeförening. En flerårig fråga om byggnadens framtid utan att någon egentlig lösning funnits i sikte. Det som till slut fällde avgörandet var att en entreprenör dök upp med konkreta planer på ett nytt synthmuseum ('Elektrish') på platsen — entreprenören försökte enligt egen utsago i fullmäktigedebatten först foga in ett bevarande av den gamla byggnaden i planen, men konstaterade att det inte var möjligt. Efter återremiss 2021 och fortsatt utredning beslutade kommunfullmäktige den 17 december 2025 att riva byggnaden och bereda plats för nybygget. Återremissen 2021 var enligt Socialdemokraternas egen redogörelse deras — syftet uppges ha varit att tillfråga större byggföretag som kunde renovera Magasinet och samtidigt bygga nya hyreslägenheter på fastigheten intill, som en fortsättning på Västra stationsområdet. Kommunfullmäktiges protokoll från 2021 ligger före sammanträdesportalens täckning (som börjar 2023-05-24) och har därför inte kunnat kontrolleras mot primärkälla; uppgiften står för partiet. Fyra år senare röstade S-gruppen i tre delar när rivningen avgjordes. Vägen dit gick via kommunstyrelsen. Begäran om rivningstillstånd klubbades där 9–4 i augusti 2024. S och MP röstade då med styret, medan V och SD sa nej (2024-08-13, § 155).",
       "resultat": "Beslut om rivning fattat 2025-12-17, § 148, med röstsiffrorna 29–6–4. Kommundirektören fick i uppdrag att begära rivningslov och verkställa rivningen; ansökan får ske först sedan detaljplanen vunnit laga kraft. Voteringen är den mest splittrade i hela materialet: Socialdemokraterna delade sig i tre delar (4 ja, 1 nej, 3 avstod) och även Moderaterna sprack när Tom Ström avstod.",
       "rostning": [
         {
@@ -198,6 +200,8 @@
       "kalla_url_4_beskrivning": "Socialdemokraterna i Höör, 2021-11-29, om återremissen och motivet bakom den. Partiets egen redogörelse, inte ett kommunalt beslutsdokument — 2021 års protokoll saknas i sammanträdesportalen.",
       "kalla_transkription": "src/data/transkriptioner/meeting_18.vtt",
       "kalla_transkription_beskrivning": "Undertextfil från kommunfullmäktiges sammanträde där rivningsärendet (nr 7) debatterades. Kommunalrådet Johan Svahnberg (M) beskriver där hur entreprenören bakom museiplanen först försökte bevara byggnaden men landade i att det inte var möjligt, samt att museet väntas komma på plats efter att detaljplanen vunnit laga kraft och köpekontrakt tecknats — dvs. ett nybygge, inte en ombyggnad av den gamla byggnaden.",
+      "kalla_url_5": "/kallor/protokoll/Protokoll_KS_240813.pdf",
+      "kalla_url_5_beskrivning": "Kommunstyrelsens protokoll 2024-08-13, § 155: begäran om rivningstillstånd, votering 9–4 (PDF).",
       "urvalsmotivering": "Långvarig, återkommande lokal fråga om stadsutveckling och kulturmiljö i centrala Höör, väl belagd i lokalpress under flera år av mandatperioden."
     },
     {
@@ -292,7 +296,7 @@
       "antagen_paragraf": "§ 76",
       "politikomrade": "Ekonomi och styrning",
       "forslagsstallare": "Kommunstyrelsen. Ändringsyrkandet som vann kom från Stefan Liljenberg (SD).",
-      "beskrivning": "Kommunfullmäktige skulle anta målen för hela mandatperioden 2024–2027. Stefan Liljenberg (SD) yrkade en ändring i målet 'Långsiktig hållbar ekonomi och miljö': att indikatorn för det årliga ekonomiska resultatet skulle bestämmas till 1,5 procent av skatteintäkter och generella statsbidrag (sett som femårssnitt). Socialdemokraterna, Vänsterpartiet och Miljöpartiet röstade för SD:s yrkande, styrets samtliga 17 emot, och MED:s två avstod. Yrkandet vann med 22–17–2 — fullmäktiges eget ekonomiska resultatmål för mandatperioden sattes alltså av SD och vänsteroppositionen tillsammans, mot styrets vilja. Det är ett av tre dokumenterade tillfällen under mandatperioden då minoritetsstyret förlorade en votering. Stefan Lissmark (S) anmälde muntlig reservation till förmån för eget förslag i en annan del av ärendet.",
+      "beskrivning": "Kommunfullmäktige skulle anta målen för hela mandatperioden 2024–2027. Stefan Liljenberg (SD) yrkade en ändring i målet 'Långsiktig hållbar ekonomi och miljö': att indikatorn för det årliga ekonomiska resultatet skulle bestämmas till 1,5 procent av skatteintäkter och generella statsbidrag (sett som femårssnitt). Socialdemokraterna, Vänsterpartiet och Miljöpartiet röstade för SD:s yrkande, styrets samtliga 17 emot, och MED:s två avstod. Yrkandet vann med 22–17–2 — fullmäktiges eget ekonomiska resultatmål för mandatperioden sattes alltså av SD och vänsteroppositionen tillsammans, mot styrets vilja. Det är ett av tre dokumenterade tillfällen under mandatperioden då minoritetsstyret förlorade en votering. Stefan Lissmark (S) anmälde muntlig reservation till förmån för eget förslag i en annan del av ärendet. I kommunstyrelsen två veckor tidigare hade styrets mål överlevt med 6–6, där ordförandens röst fick avgöra. S, V och SD röstade emot redan där (2023-05-30, § 133).",
       "resultat": "Liljenbergs yrkande bifölls med 22–17–2. Målen antogs med resultatindikatorn satt till 1,5 procent.",
       "rostning": [
         {
@@ -321,6 +325,8 @@
       ],
       "kalla_url": "/kallor/protokoll/Protokoll_KF_230614.pdf",
       "kalla_beskrivning": "Kommunfullmäktiges protokoll 2023-06-14, § 76, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_KS_230530.pdf",
+      "kalla_url_2_beskrivning": "Kommunstyrelsens protokoll 2023-05-30, § 133: målen klarade sig med ordförandens utslagsröst (PDF).",
       "urvalsmotivering": "Ett av endast tre dokumenterade tillfällen under mandatperioden då minoritetsstyret förlorade en votering — och det enda där S, V och MP röstade igenom ett SD-yrkande. Visar att blockgränserna i Höörs fullmäktige inte följer rikspolitikens."
     },
     {
@@ -330,7 +336,7 @@
       "antagen_paragraf": "§ 68",
       "politikomrade": "Ekonomi och kommunala bolag",
       "forslagsstallare": "Kommunstyrelsen. Ändringsyrkandet som vann kom från Lars-Håkan Persson (M).",
-      "beskrivning": "Kommunstyrelsen föreslog att kommunens borgensram för bostadsbolaget Höörs Fastighets Bostads AB (HFB AB) skulle sättas till 420 miljoner kronor för 2026 — lägre än de 430 miljoner bolaget begärt, med motiveringen att låneskulden var 413 miljoner, att amortering pågick och att ingen nyupplåning var planerad. Lars-Håkan Persson (M) yrkade att ramen skulle vara oförändrad på 430 miljoner, och vann med 21 röster mot 15: bakom honom stod S, V, MP och SD, medan resten av hans eget parti och övriga styret röstade emot. M sprack alltså 9–1 och styret förlorade mot en egen ledamot. Kommunstyrelsens ordförande Johan Svahnberg (M) och Nino Dervisagic (M) lämnade skriftlig reservation, där de varnar för att den högre ramen skapar ett upplåningsutrymme på 31 miljoner som vid fullt utnyttjande och stigande räntor skulle kunna ge bolaget negativt resultat när nuvarande ränteswappar löper ut. C, L och KD anmälde muntlig reservation. MED:s två ledamöter och en SD-ledamot avstod.",
+      "beskrivning": "Kommunstyrelsen föreslog att kommunens borgensram för bostadsbolaget Höörs Fastighets Bostads AB (HFB AB) skulle sättas till 420 miljoner kronor för 2026 — lägre än de 430 miljoner bolaget begärt, med motiveringen att låneskulden var 413 miljoner, att amortering pågick och att ingen nyupplåning var planerad. Lars-Håkan Persson (M) yrkade att ramen skulle vara oförändrad på 430 miljoner, och vann med 21 röster mot 15: bakom honom stod S, V, MP och SD, medan resten av hans eget parti och övriga styret röstade emot. M sprack alltså 9–1 och styret förlorade mot en egen ledamot. Kommunstyrelsens ordförande Johan Svahnberg (M) och Nino Dervisagic (M) lämnade skriftlig reservation, där de varnar för att den högre ramen skapar ett upplåningsutrymme på 31 miljoner som vid fullt utnyttjande och stigande räntor skulle kunna ge bolaget negativt resultat när nuvarande ränteswappar löper ut. C, L och KD anmälde muntlig reservation. MED:s två ledamöter och en SD-ledamot avstod. Motståndet fanns redan i kommunstyrelsen. Där röstade Lars-Håkan Persson (M) med V och MP mot ramen, 10–3 — då med S på styrets sida (2025-05-27, § 122).",
       "resultat": "Perssons yrkande bifölls med 21–15–3: borgensramen sattes till 430 miljoner kronor.",
       "rostning": [
         {
@@ -361,6 +367,8 @@
       "kalla_beskrivning": "Kommunfullmäktiges protokoll 2025-06-11, § 68, med namngiven röstlängd (PDF).",
       "kalla_url_2": "/kallor/reservationer/reservation_M_250611_par68.pdf",
       "kalla_url_2_beskrivning": "Skriftlig reservation av Johan Svahnberg (M) och Nino Dervisagic (M) mot beslutet om 430 miljoner, till förmån för kommunstyrelsens förslag om 420 miljoner (PDF).",
+      "kalla_url_3": "/kallor/protokoll/Protokoll_KS_250527.pdf",
+      "kalla_url_3_beskrivning": "Kommunstyrelsens protokoll 2025-05-27, § 122: Persson (M) röstade mot sitt parti redan här (PDF).",
       "urvalsmotivering": "Det tredje dokumenterade tillfället då minoritetsstyret förlorade en votering — och det enda där förloraren fälldes av en egen partikamrat. Att kommunstyrelsens ordförande reserverar sig skriftligt mot ett beslut som drivits igenom av en ledamot ur det egna partiet är unikt i materialet."
     },
     {
@@ -449,7 +457,7 @@
       "datum_not": "Datumet avser beslutet om VA-taxa 2024 (KF 2023-10-11 § 104). Ärendet fortsatte året därpå: VA-taxa 2025 återremitterades vid KF 2024-09-25 § 109 och antogs slutligt, omräknad, vid KF 2024-12-18 § 148.",
       "politikomrade": "Vatten och avlopp",
       "forslagsstallare": "Kommunstyrelsen, efter förslag från VR-nämnden/Mittskåne Vatten",
-      "beskrivning": "Få kommunala beslut påverkar hushållens plånbok så direkt som VA-taxan. 2023 antogs en taxa för 2024 där brukningsavgifterna höjdes med 14 procent för att nå full kostnadstäckning — och redan då aviserades ytterligare cirka 12 procent för 2025. SD hade ett eget taxeförslag och fick med sig V, MP och MED, men Socialdemokraterna röstade med styret och taxan antogs med 25–16. Året därpå, när taxan för 2025 skulle beslutas, vände styret självt: efter en procedurstrid begärde Johan Svahnberg (M) återremiss för omräkning (bland annat med räntan satt till max 3 procent och det prognostiserade underskottet på ca 4,2 miljoner skattefinansierat), och den vann med 30 mot 9 — bara SD ville avgöra ärendet direkt. Den omräknade taxan, med en höjning på 23,7 procent i stället för de 28,3 procent kommunstyrelsen först föreslagit, antogs sedan enhälligt 2024-12-18 (§ 148) med bifallsyrkanden från SD, MP och S. Voteringarna visar att S och SD inte är utbytbara oppositionsroller: S röstade med styret 2023 när SD röstade emot, och SD stod ensamt 2024.",
+      "beskrivning": "Få kommunala beslut påverkar hushållens plånbok så direkt som VA-taxan. 2023 antogs en taxa för 2024 där brukningsavgifterna höjdes med 14 procent för att nå full kostnadstäckning — och redan då aviserades ytterligare cirka 12 procent för 2025. SD hade ett eget taxeförslag och fick med sig V, MP och MED, men Socialdemokraterna röstade med styret och taxan antogs med 25–16. Året därpå, när taxan för 2025 skulle beslutas, vände styret självt: efter en procedurstrid begärde Johan Svahnberg (M) återremiss för omräkning (bland annat med räntan satt till max 3 procent och det prognostiserade underskottet på ca 4,2 miljoner skattefinansierat), och den vann med 30 mot 9 — bara SD ville avgöra ärendet direkt. Den omräknade taxan, med en höjning på 23,7 procent i stället för de 28,3 procent kommunstyrelsen först föreslagit, antogs sedan enhälligt 2024-12-18 (§ 148) med bifallsyrkanden från SD, MP och S. Voteringarna visar att S och SD inte är utbytbara oppositionsroller: S röstade med styret 2023 när SD röstade emot, och SD stod ensamt 2024. I kommunstyrelsen hade styret också förlorat om 2025 års taxa. SD:s ändringsyrkande vann där med 7 röster mot 6, med stöd av S, V och MP (2024-09-10, § 171).",
       "resultat": "VA-taxa 2024 antagen 2023-10-11 (§ 104, 25–16) med 14 procents höjning av brukningsavgifterna. VA-taxa 2025 återremitterad 2024-09-25 (§ 109, 30–9) och antagen omräknad 2024-12-18 (§ 148, utan votering) med 23,7 procents höjning.",
       "rostning": [
         {
@@ -528,6 +536,8 @@
       "kalla_url_2_beskrivning": "Kommunfullmäktiges protokoll 2024-09-25, § 109 — procedurvoteringen och återremissen (PDF).",
       "kalla_url_3": "/kallor/protokoll/Protokoll_KF_241218.pdf",
       "kalla_url_3_beskrivning": "Kommunfullmäktiges protokoll 2024-12-18, § 148 — den omräknade VA-taxan 2025 antas (PDF).",
+      "kalla_url_4": "/kallor/protokoll/Protokoll_KS_240910.pdf",
+      "kalla_url_4_beskrivning": "Kommunstyrelsens protokoll 2024-09-10, § 171: SD:s ändringsyrkande om taxan vann 7–6 (PDF).",
       "urvalsmotivering": "Direkt plånbokspåverkan för alla hushåll med kommunalt VA, och det tydligaste exemplet i materialet på att S och SD spelar olika oppositionsroller: S röstade med styret om 2024 års taxa medan SD, V, MP och MED röstade emot — och i återremissen 2024 stod SD ensamt mot alla andra."
     },
     {
@@ -730,10 +740,16 @@
       "antagen_paragraf": "§ 25",
       "politikomrade": "Skola",
       "forslagsstallare": "Remiss från kommunstyrelsens arbetsutskott",
-      "beskrivning": "Nämnden ställde sig bakom att Höör lämnar kommunalförbundet AV Media. Kommunen betalade för två tjänster med i stort sett samma strömmade skolinnehåll: AV Media för cirka 640 000 kronor om året och Nationalencyklopedin för cirka 100 000. Att lämna AV Media skulle spara runt 540 000 kronor per år utan sämre utbud, enligt yttrandet. Bara SD yrkade bifall, och ingen begärde votering. Men efter beslutet reserverade sig sex av nämndens nio ledamöter. S gjorde det skriftligt — tjänsteskrivelsen kallades ofullständig. Två från M, två från V och KD:s ledamot gjorde det muntligt. En M-ledamot lämnade också en anteckning till protokollet: frågan borde ha avgjorts av nämnden själv, inte som remissvar, och efter mer dialog. Två ledamöter var jäviga och ersattes under paragrafen. Klubban gick under tiden till vice ordföranden.",
+      "beskrivning": "Nämnden ställde sig bakom att Höör lämnar kommunalförbundet AV Media. Kommunen betalade för två tjänster med i stort sett samma strömmade skolinnehåll: AV Media för cirka 640 000 kronor om året och Nationalencyklopedin för cirka 100 000. Att lämna AV Media skulle spara runt 540 000 kronor per år utan sämre utbud, enligt yttrandet. Bara SD yrkade bifall, och ingen begärde votering. Men efter beslutet reserverade sig sex av nämndens nio ledamöter. S gjorde det skriftligt — tjänsteskrivelsen kallades ofullständig. Två från M, två från V och KD:s ledamot gjorde det muntligt. En M-ledamot lämnade också en anteckning till protokollet: frågan borde ha avgjorts av nämnden själv, inte som remissvar, och efter mer dialog. Två ledamöter var jäviga och ersattes under paragrafen. Klubban gick under tiden till vice ordföranden. Fortsättningen: kommunstyrelsen föreslog utträde med 9 röster mot 4 — S, V och MP emot, med skriftlig S-reservation (2024-06-04, § 128). Fullmäktige beslutade om utträdet den 19 juni 2024, § 80. Även där reserverade sig S.",
       "resultat": "Beslutad 2024-03-18, § 25: nämnden antog yttrandet som ställer sig bakom utträde ur AV Media och skickade det till kommunstyrelsen.",
       "kalla_url": "/kallor/protokoll/Protokoll_BUN_240318.pdf",
       "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2024-03-18, § 25, med reservationer, protokollsanteckning och jävsnoteringar (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_KS_240604.pdf",
+      "kalla_url_2_beskrivning": "Kommunstyrelsens protokoll 2024-06-04, § 128: förslaget om utträde, votering 9–4 (PDF).",
+      "kalla_url_3": "/kallor/protokoll/Protokoll_KF_240619.pdf",
+      "kalla_url_3_beskrivning": "Kommunfullmäktiges protokoll 2024-06-19, § 80: utträdet beslutas (PDF).",
+      "kalla_url_4": "/kallor/reservationer/reservation_S_240604_par128.pdf",
+      "kalla_url_4_beskrivning": "S skriftliga reservation i kommunstyrelsen, bilaga § 128 (PDF).",
       "urvalsmotivering": "Materialets enda ärende där en majoritet av ledamöterna reserverade sig mot ett beslut som ändå gäller. En reservation stoppar inget när ingen begär votering. Ärendet visar hur nämndbeslut går till, utöver sakfrågan om 540 000 kronor per år."
     },
     {
@@ -902,6 +918,412 @@
       "kalla_url": "/kallor/protokoll/Protokoll_NKAF_230425.pdf",
       "kalla_beskrivning": "Nämndens protokoll 2023-04-25, § 34, med namngiven röstlängd (PDF).",
       "urvalsmotivering": "Ett exempel på oppositionens verktyg i nämnderna: initiativärendet. Skiljelinjen — styret och SD mot S och V — gällde inte sakfrågan utan hur stor del av den som skulle besvaras. Ärendet dokumenterar också att fältverksamheten lagts ner, en uppgift som annars inte syns i sajtens material."
+    },
+    {
+      "typ": "arende",
+      "titel": "Gudmuntorps skola blir kvar — med moduler för sju miljoner",
+      "datum": "2025-10-01",
+      "antagen_paragraf": "§ 113",
+      "politikomrade": "Skola och bygg",
+      "forslagsstallare": "Kommunstyrelsen, efter eget inriktningsbeslut 2025-08-12 (§ 173)",
+      "beskrivning": "Gudmuntorps byskola får finnas kvar. Fullmäktige godkände en modullösning: den slitna modulparken rivs och ersätts, tillgängligheten förbättras och idrottshallens brandskydd åtgärdas. Investeringen beräknas till 7,1 miljoner kronor, och driftkostnaderna ökar med uppåt 2,5 miljoner om året — pengar som inte fanns i budgeten. I fullmäktige justerades finansieringen efter ett ändringsyrkande från Johan Svahnberg (M): upp till 1,85 miljoner tas från kommunens resultat 2026, resten inom ram. Kök och matsal har större brister och skjuts till ett separat beslut. Frågan hade legat öppen länge — förvaltningen tog fram fyra alternativ, och kommunstyrelsen beställde ett femte. V stod ensamt emot hela vägen. Olle Krabbe (V) ville återremittera för en barnkonsekvensbeskrivning: i kommunstyrelsen föll det 12–1, i fullmäktige 35–3. V:s skriftliga reservationer handlar om likvärdighet. Satsningen höjer enligt V kostnaden med runt 20 000 kronor per elev i Gudmuntorp, utan att elever på kommunens större skolor kompenseras. Övriga åtta partier röstade för att rädda skolan.",
+      "resultat": "Beslutad 2025-10-01, § 113: modullösningen genomförs i steg 1. Upp till 1,85 miljoner tillförs barn- och utbildningsnämnden ur kommunens resultat 2026.",
+      "rostning": [
+        {
+          "datum": "2025-10-01",
+          "paragraf": "§ 113",
+          "fraga": "Skulle ärendet avgöras samma kväll, eller återremitteras för en barnkonsekvensbeskrivning?",
+          "ja_betyder": "Ärendet avgörs idag.",
+          "nej_betyder": "Bifall till Olle Krabbes (V) yrkande: ärendet återremitteras till förvaltningen.",
+          "ja": 35,
+          "nej": 3,
+          "avstar": 0,
+          "utfall": "Ärendet avgjordes samma kväll. Beslutet i sak togs sedan utan votering, med Svahnbergs (M) ändring av finansieringen.",
+          "per_parti": {
+            "m": { "ja": 10, "nej": 0, "avstar": 0 },
+            "c": { "ja": 2, "nej": 0, "avstar": 0 },
+            "l": { "ja": 2, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 2, "nej": 0, "avstar": 0 },
+            "s": { "ja": 8, "nej": 0, "avstar": 0 },
+            "v": { "ja": 0, "nej": 3, "avstar": 0 },
+            "mp": { "ja": 2, "nej": 0, "avstar": 0 },
+            "sd": { "ja": 7, "nej": 0, "avstar": 0 },
+            "medborgerlig-samling": { "ja": 2, "nej": 0, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KF_251001.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KF_251001.pdf",
+      "kalla_beskrivning": "Kommunfullmäktiges protokoll 2025-10-01, § 113, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_KS_250916.pdf",
+      "kalla_url_2_beskrivning": "Kommunstyrelsens protokoll 2025-09-16, § 201: förslaget till fullmäktige, votering 12–1 (PDF).",
+      "kalla_url_3": "/kallor/reservationer/reservation_V_251001_par113.pdf",
+      "kalla_url_3_beskrivning": "V:s skriftliga reservation i fullmäktige, bilaga § 113 (PDF).",
+      "kalla_url_4": "/kallor/reservationer/reservation_V_250916_par201.pdf",
+      "kalla_url_4_beskrivning": "V:s skriftliga reservation i kommunstyrelsen, bilaga § 201 (PDF).",
+      "urvalsmotivering": "Byskolors framtid är en klassisk kommunal stridsfråga. Gudmuntorp har debatterats i flera år. Här är åtta partier eniga om att satsa, och V står ensamt emot. V:s skäl — alla skolor ska ha likvärdiga resurser — finns i två skriftliga reservationer."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "\"Höör anger inte\" — skrivelsen mot anmälningsplikt avslogs",
+      "datum": "2024-06-04",
+      "antagen_paragraf": "§ 143",
+      "politikomrade": "Demokrati och styrning",
+      "forslagsstallare": "Olle Krabbe (V), initiativärende",
+      "beskrivning": "Olle Krabbe (V) föreslog att kommunstyrelsen skulle skriva till regeringen och säga att anmälningsplikt inte bör införas i kommunal verksamhet. Bakgrunden är det nationella förslaget att offentligt anställda ska anmäla papperslösa. En andra punkt — att kommunens personal inte skulle förväntas följa en sådan plikt — drog Krabbe själv tillbaka. Ärendet tog åtta månader. I oktober 2023 valde kommunstyrelsen beredning i stället för beslut, med 8 röster mot 2. SD:s tre ledamöter avstod, och S-gruppen delade sig. I juni 2024 avslogs initiativet med 8 mot 5. M, L och SD röstade för avslag. Kommunens linje: vänta på en konkret remiss, eftersom lagens innehåll ännu var okänt. S, V, MP — och C:s Magnus Haara — röstade för att skrivelsen skulle skickas. S, V och MP reserverade sig skriftligen, C muntligen. S pekade i sin reservation på fackens invändningar; V beskrev frågan som ett arbetsgivaransvar.",
+      "resultat": "Avslaget 2024-06-04, § 143: kommunstyrelsen skickar ingen skrivelse till regeringen om anmälningsplikten.",
+      "rostning": [
+        {
+          "datum": "2023-10-24",
+          "paragraf": "§ 224",
+          "fraga": "Skulle initiativet beredas av förvaltningen, eller bifallas direkt?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag, begränsat till beredning av initiativärendets första punkt.",
+          "nej_betyder": "Bifall till initiativärendets första punkt direkt, enligt Olle Krabbes (V) yrkande.",
+          "ja": 8,
+          "nej": 2,
+          "avstar": 3,
+          "utfall": "Beredning. SD, som ville avslå direkt, avstod i voteringen.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 1, "nej": 1, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 1, "nej": 0, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 0, "avstar": 3 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_231024.pdf"
+        },
+        {
+          "datum": "2024-06-04",
+          "paragraf": "§ 143",
+          "fraga": "Skulle skrivelsen till regeringen skickas, eller initiativet avslås?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag: initiativärendet avslås.",
+          "nej_betyder": "Bifall till initiativärendet: kommunstyrelsen skriver till regeringen mot anmälningsplikt i kommunal verksamhet.",
+          "ja": 8,
+          "nej": 5,
+          "avstar": 0,
+          "utfall": "Avslag. C:s Magnus Haara röstade med S, V och MP.",
+          "per_parti": {
+            "m": { "ja": 4, "nej": 0, "avstar": 0 },
+            "c": { "ja": 0, "nej": 1, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 3, "nej": 0, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_240604.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_240604.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2024-06-04, § 143, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_KS_231024.pdf",
+      "kalla_url_2_beskrivning": "Kommunstyrelsens protokoll 2023-10-24, § 224: beredningsbeslutet (PDF).",
+      "kalla_url_3": "/kallor/reservationer/reservation_S_240604_par143.pdf",
+      "kalla_url_3_beskrivning": "S skriftliga reservation, bilaga § 143 (PDF).",
+      "kalla_url_4": "/kallor/reservationer/reservation_V_240604_par143.pdf",
+      "kalla_url_4_beskrivning": "V:s skriftliga reservation, bilaga § 143 (PDF).",
+      "kalla_url_5": "/kallor/reservationer/reservation_MP_240604_par143.pdf",
+      "kalla_url_5_beskrivning": "MP:s skriftliga reservation, bilaga § 143 (PDF).",
+      "urvalsmotivering": "En rikspolitisk strid i lokal tappning. Tre partier lämnade skriftliga reservationer. C röstade mot styrets övriga partier — ett av få belagda fall. Och tempot syns: åtta månader gick från inlämning till avslag."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Räddningstjänstens bemanning: oppositionen band styrets budget",
+      "datum": "2024-05-07",
+      "antagen_paragraf": "§ 101",
+      "politikomrade": "Trygghet och beredskap",
+      "forslagsstallare": "Kent Staaf (S), yrkande; frågan utredd sedan 2020",
+      "beskrivning": "Räddningstjänstens bemanning hade utretts sedan 2020 utan att nå ett skarpt beslut. I maj 2024 avgjorde S, V, MP och SD saken ihop, med 7 röster mot 6: kommundirektören ska räkna in en etappvis förstärkt operativ bemanning i budgeten från och med 2027, enligt räddningschefens rapport. Styrets ledamöter — M, C och KD — röstade emot. Samma kväll avgjordes vem som ska styra räddningstjänsten. När VA- och räddningstjänstnämnden delades flyttade räddningstjänsten in under kommunstyrelsen. Olle Krabbe (V) ville återremittera för att pröva alternativa styrformer, med stöd av SD och MP. Den voteringen slutade 6–6, och då avgör ordförandens röst: återremissen föll. S delade sig — en ledamot röstade med oppositionen, en avstod.",
+      "resultat": "Beslutad 2024-05-07, § 101: förstärkt bemanning läggs in i budgeten från 2027. Samma dag, § 105: räddningstjänsten läggs under kommunstyrelsen — avgjort med ordförandens utslagsröst.",
+      "rostning": [
+        {
+          "datum": "2024-05-07",
+          "paragraf": "§ 101",
+          "fraga": "Skulle förstärkt operativ bemanning läggas in i budgeten från 2027?",
+          "ja_betyder": "Bifall till kommunstyrelsens arbetsutskotts förslag till beslut.",
+          "nej_betyder": "Bifall till Kent Staafs (S) yrkande: kommundirektören uppdras att budgetera ett etappvis införande av förstärkt operativ bemanning från och med 2027.",
+          "ja": 6,
+          "nej": 7,
+          "avstar": 0,
+          "utfall": "Staafs yrkande vann: bemanningen ska in i budgeten.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 2, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 3, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_240507.pdf"
+        },
+        {
+          "datum": "2024-05-07",
+          "paragraf": "§ 105",
+          "fraga": "Skulle reglementsändringen som lägger räddningstjänsten under kommunstyrelsen återremitteras för att pröva andra styrformer?",
+          "ja_betyder": "Avslag på Olle Krabbes (V) återremissyrkande.",
+          "nej_betyder": "Bifall till Olle Krabbes (V) yrkande: återremiss för förslag på alternativa styrformer för räddningstjänsten.",
+          "ja": 6,
+          "nej": 6,
+          "avstar": 1,
+          "utfall": "6–6 — ordförandens utslagsröst avgjorde: ingen återremiss. Förslaget gick vidare till fullmäktige.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 2, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 1, "avstar": 1 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 3, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_240507.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_240507.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2024-05-07, §§ 101 och 105, med namngivna röstlängder (PDF).",
+      "urvalsmotivering": "Räddningstjänsten berör alla i kommunen. Det här är ett av få fall där oppositionen och SD ihop styrt om budgetarbetet. Voteringen i § 105 är dessutom materialets jämnaste: 6–6, avgjord av ordförandens röst."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Översiktsplanen: KD ville stryka byggplaner på åkermark",
+      "datum": "2026-02-24",
+      "antagen_paragraf": "§ 35",
+      "politikomrade": "Samhällsplanering",
+      "forslagsstallare": "Förslag framtaget av förvaltningen; ändringsyrkanden av George Emilson (KD)",
+      "beskrivning": "Kommunstyrelsen sa ja till att den nya översiktsplanen ställs ut för granskning. Planen pekar ut var Höör ska växa i decennier framåt. KD ville stryka två byggområden: Kyrkbyn i Tjörnarp och E22-Fogdarp. KD:s skäl i sin skriftliga reservation: åkermark är en ändlig resurs, och bebyggd åkermark går inte att få tillbaka. Beredskapen för livsmedel behöver stärkas. Kulturmiljön i Tjörnarps kyrkby är känslig. V stod bakom Kyrkbyn-yrkandet. C:s Magnus Haara stod bakom Fogdarp-yrkandet. Voteringen togs på Kyrkbyn och slutade 10–3. Bara KD, V och MP ville stryka området — S och SD röstade med M, L och C för att bygga. Fogdarp-yrkandet föll utan votering. Haara reserverade sig muntligen. Planen antas slutligt av fullmäktige efter granskningen. Det beslutet återstår.",
+      "resultat": "Beslutad 2026-02-24, § 35: översiktsplanen godkänd för granskning, med båda utbyggnadsområdena kvar.",
+      "rostning": [
+        {
+          "datum": "2026-02-24",
+          "paragraf": "§ 35",
+          "fraga": "Skulle Kyrkbyn i Tjörnarp behållas som utbyggnadsområde i översiktsplanen?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag: Kyrkbyn pekas ut som utbyggnadsområde.",
+          "nej_betyder": "Bifall till George Emilsons (KD) yrkande: Kyrkbyn stryks som utbyggnadsområde.",
+          "ja": 10,
+          "nej": 3,
+          "avstar": 0,
+          "utfall": "Kyrkbyn behålls i planen.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 0, "nej": 1, "avstar": 0 },
+            "s": { "ja": 2, "nej": 0, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 3, "nej": 0, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_260224.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_260224.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2026-02-24, § 35, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/reservationer/reservation_KD_260224_par35.pdf",
+      "kalla_url_2_beskrivning": "KD:s skriftliga reservation om åkermarken, bilaga § 35 (PDF).",
+      "urvalsmotivering": "Översiktsplanen styr markanvändningen i hela kommunen i decennier och antas slutligt efter valet — väljarna röstar alltså om vilka som avgör den. Voteringen visar en ovanlig linje: KD mot styrets övriga partier, med S och SD på styrets sida."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Tre förslag om kommunens flaggning — SD:s föll med 3 röster mot 10",
+      "datum": "2023-09-26",
+      "antagen_paragraf": "§ 197",
+      "politikomrade": "Demokrati och styrning",
+      "forslagsstallare": "Arbetsutskottet; egna förslag från SD respektive Olle Krabbe (V)",
+      "beskrivning": "Höör skulle få nya regler för flaggningen på kommunens flaggstänger. Tre förslag stod mot varandra, och arbetsutskottets vann. SD lade ett helt eget förslag till riktlinjer. Vad det innehöll framgår inte av protokollet, bara att det fanns som eget underlag. V ville stryka sex allmänna flaggdagar och i stället flagga på de nationella minoriteternas dagar, på Höör-dagen och på judiska nyåret. SD:s förslag blev motförslag och föll med 3 röster mot 10. Alla partier utom SD valde arbetsutskottets linje. V:s förslag föll utan votering. Två tillägg antogs enhälligt. Veterandagen den 29 maj blev flaggdag, och kommunen ska undersöka om minoriteternas dagar kan tas in i reglerna. Fullmäktige antog riktlinjerna två veckor senare.",
+      "resultat": "Beslutad i kommunstyrelsen 2023-09-26, § 197; riktlinjerna antagna av fullmäktige 2023-10-11, § 110.",
+      "rostning": [
+        {
+          "datum": "2023-09-26",
+          "paragraf": "§ 197",
+          "fraga": "Vilka riktlinjer för offentlig flaggning skulle gälla — arbetsutskottets eller SD:s?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag till riktlinjer.",
+          "nej_betyder": "Bifall till Sverigedemokraternas eget förslag till riktlinjer.",
+          "ja": 10,
+          "nej": 3,
+          "avstar": 0,
+          "utfall": "Arbetsutskottets riktlinjer antogs.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 2, "nej": 0, "avstar": 0 },
+            "v": { "ja": 1, "nej": 0, "avstar": 0 },
+            "mp": { "ja": 1, "nej": 0, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 3, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_230926.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_230926.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2023-09-26, § 197, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_KF_231011.pdf",
+      "kalla_url_2_beskrivning": "Kommunfullmäktiges protokoll 2023-10-11, § 110: riktlinjerna antas (PDF).",
+      "urvalsmotivering": "Symbolfrågor syns sällan i röstdata. Här finns en belagd votering där SD lade ett helt eget förslag och stod ensamt, medan V:s linje om minoriteternas dagar föll utan omröstning. Och flaggningen är ett beslut som alla kan se resultatet av."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Bostäder eller kulturkvarter? Planuppdraget för kvarteret Anders",
+      "datum": "2025-04-01",
+      "antagen_paragraf": "§ 96",
+      "politikomrade": "Kultur och stadsutveckling",
+      "forslagsstallare": "Kommunstyrelsens arbetsutskott",
+      "beskrivning": "Kommunstyrelsen gav planuppdrag för kvarteret runt Kulturhuset Anders. Hagahuset är i dåligt skick och ska rivas, och på tomterna intill — tomma sedan Engströmska huset revs 2005 — prövas nya bostäder. Kulturhuset, Kulturskolan och evenemangsparken bekräftas i planen. Planarbetet kostar 400 000 kronor; hela exploateringen är grovt uppskattad till 1,7 miljoner, mot intäkter på knappt en miljon för byggrätterna. Voteringen slutade 7–6. SD sprack: Stefan Liljenberg röstade med styret, partiets två övriga ledamöter med oppositionen. S och V yrkade avslag. S:s skriftliga reservation vill se ett kulturkvarter i stället för bostäder, och pekar på att Kulturskolan växer och behöver lokaler intill de nuvarande. MP reserverade sig muntligen.",
+      "resultat": "Beslutad 2025-04-01, § 96: planuppdrag för bostäder på Anders 3–5; kulturfunktionerna bekräftas i planen.",
+      "rostning": [
+        {
+          "datum": "2025-04-01",
+          "paragraf": "§ 96",
+          "fraga": "Skulle planuppdraget för bostäder i kvarteret Anders ges, eller avslås?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag: planuppdrag lämnas.",
+          "nej_betyder": "Bifall till Olle Krabbes (V) och Kent Staafs (S) yrkande att avslå.",
+          "ja": 7,
+          "nej": 6,
+          "avstar": 0,
+          "utfall": "Planuppdraget gavs.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 1, "nej": 2, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_250401.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_250401.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2025-04-01, § 96, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/reservationer/reservation_S_250401_par96.pdf",
+      "kalla_url_2_beskrivning": "S skriftliga reservation om kulturkvarteret, bilaga § 96 (PDF).",
+      "urvalsmotivering": "Kvarteret Anders är Höörs kulturella hjärta. Frågan avgjordes med en enda röst, och SD:s grupp röstade åt två håll. Striden om bostäder eller kulturlokaler pågår än — planen är inte antagen."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Maglehills nästa etapp: 150 bostäder och punkthus på sju våningar",
+      "datum": "2025-05-27",
+      "antagen_paragraf": "§ 136",
+      "politikomrade": "Bostäder",
+      "forslagsstallare": "Kommunstyrelsens arbetsutskott",
+      "beskrivning": "Detaljplanen för Maglehills centrala etapp gick vidare till granskning: cirka 150 bostäder i blandad skala, från villor till punkthus på fem till sju våningar, beräknade att ge Höör runt 330 nya invånare. Voteringen slutade 8–4, med MP:s ledamot som avstod. Skiljelinjen var ovanlig: S och V röstade med M och C för planen, medan KD och SD röstade emot. KD:s skriftliga reservation vill begränsa punkthusen till högst fyra våningar — partiet säger sig driva förtätning för att spara åkermark, men tycker att sju våningar blir för storskaligt och ger \"ett trist första intryck av Höör\" för den som kommer norrifrån på väg 13. SD reserverade sig muntligen utan protokollförd motivering.",
+      "resultat": "Beslutad 2025-05-27, § 136: detaljplanen för Maglehills centrala etapp godkänd för granskning.",
+      "rostning": [
+        {
+          "datum": "2025-05-27",
+          "paragraf": "§ 136",
+          "fraga": "Skulle detaljplanen med punkthus på upp till sju våningar gå vidare till granskning?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag: samrådsredogörelsen godkänns och planen går till granskning.",
+          "nej_betyder": "Bifall till George Emilsons (KD) yrkande om återremiss för att begränsa punkthusen till högst fyra våningar.",
+          "ja": 8,
+          "nej": 4,
+          "avstar": 1,
+          "utfall": "Planen gick till granskning.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 2, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 0, "nej": 1, "avstar": 0 },
+            "s": { "ja": 2, "nej": 0, "avstar": 0 },
+            "v": { "ja": 1, "nej": 0, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 0, "avstar": 1 },
+            "sd": { "ja": 0, "nej": 3, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_250527.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_250527.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2025-05-27, § 136, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/reservationer/reservation_KD_250527_par136.pdf",
+      "kalla_url_2_beskrivning": "KD:s skriftliga reservation om våningshöjden, bilaga § 136 (PDF).",
+      "urvalsmotivering": "Maglehill är kommunens största byggområde, och 330 nya invånare är runt två procent av Höörs befolkning. Voteringen bryter blocken: S och V med styret, KD och SD emot. Samma fråga om skala går igen i ärendet om översiktsplanen."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Remissvaret om skattebromsen: styret förlorade med 5–8",
+      "datum": "2026-05-26",
+      "antagen_paragraf": "§ 135",
+      "politikomrade": "Ekonomi och styrning",
+      "forslagsstallare": "Kent Staaf (S), yrkande om alternativt yttrande",
+      "beskrivning": "Staten utreder en \"skattebroms\": kommuner som sänker skatten ska få ett bidrag i tre år, kommuner som höjer ska betala en avgift. Höör bjöds in som remissinstans — våren 2026, ett år efter att kommunen själv beslutat sänka skatten med 80 öre. Två förslag till svar fanns i underlaget. Kent Staaf (S) yrkade att kommunen skulle skicka det ena i stället för det arbetsutskottet valt. Voteringen slutade 5–8: M, C och KD ville skicka arbetsutskottets svar, men L, S, V, MP och SD valde Staafs linje. Vad som skiljer de två yttrandena åt framgår inte av protokollet; det antagna svaret ligger som beslutsunderlag i kommunens mötesportal, och remissvaren publiceras av regeringen. Ingen reserverade sig.",
+      "resultat": "Beslutad 2026-05-26, § 135: Höör svarar Finansdepartementet med det yttrande Kent Staaf (S) yrkade på.",
+      "rostning": [
+        {
+          "datum": "2026-05-26",
+          "paragraf": "§ 135",
+          "fraga": "Vilket av de två remissvaren om skattebromsen skulle Höör skicka?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag till yttrande.",
+          "nej_betyder": "Bifall till Kent Staafs (S) yrkande: yttrandet enligt beslutsunderlag 6 skickas i stället.",
+          "ja": 5,
+          "nej": 8,
+          "avstar": 0,
+          "utfall": "Staafs yrkande vann. L röstade med oppositionen och SD.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 0, "nej": 1, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 3, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_260526.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_260526.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2026-05-26, § 135, med namngiven röstlängd (PDF).",
+      "urvalsmotivering": "Sänkningen av skatten med 80 öre är mandatperiodens mest omstridda beslut om pengar. Här förlorar styret en votering om vad kommunen ska tycka om statens skattebroms — tre månader före valet, med L på andra sidan. Det är den färskaste förlusten i materialet."
+    },
+    {
+      "typ": "arende",
+      "organ": "Kommunstyrelsen",
+      "titel": "Handikapprådet och pensionärsrådet slogs ihop — MP:s tillägg vann",
+      "datum": "2024-10-22",
+      "antagen_paragraf": "§ 215",
+      "politikomrade": "Demokrati och styrning",
+      "forslagsstallare": "Arbetsutskottet; tilläggsyrkande av Roger Orwén (MP)",
+      "beskrivning": "Kommunala handikapprådet och pensionärsrådet slogs ihop till ett gemensamt råd från 2025: medborgar- och pensionärsrådet. Råden är kanalen där föreningar för äldre och för personer med funktionsnedsättning möter kommunen. Roger Orwén (MP) yrkade på ett tillägg i reglerna: rådets synpunkter ska följas upp av ordföranden och tas upp igen på nästa möte. Ordföranden fann först att tillägget fallit. Men voteringen slutade 7–6 för MP. L, KD, S, V och en SD-ledamot röstade för tillägget — M, C och två SD-ledamöter emot. Styrets partier stod alltså på båda sidor. S ville i stället kalla rådet Kommunala föreningsrådet, men fick nej. Fullmäktige antog reglementet den 6 november 2024.",
+      "resultat": "Beslutad i kommunstyrelsen 2024-10-22, § 215, med MP:s uppföljningstillägg; reglementet antaget av fullmäktige 2024-11-06, § 133.",
+      "rostning": [
+        {
+          "datum": "2024-10-22",
+          "paragraf": "§ 215",
+          "fraga": "Skulle reglementet få MP:s tillägg om att föreningarnas synpunkter ska följas upp och återkopplas?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag utan tillägget.",
+          "nej_betyder": "Bifall till Roger Orwéns (MP) tilläggsyrkande.",
+          "ja": 6,
+          "nej": 7,
+          "avstar": 0,
+          "utfall": "MP:s tillägg bifölls.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 0, "nej": 1, "avstar": 0 },
+            "kd": { "ja": 0, "nej": 1, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 2, "nej": 1, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_KS_241022.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_241022.pdf",
+      "kalla_beskrivning": "Kommunstyrelsens protokoll 2024-10-22, § 215, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_KF_241106.pdf",
+      "kalla_url_2_beskrivning": "Kommunfullmäktiges protokoll 2024-11-06, § 133: reglementet antas (PDF).",
+      "urvalsmotivering": "Rådens utformning avgör hur äldre- och funktionsrättsföreningar hörs mellan valen. Voteringen är en av fyra där styret förlorade i kommunstyrelsen, och den enda där L och KD fällde avgörandet mot M och C."
     }
   ],
   "exkluderade_kandidater_not": "En tidigare version av den här noten uppgav att Vänsterpartiets motion om ökade budgetramar för barn- och utbildningsnämnden och socialnämnden (fördelning 5:2, Olle Krabbe m.fl.) inte kunnat källbeläggas i något officiellt beslutsdokument. Det stämmer inte längre: sedan samtliga fullmäktigeprotokoll hämtats ur kommunens mötesportal är motionen fullt dokumenterad — den anmäldes vid KF 2023-10-11 (§ 113) och avslogs vid KF 2023-12-06 (§ 149) efter omröstning med upprop, där S, V och MP röstade för motionen och alla övriga emot. Ärendet är ändå inte medtaget i listan: budgetramarna för 2024 täcks redan av budgetgenomgången (se /budget/ och oppositionsbudgetarna), och listan omfattar 15 ärenden, vilket fyller instruktionens ram om 10-15. En läsare som vill granska voteringen hittar den i protokollet för 2023-12-06 — observera att protokollet där innehåller ett skrivfel: båda röstlängderna rubriceras 'röstar JA', men den andra listan (S-, V- och MP-ledamöterna) är uppenbart nej-rösterna. Ytterligare ett dussintal verifierade voteringar 2023-2026 är medvetet inte medtagna; urvalsprincipen redovisas på metodiksidan."
