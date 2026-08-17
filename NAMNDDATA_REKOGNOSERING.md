@@ -1,8 +1,12 @@
 # Nämnddata — rekognosering för TASK punkt 21
 
-> **Utfall 2026-08-17:** Jonas valde urvalet "kärnfynden". 8 ärenden inlagda på
-> sajten (commits `688e263` + `5a7c416`), detaljer i TASK.md punkt 21. NKAF:s
-> voteringar och TTN:s bygglov ligger kvar här som ohämtat urval.
+> **Utfall 2026-08-17:** Jonas valde urvalet "kärnfynden" — 8 ärenden inlagda
+> (commits `688e263` + `5a7c416`). Senare samma dag beslutade Jonas att även
+> NKAF:s tre voteringsärenden skulle in (→ 26 ärenden totalt på /arenden/) och
+> att TTN:s bygglov förblir uteslutna (myndighetsutövning mot enskilda).
+> Detaljer i TASK.md punkt 21. KS-rekognosering körd samma dag: 19 av
+> kommunstyrelsens protokoll innehåller voteringar, ~29 begärda omröstningar —
+> KS är ett eget punkt-19-stort jobb om det ska göras.
 
 **Utförd:** 2026-08-17. Samtliga protokoll från de sex facknämnderna hämtade via
 Ciceron-API:et (samma flöde som `scripts/hamta-protokoll.py`, se

@@ -8,7 +8,8 @@ hantera PDF:erna):
     python scripts/hamta-namndprotokoll.py search <nämnd>   # skriver moten_<nämnd>.json
     python scripts/hamta-namndprotokoll.py fetch <nämnd>    # laddar ner till pdf/<nämnd>/
 
-<nämnd> är en av: bun, sn, nkaf, ttn, vr, va. Sedan pdftotext -table -enc UTF-8.
+<nämnd> är en av: bun, sn, nkaf, ttn, vr, va, ks (= kommunstyrelsen i
+KSF-diariet). Sedan pdftotext -table -enc UTF-8.
 Utfallet av genomsökningen 2026-08-17 står i NAMNDDATA_REKOGNOSERING.md.
 """
 import json
@@ -70,6 +71,7 @@ def main():
             "ttn": ("TTN", "Tillstånds- och tillsynsnämnden"),
             "vr": ("VR", "Nämnden för VA och Räddningstjänst"),
             "va": ("VA", "VA-nämnden"),
+            "ks": ("KSF", "Kommunstyrelsen"),
         }
         diary, board = NAMNDER[sys.argv[2]]
         hits = rpc("Search", {
@@ -104,6 +106,7 @@ def main():
             "ttn": ("TTN", "Tillstånds- och tillsynsnämnden"),
             "vr": ("VR", "Nämnden för VA och Räddningstjänst"),
             "va": ("VA", "VA-nämnden"),
+            "ks": ("KSF", "Kommunstyrelsen"),
         }
         diary, board = NAMNDER[kort]
         rpc("Search", {
