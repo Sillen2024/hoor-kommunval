@@ -1,6 +1,6 @@
 {
-  "senast_uppdaterad": "2026-08-14",
-  "metod_not": "Detta är en förenklad valkompass, inte en vetenskaplig mätning. Varje påstående är kopplat till konkreta, källbelagda ståndpunkter från partiernas 2026-manifest (se /partier/ och /jamforelse/) eller till dokumenterade beslut under mandatperioden (se /styret-vs-oppositionen/). Grupperingen styre / rödgröna / SD och MED följer samma blockindelning som resten av sajten. Verkligheten är mer splittrad än så — se resultatet för en viktig brasklapp om hur Höör faktiskt röstar. Resultatet räknas som andel av de frågor du faktiskt tagit ställning till, och två av frågorna är märkta som nationella.",
+  "senast_uppdaterad": "2026-08-17",
+  "metod_not": "Detta är en förenklad valkompass, inte en vetenskaplig mätning. Varje påstående är kopplat till konkreta, källbelagda ståndpunkter från partiernas 2026-manifest (se /partier/ och /jamforelse/) eller till dokumenterade beslut under mandatperioden (se /styret-vs-oppositionen/). Grupperingen styre / rödgröna / SD och MED följer samma blockindelning som resten av sajten. Verkligheten är mer splittrad än så — se resultatet för en viktig brasklapp om hur Höör faktiskt röstar. Resultatet räknas som andel av de frågor du faktiskt tagit ställning till, och tre av frågorna är märkta som nationella.",
   "grupper": {
     "styre": {
       "namn": "Styret",
@@ -85,11 +85,19 @@
       "kalla_url": "/partier/v/"
     },
     {
-      "id": "trygghet-migration",
-      "text": "Jag vill se en mer restriktiv migrationspolitik lokalt och hårdare straff för brott.",
+      "id": "migration",
+      "text": "Jag vill se en mer restriktiv migrationspolitik lokalt.",
       "grupp": "sd_med",
       "kompetens": "nationell",
-      "kalla_not": "Sverigedemokraterna fokuserar på skärpta straff och en restriktiv, seriös migrationspolitik i kommunen.",
+      "kalla_not": "Sverigedemokraterna vill se en restriktiv och seriös migrationspolitik i kommunen, med motivet att motverka segregation och utanförskap.",
+      "kalla_url": "/partier/sd/"
+    },
+    {
+      "id": "hardare-straff",
+      "text": "Jag vill se hårdare straff för brott.",
+      "grupp": "sd_med",
+      "kompetens": "nationell",
+      "kalla_not": "Sverigedemokraterna fokuserar på skärpta straff och ökat skydd för laglydiga medborgare.",
       "kalla_url": "/partier/sd/"
     },
     {
