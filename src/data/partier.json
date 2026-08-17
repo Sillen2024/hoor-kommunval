@@ -276,6 +276,12 @@
       "mandat_2022": 2,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://kristdemokraterna.se/",
+      "hemsida_tidigare": {
+        "url": "wp.kristdemokraterna.se/hoor",
+        "arkiv_url": "https://web.archive.org/web/20260310153022/https://wp.kristdemokraterna.se/hoor/",
+        "arkiv_datum": "2026-03-10",
+        "not": "Sidan togs ner efter 10 mars 2026 och svarar nu 404. Nyheterna på den var från 2017."
+      },
       "logo": "/logos/kd.svg",
       "logo_kalla": "Wikimedia Commons, File:Kd v1.svg (PD-textlogo)",
       "manifest_status": "ersatt",

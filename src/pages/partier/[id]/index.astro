@@ -140,6 +140,11 @@ const hemsidaNationell = NATIONELL_HEMSIDA.has(party.id);
 // läses lättare än "https://hoor.liberalerna.se/".
 const visaLank = (url: string) =>
   url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+// KD:s lokala Höör-sida finns bara kvar i Internet Archive. Vi länkar dit i
+// stället för till den döda adressen: läsaren ska kunna se vad partiet
+// faktiskt skrev lokalt, inte mötas av en 404.
+type TidigareHemsida = { url: string; arkiv_url: string; arkiv_datum: string; not: string };
+const tidigareHemsida = (party as { hemsida_tidigare?: TidigareHemsida }).hemsida_tidigare ?? null;
 
 // ——— "Hur har det gått?" (Kolada etapp 3) ——————————————————————————————
 // De gemensamma teman partiets ståndpunkter faller under, begränsat till dem
@@ -167,7 +172,7 @@ const utfallTeman = TEMA_ORDNING.filter(
     <a class="source-link" href={party.kalla_mandat} target="_blank" rel="noopener noreferrer">Mandatfördelning, hoor.se</a>
   </p>
 
-  {(party.hemsida || (party.sociala_medier_hoor?.length ?? 0) > 0) && (
+  {(party.hemsida || tidigareHemsida || (party.sociala_medier_hoor?.length ?? 0) > 0) && (
     <dl class="party-kanaler">
       {party.hemsida && (
         <>
@@ -177,6 +182,18 @@ const utfallTeman = TEMA_ORDNING.filter(
             {hemsidaNationell && (
               <span class="party-kanaler__not">Riksorganisationens sida — partiet har ingen lokal Höör-sida i drift.</span>
             )}
+          </dd>
+        </>
+      )}
+
+      {tidigareHemsida && (
+        <>
+          <dt>Gamla sidan</dt>
+          <dd>
+            <a href={tidigareHemsida.arkiv_url} target="_blank" rel="noopener noreferrer">
+              {tidigareHemsida.url} — arkiverad {tidigareHemsida.arkiv_datum}
+            </a>
+            <span class="party-kanaler__not">{tidigareHemsida.not}</span>
           </dd>
         </>
       )}
