@@ -61,7 +61,22 @@ for (const a of arendenData.arenden) {
 <Layout title="Om urvalet" description="Metodiken bakom sajten: varför den är ett urval, urvalskriterier, och vad som medvetet uteslutits.">
   <h1>Om urvalet</h1>
 
-  <h2>Varför sajten är ett urval, inte en heltäckande genomgång</h2>
+  <nav class="sidnav" aria-label="Innehåll på sidan">
+    <ul>
+      <li><a href="#varfor">Varför ett urval</a></li>
+      <li><a href="#vad-ar-med">Vad som är med</a></li>
+      <li><a href="#uteslutet">Vad som uteslutits</a></li>
+      <li><a href="#urvalskriterier">Urvalskriterier</a></li>
+      <li><a href="#tekniska-begransningar">Tekniska begränsningar</a></li>
+      <li><a href="#budgetkallor">Budgetsiffrornas källor</a></li>
+      <li><a href="#kolada">Kolada</a></li>
+      <li><a href="#lofte">Löftet</a></li>
+      <li><a href="#fas-2">Fas 2</a></li>
+      <li><a href="#kallor">Källor</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="varfor">Varför sajten är ett urval, inte en heltäckande genomgång</h2>
   <p>
     Idén till den här sajten uppkom <strong>11 augusti 2026</strong> — bara 15 dagar innan förtidsröstningen
     startar 26 augusti 2026, inför valet till kommunfullmäktige i Höör 13 september 2026. Det korta tidsfönstret
@@ -74,7 +89,7 @@ for (const a of arendenData.arenden) {
     den — inget innehåll genereras eller ändras i drift.
   </p>
 
-  <h2>Vad som är med</h2>
+  <h2 id="vad-ar-med">Vad som är med</h2>
   <ul>
     <li>Enbart <strong>kommunvalet i Höör</strong> — inte region- eller riksdagsvalet, trots att alla tre val hålls samma dag.</li>
     <li>Samtliga 9 partier som satt i fullmäktige 2022–2026: Moderaterna, Liberalerna, Centerpartiet och
@@ -94,7 +109,7 @@ for (const a of arendenData.arenden) {
       och AI-genererat media — skilt från resten av sajtens källbelagda genomgång.</li>
   </ul>
 
-  <h2>Vad som medvetet uteslutits</h2>
+  <h2 id="uteslutet">Vad som medvetet uteslutits</h2>
   <ul>
     <li>Region- och riksdagsvalen, trots samma valdag.</li>
     <li>En fullständig genomgång av samtliga protokoll och nämndmöten under mandatperioden — se Fas 2 nedan.</li>
@@ -104,10 +119,10 @@ for (const a of arendenData.arenden) {
       program. I stället anges tydligt att lokalt manifest saknas.</li>
   </ul>
 
-  <h2>Urvalskriterier för ärendelistan</h2>
+  <h2 id="urvalskriterier">Urvalskriterier för ärendelistan</h2>
   <p>{arendenData.urvalskriterier_not}</p>
 
-  <h2>Tekniska begränsningar</h2>
+  <h2 id="tekniska-begransningar">Tekniska begränsningar</h2>
   <p>
     Höörs kommun publicerar protokoll och handlingar för kommunfullmäktige från och med 2022 via en
     JavaScript-baserad mötesportal (sok-hr.unikom.se), och Wayback Machine har inte arkiverat sidans renderade
@@ -171,8 +186,8 @@ for (const a of arendenData.arenden) {
     siffror. De redovisas i två former i ärendelistan: nya ärenden för det som inte tidigare bevakades,
     och kompletteringar i befintliga ärenden där kommunstyrelsen var en station på vägen till
     fullmäktige. KS-voteringar som bara upprepar ett redan redovisat mönster — främst budgetärendenas
-    återkommande 9–4-uppställning — har inte fått egna poster; protokollen är publicerade under
-    /kallor/protokoll/.
+    återkommande 9–4-uppställning och en procedurvotering om en föredragningslista — har inte fått egna
+    poster; protokollen är publicerade under /kallor/protokoll/.
   </p>
   <p>
     Kvarvarande begränsningar i "vad har hänt"-delen: arbetsutskottens och de kommunala bolagens
@@ -182,7 +197,7 @@ for (const a of arendenData.arenden) {
     markerade som osäkra, ärende för ärende.
   </p>
 
-  <h2>Budgetsiffrornas källor, år för år</h2>
+  <h2 id="budgetkallor">Budgetsiffrornas källor, år för år</h2>
   <p>
     Alla fem budgetbeslut (2023–2027) är kontrollerade mot kommunens egna protokoll eller mötesutsändningens
     undertexter, med datum, paragraf och röstsiffror där de gått att hitta. Den sista luckan är stängd:
@@ -271,7 +286,7 @@ for (const a of arendenData.arenden) {
     värderar det inte — se <a href="/ordlista/">ordlistan</a> för de fyra statistikbegreppen.
   </p>
 
-  <h2>Löfte: fakta, inga värderingar</h2>
+  <h2 id="lofte">Löfte: fakta, inga värderingar</h2>
   <p>
     Sajten spekulerar inte i valresultat och gör inga förutsägelser om vem som vinner. Grunden är hela vägen:
     det här är vad som beslutats (med källa), och det här är vad partiet säger att det vill göra (med källa).
@@ -298,7 +313,7 @@ for (const a of arendenData.arenden) {
     avgjorde saken. Sakuppgifter ändras inte tyst.
   </p>
 
-  <h2>Fas 2 — möjlig utbyggnad, inte del av det här bygget</h2>
+  <h2 id="fas-2">Fas 2 — möjlig utbyggnad, inte del av det här bygget</h2>
   <p>
     En fullständig genomgång av samtliga protokoll under mandatperioden är påbörjad men inte klar:
     fullmäktiges, facknämndernas och kommunstyrelsens voteringar är genomgångna (se ovan), men
@@ -363,3 +378,24 @@ for (const a of arendenData.arenden) {
 
   <p class="updated">Senast uppdaterad: {budgetData.senast_uppdaterad}.</p>
 </Layout>
+
+<style>
+  .sidnav {
+    margin: 1.5rem 0 2rem;
+    padding: 0.8rem 1rem;
+    background: #fafafa;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+  }
+
+  .sidnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.88rem;
+  }
+</style>
