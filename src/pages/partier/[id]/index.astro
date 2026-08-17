@@ -44,8 +44,10 @@ type Votering = {
   kalla_protokoll: string;
 };
 
+// Nämndärenden ("organ" satt) hålls utanför: rubriken lovar fullmäktige, och
+// nämndgrupperna är 1–3 ledamöter — för små för partistatistik.
 const voteringsArenden = arendenData.arenden
-  .filter((a) => "rostning" in a && a.rostning)
+  .filter((a) => "rostning" in a && a.rostning && !("organ" in a && a.organ))
   .map((a) => ({
     arende: a,
     voteringar: ((a as { rostning?: Votering[] }).rostning ?? []).filter((r) => party.id in r.per_parti),
@@ -194,6 +196,8 @@ const manifestNot = delaNot(party.manifest_not);
         i de <a href="/arenden/">ärenden sajten bevakar</a> (ett urval, inte alla voteringar under
         mandatperioden — se <a href="/om-urvalet/">Om urvalet</a>). Antalet röster varierar mellan
         voteringarna eftersom närvaron varierar; frånvaro redovisas inte som att partiet avstod.
+        Nämndvoteringar visas på ärendesidan men räknas inte in här — grupperna på 1–3 ledamöter är för
+        små för statistik.
       </p>
       <p>
         {party.namn} deltog i {antalVoteringar} av de protokollförda voteringarna i de bevakade ärendena.

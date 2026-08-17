@@ -30,6 +30,7 @@ interface Arende {
   titel: string;
   datum: string | null;
   antagen_paragraf?: string;
+  organ?: string;
   politikomrade: string;
   forslagsstallare?: string;
   beskrivning: string;
@@ -136,6 +137,7 @@ const teman = [...new Set(arenden.map((a) => a.tema))]
 
 const antalMedVotering = arenden.filter((a) => a.voteringar.length > 0).length;
 const antalVoteringar = arenden.reduce((summa, a) => summa + a.voteringar.length, 0);
+const antalNamnd = arenden.filter((a) => a.organ).length;
 const datum = arenden.map((a) => a.datum).filter((d): d is string => Boolean(d));
 const forstaAret = datum[datum.length - 1]?.slice(0, 4);
 const sistaAret = datum[0]?.slice(0, 4);
@@ -150,13 +152,15 @@ const sistaAret = datum[0]?.slice(0, 4);
   <p class="lead">
     {arenden.length} beslut som märkts i Höör den här mandatperioden — från rivningen av Kvarnen till
     busskortet för alla över 70. För varje beslut: vad som hände, hur partierna röstade där votering hölls,
-    och källan.
+    och källan. {antalNamnd} av besluten kommer från nämnderna, där mycket av vardagen avgörs — skolan,
+    omsorgen, avgifterna. Nämndbeslut är märkta med nämndens namn; övriga är kommunfullmäktiges.
   </p>
 
   <p class="arende-summering">
     <span><strong>{arenden.length}</strong> ärenden</span>
     <span><strong>{antalMedVotering}</strong> avgjorda med votering</span>
     <span><strong>{antalVoteringar}</strong> protokollförda omröstningar</span>
+    <span><strong>{antalNamnd}</strong> från nämnderna</span>
     <span><strong>{forstaAret}–{sistaAret}</strong></span>
   </p>
 
@@ -172,6 +176,7 @@ const sistaAret = datum[0]?.slice(0, 4);
           <a href={`#${a.anchor}`}>
             <span class="arende-index__datum">{a.datum ?? "Odaterat"}</span>
             <span class="arende-index__titel">{a.titel}</span>
+            {a.organ && <span class="arende-index__organ">Nämnd</span>}
             {a.voteringar.length > 0 && <span class="arende-index__votering">Votering</span>}
           </a>
         </li>
@@ -207,6 +212,7 @@ const sistaAret = datum[0]?.slice(0, 4);
       <p class="arende__meta">
         <span class="arende__datum">{a.datum ?? "Datum ej fastställt"}</span>
         {a.antagen_paragraf && <span class="arende__paragraf">{a.antagen_paragraf}</span>}
+        {a.organ && <span class="badge badge--organ">{a.organ}</span>}
         <span class="badge badge--neutral">{a.politikomrade}</span>
         {a.voteringar.length > 0 && (
           <span class="badge badge--votering">
