@@ -120,16 +120,19 @@ const rattaMailto = `mailto:${rattaAdress}?subject=${encodeURIComponent(rattaAmn
     </main>
     <footer class="site-footer">
       <div class="site-footer__inner">
+        {/* Löptexten länkar inte det sidfotsmenyn strax under redan länkar
+            (AI-experimentet, Om urvalet, Rätta en uppgift) — skärmläsare läser
+            annars upp varje mål två gånger (Fabel-granskning 2, §2.4.3). */}
         <p>
           Den här sajten är en oberoende, ideell faktasammanställning inför kommunvalet i Höör 13 september 2026.
           Den drivs inte av något parti och värderar inte vad partierna säger — bara dokumenterade fakta med källa,
-          med undantag för <a href="/ai/">AI-experimentet</a>, tydligt märkt som åsikt/tankeexperiment.
-          Sajten är ett urval, inte en heltäckande genomgång — se <a href="/om-urvalet/">Om urvalet</a> för vad som är med och vad som medvetet uteslutits.
+          med undantag för AI-experimentet, tydligt märkt som åsikt/tankeexperiment.
+          Sajten är ett urval, inte en heltäckande genomgång — se Om urvalet för vad som är med och vad som medvetet uteslutits.
         </p>
         <p class="site-footer__ratta">
           <strong>Hittat ett fel på den här sidan?</strong>{" "}
           <a href={rattaMailto}>Rapportera det direkt</a> — sidans adress fylls i åt dig. Så prövas och redovisas
-          rättelser: <a href="/ratta/">Rätta en uppgift</a>.
+          rättelser: Rätta en uppgift.
         </p>
         <nav aria-label="Sidfotsmeny">
           <ul>
