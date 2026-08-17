@@ -167,6 +167,24 @@ const sistaAret = datum[0]?.slice(0, 4);
     <span><strong>{forstaAret}–{sistaAret}</strong></span>
   </p>
 
+  <div class="arende-filter" id="arende-filter" hidden>
+    <div class="arende-filter__teman" role="group" aria-label="Filtrera på tema">
+      <button type="button" data-tema="alla" aria-pressed="true">Alla teman</button>
+      {teman.map((t) => (
+        <button type="button" data-tema={t.namn}>
+          {t.namn} <span class="arende-filter__antal">{t.antal}</span>
+        </button>
+      ))}
+    </div>
+    <div class="arende-filter__rad">
+      <button type="button" id="votering-toggle" class="arende-filter__toggle" aria-pressed="false">
+        Bara med votering
+      </button>
+      <p class="arende-filter__status" id="arende-status" role="status" aria-live="polite"></p>
+      <a class="arende-filter__topp" href="#listan">↑ Till listan</a>
+    </div>
+  </div>
+
   <nav class="arende-index" id="listan" aria-label="Alla ärenden">
     <h2>Alla ärenden, nyast först</h2>
     <p class="arende-index__not">
@@ -190,24 +208,6 @@ const sistaAret = datum[0]?.slice(0, 4);
       ))}
     </ul>
   </nav>
-
-  <div class="arende-filter" id="arende-filter" hidden>
-    <div class="arende-filter__teman" role="group" aria-label="Filtrera på tema">
-      <button type="button" data-tema="alla" aria-pressed="true">Alla teman</button>
-      {teman.map((t) => (
-        <button type="button" data-tema={t.namn}>
-          {t.namn} <span class="arende-filter__antal">{t.antal}</span>
-        </button>
-      ))}
-    </div>
-    <div class="arende-filter__rad">
-      <button type="button" id="votering-toggle" class="arende-filter__toggle" aria-pressed="false">
-        Bara med votering
-      </button>
-      <p class="arende-filter__status" id="arende-status" role="status" aria-live="polite"></p>
-      <a class="arende-filter__topp" href="#listan">↑ Till listan</a>
-    </div>
-  </div>
 
   {arenden.map((a) => (
     <article
