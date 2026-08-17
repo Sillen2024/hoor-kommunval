@@ -3,21 +3,54 @@ import Layout from "../../layouts/Layout.astro";
 import historiskaValData from "../../data/historiska_val.json";
 
 const val = [...historiskaValData.val].sort((a, b) => b.ar - a.ar);
+
+// Ledens påståenden räknas ur datan i stället för att skrivas som siffror i
+// löptext (Granskning 2 §2.2): reviderar någon röstetalen ska meningen ändra
+// sig eller falla bort, inte bli fel.
+const senaste = val[0];
+const forra = val[1];
+const andel = (s: string) => Number(s.replace("%", "").replace(",", ".").trim());
+const storst = (v: typeof senaste) => [...v.resultat].sort((a, b) => b.roster - a.roster)[0];
+
+const skiften = forra
+  ? senaste.resultat
+      .map((r) => {
+        const fore = forra.resultat.find((x) => x.parti === r.parti);
+        return fore ? { parti: r.parti, diff: andel(r.andel) - andel(fore.andel) } : null;
+      })
+      .filter((s): s is { parti: string; diff: number } => s !== null)
+      .sort((a, b) => b.diff - a.diff)
+  : [];
+const upp = skiften[0];
+const ned = skiften[skiften.length - 1];
+const maktskifte = forra && storst(senaste).parti !== storst(forra).parti;
+
+const pe = (n: number) =>
+  `${n >= 0 ? "+" : "−"}${Math.abs(n).toLocaleString("sv-SE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
 ---
 
 <Layout
   title="Historiska val"
-  description="Riktiga, källbelagda valresultat (röster och röstandelar, inte bara mandat) för Höörs kommunfullmäktige, valet 2022 och tidigare val."
+  description="Riktiga, källbelagda valresultat (röster och röstandelar, inte bara mandat) för Höörs kommunfullmäktige, valen 2022 och 2018."
   image="/og-historiska-val-v1.png"
 >
-  <h1>Historiska val till Höörs kommunfullmäktige</h1>
+  <h1>Hur röstade Höör förra gången?</h1>
   <p class="lead">
-    Röster och röstandelar per parti — inte bara mandat — för valet till Höörs kommunfullmäktige. De flesta andra
-    sidor på hoor.se och andra kommunala källor listar enbart mandatfördelningen; här redovisas i stället de
-    faktiska röstsiffrorna, med källa, så att man kan se hur nära gränserna gick.
+    {forra && upp && ned ? (
+      <>
+        Mellan {forra.ar} och {senaste.ar} {maktskifte
+          ? `gick ${storst(senaste).parti} om ${storst(forra).parti} som största parti`
+          : `förblev ${storst(senaste).parti} största parti`} — {upp.parti} växte mest
+        ({pe(upp.diff)} procentenheter) och {ned.parti} tappade mest ({pe(ned.diff)}).
+        Här står de faktiska röstsiffrorna för båda valen, inte bara mandaten, med källa på varje tal.
+      </>
+    ) : (
+      <>
+        Röster och röstandelar per parti — inte bara mandat — för valen till Höörs kommunfullmäktige,
+        med källa på varje tal.
+      </>
+    )}
   </p>
-
-  <div class="banner">{historiskaValData.metod_not}</div>
 
   {val.map((v) => (
     <section class="policy-block" id={`val-${v.ar}`}>
@@ -32,7 +65,7 @@ const val = [...historiskaValData.val].sort((a, b) => b.ar - a.ar);
             <th>Valdeltagande</th>
             <td>
               {v.valdeltagande}
-              {v.valdeltagande_not && <div class="not-box">{v.valdeltagande_not}</div>}
+              {v.valdeltagande_not && <span class="updated"> {v.valdeltagande_not}</span>}
             </td>
           </tr>
         </tbody>
@@ -65,9 +98,15 @@ const val = [...historiskaValData.val].sort((a, b) => b.ar - a.ar);
         </tbody>
       </table>
 
-      {v.resultat_not && <div class="not-box">{v.resultat_not}</div>}
-      {v.mandat_not && <div class="not-box">{v.mandat_not}</div>}
       {v.styre_efter_valet && <p><strong>Styre efter valet:</strong> {v.styre_efter_valet}</p>}
+
+      {(v.resultat_not || v.mandat_not) && (
+        <details class="not-box">
+          <summary>Avstämning mot totalsiffrorna</summary>
+          {v.resultat_not && <p>{v.resultat_not}</p>}
+          {v.mandat_not && <p>{v.mandat_not}</p>}
+        </details>
+      )}
 
       <a class="source-link" href={v.kalla_url} target="_blank" rel="noopener noreferrer">{v.kalla_beskrivning}</a>
       {v.kalla_url_2 && (
@@ -75,6 +114,11 @@ const val = [...historiskaValData.val].sort((a, b) => b.ar - a.ar);
       )}
     </section>
   ))}
+
+  <details class="not-box">
+    <summary>Var siffrorna kommer ifrån och hur de kontrollerats</summary>
+    <p>{historiskaValData.metod_not}</p>
+  </details>
 
   <p class="updated">Senast uppdaterad: {historiskaValData.senast_uppdaterad}. Fler detaljer om metoden: <a href="/om-urvalet/">Om urvalet</a>.</p>
 </Layout>
