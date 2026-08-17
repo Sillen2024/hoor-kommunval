@@ -226,6 +226,18 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
     protokollen — nämndram, votering, kontraproposition — förklaras i <a href="/ordlista/">ordlistan</a>.
   </div>
 
+  <nav class="sidnav" aria-label="Innehåll på sidan">
+    <ul>
+      <li><a href="#vad-kostar-80-ore">Vad kostar 80 öre mig?</a></li>
+      <li><a href="#din-hundralapp">Vart går din hundralapp?</a></li>
+      <li><a href="#totalen">Hur stor är budgeten?</a></li>
+      <li><a href="#namndramar">Nämndernas ramar</a></li>
+      <li><a href="#referenskostnad">Höör mot referenskostnaden</a></li>
+      <li><a href="#oppositionen">Oppositionens förslag</a></li>
+      <li><a href="#arsbeslut">Besluten år för år</a></li>
+    </ul>
+  </nav>
+
   <section class="policy-block">
     <h2 id="vad-kostar-80-ore">Vad kostar 80 öre mig?</h2>
     <p>
@@ -360,7 +372,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
   </div>
 
   <section class="policy-block">
-    <h2>Hur stor är budgeten – och hur mycket ökar den?</h2>
+    <h2 id="totalen">Hur stor är budgeten – och hur mycket ökar den?</h2>
     <p>
       Måttet nedan, <strong>verksamhetens nettokostnader</strong>, är vad kommunens verksamhet kostar totalt varje
       år efter att avgifter och statsbidrag räknats bort. Det är hämtat ur resultaträkningen i respektive års egen
@@ -395,7 +407,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
   </section>
 
   <section class="policy-block">
-    <h2>Vad läggs pengarna på? Nämndernas budgetramar</h2>
+    <h2 id="namndramar">Vad läggs pengarna på? Nämndernas budgetramar</h2>
     <p>
       Så här fördelas budgeten mellan kommunens nämnder, år för år (miljoner kronor). Uppgifterna kommer från
       avsnittet "Budgetramar" i respektive års egen budgethandling — för 2027 ur kommunstyrelsens budgetförslag,
@@ -648,7 +660,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
   </section>
 
   <section class="policy-block">
-    <h2>Vad ville oppositionen göra annorlunda?</h2>
+    <h2 id="oppositionen">Vad ville oppositionen göra annorlunda?</h2>
     <p>
       S, V och MP lade egna, fullständiga budgetförslag de flesta av åren — inte bara det formella motförslag
       som gick till votering. Förslagen är hämtade i fulltext direkt ur kommunens mötesportal och jämförs
@@ -810,6 +822,25 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
 </Layout>
 
 <style>
+  .sidnav {
+    margin: 1.5rem 0 2rem;
+    padding: 0.8rem 1rem;
+    background: #fafafa;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+  }
+
+  .sidnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.88rem;
+  }
+
   .hundralapp {
     list-style: none;
     padding: 0;
