@@ -3,6 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 import Utfall from "../../../components/Utfall.astro";
 import partierData from "../../../data/partier.json";
 import arendenData from "../../../data/arenden.json";
+import budgetData from "../../../data/budget.json";
 import oppositionsbudgetar from "../../../data/oppositionsbudgetar.json";
 import koladaData from "../../../data/kolada.json";
 import { TEMA_KARTA, TEMA_NYCKELTAL, TEMA_ORDNING } from "../../../lib/tema-karta";
@@ -78,9 +79,11 @@ const budgetHistorik = oppositionsbudgetar.forslag
   .sort((a, b) => a.ar - b.ar);
 
 // ——— "Löftet och pengarna" (Fabel-granskningen §2D) ————————————————————
-// Partiets senaste budgetförslag med fullständiga nämndramar, omräknat till
-// mnkr-skillnad mot styrets budget. Rent deskriptivt: vad partiet själv
-// avsatte, bredvid sajtens jämförelsepunkt (förskoleavvikelsen).
+// Två varianter, båda villkorade på datan: opposition med egna nämndramar
+// får sitt senaste budgetförslag omräknat till mnkr-skillnad mot styrets
+// budget; styrets partier får skattesatsens väg genom de antagna budgetarna.
+// SD och MED får ingen sektion — att de saknar egna budgetförslag är inte
+// källbelagt i datan, och frånvaro utan belägg renderas inte.
 const sv = (n: number, d = 1) =>
   n.toLocaleString("sv-SE", { minimumFractionDigits: d, maximumFractionDigits: d });
 const senasteMedRamar = [...budgetHistorik]
@@ -92,6 +95,20 @@ const ramDiffar = senasteMedRamar
       .filter((d) => d.mnkr !== 0)
       .sort((a, b) => b.mnkr - a.mnkr)
   : null;
+
+// Styre-varianten: första och sista antagna skattesats ur budget.json.
+// Renderas bara om båda går att läsa ur datan och faktiskt skiljer sig.
+const budgetBeslut = budgetData.beslut;
+const skattesatsTal = (s: string) => s.match(/^\d+,\d+/)?.[0] ?? null;
+const forstaBudget = budgetBeslut[0];
+const sistaBudget = budgetBeslut[budgetBeslut.length - 1];
+const forstaSkatt = skattesatsTal(forstaBudget.kommunal_skattesats);
+const sistaSkatt = skattesatsTal(sistaBudget.kommunal_skattesats);
+const skattRiktning =
+  forstaSkatt && sistaSkatt
+    ? parseFloat(sistaSkatt.replace(",", ".")) - parseFloat(forstaSkatt.replace(",", "."))
+    : 0;
+const visaStyrePengar = party.block === "styre" && forstaSkatt && sistaSkatt && skattRiktning !== 0;
 
 const HÖÖR = koladaData.hoor;
 const koladaPreliminara = [
@@ -263,6 +280,19 @@ const utfallTeman = TEMA_ORDNING.filter(
           </li>
         ))}
       </ul>
+    </>
+  )}
+
+  {visaStyrePengar && (
+    <>
+      <h2>Löftet och pengarna</h2>
+      <p>
+        {party.namn} sitter i styret, och styrets löften har redan en prislapp: den antagna budgeten.
+        Under mandatperioden har fullmäktige {skattRiktning < 0 ? "sänkt" : "höjt"} skatten från{" "}
+        {forstaSkatt} kronor (budget {forstaBudget.ar}) till {sistaSkatt} kronor (budget {sistaBudget.ar}) av
+        varje intjänad hundralapp. Vad det ger dig, vad det kostar kommunen per år och vart varje hundralapp
+        går står på <a href="/budget/">Budget</a>.
+      </p>
     </>
   )}
 
