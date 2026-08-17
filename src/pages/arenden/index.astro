@@ -133,6 +133,17 @@ const arenden = (arendenData.arenden as unknown as Arende[])
   // hamnar sist i stället för att sorteras som tomma strängar.
   .sort((a, b) => (b.datum ?? "").localeCompare(a.datum ?? ""));
 
+// Årsgruppering av indexet: 35 rader i löpande följd är svåra att skumma.
+// Åren räknas ur datumen — listan är redan sorterad nyast först med odaterade
+// sist, så en genomlöpning i ordning ger åren fallande och "Odaterade" sist.
+const arsgrupper: { rubrik: string; poster: typeof arenden }[] = [];
+for (const a of arenden) {
+  const rubrik = a.datum ? a.datum.slice(0, 4) : "Odaterade";
+  const sista = arsgrupper[arsgrupper.length - 1];
+  if (sista && sista.rubrik === rubrik) sista.poster.push(a);
+  else arsgrupper.push({ rubrik, poster: [a] });
+}
+
 const teman = [...new Set(arenden.map((a) => a.tema))]
   .map((namn) => ({ namn, antal: arenden.filter((a) => a.tema === namn).length }))
   .sort((a, b) => b.antal - a.antal || a.namn.localeCompare(b.namn, "sv"));
@@ -191,22 +202,27 @@ const sistaAret = datum[0]?.slice(0, 4);
       Datumen är kommunala beslutsdatum där inget annat anges. Avvikelser redovisas i "Not om datum" på
       respektive ärende.
     </p>
-    <ul>
-      {arenden.map((a) => (
-        <li data-tema={a.tema} data-votering={a.voteringar.length > 0 ? "ja" : "nej"}>
-          <a href={`#${a.anchor}`}>
-            <span class="arende-index__datum">{a.datum ?? "Odaterat"}</span>
-            <span class="arende-index__titel">{a.titel}</span>
-            {a.organ && (
-              <span class="arende-index__organ">
-                {a.organ === "Kommunstyrelsen" ? "Kommunstyrelsen" : "Nämnd"}
-              </span>
-            )}
-            {a.voteringar.length > 0 && <span class="arende-index__votering">Votering</span>}
-          </a>
-        </li>
-      ))}
-    </ul>
+    {arsgrupper.map((g) => (
+      <section class="arende-index__grupp">
+        <h3 class="arende-index__ar">{g.rubrik}</h3>
+        <ul>
+          {g.poster.map((a) => (
+            <li data-tema={a.tema} data-votering={a.voteringar.length > 0 ? "ja" : "nej"}>
+              <a href={`#${a.anchor}`}>
+                <span class="arende-index__datum">{a.datum ?? "Odaterat"}</span>
+                <span class="arende-index__titel">{a.titel}</span>
+                {a.organ && (
+                  <span class="arende-index__organ">
+                    {a.organ === "Kommunstyrelsen" ? "Kommunstyrelsen" : "Nämnd"}
+                  </span>
+                )}
+                {a.voteringar.length > 0 && <span class="arende-index__votering">Votering</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
   </nav>
 
   {arenden.map((a) => (
@@ -313,6 +329,7 @@ const sistaAret = datum[0]?.slice(0, 4);
     const temaKnappar = document.querySelectorAll<HTMLButtonElement>(".arende-filter__teman button");
     const arenden = document.querySelectorAll<HTMLElement>(".arende");
     const indexrader = document.querySelectorAll<HTMLElement>(".arende-index li");
+    const indexgrupper = document.querySelectorAll<HTMLElement>(".arende-index__grupp");
 
     if (filterbar && status && tomt && voteringToggle) {
       filterbar.hidden = false;
@@ -333,6 +350,10 @@ const sistaAret = datum[0]?.slice(0, 4);
         });
         indexrader.forEach((el) => {
           el.hidden = !matchar(el);
+        });
+        // En årsrubrik utan synliga rader ska inte stå kvar ensam.
+        indexgrupper.forEach((grupp) => {
+          grupp.hidden = ![...grupp.querySelectorAll<HTMLElement>("li")].some((li) => !li.hidden);
         });
         tomt.hidden = synliga > 0;
         status.textContent =
