@@ -29,7 +29,7 @@ Verifierat i koden 2026-08-15 av Session B. Samtliga åtta är åtgärdade:
 - [x] **4. B5** — "den enda dokumenterade omröstningen" borta. (Frasen finns kvar i en annan, korrekt betydelse: MED röstade med styret "för första och enda dokumenterade gången" 2027 — det är rätt och ska stå kvar.)
 - [x] **5. B4** — valkompassens JS-beroende åtgärdat.
 - [x] **6. D1** — `/om-urvalet/` och `historiska_val.json` uppdaterade.
-- [x] **7. D6** — `/ai/media/` borttagen. `src/data/media.json` ligger kvar oanvänd — kan städas.
+- [x] **7. D6** — `/ai/media/` borttagen. `src/data/media.json` städad 2026-08-17 (noll referenser i src/ och scripts/).
 - [x] **8a. 404** — både `src/pages/404.astro` och `error_page 404 /404.html;` i `nginx.conf:11` finns.
 - [x] **8b. gzip** — påslaget i `nginx.conf:7–18` (commit `d93e1df`). Se punkt 10a.
 
