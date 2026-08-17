@@ -58,29 +58,31 @@ const rader = partierData.partier
     <strong>{rostning.ja} ja – {rostning.nej} nej{rostning.avstar > 0 ? ` – ${rostning.avstar} avstod` : ""}.</strong>
     {" "}{rostning.utfall}
   </p>
-  <table class="votering__tabell">
-    <thead>
-      <tr>
-        <th>Parti</th>
-        <th>Ja</th>
-        <th>Nej</th>
-        <th>Avstod</th>
-      </tr>
-    </thead>
-    <tbody>
-      {rader.map((r) => (
+  <div class="table-scroll votering__scroll">
+    <table class="votering__tabell">
+      <thead>
         <tr>
-          <th scope="row">
-            {r.namn}
-            {r.splittrat && <span class="votering__splittrat"> — splittrat</span>}
-          </th>
-          <td>{r.roster.ja || ""}</td>
-          <td>{r.roster.nej || ""}</td>
-          <td>{r.roster.avstar || ""}</td>
+          <th>Parti</th>
+          <th>Ja</th>
+          <th>Nej</th>
+          <th>Avstod</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {rader.map((r) => (
+          <tr>
+            <th scope="row">
+              {r.namn}
+              {r.splittrat && <span class="votering__splittrat"> — splittrat</span>}
+            </th>
+            <td>{r.roster.ja || ""}</td>
+            <td>{r.roster.nej || ""}</td>
+            <td>{r.roster.avstar || ""}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
   <a class="source-link" href={rostning.kalla_protokoll} target="_blank" rel="noopener noreferrer">
     Protokollet {rostning.datum} {rostning.paragraf}, med namngiven röstlängd (PDF)
   </a>

@@ -71,32 +71,34 @@ const pe = (n: number) =>
         </tbody>
       </table>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Parti</th>
-            <th>Röster</th>
-            <th>Andel</th>
-            <th>Mandat</th>
-          </tr>
-        </thead>
-        <tbody>
-          {v.resultat.map((r) => {
-            const isStyre = "styre_partier" in v && (v as any).styre_partier?.includes(r.parti);
-            return (
-              <tr>
-                <td>
-                  {r.parti}
-                  {isStyre && <> <span class="badge badge--styre">Styre</span></>}
-                </td>
-                <td>{r.roster.toLocaleString("sv-SE")}</td>
-                <td>{r.andel}</td>
-                <td>{r.mandat ?? <span class="no-data">Ej verifierat</span>}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Parti</th>
+              <th>Röster</th>
+              <th>Andel</th>
+              <th>Mandat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {v.resultat.map((r) => {
+              const isStyre = "styre_partier" in v && (v as any).styre_partier?.includes(r.parti);
+              return (
+                <tr>
+                  <td>
+                    {r.parti}
+                    {isStyre && <> <span class="badge badge--styre">Styre</span></>}
+                  </td>
+                  <td>{r.roster.toLocaleString("sv-SE")}</td>
+                  <td>{r.andel}</td>
+                  <td>{r.mandat ?? <span class="no-data">Ej verifierat</span>}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
 
       {v.styre_efter_valet && <p><strong>Styre efter valet:</strong> {v.styre_efter_valet}</p>}
 

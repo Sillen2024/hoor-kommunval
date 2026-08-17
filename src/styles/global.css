@@ -677,6 +677,16 @@ th {
   max-width: 32rem;
 }
 
+/* Voteringstabellen är kompakt (max 32rem) — .table-scroll:s 40rem-minimum
+   skulle tvinga fram scroll i onödan. 22rem motsvarar tabellens naturliga
+   minimum; under det tar scrollen över i stället för att kolumnerna krossas. */
+.votering__scroll { margin: 0.75rem 0 0.25rem; }
+
+.votering__scroll .votering__tabell {
+  min-width: 22rem;
+  margin: 0;
+}
+
 .votering__tabell td {
   text-align: right;
   width: 4.5rem;

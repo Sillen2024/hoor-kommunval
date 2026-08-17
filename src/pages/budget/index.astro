@@ -234,26 +234,28 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       80 öre lägre än vid mandatperiodens början. Omräknat är det {sv(skattUtgang - skatt2027, 2)} kr mindre i
       kommunalskatt per hundralapp av din beskattningsbara inkomst.
     </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Beskattningsbar inkomst</th>
-          <th>Efter första steget (30 öre)</th>
-          <th>Efter båda stegen (80 öre)</th>
-          <th>Per år (80 öre)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {inkomstRader.map((r) => (
+    <div class="table-scroll">
+      <table>
+        <thead>
           <tr>
-            <th scope="row">{kr(r.inkomst)} kr/mån</th>
-            <td>{kr(r.steg1)} kr/mån</td>
-            <td>{kr(r.totalt)} kr/mån</td>
-            <td>{kr(r.totalt * 12)} kr</td>
+            <th>Beskattningsbar inkomst</th>
+            <th>Efter första steget (30 öre)</th>
+            <th>Efter båda stegen (80 öre)</th>
+            <th>Per år (80 öre)</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {inkomstRader.map((r) => (
+            <tr>
+              <th scope="row">{kr(r.inkomst)} kr/mån</th>
+              <td>{kr(r.steg1)} kr/mån</td>
+              <td>{kr(r.totalt)} kr/mån</td>
+              <td>{kr(r.totalt * 12)} kr</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     <div class="not-box">
       Tabellen är ren multiplikation, ingen prognos: 0,80 kr per hundralapp är 0,80 % av den beskattningsbara
       inkomsten. Två saker att hålla isär. <strong>Beskattningsbar inkomst är inte samma sak som lön</strong> —
@@ -364,30 +366,32 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       år efter att avgifter och statsbidrag räknats bort. Det är hämtat ur resultaträkningen i respektive års egen
       budgethandling — inte ur senare års omräknade siffror.
     </p>
-    <table>
-      <thead>
-        <tr>
-          <th>År</th>
-          <th>Nettokostnad</th>
-          <th>Förändring mot föregående år</th>
-        </tr>
-      </thead>
-      <tbody>
-        {totalRader.map((r) => (
+    <div class="table-scroll">
+      <table>
+        <thead>
           <tr>
-            <th scope="row">{r.ar}</th>
-            <td>{r.total != null ? `${sv(r.total)} mnkr` : <span class="no-data">Uppgift saknas</span>}</td>
-            <td>
-              {r.diffMnkr != null ? (
-                <>{r.diffMnkr >= 0 ? "+" : ""}{sv(r.diffMnkr)} mnkr ({r.diffProcent! >= 0 ? "+" : ""}{sv(r.diffProcent!)} %)</>
-              ) : (
-                <span class="no-data">–</span>
-              )}
-            </td>
+            <th>År</th>
+            <th>Nettokostnad</th>
+            <th>Förändring mot föregående år</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {totalRader.map((r) => (
+            <tr>
+              <th scope="row">{r.ar}</th>
+              <td>{r.total != null ? `${sv(r.total)} mnkr` : <span class="no-data">Uppgift saknas</span>}</td>
+              <td>
+                {r.diffMnkr != null ? (
+                  <>{r.diffMnkr >= 0 ? "+" : ""}{sv(r.diffMnkr)} mnkr ({r.diffProcent! >= 0 ? "+" : ""}{sv(r.diffProcent!)} %)</>
+                ) : (
+                  <span class="no-data">–</span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section class="policy-block">
