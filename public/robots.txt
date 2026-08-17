@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hoor-kommunval.ibland.nu/sitemap-index.xml

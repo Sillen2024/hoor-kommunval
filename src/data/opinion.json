@@ -1,0 +1,29 @@
+{
+  "senast_uppdaterad": "2026-08-17",
+  "not": "Opinionsmätningar om Höör, refererade i press. Sajten återger publicerade tal med källhänvisning — själva artiklarna kan ligga bakom betalvägg och återpubliceras inte här.",
+  "undersokningar": [
+    {
+      "id": "skd-novus-2026-besparingar",
+      "medium": "Skånska Dagbladet",
+      "utforare": "Novus",
+      "publicerad": "2026-07-26",
+      "titel": "Här är besparingarna som mellanskåningarna tycker mest illa om",
+      "url": "https://www.skd.se/skane/mellanskane/har-ar-besparingarna-som-mellanskaningarna-tycker-mest-illa-om/",
+      "betalvagg": true,
+      "fraga": "Om din kommun måste spara, var tycker du man i första hand bör minska kostnaderna?",
+      "max_val": 3,
+      "antal_alternativ": 17,
+      "svarande_hoor": 1029,
+      "svarande_not": "Mätningen gjordes också i Hörby (1 040 svarande) och Eslöv (1 016). Artikeln anger inte fältperiod eller felmarginal.",
+      "hoor_bottenval_procent": {
+        "Skola": 1,
+        "Barnomsorg": 1,
+        "Äldrevård": 1,
+        "Omsorg": 2,
+        "Trygghet": 3
+      },
+      "bottenval_not": "Andel av de svarande i Höör som valde området som ett av sina högst tre sparförslag. Artikeln redovisar bara bottenvalen (etiketterna ovan är diagrammets egna); i löptexten kallas de tre lägsta 'Äldreomsorg', 'Förskola och barnomsorg' och 'Skola (grundskola/gymnasium)'. SkD aviserar en uppföljare om toppen av listan — var flest tycker att kommunen kan spara.",
+      "verifierad": "Artikeln läst i sin helhet 2026-08-17 via prenumeration."
+    }
+  ]
+}

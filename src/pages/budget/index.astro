@@ -1,0 +1,832 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import budgetData from "../../data/budget.json";
+import oppositionsbudgetar from "../../data/oppositionsbudgetar.json";
+import partierData from "../../data/partier.json";
+import koladaData from "../../data/kolada.json";
+
+const sv = (n: number, decimals = 1) =>
+  n.toLocaleString("sv-SE", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+
+const partyName = (id: string) => partierData.partier.find((p) => p.id === id)?.namn ?? id.toUpperCase();
+const oppAr = [...new Set(oppositionsbudgetar.forslag.map((f) => f.ar))].sort();
+
+const totalRader = budgetData.beslut.map((b, i) => {
+  const foreg = budgetData.beslut[i - 1];
+  let diffMnkr: number | null = null;
+  let diffProcent: number | null = null;
+  if (b.total_nettokostnad_mnkr != null && foreg?.total_nettokostnad_mnkr != null) {
+    diffMnkr = b.total_nettokostnad_mnkr - foreg.total_nettokostnad_mnkr;
+    diffProcent = (diffMnkr / foreg.total_nettokostnad_mnkr) * 100;
+  }
+  return { ar: b.ar, total: b.total_nettokostnad_mnkr, diffMnkr, diffProcent };
+});
+
+const namndRader = Object.keys(
+  budgetData.beslut.find((b) => b.namndfordelning_tkr)?.namndfordelning_tkr ?? {}
+);
+
+// Poster som fullmäktige uttryckligen låser vid budgetbeslutet — en egen
+// beslutspunkt varje år under mandatperioden. Ligger som "varav"-rader inom
+// respektive nämnds ram och ingår redan i nämndsummorna.
+type Oronmarkta = {
+  beslutssats: string;
+  beslutssats_kalla: string;
+  beslutspunkt: number;
+  beslutspunkt_av: number;
+  poster_tkr: Record<string, number>;
+  poster_namnd: Record<string, string>;
+  summa_tkr: number;
+  not: string;
+  not_kalla?: string;
+  aterkommande?: string;
+};
+const oronmarktaBeslut = budgetData.beslut
+  .filter((b) => (b as { oronmarkta_poster?: Oronmarkta }).oronmarkta_poster)
+  .map((b) => ({
+    ar: b.ar,
+    paragraf: b.antagen_paragraf,
+    o: (b as { oronmarkta_poster?: Oronmarkta }).oronmarkta_poster!,
+  }));
+// Beslutsordningen i datan är kronologisk, så sista posten är senaste året.
+const senasteOron = oronmarktaBeslut[oronmarktaBeslut.length - 1];
+const forstaOron = oronmarktaBeslut[0];
+const oronmarktaRader = Object.keys(senasteOron.o.poster_tkr).sort(
+  (a, b) => senasteOron.o.poster_tkr[b] - senasteOron.o.poster_tkr[a]
+);
+const oronmarkta = oronmarktaBeslut.find((b) => b.ar === 2027)?.o;
+
+// Skattesatsen står som t.ex. "21,75 kr/hundralapp (oförändrad)" i datan.
+const skattesats = (ar: number) =>
+  Number(budgetData.beslut.find((b) => b.ar === ar)!.kommunal_skattesats.match(/[\d,]+/)![0].replace(",", "."));
+
+const skattUtgang = skattesats(2025); // 21,75 — läget när mandatperioden började
+const skatt2026 = skattesats(2026); // 21,45
+const skatt2027 = skattesats(2027); // 20,95
+
+// ——— Kolada: utfall mot referenskostnad ————————————————————————————————
+//
+// OBS på skillnaden mot resten av sidan. Tabellerna ovan visar vad fullmäktige
+// *beslutade* om, för åren 2023–2027. Kolada visar vad verksamheten *blev*,
+// 2018–2025. Det är två olika saker och de överlappar bara delvis i tid — en
+// ram för 2027 kan inte jämföras med en avvikelse som inte finns än.
+
+const HÖÖR = koladaData.hoor;
+const koladaVarde = (kpiId: string, ar: number): number | null =>
+  koladaData.nyckeltal.find((n) => n.kpi_id === kpiId)?.varden[HÖÖR]?.[String(ar)] ?? null;
+const koladaNyckeltal = (kpiId: string) => koladaData.nyckeltal.find((n) => n.kpi_id === kpiId)!;
+
+// Sista fastställda året. Räknas ur datan så att sidan följer med när 2025
+// fastställs 2026-09-30 — före dess ska inget påstås utan förbehåll på ett
+// preliminärt år. Se KOLADA_PLAN.md risk 2.
+const preliminaraAr = [
+  ...new Set(koladaData.nyckeltal.map((n) => n.preliminar_fran_ar).filter((a): a is number => a !== null)),
+];
+const koladaAr = koladaData.ar;
+const huvudar = preliminaraAr.length > 0 ? Math.min(...preliminaraAr) - 1 : koladaAr[koladaAr.length - 1];
+const arPreliminart = (ar: number) => preliminaraAr.includes(ar);
+
+// Verksamheterna som nämndramarna faktiskt avser. Nämndkopplingen är hämtad
+// ur budgetens egen struktur: gymnasiet ligger under kommunstyrelsen i Höör,
+// inte under barn- och utbildningsnämnden, vilket öronmärkningsbeslutet visar.
+const verksamheter = [
+  { namn: "Förskola", procent: "N11024", mnkr: "N11038", namnd: "Barn- och utbildningsnämnd" },
+  { namn: "Grundskola", procent: "N15001", mnkr: "N15045", namnd: "Barn- och utbildningsnämnd" },
+  { namn: "Fritidshem", procent: "N13020", mnkr: "N13032", namnd: "Barn- och utbildningsnämnd" },
+  { namn: "Gymnasieskola", procent: "N17001", mnkr: "N17030", namnd: "Kommunstyrelse" },
+  { namn: "Äldreomsorg", procent: "N20900", mnkr: "N20029", namnd: "Socialnämnd" },
+  { namn: "Individ- och familjeomsorg", procent: "N30001", mnkr: "N30026", namnd: "Socialnämnd" },
+  { namn: "LSS", procent: "N28018", mnkr: "N28021", namnd: "Socialnämnd" },
+].map((v) => ({
+  ...v,
+  avvikelseProcent: koladaVarde(v.procent, huvudar),
+  avvikelseMnkr: koladaVarde(v.mnkr, huvudar),
+  senasteProcent: koladaVarde(v.procent, koladaAr[koladaAr.length - 1]),
+}));
+// Mest negativ avvikelse först — det är den läsaren har svårast att se i
+// ramtabellen, eftersom en ram inte avslöjar vad den borde ha varit.
+const verksamheterSorterad = [...verksamheter].sort(
+  (a, b) => (a.avvikelseMnkr ?? 0) - (b.avvikelseMnkr ?? 0)
+);
+
+// Tidsserien i §1.2: de tre tyngsta verksamheterna.
+const tidsserie = ["Förskola", "Grundskola", "Äldreomsorg"].map(
+  (namn) => verksamheter.find((v) => v.namn === namn)!
+);
+
+// Tre påståenden i texten nedan räknas fram ur serierna i stället för att
+// skrivas för hand. Skälet är konkret: KOLADA_PLAN.md §1.2 påstod att
+// förskolans avvikelse fallit "varje år sedan 2018", men 2020 bröt trenden.
+// En trend ska läsas ur serien, inte ur minnet av den — och Kolada reviderar
+// publicerade värden utan att avisera det.
+
+// 1. Hur länge förskolans avvikelse blivit mer negativ i obruten följd.
+//    Räknas på samma serie som visas i tabellen (mnkr), inte på procenten.
+const forskolaSerie = koladaNyckeltal("N11038").varden[HÖÖR];
+let forskolaStreakStart = huvudar;
+while (
+  forskolaSerie[String(forskolaStreakStart - 1)] != null &&
+  forskolaSerie[String(forskolaStreakStart)]! < forskolaSerie[String(forskolaStreakStart - 1)]!
+) {
+  forskolaStreakStart -= 1;
+}
+
+// 2. Åren då grundskolan låg över referenskostnaden.
+const grundskolaOverAr = koladaAr.filter((ar) => (koladaVarde("N15045", ar) ?? 0) > 0);
+const grundskolaUnderIgen = koladaAr.find(
+  (ar) => ar > (grundskolaOverAr[grundskolaOverAr.length - 1] ?? 0) && (koladaVarde("N15045", ar) ?? 0) < 0
+);
+
+// 3. Om förskolan haft den största negativa avvikelsen i kronor varje år under
+//    mandatperioden. Påståendet står bara i texten om det stämmer.
+const mandatperiodAr = koladaAr.filter((ar) => ar >= 2022);
+const forskolaAlltidLagst = mandatperiodAr.every((ar) =>
+  verksamheter.every((v) => (koladaVarde(v.mnkr, ar) ?? 0) >= (koladaVarde("N11038", ar) ?? 0))
+);
+
+// Egen bearbetning (KOLADA_PLAN.md §2): summan av två råvärden.
+const skolaSamlatMnkr =
+  (koladaVarde("N11038", huvudar) ?? 0) + (koladaVarde("N15045", huvudar) ?? 0);
+
+// Största föreslagna höjningen av barn- och utbildningsnämndens ram under
+// mandatperioden, ur oppositionens egna budgetförslag.
+const bunHojningar = oppositionsbudgetar.forslag
+  .filter((f) => f.namnd_diff_tkr && (f.namnd_diff_tkr as Record<string, number>)["Barn- och utbildningsnämnd"] > 0)
+  .map((f) => ({
+    ar: f.ar,
+    parti: f.gemensamt_med ? `${partyName(f.parti_id)} och ${partyName(f.gemensamt_med)}` : partyName(f.parti_id),
+    mnkr: (f.namnd_diff_tkr as Record<string, number>)["Barn- och utbildningsnämnd"] / 1000,
+  }))
+  .sort((a, b) => b.mnkr - a.mnkr);
+const storstaBunHojning = bunHojningar[0];
+
+const koladaKallaUrl = (kpiIds: string[], ar: number[]) =>
+  `https://api.kolada.se/v3/data/kpi/${kpiIds.join(",")}/municipality/${HÖÖR}/year/${ar.join(",")}`;
+
+const kr = (n: number) => Math.round(n).toLocaleString("sv-SE");
+const inkomstRader = [20000, 25000, 30000, 35000, 40000, 45000].map((inkomst) => ({
+  inkomst,
+  steg1: (inkomst * (skattUtgang - skatt2026)) / 100,
+  totalt: (inkomst * (skattUtgang - skatt2027)) / 100,
+}));
+
+// ——— Vad sänkningen kostar kommunen (Fabel-granskningen §2C) ————————————
+// Resultaträkningen i budget 2027 har en egen rad för sänkningen. Kolumnerna
+// är stegen (30 öre 2026, 50 öre 2027 mot föregående sats) — hela 80-öres-
+// effekten är en egen uppräkning och redovisas som storleksordning.
+type SkattesankningRR = {
+  rad: string;
+  mnkr_per_ar: Record<string, number>;
+  kalla_pdf: string;
+};
+const skattesankningRR = (budgetData.beslut.find((b) => b.ar === 2027) as {
+  skattesankning_resultatrakning?: SkattesankningRR;
+})?.skattesankning_resultatrakning;
+const steg30Mnkr = skattesankningRR ? Math.abs(skattesankningRR.mnkr_per_ar["2026"]) : null;
+const steg50Mnkr = skattesankningRR ? Math.abs(skattesankningRR.mnkr_per_ar["2027"]) : null;
+const hela80Mnkr = steg50Mnkr !== null ? Math.round((steg50Mnkr * 80) / 50) : null;
+const forskolaAvvikelseMnkr = koladaVarde("N11038", huvudar);
+
+// ——— Din hundralapp (Fabel-granskningen §1.5) ———————————————————————————
+// Nämndramarna 2027 omräknade till kronor av varje hundralapp som fullmäktige
+// fördelar till nämnderna. Egen bearbetning av samma tal som ramtabellen visar.
+const namnd27 = budgetData.beslut.find((b) => b.ar === 2027)!.namndfordelning_tkr as Record<string, number>;
+const hundralappBas = namnd27["Summa (nämndernas nettokostnader)"];
+const hundralappStora = [
+  { namn: "Förskola och grundskola — barn- och utbildningsnämnden", tkr: namnd27["Barn- och utbildningsnämnd"] },
+  { namn: "Vård och omsorg — socialnämnden", tkr: namnd27["Socialnämnd"] },
+  { namn: "Kommunstyrelsen — bl.a. gymnasieplatser, gator och administration", tkr: namnd27["Kommunstyrelse"] },
+  { namn: "Kultur, arbete och folkhälsa", tkr: namnd27["Nämnden för kultur, arbete och folkhälsa"] },
+];
+const hundralappOvrigt = hundralappBas - hundralappStora.reduce((s, r) => s + r.tkr, 0);
+const hundralapp = [
+  ...hundralappStora,
+  { namn: "Politik, revision och tillsyn", tkr: hundralappOvrigt },
+].map((r) => ({ ...r, kronor: (r.tkr / hundralappBas) * 100 }));
+const gymnasieTkr = oronmarkta
+  ? Object.entries(oronmarkta.poster_tkr).find(([namn]) => namn.toLowerCase().includes("gymnasie"))?.[1] ?? null
+  : null;
+const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 100 : null;
+---
+
+<Layout
+  title="Budgetöversikt"
+  description="De fem budgetbesluten 2023–2027 i Höörs kommun, sida vid sida."
+  image="/og-budget-v2.png"
+>
+  <h1>Budgetöversikt 2023–2027</h1>
+  <p class="lead">
+    Höörs kommunfullmäktige beslutar varje höst om budget för nästkommande år. Nedan är de fem budgetbesluten
+    (för åren 2023–2027) som det sittande styret (M, L, C, KD) tagit fram under mandatperioden 2022–2026.
+  </p>
+
+  <div class="banner">
+    Budgetsiffrorna nedan är kontrollerade mot kommunens egna protokoll eller mötesutsändningens undertexter.
+    Läs mer om metod och kvarvarande kunskapsluckor på sidan <a href="/om-urvalet/">Om urvalet</a>. Termerna i
+    protokollen — nämndram, votering, kontraproposition — förklaras i <a href="/ordlista/">ordlistan</a>.
+  </div>
+
+  <section class="policy-block">
+    <h2 id="vad-kostar-80-ore">Vad kostar 80 öre mig?</h2>
+    <p>
+      Kommunalskatten i Höör låg på {sv(skattUtgang, 2)} kr per hundralapp 2023–2025. Den sänktes med 30 öre inför
+      2026 (till {sv(skatt2026, 2)} kr) och med ytterligare 50 öre inför 2027 (till {sv(skatt2027, 2)} kr) — totalt
+      80 öre lägre än vid mandatperiodens början. Omräknat är det {sv(skattUtgang - skatt2027, 2)} kr mindre i
+      kommunalskatt per hundralapp av din beskattningsbara inkomst.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Beskattningsbar inkomst</th>
+          <th>Efter första steget (30 öre)</th>
+          <th>Efter båda stegen (80 öre)</th>
+          <th>Per år (80 öre)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {inkomstRader.map((r) => (
+          <tr>
+            <th scope="row">{kr(r.inkomst)} kr/mån</th>
+            <td>{kr(r.steg1)} kr/mån</td>
+            <td>{kr(r.totalt)} kr/mån</td>
+            <td>{kr(r.totalt * 12)} kr</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="not-box">
+      Tabellen är ren multiplikation, ingen prognos: 0,80 kr per hundralapp är 0,80 % av den beskattningsbara
+      inkomsten. Två saker att hålla isär. <strong>Beskattningsbar inkomst är inte samma sak som lön</strong> —
+      grundavdraget (och eventuella andra avdrag) dras av först, så din beskattningsbara inkomst är lägre än din
+      bruttolön och den faktiska besparingen därmed något mindre än om du läser tabellen med lönen i vänsterkolumnen.
+      Och siffrorna gäller <strong>bara kommunalskatten</strong>: regionskatten till Region Skåne, begravningsavgiften
+      och en eventuell kyrkoavgift påverkas inte av kommunfullmäktiges beslut.
+    </div>
+
+    {skattesankningRR && steg30Mnkr !== null && steg50Mnkr !== null && (
+      <>
+        <h3>Och vad kostar de kommunen?</h3>
+        <p>
+          Kommunens egen resultaträkning svarar. Raden <em>"{skattesankningRR.rad}"</em> i budget 2027 tar
+          upp 30-öressteget som {sv(steg30Mnkr)} miljoner kronor mindre i skatteintäkter 2026, och
+          50-öressteget som {sv(steg50Mnkr)} miljoner mindre 2027. Räknar man ihop stegen motsvarar hela
+          80-öressänkningen i storleksordningen <strong>{hela80Mnkr} miljoner kronor om året</strong> i
+          lägre skatteintäkter.
+          {forskolaAvvikelseMnkr !== null && (
+            <>
+              {" "}Som jämförelsepunkt: det är mer än förskolans hela avstånd till referenskostnaden
+              {" "}{huvudar} ({sv(Math.abs(forskolaAvvikelseMnkr))} miljoner kronor — se
+              {" "}<a href="#referenskostnad">nedan</a>).
+            </>
+          )}
+        </p>
+        <a class="source-link" href={skattesankningRR.kalla_pdf} target="_blank" rel="noopener noreferrer">
+          Resultaträkningen i kommunstyrelsens budgetförslag 2027, raden "{skattesankningRR.rad}" (PDF)
+        </a>
+        <span class="derived-note">
+          summan för hela 80-öressänkningen är uppräknad här ur handlingens 50-öresrad; stegen står i
+          handlingen, summan gör det inte
+        </span>
+        <div class="not-box">
+          Talen är storleksordningar och ska inte ställas upp som en ekvation mot enskilda verksamheter:
+          lägre skatteintäkter täcks inte krona för krona av en viss nämnd, och en avvikelse mot
+          referenskostnaden är ett utfall, inte en budgetpost.
+        </div>
+      </>
+    )}
+  </section>
+
+  <section class="policy-block">
+    <h2 id="din-hundralapp">Vart går din hundralapp?</h2>
+    <p>
+      Av varje hundralapp som fullmäktige fördelar till nämnderna 2027 går drygt sju tior till två nämnder:
+      skolans och omsorgens.
+    </p>
+    <ul class="hundralapp">
+      {hundralapp.map((r) => (
+        <li>
+          <span class="hundralapp__rad">
+            <span>{r.namn}</span>
+            <strong>{r.kronor.toLocaleString("sv-SE", { minimumFractionDigits: 0, maximumFractionDigits: 0 })} kr</strong>
+          </span>
+          <span class="hundralapp__bar" style={`width: ${r.kronor}%`} aria-hidden="true"></span>
+        </li>
+      ))}
+    </ul>
+    {gymnasieKronor !== null && (
+      <p>
+        Inne i kommunstyrelsens del ligger gymnasiet: Höör driver inga nationella gymnasieprogram, så
+        ungefär {Math.round(gymnasieKronor)} kronor av hundralappen köper gymnasieplatser i andra kommuner.
+      </p>
+    )}
+    <span class="derived-note">
+      kronorna per hundralapp är uträknade här ur nämndramarna för 2027 — ramarna och deras källa står i
+      tabellen nedan
+    </span>
+  </section>
+
+  <div class="vagval">
+    <h3>Vägvalet: skatten</h3>
+    <dl>
+      <dt>Läget</dt>
+      <dd>
+        Kommunalskatten sänks med 80 öre i två steg, 2026 och 2027 — från {sv(skattUtgang, 2)} till
+        {" "}{sv(skatt2027, 2)} kr per hundralapp.
+      </dd>
+      <dt>Pengarna</dt>
+      <dd>
+        För dig: cirka {kr((30000 * (skattUtgang - skatt2027)) / 100)} kr i månaden vid 30 000 kr i
+        beskattningsbar inkomst (tabellen ovan). För kommunen: i storleksordningen {hela80Mnkr} miljoner
+        kronor om året i lägre skatteintäkter.
+      </dd>
+      <dt>Alternativen</dt>
+      <dd>
+        I budgetförslagen för 2027 ville S och MP behålla 21,45 kr och avvisade sänkningen; V ville sänka
+        med 25 öre i stället för styrets 50. Förslagen i sin helhet står under{" "}
+        <a href="#arsbeslut">årsbesluten</a> och på <a href="/partier/">partisidorna</a>.
+      </dd>
+      <dt>Handlingen</dt>
+      <dd>
+        Budget 2027 antogs med 26 röster mot 13 — styret plus SD:s närvarande grupp och MED, mot S, V och
+        MP. Se <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+      </dd>
+    </dl>
+    <p class="vagval__fraga">
+      Frågan till dig: vad väger tyngst — några hundralappar lägre skatt i månaden, eller det pengarna
+      annars kunde gå till?
+    </p>
+  </div>
+
+  <section class="policy-block">
+    <h2>Hur stor är budgeten – och hur mycket ökar den?</h2>
+    <p>
+      Måttet nedan, <strong>verksamhetens nettokostnader</strong>, är vad kommunens verksamhet kostar totalt varje
+      år efter att avgifter och statsbidrag räknats bort. Det är hämtat ur resultaträkningen i respektive års egen
+      budgethandling — inte ur senare års omräknade siffror.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>År</th>
+          <th>Nettokostnad</th>
+          <th>Förändring mot föregående år</th>
+        </tr>
+      </thead>
+      <tbody>
+        {totalRader.map((r) => (
+          <tr>
+            <th scope="row">{r.ar}</th>
+            <td>{r.total != null ? `${sv(r.total)} mnkr` : <span class="no-data">Uppgift saknas</span>}</td>
+            <td>
+              {r.diffMnkr != null ? (
+                <>{r.diffMnkr >= 0 ? "+" : ""}{sv(r.diffMnkr)} mnkr ({r.diffProcent! >= 0 ? "+" : ""}{sv(r.diffProcent!)} %)</>
+              ) : (
+                <span class="no-data">–</span>
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="policy-block">
+    <h2>Vad läggs pengarna på? Nämndernas budgetramar</h2>
+    <p>
+      Så här fördelas budgeten mellan kommunens nämnder, år för år (miljoner kronor). Uppgifterna kommer från
+      avsnittet "Budgetramar" i respektive års egen budgethandling — för 2027 ur kommunstyrelsens budgetförslag,
+      som fullmäktige antog oförändrat. Raderna <strong>Summa</strong> och{" "}
+      <strong>Totalt</strong> är delsummor: Summa är vad nämnderna själva tilldelas, och Totalt läggs till efter att
+      centrala kompensationspotter för löne-, pris- och demografiförändringar räknats in. Detta Totalt-belopp är
+      inte samma sak som "Nettokostnad" i tabellen ovan, som även innehåller andra centrala poster (till exempel
+      avskrivningar och pensioner) som inte fördelas ut per nämnd.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Nämnd / post</th>
+            {budgetData.beslut.map((b) => <th>{b.ar}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {namndRader.map((namnd) => (
+            <tr class={namnd.startsWith("Summa") || namnd.startsWith("Totalt") ? "namnd-total" : ""}>
+              <th scope="row">{namnd}</th>
+              {budgetData.beslut.map((b) => {
+                const varde = (b.namndfordelning_tkr as Record<string, number> | null)?.[namnd];
+                return (
+                  <td>
+                    {varde != null ? `${sv(varde / 1000)} mnkr` : <span class="no-data">–</span>}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {oronmarktaBeslut.length > 0 && (
+      <div class="banner oronmarkta">
+        <p>
+          <strong>Fyra poster är låsta — varje år.</strong> Fullmäktige fördelar inte bara ramarna. Varje
+          budgetbeslut under mandatperioden har också en egen beslutspunkt om att vissa pengar inte får användas
+          till något annat. I beslutet för {senasteOron.ar} (punkt {senasteOron.o.beslutspunkt} av{" "}
+          {senasteOron.o.beslutspunkt_av}) lyder den ordagrant: <em>"{senasteOron.o.beslutssats}"</em>
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Låst post</th>
+                <th>Ingår i ramen för</th>
+                {oronmarktaBeslut.map((b) => <th>{b.ar}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {oronmarktaRader.map((post) => (
+                <tr>
+                  <th scope="row">{post}</th>
+                  <td>{senasteOron.o.poster_namnd[post]}</td>
+                  {oronmarktaBeslut.map((b) => <td>{sv(b.o.poster_tkr[post] / 1000)}</td>)}
+                </tr>
+              ))}
+              <tr class="namnd-total">
+                <th scope="row">Summa låsta poster</th>
+                <td></td>
+                {oronmarktaBeslut.map((b) => <td>{sv(b.o.summa_tkr / 1000)}</td>)}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="updated">
+          Miljoner kronor, ur varje års egen budgethandling. Störst belopp {senasteOron.ar} överst.
+          Beslutet lyder likadant alla fem åren — bara paragraf och punkt skiljer:{" "}
+          {oronmarktaBeslut.map((b) => `${b.ar} ${b.paragraf} punkt ${b.o.beslutspunkt}`).join(" · ")}.
+        </p>
+        <p>
+          Tabellen visar också riktningen. Gymnasieposten har vuxit från{" "}
+          {sv(forstaOron.o.poster_tkr["Gymnasieverksamhet"] / 1000)} till{" "}
+          {sv(senasteOron.o.poster_tkr["Gymnasieverksamhet"] / 1000)} mnkr mellan {forstaOron.ar} och{" "}
+          {senasteOron.ar}, medan ramen för ekonomiskt bistånd gått åt andra hållet — från{" "}
+          {sv(forstaOron.o.poster_tkr["Ekonomiskt bistånd"] / 1000)} till{" "}
+          {sv(senasteOron.o.poster_tkr["Ekonomiskt bistånd"] / 1000)} mnkr. Gymnasieposten är den överlägset
+          största och utgör drygt en tredjedel av hela kommunstyrelsens ram. Höörs kommun driver inga nationella
+          gymnasieprogram, så pengarna går i allt väsentligt till utbildningsplatser i andra kommuner — kommunen
+          driver däremot två introduktionsprogram vid Höörs Lärcentrum. Beloppen ligger inne i nämndernas ramar
+          i tabellen ovan och ska alltså inte läggas till.
+        </p>
+      </div>
+    )}
+  </section>
+
+  <section class="policy-block">
+    <h2 id="referenskostnad">Är det mycket eller lite? Höör mot referenskostnaden</h2>
+    <p>
+      Tabellerna ovan svarar på vad fullmäktige <em>beslutade</em>. De svarar inte på om beloppen är höga eller
+      låga, för det finns inget att jämföra med — 1 330 miljoner kronor är varken mycket eller lite i sig.
+      Statistikdatabasen <a href="/om-urvalet/#kolada">Kolada</a> ger en jämförelsepunkt: en{" "}
+      <a href="/ordlista/#referenskostnad">referenskostnad</a> som räknas fram för varje kommun utifrån hur
+      många barn, elever och äldre som bor där. Skillnaden mellan vad verksamheten faktiskt kostade och den
+      punkten kallas <a href="/ordlista/#nettokostnadsavvikelse">nettokostnadsavvikelse</a>.
+    </p>
+    <div class="not-box">
+      <strong>Två saker skiljer den här tabellen från de föregående.</strong> För det första: ovan står vad som{" "}
+      <em>beslutades</em> för 2023–2027, här står vad verksamheten <em>blev</em> — utfall, inte budget. För det
+      andra: åren är inte desamma. Kolada har utfall till och med {koladaAr[koladaAr.length - 1]}, så budgetåren
+      2026 och 2027 har ännu inget utfall att jämföra med. Siffrorna nedan går alltså inte att räkna av mot
+      ramarna ovan. En negativ avvikelse betyder inte heller att kommunen "sparat" pengar, och säger ingenting
+      om kvaliteten — se <a href="/ordlista/#nettokostnadsavvikelse">ordlistan</a>.
+    </div>
+
+    <h3>Utfall {huvudar}, per verksamhet</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Verksamhet</th>
+            <th>Ingår i ramen för</th>
+            <th>Avvikelse {huvudar}</th>
+            <th>I procent</th>
+            <th>{koladaAr[koladaAr.length - 1]}{arPreliminart(koladaAr[koladaAr.length - 1]) ? " (prel.)" : ""}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {verksamheterSorterad.map((v) => (
+            <tr>
+              <th scope="row">{v.namn}</th>
+              <td>{v.namnd}</td>
+              <td>
+                {v.avvikelseMnkr != null ? (
+                  <>{v.avvikelseMnkr >= 0 ? "+" : ""}{sv(v.avvikelseMnkr)} mnkr</>
+                ) : (
+                  <span class="no-data">–</span>
+                )}
+              </td>
+              <td>
+                {v.avvikelseProcent != null ? (
+                  <>{v.avvikelseProcent >= 0 ? "+" : ""}{sv(v.avvikelseProcent)} %</>
+                ) : (
+                  <span class="no-data">–</span>
+                )}
+              </td>
+              <td>
+                {v.senasteProcent != null ? (
+                  <>{v.senasteProcent >= 0 ? "+" : ""}{sv(v.senasteProcent)} %</>
+                ) : (
+                  <span class="no-data">–</span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <a
+      class="source-link"
+      href={koladaKallaUrl(verksamheter.flatMap((v) => [v.procent, v.mnkr]), [huvudar, koladaAr[koladaAr.length - 1]])}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Kolada — nettokostnadsavvikelse för Höör {huvudar} och {koladaAr[koladaAr.length - 1]}
+    </a>
+    <p>
+      Minustecken betyder att verksamheten kostade mindre än referenskostnaden, plustecken att den kostade mer.
+      Förskolan ligger längst ned{forskolaAlltidLagst
+        ? `, och har haft den största negativa avvikelsen i kronor varje år sedan ${mandatperiodAr[0]}`
+        : ""}. Äldreomsorgen {huvudar} sticker ut åt
+      andra hållet med {sv(koladaVarde("N20029", huvudar) ?? 0)} mnkr över referenskostnaden — ett enskilt år
+      som faller tillbaka till {sv(koladaVarde("N20900", koladaAr[koladaAr.length - 1]) ?? 0)} procent
+      {arPreliminart(koladaAr[koladaAr.length - 1]) ? " i den preliminära siffran för " : " "}
+      {koladaAr[koladaAr.length - 1]}. Vad som orsakade hoppet framgår inte av statistiken, och sajten gissar inte.
+    </p>
+
+    <h3>Förskola, grundskola och äldreomsorg över tid</h3>
+    <p>
+      Avvikelsen i miljoner kronor, år för år. Ett enskilt år kan bero på tillfälligheter; riktningen över en
+      mandatperiod gör det sällan.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Verksamhet</th>
+            {koladaAr.map((ar) => (
+              <th>{ar}{arPreliminart(ar) ? "*" : ""}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {tidsserie.map((v) => (
+            <tr>
+              <th scope="row">{v.namn}</th>
+              {koladaAr.map((ar) => {
+                const varde = koladaVarde(v.mnkr, ar);
+                return (
+                  <td>
+                    {varde != null ? (
+                      <>{varde >= 0 ? "+" : ""}{sv(varde)}</>
+                    ) : (
+                      <span class="no-data">–</span>
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <a
+      class="source-link"
+      href={koladaKallaUrl(tidsserie.map((v) => v.mnkr), koladaAr)}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Kolada — nettokostnadsavvikelse i mnkr för Höör {koladaAr[0]}–{koladaAr[koladaAr.length - 1]}
+    </a>
+    <p class="updated">
+      Miljoner kronor. * {preliminaraAr.join(" och ")} är preliminärt och fastställs
+      {" "}{koladaNyckeltal("N11038").publicering.publication_date}, efter valdagen.
+    </p>
+    <p>
+      Förskolans avvikelse har blivit mer negativ varje år sedan {forskolaStreakStart} — från
+      {" "}{sv(koladaVarde("N11038", forskolaStreakStart) ?? 0)} mnkr {forskolaStreakStart} till
+      {" "}{sv(koladaVarde("N11038", huvudar) ?? 0)} mnkr {huvudar}. Grundskolan låg över referenskostnaden
+      {" "}{grundskolaOverAr[0]}–{grundskolaOverAr[grundskolaOverAr.length - 1]} och under den från
+      {" "}{grundskolaUnderIgen} och framåt.
+    </p>
+
+    <h3>Vad det betyder för oppositionens förslag</h3>
+    <p>
+      Det här är bakgrunden till att flera oppositionspartier föreslagit högre ramar för barn- och
+      utbildningsnämnden. Det största enskilda förslaget under mandatperioden kom från{" "}
+      {storstaBunHojning.parti} inför budget {storstaBunHojning.ar}: {sv(storstaBunHojning.mnkr)} mnkr mer till
+      nämnden än styrets förslag. Förskolans och grundskolans sammanlagda avvikelse {huvudar} var
+      {" "}{sv(skolaSamlatMnkr)} mnkr.
+    </p>
+    <span class="derived-note">
+      {sv(skolaSamlatMnkr)} mnkr är summan av två råvärden ur Kolada (förskola {sv(koladaVarde("N11038", huvudar) ?? 0)}
+      {" "}+ grundskola {sv(koladaVarde("N15045", huvudar) ?? 0)}), inte ett tal Kolada publicerar
+    </span>
+    <div class="not-box">
+      <strong>De två talen är inte varandras motsvarighet och ska inte subtraheras.</strong> Nämndens ram
+      omfattar mer än förskola och grundskola, förslagen gäller kommande år medan avvikelsen är ett utfall, och
+      en höjd ram styr inte automatiskt vilken verksamhet pengarna hamnar i. Storleksordningen är ändå det som
+      gör förslagen begripliga: de rör sig i samma härad som avståndet till referenskostnaden. Vad varje parti
+      konkret ville lägga pengarna på står nedan och på partiernas egna sidor.
+    </div>
+    <p>
+      Hur Höörs avvikelser ser ut bredvid andra kommuners — Skånes {koladaData.skane.length}, grannkommunerna
+      och de kommuner Kolada bedömt som strukturellt mest lika Höör — står på
+      {" "}<a href="/nyckeltal/">Nyckeltal</a>.
+    </p>
+  </section>
+
+  <section class="policy-block">
+    <h2>Vad ville oppositionen göra annorlunda?</h2>
+    <p>
+      S, V och MP lade egna, fullständiga budgetförslag de flesta av åren — inte bara det formella motförslag
+      som gick till votering. Förslagen är hämtade i fulltext direkt ur kommunens mötesportal och jämförs
+      nedan mot styrets antagna budget, år för år. Hur voteringarna gick står på{" "}
+      <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+    </p>
+    <div class="not-box">
+      Budget 2024: S och MP:s förslag var kortare prioritetslistor utan fullständiga nämndramar och går inte att
+      sifferjämföra rakt av mot styrets budget. Vänsterpartiet hade en fullständig alternativbudget, men med lägre
+      ambition än styret på flera nämnder. Se partiernas egna sidor för detaljer.
+    </div>
+    {oppAr.filter((ar) => ar !== 2024).map((ar) => {
+      const styretBeslut = budgetData.beslut.find((b) => b.ar === ar);
+      const forslagAr = oppositionsbudgetar.forslag.filter(
+        (f) => f.ar === ar && !(f.parti_id === "mp" && f.gemensamt_med === "s")
+      );
+      return (
+        <div class="table-scroll">
+          <h3>Budget {ar}</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Förslag</th>
+                <th>Skattesats</th>
+                <th>Diff mot styret (nettokostnad)</th>
+                <th>Källa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="namnd-total">
+                <th scope="row">Styret (antaget)</th>
+                <td>{styretBeslut?.kommunal_skattesats}</td>
+                <td>—</td>
+                <td></td>
+              </tr>
+              {forslagAr.map((f) => (
+                <tr>
+                  <th scope="row">
+                    {f.gemensamt_med ? `${partyName(f.parti_id)} + ${partyName(f.gemensamt_med)}` : partyName(f.parti_id)}
+                  </th>
+                  <td>{f.skattesats}</td>
+                  <td>
+                    {f.total_diff_mnkr != null ? (
+                      <>{f.total_diff_mnkr >= 0 ? "+" : ""}{sv(f.total_diff_mnkr)} mnkr</>
+                    ) : (
+                      <span class="no-data">{f.total_diff_not ?? "Ej angivet"}</span>
+                    )}
+                  </td>
+                  <td><a class="source-link" href={f.pdf} target="_blank" rel="noopener noreferrer">PDF</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    })}
+    <p class="updated">
+      Fullständig genomgång av varje förslags konkreta satsningar och besparingar finns på respektive partis egen
+      sida: <a href="/partier/s/">Socialdemokraterna</a>, <a href="/partier/v/">Vänsterpartiet</a>,{" "}
+      <a href="/partier/mp/">Miljöpartiet</a>.
+    </p>
+  </section>
+
+  <section class="policy-block" id="arsbeslut">
+    <h2>Besluten år för år: protokoll, voteringar och källdokument</h2>
+    <p>
+      Varje års budgetbeslut i original — förslagsställare, skattesats, votering och källdokument.
+      Fäll ut det år du vill granska.
+    </p>
+  {budgetData.beslut.map((b) => (
+    <details class="not-box">
+      <summary>{b.titel}</summary>
+      <p>{b.beskrivning}</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>Förslagsställare</th>
+            <td>{b.forslagsstallare}</td>
+          </tr>
+          {b.forslag_datum && (
+            <tr>
+              <th>Förslagsdatum</th>
+              <td>{b.forslag_datum}</td>
+            </tr>
+          )}
+          <tr>
+            <th>Antagen</th>
+            <td>
+              {b.antagen_datum ? (
+                <>
+                  {b.antagen_datum}{b.antagen_paragraf ? ` (${b.antagen_paragraf})` : ""}
+                </>
+              ) : (
+                <span class="no-data">Exakt datum ej oberoende verifierat</span>
+              )}
+              {b.antagen_datum_not && <div class="not-box">{b.antagen_datum_not}</div>}
+            </td>
+          </tr>
+          <tr>
+            <th>Kommunal skattesats</th>
+            <td>{b.kommunal_skattesats}</td>
+          </tr>
+          <tr>
+            <th>Resultat</th>
+            <td>{b.resultat}</td>
+          </tr>
+          <tr>
+            <th>Röstning</th>
+            <td>
+              {b.rostning ? (
+                <>
+                  {b.rostning.ja} ja / {b.rostning.nej} nej
+                  {b.rostning.avstar ? `, ${b.rostning.avstar} avstod` : ""}
+                  {b.rostning.franvarande ? `, ${b.rostning.franvarande} frånvarande` : ""}
+                </>
+              ) : (
+                <span class="no-data">Ingen votering om budgeten (se noten nedan)</span>
+              )}
+              {b.rostning_not && <div class="not-box">{b.rostning_not}</div>}
+            </td>
+          </tr>
+          {b.procedurvotering && (
+            <tr>
+              <th>Procedurvotering</th>
+              <td>
+                {b.procedurvotering.ja} ja / {b.procedurvotering.nej} nej
+                {b.procedurvotering.avstar ? `, ${b.procedurvotering.avstar} avstod` : ""}
+                {b.procedurvotering.franvarande ? `, ${b.procedurvotering.franvarande} frånvarande` : ""}
+                {b.procedurvotering_not && <div class="not-box">{b.procedurvotering_not}</div>}
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+      <a class="source-link" href={b.kalla_url} target="_blank" rel="noopener noreferrer">{b.kalla_beskrivning}</a>
+      {b.kalla_motesagenda && (
+        <p class="updated">Mötesagenda (ej fristående verifierbar källa): <a href={b.kalla_motesagenda} target="_blank" rel="noopener noreferrer">{b.kalla_motesagenda}</a></p>
+      )}
+      {b.kalla_nyhet && (
+        <p class="updated">Se även: <a href={b.kalla_nyhet} target="_blank" rel="noopener noreferrer">{b.kalla_nyhet}</a></p>
+      )}
+      {b.bilagor && (
+        <div class="bilagor">
+          <h3>Källdokument i original</h3>
+          <ul>
+            {b.bilagor.map((bil) => (
+              <li>
+                <a href={bil.url} target="_blank" rel="noopener noreferrer">{bil.titel}</a> (PDF)
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </details>
+  ))}
+  </section>
+
+  <p class="updated">Senast uppdaterad: {budgetData.senast_uppdaterad}.</p>
+</Layout>
+
+<style>
+  .hundralapp {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: grid;
+    gap: 0.7rem;
+    max-width: 38rem;
+  }
+
+  .hundralapp__rad {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .hundralapp__bar {
+    display: block;
+    height: 0.8rem;
+    background: var(--color-accent);
+    border-radius: 2px;
+    min-width: 2px;
+  }
+</style>

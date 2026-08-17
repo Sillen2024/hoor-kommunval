@@ -1,0 +1,1530 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #5a5a5a;
+  --color-border: #d8d8d8;
+  --color-accent: #0b4a6f;
+  --color-styre-bg: #eaf2f8;
+  --color-styre-border: #0b4a6f;
+  --color-opp-bg: #f8f2ea;
+  --color-opp-border: #8a5a1e;
+  --color-note-bg: #fff8e1;
+  --color-note-border: #c9a227;
+  --max-width: 62rem;
+  font-size: 17px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+}
+
+a { color: var(--color-accent); }
+a:visited { color: #5a3a8a; }
+
+.site-header {
+  border-bottom: 3px solid var(--color-text);
+  background: #fff;
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-header__title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-header__title img {
+  display: block;
+  height: 50px;
+  width: auto;
+}
+
+.site-header__title small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin-top: 0.2rem;
+}
+
+nav.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.92rem;
+}
+
+nav.site-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--color-accent);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+.banner {
+  background: #f4f6f5;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  padding: 0.9rem 1.25rem;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.banner strong { color: var(--color-text); }
+
+.banner p + p { margin-top: 0.7rem; }
+
+/* Öronmärkta budgetposter på /budget/ — citat + flerårstabell i en banner. */
+.oronmarkta em {
+  color: var(--color-text);
+  font-style: normal;
+  border-left: 2px solid var(--color-border);
+  padding-left: 0.6rem;
+  display: inline-block;
+  margin-top: 0.35rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  color: var(--color-text);
+  display: block;
+  background: #fafafa;
+  transition: box-shadow 0.15s ease;
+}
+
+.card:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.card p { margin: 0; font-size: 0.9rem; color: var(--color-muted); }
+
+.badge {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.badge--styre {
+  background: var(--color-styre-bg);
+  border-color: var(--color-styre-border);
+  color: var(--color-styre-border);
+}
+
+.badge--opposition {
+  background: var(--color-opp-bg);
+  border-color: var(--color-opp-border);
+  color: var(--color-opp-border);
+}
+
+.badge--neutral {
+  background: #f0f0f0;
+  border-color: #999;
+  color: #333;
+}
+
+.party-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+
+.party-list a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.party-list a:hover { border-color: var(--color-accent); }
+
+.party-list__logo {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+}
+
+.party-list__name {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.party-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.party-logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.92rem;
+}
+
+th, td {
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f3f3f3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+
+.table-scroll table {
+  margin: 0;
+  min-width: 40rem;
+}
+
+.namnd-total th,
+.namnd-total td {
+  font-weight: 700;
+  background: #f7f7f7;
+}
+
+.source-link {
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #eef6f0;
+  border: 1px solid #3a7d52;
+  color: #2c5f3e;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-link:visited { color: #2c5f3e; }
+.source-link:hover { background: #ddeee1; }
+
+.source-link::before {
+  content: "✓ Källbelagt — ";
+  color: #2c5f3e;
+  font-weight: 700;
+}
+
+/* I en källförteckning (t.ex. /arenden/) står beskrivningarna på egen rad och
+   ska kunna läsas i sin helhet — där gör ellipsen mer skada än nytta. */
+.source-link--wrap {
+  display: inline-block;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.4;
+  padding: 0.25rem 0.6rem;
+}
+
+/* Debatt- och opinionsmaterial. Får medvetet inte det gröna märket: det
+   citeras som belägg för att ett ärende varit omdebatterat, aldrig som källa
+   för en sakuppgift. Samma logik som .derived-note — annan färg, annat
+   prefix, streckad ram, så att "✓ Källbelagt" fortsätter betyda en sak. */
+.debatt-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: #fdf6ec;
+  border: 1px dashed var(--color-opp-border);
+  color: #7a4f1a;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 100%;
+}
+
+.debatt-link:visited { color: #7a4f1a; }
+.debatt-link:hover { background: #f7ecdc; }
+
+.debatt-link::before {
+  content: "✎ Debatt, inte sakkälla — ";
+  font-weight: 700;
+}
+
+/* Egen bearbetning — medvetet inte samma märke som .source-link.
+   Koladas licensvillkor tillåter inte att beräkningar gjorda på deras data
+   anges med Kolada som källa. Snitt, ranking och differenser räknade vid
+   byggtid ur kolada.json bär därför den här märkningen, aldrig den gröna.
+   Skillnaden är inte kosmetisk: "✓ Källbelagt" betyder på den här sajten att
+   uppgiften står ordagrant i ett dokument någon annan skrivit under. Får en
+   egenräknad siffra samma märke betyder märket ingenting. Därför annan färg
+   (ockra, samma familj som oppositionsmarkeringen), annat prefix, streckad
+   ram. Till skillnad från .source-link får texten radbrytas — den beskriver
+   en beräkning i ord i stället för att visa en URL. */
+.derived-note {
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #fdf6ec;
+  border: 1px dashed var(--color-opp-border);
+  color: #7a4f1a;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 100%;
+}
+
+.derived-note::before {
+  content: "∑ Egen bearbetning — ";
+  color: #7a4f1a;
+  font-weight: 700;
+}
+
+.derived-note a,
+.derived-note a:visited {
+  color: #7a4f1a;
+}
+
+/* Hero / valkompass */
+
+.hero-cta {
+  border: 2px solid var(--color-accent);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+  background: linear-gradient(180deg, #f3f9fc 0%, #ffffff 100%);
+}
+
+.hero-cta h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+.hero-cta__intro {
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+}
+
+.valkompass {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.valkompass__progress {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.valkompass__question {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.valkompass__kalla {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0 0 1rem;
+}
+
+.valkompass__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.valkompass__actions button {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  cursor: pointer;
+}
+
+.valkompass__actions button:hover { border-color: var(--color-accent); }
+
+.valkompass__actions button[data-answer="for"] {
+  border-color: #2c5f3e;
+  color: #2c5f3e;
+}
+
+.valkompass__actions button[data-answer="emot"] {
+  border-color: #8a3a3a;
+  color: #8a3a3a;
+}
+
+.valkompass__actions button[data-answer="vet-ej"] {
+  color: var(--color-muted);
+}
+
+.valkompass__result {
+  display: none;
+}
+
+.valkompass__result-bars {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.valkompass__bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.valkompass__bar-track {
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #eee;
+  overflow: hidden;
+}
+
+.valkompass__bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+}
+
+.valkompass__restart {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  cursor: pointer;
+  margin-top: 0.75rem;
+}
+
+.trust-note {
+  border: 1px solid #3a7d52;
+  background: #eef6f0;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+
+.trust-note strong { color: #2c5f3e; }
+
+.hook-card {
+  border: 2px solid var(--color-text);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  background: #fffdf5;
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.hook-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+.hook-card__eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+}
+.hook-card h3 { margin: 0.25rem 0 0.4rem; font-size: 1.25rem; }
+.hook-card p { margin: 0; color: var(--color-muted); }
+
+.dig-deeper {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+
+.dig-deeper h2 { font-size: 1.15rem; color: var(--color-muted); }
+
+/* Livssituationer */
+
+.situation-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.situation-picker__btn {
+  font: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fafafa;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+}
+
+.situation-picker__emoji { font-size: 1.4rem; }
+.situation-picker__namn { font-weight: 700; font-size: 0.95rem; }
+.situation-picker__beskrivning { font-size: 0.8rem; color: var(--color-muted); }
+
+.situation-picker__btn[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  border-width: 2px;
+  background: var(--color-styre-bg);
+}
+
+/* Micro-animationer: snabb, taktil feedback vid klick och hover.
+   Respekterar prefers-reduced-motion — ingen rörelse påtvingas den som bett om det. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .card,
+  .hook-card,
+  .party-list a,
+  .situation-picker__btn,
+  .stance-card,
+  .valkompass__actions button,
+  .filter-bar button,
+  .valkompass__restart {
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .card:hover,
+  .hook-card:hover,
+  .party-list a:hover,
+  .situation-picker__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+
+  .card:active,
+  .hook-card:active,
+  .party-list a:active,
+  .situation-picker__btn:active,
+  .valkompass__actions button:active,
+  .filter-bar button:active,
+  .valkompass__restart:active {
+    transform: scale(0.95);
+  }
+
+  .stance-card {
+    border-left-width: 4px;
+  }
+
+  .stance-card:hover {
+    border-left-width: 7px;
+    background: #fafafa;
+  }
+
+  .valkompass__actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  .fade-in {
+    animation: fade-in-up 0.3s ease;
+  }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.not-box {
+  font-size: 0.85rem;
+  color: #6b4e00;
+  background: var(--color-note-bg);
+  border: 1px solid var(--color-note-border);
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  margin-top: 0.4rem;
+}
+
+/* Protokollförd votering (Votering.astro). Beslutsordningen ligger i en
+   egen ruta ovanför siffrorna eftersom JA/NEJ ofta betyder motsatsen till
+   vad man gissar — den får inte gå att missa. */
+.votering {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid #3a7d52;
+  border-radius: 4px;
+  background: #fafbfa;
+}
+
+.votering__rubrik {
+  margin: 0 0 0.5rem;
+}
+
+.votering__ordning {
+  font-size: 0.88rem;
+  background: #f3f3f3;
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  margin: 0 0 0.5rem;
+}
+
+.votering__resultat {
+  margin: 0;
+}
+
+.votering__tabell {
+  margin: 0.75rem 0 0.25rem;
+  max-width: 32rem;
+}
+
+.votering__tabell td {
+  text-align: right;
+  width: 4.5rem;
+}
+
+.votering__splittrat {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #8a6d1a;
+}
+
+/* "Så har partiet röstat" på partisidorna. Varje votering återger
+   beslutsordningen även här — partiets siffror utan den vore lika
+   vilseledande som totalsiffrorna. */
+.track-record__votering {
+  margin: 0.75rem 0;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: #fafbfa;
+}
+
+.track-record__votering--splittrad {
+  border-left: 4px solid #b8860b;
+}
+
+.track-record__fraga {
+  margin: 0 0 0.4rem;
+}
+
+details.not-box {
+  padding: 0;
+}
+
+details.not-box summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.5rem 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+details.not-box summary::-webkit-details-marker {
+  display: none;
+}
+
+details.not-box summary::after {
+  content: "+";
+  font-weight: 700;
+  margin-left: 0.6rem;
+}
+
+details.not-box[open] summary::after {
+  content: "−";
+}
+
+details.not-box summary:hover {
+  text-decoration: underline;
+}
+
+details.not-box p {
+  margin: 0;
+  padding: 0 0.7rem 0.6rem;
+}
+
+/* ------------------------------------------------------------------
+   /arenden/ — femton långa ärenden på en sida. Överblicken görs i tre
+   steg: en sifferrad, ett index man kan skumma, och en klistrad filter-
+   rad som följer med ner genom listan. Ärendena renderas i samma DOM som
+   tidigare, bara omgrupperade — sidan ska fungera utan JavaScript och gå
+   att söka igenom med Ctrl+F, så ingenting fälls ihop eller lazy-laddas.
+   ------------------------------------------------------------------ */
+
+.arende-summering {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 2px solid var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.88rem;
+  color: var(--color-muted);
+}
+
+.arende-summering strong {
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+
+.arende-index {
+  margin: 1.5rem 0 2rem;
+}
+
+.arende-index h2 {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+}
+
+.arende-index__not {
+  margin: 0 0 0.9rem;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+/* Två–tre kolumner gör att alla ärenden syns utan att man behöver skrolla
+   förbi indexet för att komma åt det första ärendet. */
+.arende-index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 0.4rem;
+}
+
+.arende-index li[hidden] { display: none; }
+
+.arende-index a {
+  display: block;
+  height: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
+  border-radius: 4px;
+  background: #fafafa;
+  text-decoration: none;
+  color: inherit;
+}
+
+.arende-index a:hover,
+.arende-index a:focus-visible {
+  border-left-color: var(--color-accent);
+  background: #f2f6f9;
+}
+
+.arende-index a:hover .arende-index__titel { text-decoration: underline; }
+
+.arende-index__datum {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.arende-index__titel {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 0.1rem;
+}
+
+.arende-index__votering {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #2c5f3e;
+}
+
+.arende-index__votering::before { content: "▮ "; }
+
+/* Filterraden klistrar sig under headern så att man kan byta tema mitt i
+   listan utan att skrolla tillbaka. Därav också scroll-margin-top på
+   ärendena längre ner — annars hamnar rubriken bakom raden vid ankarhopp. */
+.arende-filter {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 0 1rem;
+  padding: 0.6rem 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.arende-filter[hidden] { display: none; }
+
+.arende-filter__teman {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.arende-filter button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.arende-filter button:hover { border-color: var(--color-accent); }
+
+.arende-filter button[aria-pressed="true"] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.arende-filter__antal {
+  opacity: 0.65;
+  font-variant-numeric: tabular-nums;
+}
+
+.arende-filter__rad {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.arende-filter__toggle[aria-pressed="true"] {
+  background: #2c5f3e;
+  border-color: #2c5f3e;
+}
+
+.arende-filter__status {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.arende-filter__topp {
+  margin-left: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.arende-filter__topp:hover { text-decoration: underline; }
+
+.arende {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 0 1.75rem;
+  scroll-margin-top: 6.5rem;
+}
+
+.arende[hidden] { display: none; }
+
+/* Ankarhopp landar mitt i en lång sida; tonplattan visar vilket ärende man
+   faktiskt hamnade på. Markeringen är en bakgrund plus en box-shadow-spread
+   i stället för en ram — inget av dem påverkar layouten, så sidan hoppar
+   inte i sidled när :target slår till. */
+.arende:target {
+  background: #f2f6f9;
+  box-shadow: 0 0 0 0.7rem #f2f6f9;
+  border-radius: 2px;
+}
+
+.arende__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.7rem;
+  margin: 0 0 0.4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.arende__datum {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.arende__paragraf { font-variant-numeric: tabular-nums; }
+
+.badge--votering {
+  background: #eef6f0;
+  border-color: #3a7d52;
+  color: #2c5f3e;
+}
+
+.arende h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.6rem;
+}
+
+.arende__ankare {
+  text-decoration: none;
+  color: var(--color-border);
+  font-weight: 400;
+  opacity: 0;
+}
+
+.arende:hover .arende__ankare,
+.arende__ankare:focus-visible { opacity: 1; }
+
+.arende__ankare:hover { color: var(--color-accent); }
+
+/* Utfallet är det läsaren letar efter och stod tidigare nere i en tabell.
+   Nu ligger det direkt under rubriken. */
+.arende__resultat {
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: #f4f6f5;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.arende__resultat-etikett {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin-right: 0.3rem;
+}
+
+.arende__forslagsstallare {
+  margin: 0 0 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.arende__kallor { margin-top: 1rem; }
+
+.arende__kallor h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  margin: 0 0 0.35rem;
+}
+
+.arende__kallor ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+  justify-items: start;
+}
+
+.arende__kallor .source-link { margin-top: 0; }
+
+.arende__debatt { margin: 0.5rem 0 0; }
+
+@media (max-width: 40rem) {
+  /* Chipsen får skrolla i sidled i stället för att bygga en tre rader hög
+     klistrad rad som äter halva mobilskärmen. */
+  .arende-filter__teman {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+  }
+
+  .arende-filter__teman button { flex: 0 0 auto; }
+
+  .arende { scroll-margin-top: 5rem; }
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.filter-bar button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  cursor: pointer;
+}
+
+.filter-bar button[aria-pressed="true"] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.policy-block {
+  border-top: 1px solid var(--color-border);
+  padding: 1.25rem 0;
+}
+
+.policy-block h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.stance-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.stance-card {
+  border-left: 4px solid var(--color-border);
+  padding: 0.5rem 0 0.5rem 0.9rem;
+  min-width: 0;
+}
+
+.stance-card.styre { border-left-color: var(--color-styre-border); }
+.stance-card.opposition { border-left-color: var(--color-opp-border); }
+
+.stance-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+}
+
+.stance-card__label {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Under 350 px är 18rem bredare än skärmen och kolumnen svämmar över.
+   (TASK.md, kvarvarande åtgärd från den strukna accordion-punkten.) */
+@media (max-width: 350px) {
+  .compare-grid {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+}
+
+/* Grid-items har min-width: auto, så den nowrap:ade käll-URL:en i .source-link
+   spränger annars spårbredden och kolumnerna lägger sig över varandra. */
+.compare-col {
+  min-width: 0;
+}
+
+.compare-col h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.compare-col--styre {
+  border-top: 3px solid var(--color-styre-border);
+  padding-top: 0.75rem;
+}
+
+.compare-col--opposition {
+  border-top: 3px solid var(--color-opp-border);
+  padding-top: 0.75rem;
+}
+
+.site-footer {
+  border-top: 3px solid var(--color-text);
+  margin-top: 3rem;
+  padding: 1.5rem 1.25rem 3rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.site-footer a { color: var(--color-muted); }
+
+.site-footer nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.candidate-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.candidate-list li {
+  border-left: 4px solid var(--color-border);
+  padding: 0.4rem 0 0.4rem 0.9rem;
+}
+
+.candidate-list .source-link {
+  margin-top: 0;
+  margin-left: 0.3rem;
+}
+
+.no-data {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.updated {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.bilagor {
+  margin-top: 1rem;
+}
+
+.bilagor h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.bilagor ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+}
+
+.bilagor li {
+  margin-bottom: 0.2rem;
+}
+
+.kronika-piece {
+  margin: 2rem 0 3rem;
+}
+
+.kronika-piece h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.kronika-byline {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
+
+.kronika-rebuttal {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  background: #f4f8fb;
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.kronika-rebuttal__label {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.badge--ai {
+  background: #f3ecfa;
+  border-color: #6b3fa0;
+  color: #6b3fa0;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.media-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  background: #fafafa;
+}
+
+.media-card h3 { margin: 0.5rem 0 0.35rem; font-size: 1rem; }
+.media-card p { margin: 0; font-size: 0.9rem; color: var(--color-muted); }
+.media-card audio { width: 100%; }
+
+.media-card--placeholder {
+  background: #fff;
+  border-style: dashed;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.media-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--color-border);
+  border-radius: 6px;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f5;
+}
+
+.media-card__image {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.ordlista dt {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.ordlista dt:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.ordlista dd {
+  margin: 0.4rem 0 0;
+}
+
+/* Felrapporteringskanalen (punkt 23). Rättelselänken i sidfoten ligger ovanför
+   sidfotsmenyn och är den enda länken där som får ha textfärg — den ska gå att
+   hitta utan att man letar. */
+.site-footer__ratta {
+  margin: 1rem 0 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  background: #fafbfc;
+}
+
+.site-footer__ratta strong { color: var(--color-text); }
+
+.site-footer__ratta a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.ratta-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin: 1.5rem 0 0.4rem;
+}
+
+.ratta-cta__knapp {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 6px;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ratta-cta__knapp:visited { color: #fff; }
+.ratta-cta__knapp:hover { background: #093a56; border-color: #093a56; }
+
+.ratta-cta__adress {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.ratta-cta__not {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0;
+}
+
+.ratta-policy li { margin-bottom: 0.6rem; }
+
+.rattelselogg {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.rattelselogg li {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-opp-border);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+}
+
+.rattelselogg p { margin: 0.3rem 0; }
+
+.rattelselogg__meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.rattelselogg__kalla { margin-left: 0.6rem; }
+
+.rattelselogg__fore { color: var(--color-muted); text-decoration-color: var(--color-border); }
+.rattelselogg__fore strong { color: var(--color-opp-border); }
+.rattelselogg__efter strong { color: #2c5f3e; }
+
+/* Siffer-callout (Fabel-granskningen §6): stort tal + en rad + källänk.
+   Används på startsidan och högst upp på temasidorna. */
+.nyckelfynd-rad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.nyckelfynd {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nyckelfynd__tal {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+
+.nyckelfynd__text {
+  font-size: 0.95rem;
+}
+
+.nyckelfynd .source-link,
+.nyckelfynd a {
+  font-size: 0.85rem;
+}
+
+/* 41-prickarsfiguren (Fabel-granskningen §1.5): fullmäktiges mandat som
+   prickar i tre färger. Ren HTML/CSS, ingen bild. */
+.mandatprickar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 1rem 0 0.4rem;
+  max-width: 26rem;
+}
+
+.mandatprickar span {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+}
+
+.prick--styre { background: var(--color-styre-border); }
+.prick--sd { background: var(--color-note-border); }
+.prick--ovriga { background: var(--color-opp-border); }
+
+.mandatprickar__legend {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0 0 1rem;
+}
+
+.mandatprickar__legend .prick-inline {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+}
+
+.badge--omdiskuterat {
+  background: var(--color-note-bg);
+  border-color: var(--color-note-border);
+  color: #7a6217;
+}
+
+/* Vägvalet (Fabel-granskningen §3): fast form för att göra konsekvenser
+   läsbara utan att tycka. Läget → pengarna → alternativen → handlingen →
+   frågan till läsaren. Punkt 1–4 är källbelagd fakta, punkt 5 är läsarens. */
+.vagval {
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.vagval > h3:first-child {
+  margin-top: 0;
+}
+
+.vagval dl {
+  margin: 0.5rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.vagval dt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+}
+
+.vagval dd {
+  margin: 0 0 0.4rem;
+}
+
+.vagval__fraga {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.7rem;
+  margin-top: 0.7rem;
+  font-style: italic;
+}

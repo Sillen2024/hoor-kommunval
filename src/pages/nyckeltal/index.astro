@@ -1,0 +1,937 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Jamforelse from "../../components/Jamforelse.astro";
+import koladaData from "../../data/kolada.json";
+import budgetData from "../../data/budget.json";
+import oppositionsbudgetar from "../../data/oppositionsbudgetar.json";
+import partierData from "../../data/partier.json";
+import opinionData from "../../data/opinion.json";
+
+// Höör i jämförelse, byggd helt på Koladas råvärden.
+//
+// LICENS (KOLADA_PLAN.md §2): råvärdena får märkas "Källa: Kolada". Snitt,
+// placeringar och differenser räknas här vid byggtid och märks som egen
+// bearbetning. Inget av det uträknade får tillskrivas Kolada.
+//
+// Ingenting på sidan är skrivet som en siffra i löptext. Varje tal läses ur
+// kolada.json, så att en revidering hos Kolada slår igenom överallt samtidigt
+// i stället för att lämna kvar en gammal siffra i en mening.
+
+type Serie = Record<string, Record<string, number>>;
+
+const HÖÖR = koladaData.hoor;
+const kommunnamn = koladaData.kommuner as Record<string, string>;
+const skane = koladaData.skane;
+const grannar = koladaData.grannar;
+const koladaAr = koladaData.ar;
+
+const kpi = (id: string) => {
+  const n = koladaData.nyckeltal.find((x) => x.kpi_id === id);
+  if (!n) throw new Error(`Nyckeltal ${id} saknas i kolada.json — kör scripts/hamta-kolada.mjs`);
+  return n;
+};
+
+const varde = (id: string, kod: string, ar: number): number | null =>
+  (kpi(id).varden as unknown as Serie)[kod]?.[String(ar)] ?? null;
+
+// Huvudår: senaste året som inte är preliminärt. Samma logik som på
+// budgetsidan — nettokostnadsavvikelserna fastställs 2026-09-30, efter
+// valdagen, så det senaste året är preliminärt hela valrörelsen igenom.
+const preliminaraAr = [
+  ...new Set(koladaData.nyckeltal.map((n) => n.preliminar_fran_ar).filter((a): a is number => a !== null)),
+];
+const senasteAr = koladaAr[koladaAr.length - 1];
+const huvudar = preliminaraAr.length > 0 ? Math.min(...preliminaraAr) - 1 : senasteAr;
+const arPreliminart = (id: string, ar: number) => {
+  const p = kpi(id).preliminar_fran_ar;
+  return p !== null && ar >= p;
+};
+
+const grupp = (nyckel: string) => {
+  const g = koladaData.grupper.find((x) => x.nyckel === nyckel);
+  if (!g) throw new Error(`Jämförelsegruppen ${nyckel} saknas i kolada.json`);
+  return g;
+};
+const gruppFor = (id: string) => grupp(kpi(id).grupp);
+
+// ——— Egna bearbetningar ————————————————————————————————————————————————
+//
+// Alla fyra funktionerna nedan producerar tal som INTE får anges med Kolada
+// som källa. De hålls samlade här så att gränsen är lätt att se i koden.
+
+const snitt = (id: string, koder: string[], ar: number): { varde: number | null; antal: number } => {
+  const v = koder.map((k) => varde(id, k, ar)).filter((x): x is number => x !== null);
+  return { varde: v.length === 0 ? null : v.reduce((s, x) => s + x, 0) / v.length, antal: v.length };
+};
+
+// Placering räknad från lägsta värdet. Riktningen står utskriven i texten
+// varje gång — "plats 3" utan riktning är meningslöst för ett tal som kan
+// vara både positivt och negativt och där lågt varken är bra eller dåligt.
+const placering = (id: string, koder: string[], ar: number) => {
+  const par = koder
+    .map((k) => ({ kod: k, v: varde(id, k, ar) }))
+    .filter((p): p is { kod: string; v: number } => p.v !== null)
+    .sort((a, b) => a.v - b.v);
+  const i = par.findIndex((p) => p.kod === HÖÖR);
+  return i === -1 ? null : { plats: i + 1, av: par.length };
+};
+
+const rader = (id: string, koder: string[], ar: number, medSnitt = false, snittEtikett = "Snitt") => {
+  const lista = koder
+    .map((k) => ({
+      namn: kommunnamn[k] ?? k,
+      varde: varde(id, k, ar),
+      markerad: k === HÖÖR,
+      preliminar: arPreliminart(id, ar) && varde(id, k, ar) !== null,
+    }))
+    .sort((a, b) => (a.varde ?? Infinity) - (b.varde ?? Infinity));
+  if (!medSnitt) return lista;
+  const s = snitt(id, koder, ar);
+  return [...lista, { namn: snittEtikett, varde: s.varde, harledd: true }];
+};
+
+// ——— Verksamheterna ————————————————————————————————————————————————————
+//
+// Samma sju som nämndramarna på budgetsidan avser, plus totalen. LSS ingår
+// inte i totalen (N00097 är "exkl. LSS"), så den raden kan inte summeras ihop
+// med de övriga — den står med för att LSS är en av socialnämndens tyngsta
+// verksamheter och skulle saknas helt annars.
+const verksamheter = [
+  { namn: "Förskola", procent: "N11024", mnkr: "N11038", iTotal: true },
+  { namn: "Fritidshem", procent: "N13020", mnkr: "N13032", iTotal: true },
+  { namn: "Grundskola", procent: "N15001", mnkr: "N15045", iTotal: true },
+  { namn: "Gymnasieskola", procent: "N17001", mnkr: "N17030", iTotal: true },
+  { namn: "Äldreomsorg", procent: "N20900", mnkr: "N20029", iTotal: true },
+  { namn: "Individ- och familjeomsorg", procent: "N30001", mnkr: "N30026", iTotal: true },
+  { namn: "LSS", procent: "N28018", mnkr: "N28021", iTotal: false },
+];
+
+const verksamhetsrader = verksamheter.map((v) => {
+  const g = gruppFor(v.procent);
+  return {
+    ...v,
+    hoor: varde(v.procent, HÖÖR, huvudar),
+    hoorMnkr: varde(v.mnkr, HÖÖR, huvudar),
+    skaneSnitt: snitt(v.procent, skane, huvudar).varde,
+    skanePlats: placering(v.procent, skane, huvudar),
+    grannSnitt: snitt(v.procent, grannar, huvudar).varde,
+    gruppNamn: g.etikett,
+    gruppSnitt: snitt(v.procent, g.medlemmar, huvudar).varde,
+    gruppPlats: placering(v.procent, [HÖÖR, ...g.medlemmar], huvudar),
+  };
+});
+
+// Sorterad så att den största avvikelsen nedåt hamnar först. Ordningen är en
+// egen bearbetning, men den ändrar inga siffror.
+const verksamhetsraderSorterad = [...verksamhetsrader].sort(
+  (a, b) => (a.hoor ?? Infinity) - (b.hoor ?? Infinity),
+);
+
+// ——— Övriga nyckeltal ——————————————————————————————————————————————————
+//
+// Här är riktningen inte neutral på samma sätt: ett högre meritvärde är
+// entydigt bättre, en längre väntetid entydigt sämre. Sidan skriver ändå inte
+// ut "bra"/"dåligt", bara placeringen och riktningen den räknats i.
+// decimaler sätts per nyckeltal: skattesatsen är 21,75 och blir fel som 21,8,
+// medan en kostnad per elev inte ska ha decimaler alls.
+const ovriga = [
+  { id: "N00901", decimaler: 2 },
+  { id: "N03106", decimaler: 1 },
+  { id: "N03001", decimaler: 1 },
+  { id: "N15507", decimaler: 1 },
+  { id: "N15428", decimaler: 1 },
+  { id: "N15027", decimaler: 0 },
+  { id: "N15033", decimaler: 1 },
+  { id: "N11008", decimaler: 0 },
+  { id: "N11102", decimaler: 1 },
+  { id: "U23401", decimaler: 0 },
+];
+
+// Varje övrigt nyckeltal redovisas för sitt eget senaste år med värde för
+// Höör. Att tvinga in dem i huvudåret skulle tömma tabellen på rader: t.ex.
+// meritvärde och väntetid har olika publiceringstakt.
+const ovrigaRader = ovriga.map((o) => {
+  const n = kpi(o.id);
+  const ar = [...koladaAr].reverse().find((a) => varde(o.id, HÖÖR, a) !== null) ?? huvudar;
+  return {
+    ...o,
+    titel: n.titel,
+    enhet: n.enhet,
+    ar,
+    preliminar: arPreliminart(o.id, ar),
+    hoor: varde(o.id, HÖÖR, ar),
+    skaneSnitt: snitt(o.id, skane, ar).varde,
+    skaneAntal: snitt(o.id, skane, ar).antal,
+    plats: placering(o.id, skane, ar),
+  };
+});
+
+// ——— Enskilda fynd, uträknade ur serien ————————————————————————————————
+
+// Lägsta kommunen, och lägsta som inte är Höör. Formuleringarna i texten
+// växlar på hoorLagst i stället för att slå fast en placering: en revidering
+// hos Kolada får inte lämna kvar "lägst i Skåne" i en mening där det slutat
+// stämma.
+const lagsta = (id: string, koder: string[], ar: number) => {
+  const sorterad = koder
+    .map((k) => ({ kod: k, v: varde(id, k, ar) }))
+    .filter((p): p is { kod: string; v: number } => p.v !== null)
+    .sort((a, b) => a.v - b.v);
+  return {
+    sorterad,
+    hoorLagst: sorterad[0]?.kod === HÖÖR,
+    lagstUtomHoor: sorterad.find((p) => p.kod !== HÖÖR)!,
+  };
+};
+
+// Totalen (N00097) är ett netto. Skillnaden mellan den och verksamheterna är
+// hela poängen med avsnittet, så summan och de två tyngsta posterna räknas
+// fram i stället för att skrivas ut — annars står fel verksamhetsnamn kvar i
+// meningen nästa gång Kolada reviderar.
+const iTotalen = verksamhetsrader.filter(
+  (v): v is typeof v & { hoorMnkr: number } => v.iTotal && v.hoorMnkr !== null,
+);
+const nettoSumma = iTotalen.reduce((s, v) => s + v.hoorMnkr, 0);
+const storstUpp = [...iTotalen].sort((a, b) => b.hoorMnkr - a.hoorMnkr)[0];
+const storstNed = [...iTotalen].sort((a, b) => a.hoorMnkr - b.hoorMnkr)[0];
+
+const totalHoor = varde("N00097", HÖÖR, huvudar);
+const totalPlats = placering("N00097", skane, huvudar);
+const totalSkane = snitt("N00097", skane, huvudar);
+const totalUnderNoll = skane
+  .map((k) => varde("N00097", k, huvudar))
+  .filter((v): v is number => v !== null && v < 0).length;
+
+// ——— Förskolan ————————————————————————————————————————————————————————
+//
+// Två mått byggda på olika sätt: N11024 är relativ mot en strukturberäknad
+// referenskostnad, N11008 är råa kronor per inskrivet barn utan någon modell
+// emellan. Att båda pekar ut samma kommun är hela skälet att visa dem
+// tillsammans — ett ensamt mått hade kunnat vara en artefakt i utjämningen.
+const KOSTNAD_BARN = "N11008";
+const BARN_ARSARB = "N11102";
+
+const forskolaSkanePlats = placering("N11024", skane, huvudar);
+const forskolaSkanePlatsPrel = placering("N11024", skane, senasteAr);
+const forskolaHoor = varde("N11024", HÖÖR, huvudar);
+const forskolaSkaneSnitt = snitt("N11024", skane, huvudar).varde;
+const forskolaLagst = lagsta("N11024", skane, huvudar);
+
+const kostnadHoor = varde(KOSTNAD_BARN, HÖÖR, huvudar);
+const kostnadPlats = placering(KOSTNAD_BARN, skane, huvudar);
+const kostnadSkane = snitt(KOSTNAD_BARN, skane, huvudar);
+const kostnadLagst = lagsta(KOSTNAD_BARN, skane, huvudar);
+// Avståndet till snittet, både i kronor och i procent. Procenten här är
+// Höörs avvikelse från länssnittet — inte samma sak som N11024, som mäter mot
+// en strukturberäknad referenskostnad. De två får inte förväxlas i texten.
+const kostnadDiff =
+  kostnadHoor !== null && kostnadSkane.varde !== null ? kostnadHoor - kostnadSkane.varde : null;
+const kostnadDiffProc =
+  kostnadHoor !== null && kostnadSkane.varde !== null
+    ? ((kostnadHoor - kostnadSkane.varde) / kostnadSkane.varde) * 100
+    : null;
+
+const tathetHoor = varde(BARN_ARSARB, HÖÖR, huvudar);
+const tathetPlats = placering(BARN_ARSARB, skane, huvudar);
+const tathetSkane = snitt(BARN_ARSARB, skane, huvudar);
+
+// Tidsserien. Bara år där avvikelsen finns — de tidigaste åren saknar värde
+// för flera av nyckeltalen och skulle ge rader med enbart streck.
+const forskolaSerie = koladaAr
+  .map((a) => ({
+    ar: a,
+    procent: varde("N11024", HÖÖR, a),
+    mnkr: varde("N11038", HÖÖR, a),
+    krBarn: varde(KOSTNAD_BARN, HÖÖR, a),
+    tathet: varde(BARN_ARSARB, HÖÖR, a),
+    preliminar: arPreliminart("N11024", a),
+  }))
+  .filter((r) => r.procent !== null);
+const forskolaForst = forskolaSerie[0];
+const forskolaSenastFastst = forskolaSerie.filter((r) => !r.preliminar).at(-1)!;
+
+// Den obrutna svansen: hur långt bakåt avvikelsen har vuxit varje år i följd.
+// Räknas fram i stället för att skrivas ut, eftersom ett enda reviderat år kan
+// bryta serien — då ska meningen ändra sig, inte bli fel. Serien spänner över
+// metodbytet 2019, så en påstådd trend måste hålla sig innanför det.
+const vaxandeFran = (() => {
+  let i = forskolaSerie.length - 1;
+  while (i > 0 && forskolaSerie[i].procent! < forskolaSerie[i - 1].procent!) i--;
+  return forskolaSerie[i];
+})();
+const vaxandeAntalAr = forskolaSerie.at(-1)!.ar - vaxandeFran.ar;
+
+// Hur många av de tre referenserna som ger samma bild. Räknas fram i stället
+// för att påstås, eftersom den är hela poängen med att visa tre.
+const forskolaUnderAllaSnitt = [
+  snitt("N11024", skane, huvudar).varde,
+  snitt("N11024", grannar, huvudar).varde,
+  snitt("N11024", gruppFor("N11024").medlemmar, huvudar).varde,
+].filter((s) => s !== null && (forskolaHoor ?? 0) < s).length;
+
+// Överlapp mellan Skåne och grupperna: hur många av gruppmedlemmarna som
+// också ligger i Skåne. Förklarar varför de tre referenserna skiljer sig.
+const gruppKoder = [...new Set(koladaData.grupper.flatMap((g) => g.medlemmar))];
+const gruppKoderISkane = gruppKoder.filter((k) => skane.includes(k));
+
+const sv = (v: number | null, d = 1) =>
+  v === null ? "–" : v.toLocaleString("sv-SE", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+// Kronor skrivs alltid ut med tusentalsavgränsare. 162 873 är läsbart,
+// 162873 är det inte, och sidan handlar om att göra tal begripliga.
+const kr = (v: number | null) => (v === null ? "–" : Math.round(v).toLocaleString("sv-SE"));
+
+// Beloppen är signerade i Kolada: minus betyder under referenskostnaden. I
+// löptext läser det bättre som "28,6 miljoner under" än "−28,6 miljoner", så
+// texten sätter riktningen med ord och tar absolutbeloppet här.
+const abs = (v: number | null, d = 1) => (v === null ? "–" : sv(Math.abs(v), d));
+const riktning = (v: number | null) => (v === null ? "" : v < 0 ? "under" : "över");
+
+const kallaUrl = (ids: string[], koder: string[], ar: number[]) =>
+  `https://api.kolada.se/v3/data/kpi/${ids.join(",")}/municipality/${koder.join(",")}/year/${ar.join(",")}`;
+
+// ——— Vägvalet: förskolan (Fabel-granskningen §3) ———————————————————————
+// Alternativen och handlingen läses ur budget- och oppositionsdatan, så att
+// blocket följer med om siffrorna ändras.
+const partyName = (id: string) => partierData.partier.find((p) => p.id === id)?.namn ?? id.toUpperCase();
+const bunHojningar = oppositionsbudgetar.forslag
+  .filter((f) => f.namnd_diff_tkr && (f.namnd_diff_tkr as Record<string, number>)["Barn- och utbildningsnämnd"] > 0)
+  .map((f) => ({
+    ar: f.ar,
+    parti: f.gemensamt_med ? `${partyName(f.parti_id)} och ${partyName(f.gemensamt_med)}` : partyName(f.parti_id),
+    mnkr: (f.namnd_diff_tkr as Record<string, number>)["Barn- och utbildningsnämnd"] / 1000,
+  }))
+  .sort((a, b) => b.mnkr - a.mnkr);
+const storstaBunHojning = bunHojningar[0];
+const budgetVoteringar = budgetData.beslut.filter((b) => b.rostning);
+const jaRoster = [...new Set(budgetVoteringar.map((b) => b.rostning!.ja))];
+const nejRoster = [...new Set(budgetVoteringar.map((b) => b.rostning!.nej))];
+
+// Opinionen i samma vägval: SkD:s Novus-mätning. Talen läses ur opinion.json,
+// och jämförelsen med skola/äldrevård renderas bara om den stämmer i datan.
+const novus = opinionData.undersokningar.find((u) => u.id === "skd-novus-2026-besparingar");
+if (!novus) throw new Error("Novus-mätningen saknas i opinion.json");
+const novusBarnomsorg = novus.hoor_bottenval_procent["Barnomsorg"];
+const novusLikaLagt =
+  novus.hoor_bottenval_procent["Skola"] === novusBarnomsorg &&
+  novus.hoor_bottenval_procent["Äldrevård"] === novusBarnomsorg;
+const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "numeric" }).format(
+  new Date(novus.publicerad),
+);
+---
+
+<Layout
+  title="Nyckeltal — Höör i jämförelse"
+  description={`Höörs kostnader och resultat jämförda med Skånes ${skane.length} kommuner, grannkommunerna och Koladas officiella "Liknande kommuner"-grupper. Alla siffror ur Koladas öppna API.`}
+  image="/og-nyckeltal-v2.png"
+>
+  <article>
+    <h1>Nyckeltal — Höör i jämförelse</h1>
+    {forskolaLagst.hoorLagst && kostnadLagst.hoorLagst ? (
+      <p class="lead">
+        Höörs förskola kostar minst i hela Skåne — oavsett hur man räknar. Det är det tydligaste som syns
+        när Höörs siffror ställs mot andra kommuners. Den här sidan visar var Höör lägger mer än
+        jämförbara kommuner, var kommunen lägger mindre — och jämfört med vilka.
+      </p>
+    ) : (
+      <p class="lead">
+        Den här sidan ställer Höörs kostnader och resultat mot tre referenser samtidigt — Skånes kommuner,
+        grannkommunerna och de mest jämförbara kommunerna — och visar när de säger samma sak och när de
+        inte gör det.
+      </p>
+    )}
+
+    <div class="not-box">
+      <p>
+        <strong>Det här är utfall, inte politik.</strong> Siffrorna visar vad verksamheten kostade och
+        gav, inte vad något parti vill. De kommer ur <a href="#kallor">Kolada</a>, den nationella
+        statistikdatabasen — inte ur kommunens eller något partis material — och Höör räknas på exakt
+        samma sätt som alla andra kommuner.
+      </p>
+    </div>
+
+    <p class="updated" id="legend">
+      Läsanvisning: <strong>plats 1 = lägst värde i Skåne.</strong> Lågt är inte automatiskt bra eller
+      dåligt. Snitt och placeringar är uträknade här ur Koladas råvärden och bär det streckade märket;
+      varje enskild kommunsiffra är hämtad som den är och länkar till API-anropet.
+    </p>
+
+    <nav class="sidnav" aria-label="Innehåll på sidan">
+      <ul>
+        <li><a href="#forskola">Förskolan</a></li>
+        <li><a href="#skane">Höör i Skåne</a></li>
+        <li><a href="#grannar">Höör mot grannkommunerna</a></li>
+        <li><a href="#liknande">Höör mot liknande kommuner</a></li>
+        <li><a href="#ovriga">Övriga nyckeltal</a></li>
+        <li><a href="#kallor">Var siffrorna kommer ifrån</a></li>
+      </ul>
+    </nav>
+
+    <details class="not-box" id="tre-referenser">
+      <summary>Vad jämförs Höör med — och vad är en referenskostnad?</summary>
+      <p>
+        <strong>Skånes {skane.length} kommuner</strong> är den geografiska referensen. Den är lätt att
+        kontrollera och innehåller allt från Malmö till Perstorp — vilket också är dess svaghet: en kommun
+        med {sv(varde("N00901", HÖÖR, senasteAr), 2)} i skattesats och några tusen invånare jämförs med en
+        storstad.
+      </p>
+      <p>
+        <strong>Grannkommunerna</strong> — {grannar.map((k) => kommunnamn[k]).join(", ")} — är den referens
+        en Höörsbo faktiskt använder. Den är inte metodiskt matchad på någonting alls. Den står med ändå,
+        därför att det är den jämförelse som görs i verkligheten och den bör då göras med rätt siffror.
+      </p>
+      <p>
+        <strong>Koladas "Liknande kommuner"</strong> är den metodiskt starkaste. RKA matchar varje kommun
+        mot sju andra utifrån struktur — befolkningsstorlek, andel barn eller äldre, skattekraft, geografi
+        — och gör det <em>per verksamhet</em>. Därför är Höörs förskolegrupp inte samma kommuner som Höörs
+        äldreomsorgsgrupp. Höör ingår inte i sina egna grupper, så ett gruppsnitt är ett snitt av sju andra
+        kommuner. Av de {gruppKoder.length} kommuner som ingår i Höörs {koladaData.grupper.length} grupper
+        ligger bara {gruppKoderISkane.length} i Skåne — den strukturella likheten följer inte länsgränsen.
+      </p>
+      <p>
+        De tre svarar inte alltid lika. När de gör det är slutsatsen starkare än när bara en av dem gör
+        det, och sidan visar därför alla tre i stället för att välja den som ger tydligast utslag.
+      </p>
+      <p>
+        <strong>Referenskostnaden är inte en rekommendation.</strong> Den säger inte vad en kommun
+        <em>borde</em> lägga. Den är vad verksamheten faktiskt kostar i riket i genomsnitt, omräknat till
+        den enskilda kommunens struktur — åldersfördelning, tätortsgrad, socioekonomi, geografi. Måttet
+        visar var Höör ligger i förhållande till hur andra kommuner gör — inte i förhållande till vad som
+        vore rätt. Det betyder också att invändningen "men vi har ju en annan befolkning" redan är
+        besvarad: att Höör har många äldre höjer referenskostnaden för äldreomsorgen, att kommunen har få
+        små barn sänker den för förskolan. En avvikelse är det som återstår <em>efter</em> att strukturen
+        räknats bort. Mer i <a href="/ordlista/#referenskostnad">ordlistan</a>.
+      </p>
+    </details>
+
+    <section>
+      <h2 id="forskola">Förskolan</h2>
+      <p>
+        Förskolan är det tydligaste utslaget i hela materialet, och det enda där två mått byggda på helt
+        olika sätt pekar ut Höör som lägst i Skåne. Därför får den ett eget avsnitt.
+      </p>
+
+      <h3>Mått 1: avvikelse från den egna referenskostnaden</h3>
+      <Jamforelse
+        rubrik={`Nettokostnadsavvikelse förskola, ${huvudar}`}
+        enhet="procent"
+        rader={rader("N11024", skane, huvudar, true, `Snitt Skåne (${snitt("N11024", skane, huvudar).antal} kommuner)`)}
+        beskrivning="Hur mycket över eller under sin egen referenskostnad varje kommun ligger (vad det betyder står i vecket ovan). Sorterad från lägst till högst."
+        kallaUrl={kallaUrl(["N11024"], skane, [huvudar])}
+        kallaText={`Källa: Kolada — N11024 för Skånes kommuner ${huvudar}`}
+        bearbetning="snittraden är uträknad här"
+      />
+      <p>
+        {huvudar} låg Höör på {sv(forskolaHoor)} procent, plats {forskolaSkanePlats?.plats} av
+        {" "}{forskolaSkanePlats?.av}, mot ett Skånesnitt på
+        {" "}{sv(forskolaSkaneSnitt)} procent. Det motsvarar {abs(varde("N11038", HÖÖR, huvudar))} miljoner
+        kronor {riktning(varde("N11038", HÖÖR, huvudar))} referenskostnaden.
+        {" "}{forskolaLagst.hoorLagst ? "Näst lägst" : "Lägst"} i Skåne ligger
+        {" "}{kommunnamn[forskolaLagst.lagstUtomHoor.kod]} på {sv(forskolaLagst.lagstUtomHoor.v)} procent.
+        {forskolaSkanePlatsPrel && (
+          <>
+            {" "}I den preliminära siffran för {senasteAr} är Höörs placering
+            {" "}{forskolaSkanePlatsPrel.plats} av {forskolaSkanePlatsPrel.av}, på
+            {" "}{sv(varde("N11024", HÖÖR, senasteAr))} procent — ett värde som fastställs
+            {" "}{kpi("N11024").publicering.publication_date}, alltså efter valdagen.
+          </>
+        )}
+      </p>
+
+      <h3>Mått 2: kronor per barn, utan modell emellan</h3>
+      <p>
+        Måttet ovan är relativt: det mäter mot en referenskostnad som räknats fram för just Höör. En kommun
+        med få små barn kan ha låg referenskostnad och ändå hamna på plus. Nyckeltalet nedan har ingen
+        modell emellan — det är kostnaden delad med antalet inskrivna barn.
+      </p>
+      <Jamforelse
+        rubrik={`Kostnad förskola, ${huvudar}`}
+        enhet="kronor per inskrivet barn"
+        decimaler={0}
+        rader={rader(KOSTNAD_BARN, skane, huvudar, true, `Snitt Skåne (${kostnadSkane.antal} kommuner)`)}
+        beskrivning="Sorterad från lägst till högst. Skalan börjar på noll — en avkortad skala skulle överdriva skillnaderna mellan kommunerna."
+        kallaUrl={kallaUrl([KOSTNAD_BARN], skane, [huvudar])}
+        kallaText={`Källa: Kolada — ${KOSTNAD_BARN} för Skånes kommuner ${huvudar}`}
+        bearbetning="snittraden är uträknad här"
+      />
+      <p>
+        Höör lade {kr(kostnadHoor)} kronor per inskrivet barn {huvudar} — plats {kostnadPlats?.plats} av
+        {" "}{kostnadPlats?.av}. Skånesnittet var {kr(kostnadSkane.varde)} kronor, alltså
+        {" "}{abs(kostnadDiff, 0)} kronor {riktning(kostnadDiff)} snittet per barn, eller
+        {" "}{abs(kostnadDiffProc)} procent. {kostnadLagst.hoorLagst
+          ? `Närmast Höör ligger ${kommunnamn[kostnadLagst.lagstUtomHoor.kod]} på ${kr(kostnadLagst.lagstUtomHoor.v)} kronor.`
+          : `Lägst i Skåne ligger ${kommunnamn[kostnadLagst.sorterad[0].kod]} på ${kr(kostnadLagst.sorterad[0].v)} kronor.`}
+      </p>
+      {forskolaLagst.hoorLagst && kostnadLagst.hoorLagst && (
+        <p>
+          <strong>Det är därför fyndet är robust.</strong> De två måtten är konstruerade på olika sätt — ett
+          relativt mot en strukturberäknad referenskostnad, ett i råa kronor per barn utan någon modell
+          emellan — och båda placerar Höör lägst av Skånes kommuner. En enskild låg siffra kan vara en
+          artefakt i utjämningsmodellen. Två oberoende mått som pekar åt samma håll är det inte.
+        </p>
+      )}
+
+      <h3>Utvecklingen över tid</h3>
+      <p>
+        Avvikelsen är inte ett enskilt år. Kostnaden per barn stiger i Höör — men långsammare än i resten av
+        Skåne, år efter år, vilket är vad den växande avvikelsen mäter.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">År</th>
+              <th scope="col">Avvikelse %</th>
+              <th scope="col">Mnkr</th>
+              <th scope="col">Kr/inskrivet barn</th>
+              <th scope="col">Barn per årsarbetare</th>
+            </tr>
+          </thead>
+          <tbody>
+            {forskolaSerie.map((r) => (
+              <tr>
+                <th scope="row">{r.ar}{r.preliminar ? "*" : ""}</th>
+                <td>{sv(r.procent)}</td>
+                <td>{sv(r.mnkr)}</td>
+                <td>{kr(r.krBarn)}</td>
+                <td>{sv(r.tathet, 2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <a
+        class="source-link"
+        href={kallaUrl(["N11024", "N11038", KOSTNAD_BARN, BARN_ARSARB], [HÖÖR], forskolaSerie.map((r) => r.ar))}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Källa: Kolada — förskolenyckeltalen för Höör {forskolaForst.ar}–{forskolaSerie.at(-1)!.ar}
+      </a>
+      <p class="updated">
+        * Preliminärt värde. Gäller avvikelsen, miljonbeloppet och kostnaden per barn — barn per
+        årsarbetare är fastställt för samtliga år. Beräkningssättet för nettokostnadsavvikelse lades om
+        2019, så år före och efter är inte helt jämförbara.
+      </p>
+      <p>
+        Mellan {forskolaForst.ar} och {forskolaSenastFastst.ar} gick avvikelsen från
+        {" "}{sv(forskolaForst.procent)} till {sv(forskolaSenastFastst.procent)} procent, och från
+        {" "}{abs(forskolaForst.mnkr)} till {abs(forskolaSenastFastst.mnkr)} miljoner kronor
+        {" "}{riktning(forskolaSenastFastst.mnkr)} referenskostnaden. Den jämförelsen spänner över
+        metodbytet och ska läsas med noten ovan i minnet.
+        {vaxandeAntalAr >= 3 && (
+          <>
+            {" "}Inom en och samma metod är mönstret entydigt: sedan {vaxandeFran.ar} har avvikelsen vuxit
+            varje år utan avbrott, {vaxandeAntalAr} år i rad
+            {forskolaSerie.at(-1)!.preliminar ? " om det preliminära sista året räknas med" : ""}.
+          </>
+        )}
+      </p>
+
+      <h3>Vad statistiken inte svarar på</h3>
+      <p>
+        En invändning som ligger nära till hands är att barngrupperna är större i Höör. Den håller inte som
+        huvudförklaring. Barn per årsarbetare {huvudar} var {sv(tathetHoor, 2)} i Höör mot
+        {" "}{sv(tathetSkane.varde, 2)} i Skånesnitt — plats {tathetPlats?.plats} av {tathetPlats?.av} —
+        något över medel men långt ifrån extremt. Några procents
+        högre barnantal per anställd förklarar inte {abs(kostnadDiffProc)} procent lägre kostnad per barn.
+      </p>
+      <Jamforelse
+        rubrik={`Barn per årsarbetare i förskolan, ${huvudar}`}
+        enhet="barn"
+        decimaler={2}
+        rader={rader(BARN_ARSARB, skane, huvudar, true, `Snitt Skåne (${tathetSkane.antal} kommuner)`)}
+        beskrivning="Sorterad från lägst till högst. Färre barn per årsarbetare betyder högre personaltäthet."
+        kallaUrl={kallaUrl([BARN_ARSARB], skane, [huvudar])}
+        kallaText={`Källa: Kolada — ${BARN_ARSARB} för Skånes kommuner ${huvudar}`}
+        bearbetning="snittraden är uträknad här"
+      />
+      <p>
+        Var resten av skillnaden ligger säger den här statistiken inte. Personalens utbildningsnivå,
+        lokalkostnader, enheternas storlek och andelen fristående förskolor är alla tänkbara delförklaringar,
+        och sajten gissar inte mellan dem.
+      </p>
+      <div class="not-box">
+        <p>
+          <strong>Siffran avgör inte tolkningen.</strong> Att Höör lägger minst per barn i Skåne kan läsas
+          som en effektiv förskola, som en underfinansierad förskola, eller som en strukturfaktor
+          utjämningsmodellen missar. Statistiken skiljer inte mellan de tre. Det är en politisk fråga, och
+          den ska ställas till partierna — inte besvaras av den här sidan. Vad partierna faktiskt har sagt
+          och röstat om finns under <a href="/partier/">Partierna</a> och
+          {" "}<a href="/arenden/">Ärendena</a>.
+        </p>
+      </div>
+
+      <div class="vagval">
+        <h3>Vägvalet: förskolan</h3>
+        <dl>
+          <dt>Läget</dt>
+          <dd>
+            Höörs förskola kostade {kr(kostnadHoor)} kronor per inskrivet barn {huvudar} —
+            {forskolaLagst.hoorLagst && kostnadLagst.hoorLagst ? " lägst i Skåne på båda måtten ovan" : ` plats ${kostnadPlats?.plats} av ${kostnadPlats?.av} i Skåne`}.
+          </dd>
+          <dt>Pengarna</dt>
+          <dd>
+            Avståndet till referenskostnaden {huvudar}: {abs(varde("N11038", HÖÖR, huvudar))} miljoner
+            kronor {riktning(varde("N11038", HÖÖR, huvudar))}.
+          </dd>
+          <dt>Alternativen</dt>
+          <dd>
+            Flera oppositionspartier har föreslagit högre ramar för barn- och utbildningsnämnden i sina
+            egna budgetar — störst var {storstaBunHojning.parti} med {sv(storstaBunHojning.mnkr)} miljoner
+            kronor mer än styret inför {storstaBunHojning.ar}. Styret har prioriterat sänkt skatt, som
+            kostar kommunen i samma storleksordning per år — räkningen står på{" "}
+            <a href="/budget/#vad-kostar-80-ore">budgetsidan</a>.
+          </dd>
+          <dt>Handlingen</dt>
+          <dd>
+            I {budgetVoteringar.length === 3 ? "alla tre" : budgetVoteringar.length} budgetvoteringarna
+            vann styrets budget{jaRoster.length === 1 && nejRoster.length === 1
+              ? ` med ${jaRoster[0]} röster mot ${nejRoster[0]}`
+              : ""} — SD:s grupp röstade med styret. Se{" "}
+            <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+          </dd>
+          <dt>Opinionen</dt>
+          <dd>
+            {novus.medium} lät Novus fråga {novus.svarande_hoor.toLocaleString("sv-SE")} Höörsbor:
+            "{novus.fraga}" — högst {novus.max_val} val av {novus.antal_alternativ} områden.
+            {" "}{novusBarnomsorg} procent av de svarande valde barnomsorgen.
+            {novusLikaLagt && " Skolan och äldrevården fick lika få kryss."}{" "}
+            <a href={novus.url} target="_blank" rel="noopener noreferrer">
+              {novus.medium}, {novusManad}
+            </a>{novus.betalvagg ? " (betalvägg)" : ""}.
+          </dd>
+        </dl>
+        <p class="vagval__fraga">
+          Frågan till dig: vad väger tyngst — lägre skatt, eller mer resurser per förskolebarn?
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 id="skane">Höör i Skåne — totalt och per verksamhet</h2>
+      <p>
+        Hur mycket över eller under sin referenskostnad ligger Höör, allt sammanvägt? Noll betyder att
+        kommunen lägger precis vad strukturen motiverar.
+      </p>
+
+      <Jamforelse
+        rubrik={`Nettokostnadsavvikelse totalt (exkl. LSS), ${huvudar}`}
+        enhet="procent"
+        rader={rader("N00097", skane, huvudar, true, `Snitt Skåne (${snitt("N00097", skane, huvudar).antal} kommuner)`)}
+        beskrivning="Alla verksamheter utom LSS, sammanvägt. Sorterad från lägst till högst — minus betyder att kommunen lägger mindre än referenskostnaden, plus att den lägger mer."
+        kallaUrl={kallaUrl(["N00097"], skane, [huvudar])}
+        kallaText={`Källa: Kolada — N00097 för Skånes kommuner ${huvudar}`}
+        bearbetning="snittraden är uträknad här"
+      />
+
+      <h3>Totalen är den minst intressanta siffran på sidan</h3>
+      <p>
+        Höörs {sv(totalHoor)} procent är plats {totalPlats?.plats} av {totalPlats?.av} — mitt i högen. Skånesnittet är {sv(totalSkane.varde)} procent, och {totalUnderNoll} av
+        {" "}{totalSkane.antal} skånska kommuner ligger under noll. På totalen är Höör en helt vanlig
+        skånsk kommun.
+      </p>
+      <p>
+        Det beror på att totalen är ett <strong>netto</strong>. Verksamheterna som ingår summerar
+        till {abs(nettoSumma)} miljoner kronor {riktning(nettoSumma)} referenskostnaden — men den
+        summan innehåller {storstUpp.namn.toLowerCase()} på {abs(storstUpp.hoorMnkr)} miljoner
+        {" "}{riktning(storstUpp.hoorMnkr)} och {storstNed.namn.toLowerCase()} på
+        {" "}{abs(storstNed.hoorMnkr)} miljoner {riktning(storstNed.hoorMnkr)}. De två tar nästan ut
+        varandra. Ett litet netto betyder alltså inte att kommunen ligger nära referenskostnaden överallt —
+        det kan lika gärna betyda att den ligger långt ifrån den åt båda hållen samtidigt. Tabellen nedan
+        är därför den som säger något, inte stapeln ovanför.
+      </p>
+
+      <h3>Alla verksamheter, {huvudar}</h3>
+      <p>
+        Samma mått för de sju verksamheter som nämndramarna i <a href="/budget/#referenskostnad">budgeten</a>
+        {" "}avser, i procent och i miljoner kronor. LSS ingår inte i totalen ovan och kan inte summeras ihop med de
+        övriga.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Verksamhet</th>
+              <th scope="col">Höör %</th>
+              <th scope="col">Höör mnkr</th>
+              <th scope="col">Snitt Skåne</th>
+              <th scope="col">Plats i Skåne</th>
+            </tr>
+          </thead>
+          <tbody>
+            {verksamhetsraderSorterad.map((v) => (
+              <tr>
+                <th scope="row">{v.namn}{v.iTotal ? "" : " (ej i totalen)"}</th>
+                <td>{sv(v.hoor)}</td>
+                <td>{sv(v.hoorMnkr)}</td>
+                <td>{sv(v.skaneSnitt)}</td>
+                <td>{v.skanePlats ? `${v.skanePlats.plats} av ${v.skanePlats.av}` : "–"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <details class="not-box">
+        <summary>Samma verksamheter mot grannkommunerna och "Liknande kommuner"</summary>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Verksamhet</th>
+                <th scope="col">Höör %</th>
+                <th scope="col">Snitt grannar</th>
+                <th scope="col">Snitt liknande</th>
+              </tr>
+            </thead>
+            <tbody>
+              {verksamhetsraderSorterad.map((v) => (
+                <tr>
+                  <th scope="row">{v.namn}</th>
+                  <td>{sv(v.hoor)}</td>
+                  <td>{sv(v.grannSnitt)}</td>
+                  <td>{sv(v.gruppSnitt)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Vilka kommuner som ingår i referenserna står i avsnitten om{" "}
+          <a href="#grannar">grannkommunerna</a> och <a href="#liknande">liknande kommuner</a> nedan.
+        </p>
+      </details>
+      <a
+        class="source-link"
+        href={kallaUrl(verksamheter.flatMap((v) => [v.procent, v.mnkr]), [HÖÖR], [huvudar])}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Källa: Kolada — nettokostnadsavvikelse i procent och miljoner kronor för Höör {huvudar}
+      </a>
+    </section>
+
+    <section>
+      <h2 id="grannar">Höör mot grannkommunerna</h2>
+      <p>
+        {grannar.map((k) => kommunnamn[k]).join(", ")} och Höör. Ingen av dem är strukturellt matchad mot
+        Höör — {kommunnamn[grannar[1]]} är betydligt större, {kommunnamn[grannar[0]]} betydligt mindre —
+        men det är de kommuner en Höörsbo har egen erfarenhet av.
+      </p>
+
+      <Jamforelse
+        rubrik={`Nettokostnadsavvikelse förskola, ${huvudar}`}
+        enhet="procent"
+        rader={rader("N11024", [HÖÖR, ...grannar], huvudar, true, "Snitt grannar (utan Höör)")}
+        kallaUrl={kallaUrl(["N11024"], [HÖÖR, ...grannar], [huvudar])}
+        kallaText={`Källa: Kolada — N11024 för Höör och grannkommunerna ${huvudar}`}
+        bearbetning="snittraden är uträknad här (utan Höör)"
+      />
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Verksamhet</th>
+              <th scope="col">Höör</th>
+              {grannar.map((k) => <th scope="col">{kommunnamn[k]}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {verksamhetsraderSorterad.map((v) => (
+              <tr>
+                <th scope="row">{v.namn}</th>
+                <td><strong>{sv(v.hoor)}</strong></td>
+                {grannar.map((k) => <td>{sv(varde(v.procent, k, huvudar))}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <a
+        class="source-link"
+        href={kallaUrl(verksamheter.map((v) => v.procent), [HÖÖR, ...grannar], [huvudar])}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Källa: Kolada — nettokostnadsavvikelse i procent, Höör och grannkommunerna {huvudar}
+      </a>
+    </section>
+
+    <section>
+      <h2 id="liknande">Höör mot liknande kommuner</h2>
+      <p>
+        Koladas officiella "Liknande kommuner"-grupper. Varje grupp består av sju kommuner som RKA matchat
+        strukturellt mot Höör för just den verksamheten, och Höör ingår inte själv. Grupperna har olika
+        medlemmar därför att det som gör en kommun jämförbar i förskolan — andelen små barn, tätortsgrad —
+        inte är detsamma som det som gör den jämförbar i äldreomsorgen.
+      </p>
+
+      <Jamforelse
+        rubrik={`Nettokostnadsavvikelse förskola, ${huvudar}`}
+        enhet="procent"
+        rader={rader("N11024", [HÖÖR, ...gruppFor("N11024").medlemmar], huvudar, true, "Snitt gruppen (utan Höör)")}
+        beskrivning={gruppFor("N11024").titel}
+        kallaUrl={kallaUrl(["N11024"], [HÖÖR, ...gruppFor("N11024").medlemmar], [huvudar])}
+        kallaText={`Källa: Kolada — N11024 för Höör och gruppen ${huvudar}`}
+        bearbetning="snittraden är uträknad här (utan Höör)"
+      />
+
+      <p>
+        Grupperna och deras medlemmar, som de såg ut när datan hämtades
+        ({koladaData.hamtad}). RKA gör om matchningen med jämna mellanrum, och gruppens namn innehåller
+        därför det år den gäller.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Grupp</th>
+              <th scope="col">Kommuner</th>
+            </tr>
+          </thead>
+          <tbody>
+            {koladaData.grupper.map((g) => (
+              <tr>
+                <th scope="row">
+                  <a href={`https://api.kolada.se/v3/municipality_groups/${g.grupp_id}`} target="_blank" rel="noopener noreferrer">
+                    {g.etikett}
+                  </a>
+                </th>
+                <td>{g.medlemmar.map((k) => kommunnamn[k]).join(", ")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <a
+        class="source-link"
+        href="https://api.kolada.se/v3/municipality_groups?title=H%C3%B6%C3%B6r"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Källa: Kolada — Höörs jämförelsegrupper
+      </a>
+
+      <h3>Höörs placering i sin egen grupp</h3>
+      <p>
+        Åtta kommuner per rad: Höör plus gruppens sju.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Verksamhet</th>
+              <th scope="col">Höör</th>
+              <th scope="col">Snitt gruppen</th>
+              <th scope="col">Plats av 8</th>
+            </tr>
+          </thead>
+          <tbody>
+            {verksamhetsraderSorterad.map((v) => (
+              <tr>
+                <th scope="row">{v.namn}</th>
+                <td>{sv(v.hoor)}</td>
+                <td>{sv(v.gruppSnitt)}</td>
+                <td>{v.gruppPlats ? `${v.gruppPlats.plats} av ${v.gruppPlats.av}` : "–"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {forskolaUnderAllaSnitt === 3 && (
+        <p>
+          Förskolan är det enda måttet där alla tre referenserna pekar åt samma håll: Höör ligger under
+          Skånesnittet, under grannkommunernas snitt och under snittet för de sju kommuner RKA bedömt som
+          strukturellt mest lika Höör i just förskolan. Vad det beror på framgår inte av statistiken, och
+          sidan gissar inte.
+        </p>
+      )}
+    </section>
+
+    <section>
+      <h2 id="ovriga">Övriga nyckeltal</h2>
+      <p>
+        Kostnader, resultat och ekonomiska mått, jämförda med Skånes kommuner. Varje rad visas för det
+        senaste år som har ett värde för Höör — nyckeltalen publiceras i olika takt, och att tvinga in dem
+        i samma år skulle tömma tabellen på rader.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Nyckeltal</th>
+              <th scope="col">Enhet</th>
+              <th scope="col">År</th>
+              <th scope="col">Höör</th>
+              <th scope="col">Snitt Skåne</th>
+              <th scope="col">Plats</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ovrigaRader.map((o) => (
+              <tr>
+                <th scope="row">
+                  <a href={kallaUrl([o.id], skane, [o.ar])} target="_blank" rel="noopener noreferrer">{o.titel}</a>
+                </th>
+                <td>{o.enhet}</td>
+                <td>{o.ar}{o.preliminar ? "*" : ""}</td>
+                <td><strong>{sv(o.hoor, o.decimaler)}</strong></td>
+                <td>{sv(o.skaneSnitt, o.decimaler)}</td>
+                <td>{o.plats ? `${o.plats.plats} av ${o.plats.av}` : "–"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="updated">
+        * Preliminärt värde, ännu inte fastställt av Kolada. Nyckeltalens titlar länkar till API-anropet
+        som hämtade raden. Att antalet kommuner i "Plats av" är färre än {skane.length} betyder att
+        nyckeltalet saknas för någon kommun det året, inte att den är utelämnad här.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="kallor">Var siffrorna kommer ifrån</h2>
+      <p>
+        Alla värden är hämtade ur Koladas öppna API {koladaData.hamtad} och ligger sparade som en fil i
+        sajtens kod. Sidan anropar alltså inte Kolada när du besöker den — du ser exakt de siffror som
+        fanns vid hämtningen, och sidan fungerar även om Kolada ligger nere. Metoden, hela nyckeltalslistan
+        och licensvillkoren står under <a href="/om-urvalet/#kolada">Om urvalet</a>. Begrepp som
+        {" "}<a href="/ordlista/#nettokostnadsavvikelse">nettokostnadsavvikelse</a> och
+        {" "}<a href="/ordlista/#referenskostnad">referenskostnad</a> förklaras i
+        {" "}<a href="/ordlista/">ordlistan</a>.
+      </p>
+      <p class="updated">
+        Kolada reviderar publicerade värden utan att avisera det. Hämtningsskriptet skriver ut en diff mot
+        föregående körning, så att en ändrad siffra syns i stället för att tyst rätta sig själv.
+      </p>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .sidnav {
+    margin: 1.5rem 0 2rem;
+    padding: 0.8rem 1rem;
+    background: #fafafa;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+  }
+
+  .sidnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.88rem;
+  }
+
+  section {
+    margin-top: 2.5rem;
+  }
+</style>

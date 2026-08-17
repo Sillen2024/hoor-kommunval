@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Om mig"
+  description="Sajten är skapad av Jonas Blomgren, boende i Höör. Vem han är, varför sajten byggdes och vilken teknik den bygger på."
+>
+  <h1>Om mig</h1>
+  <p class="lead">
+    Kort presentation av vem som ligger bakom sajten, varför den byggdes, och vilken teknik den är gjord med.
+  </p>
+
+  <h2>Vem är jag?</h2>
+  <p>
+    Jag heter Jonas Blomgren och bor här i Höör, med fru och två barn.
+  </p>
+
+  <h2>Varför gjorde jag den här sidan?</h2>
+  <p>
+    Drivkraften var i grunden AI-nyfikenhet — sajten är byggd med Claude Code och Gemini (via verktyget
+    Antigravity), som ett sätt att testa vad AI-agenter faktiskt klarar av när de får samla in, strukturera och
+    källbelägga ett större material på egen hand.
+  </p>
+  <p>
+    Men det handlar också om att samhällsfrågor är viktiga, och att valen vi har här i Höör kan kännas ganska
+    trista: ett val mellan ett sittande blått styre eller en opposition som inte är enig om vad den vill i
+    stället, utan att särskilt mycket av substansen bakom de valen faktiskt blir synlig för väljarna. Tanken med sajten är att försöka väcka debatt
+    och medvetenhet genom att paketera det material som AI-agenterna samlat in och organiserat — på ett sätt som
+    är lättare att ta till sig än protokoll och manifest i sin råa form.
+  </p>
+  <p>
+    Kontakt: <a href="mailto:hej@ibland.nu">hej@ibland.nu</a>. Gäller det en uppgift på sajten som inte stämmer,
+    använd <a href="/ratta/">Rätta en uppgift</a> — där står hur felanmälan hanteras och där loggas varje
+    rättelse som gjorts.
+  </p>
+
+  <h2>Teknisk specifikation</h2>
+  <p>
+    Sajten är byggd med <a href="https://astro.build">Astro</a>, ett ramverk för statiska sajter. Den renderas
+    helt vid byggtillfället — inget innehåll genereras eller hämtas via AI- eller API-anrop när du besöker
+    sajten, och det finns ingen server-logik i drift. Interaktiva inslag (som valkompassen) är vanlig,
+    ramverksfri JavaScript.
+  </p>
+  <p>
+    Sajten paketeras som en Docker-image (Nginx som serverar de färdigbyggda statiska filerna) och är
+    versionshanterad i Git. Källkoden till innehållet, urvalet och metoden är öppet redovisad på sidan{" "}
+    <a href="/om-urvalet/">Om urvalet</a>.
+  </p>
+
+  <p>
+    <em>
+      Sajten drivs inte av något parti och är inte ett kommersiellt projekt. Se <a href="/om-urvalet/">Om
+      urvalet</a> för sajtens fulla metod och löfte om fakta.
+    </em>
+  </p>
+</Layout>

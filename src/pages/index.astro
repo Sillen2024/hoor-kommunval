@@ -1,0 +1,161 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Valkompass from "../components/Valkompass.astro";
+import partierData from "../data/partier.json";
+import valkompassData from "../data/valkompass.json";
+import koladaData from "../data/kolada.json";
+import budgetData from "../data/budget.json";
+
+const fragor = valkompassData.fragor;
+
+// ——— "Tre saker som sticker ut" (Fabel-granskningen §4) ————————————————
+// Talen läses ur samma datafiler som temasidorna, aldrig ur löptext, så att
+// en revidering slår igenom här också. Placeringen och 26-röstersmönstret är
+// egna bearbetningar och märks som sådana under callouterna.
+
+type Serie = Record<string, Record<string, number>>;
+const HÖÖR = koladaData.hoor;
+const kpi = (id: string) => koladaData.nyckeltal.find((n) => n.kpi_id === id)!;
+const varde = (id: string, kod: string, ar: number): number | null =>
+  (kpi(id).varden as unknown as Serie)[kod]?.[String(ar)] ?? null;
+const preliminaraAr = [
+  ...new Set(koladaData.nyckeltal.map((n) => n.preliminar_fran_ar).filter((a): a is number => a !== null)),
+];
+const huvudar =
+  preliminaraAr.length > 0 ? Math.min(...preliminaraAr) - 1 : koladaData.ar[koladaData.ar.length - 1];
+
+const forskolaSorterad = koladaData.skane
+  .map((k) => ({ kod: k, v: varde("N11024", k, huvudar) }))
+  .filter((p): p is { kod: string; v: number } => p.v !== null)
+  .sort((a, b) => a.v - b.v);
+const forskolaPlats = forskolaSorterad.findIndex((p) => p.kod === HÖÖR) + 1;
+const forskolaHoor = varde("N11024", HÖÖR, huvudar);
+
+// Budgetvoteringarna: renderas bara som mönster om ja-siffran faktiskt är
+// densamma i samtliga voteringar.
+const voteringar = budgetData.beslut.filter((b) => b.rostning);
+const jaRoster = [...new Set(voteringar.map((b) => b.rostning!.ja))];
+const sammaJa = jaRoster.length === 1 ? jaRoster[0] : null;
+
+const skattesats = (ar: number) =>
+  Number(budgetData.beslut.find((b) => b.ar === ar)!.kommunal_skattesats.match(/[\d,]+/)![0].replace(",", "."));
+const skattSankningOre = Math.round((skattesats(2025) - skattesats(2027)) * 100);
+
+const sv = (v: number | null, d = 1) =>
+  v === null ? "–" : v.toLocaleString("sv-SE", { minimumFractionDigits: d, maximumFractionDigits: d });
+---
+
+<Layout
+  title="Valet 2026: Fakta, löften och valkompass"
+  description="Allt du behöver veta inför Höörs kommunval 13 september 2026. Läs om styrets beslut, partiernas löften och gör vår lokala valkompass."
+>
+  <h1>Höörs kommunval 2026: Vet du vad du röstar på?</h1>
+  <p class="lead">
+    Söndag 13 september 2026 är det val till kommunfullmäktige i Höör. Den här sajten samlar två saker,
+    med källa på varje uppgift: vad det sittande styret (M, L, C, KD) faktiskt har beslutat under mandatperioden
+    2022–2026, och vad alla nio partier i fullmäktige säger att de vill göra i nästa mandatperiod.
+  </p>
+
+  <section class="hero-cta">
+    <h2>Vet du inte vad du ska rösta på än?</h2>
+    <p class="hero-cta__intro">
+      Svara på {fragor.length} frågor om din vardag i Höör. Du ser direkt vilket block du lutar mest åt — och
+      varför, med källa på varje påstående.
+    </p>
+
+    <Valkompass />
+  </section>
+
+  <section>
+    <h2>Tre saker som sticker ut i Höör</h2>
+    <div class="nyckelfynd-rad">
+      {forskolaHoor !== null && (
+        <div class="nyckelfynd">
+          <span class="nyckelfynd__tal">{sv(forskolaHoor)} %</span>
+          <span class="nyckelfynd__text">
+            Så långt under sin referenskostnad låg Höörs förskola {huvudar} —
+            {forskolaPlats === 1 ? " minst pengar per barn i hela Skåne" : ` plats ${forskolaPlats} av ${forskolaSorterad.length} i Skåne`}.
+          </span>
+          <a href="/nyckeltal/#forskola">Hela jämförelsen →</a>
+        </div>
+      )}
+      {sammaJa !== null && (
+        <div class="nyckelfynd">
+          <span class="nyckelfynd__tal">{sammaJa} röster</span>
+          <span class="nyckelfynd__text">
+            Styret har 17 av 41 mandat — men vann alla {voteringar.length} budgetvoteringar med exakt
+            {" "}{sammaJa} röster. SD:s grupp fyllde ut, varje gång.
+          </span>
+          <a href="/styret-vs-oppositionen/">Vem styr egentligen? →</a>
+        </div>
+      )}
+      <div class="nyckelfynd">
+        <span class="nyckelfynd__tal">−{skattSankningOre} öre</span>
+        <span class="nyckelfynd__text">
+          Skatten sänks i två steg, 2026 och 2027 — från {sv(skattesats(2025), 2)} till
+          {" "}{sv(skattesats(2027), 2)} kr per hundralapp.
+        </span>
+        <a href="/budget/#vad-kostar-80-ore">Vad det betyder i kronor →</a>
+      </div>
+    </div>
+    <span class="derived-note">
+      förskolans placering och voteringsmönstret är uträknade här ur Koladas råvärden respektive
+      protokollens röstsiffror — hela underlaget står på länksidorna
+    </span>
+  </section>
+
+  <div class="dig-deeper">
+    <h2>Vill du gräva djupare?</h2>
+    <div class="card-grid">
+      <a class="card" href="/styret-vs-oppositionen/">
+        <h3>Vem bestämmer egentligen?</h3>
+        <p>Vad skiljer blocken åt, och vad visar röstsiffrorna från budgetomröstningarna? Fem minuters läsning.</p>
+      </a>
+      <a class="card" href="/din-vardag/">
+        <h3>Vad lovar partierna just dig?</h3>
+        <p>Välj din situation — förälder, pensionär, företagare eller landsbygdsbo — och se löftena som gäller dig.</p>
+      </a>
+      <a class="card" href="/partier/">
+        <h3>Vad vill ditt parti?</h3>
+        <p>Alla nio partier: löften, kandidater — och hur de faktiskt har röstat i fullmäktige.</p>
+      </a>
+      <a class="card" href="/jamforelse/">
+        <h3>Var står partierna i din fråga?</h3>
+        <p>Skola, vård, trygghet, landsbygd — styre mot opposition, tema för tema.</p>
+      </a>
+      <a class="card" href="/budget/">
+        <h3>Vart går pengarna?</h3>
+        <p>Vad skattesänkningen ger dig, hur budgeten vuxit och vad oppositionen ville göra i stället.</p>
+      </a>
+      <a class="card" href="/nyckeltal/">
+        <h3>Lägger Höör mer eller mindre än andra?</h3>
+        <p>Höörs kostnader och resultat mot Skåne, grannkommunerna och de mest jämförbara kommunerna.</p>
+      </a>
+      <a class="card" href="/arenden/">
+        <h3>Vilka beslut har märkts?</h3>
+        <p>Ett urval beslut och motioner från mandatperioden — med voteringar och källor.</p>
+      </a>
+      <a class="card" href="/sa-rostar-du/">
+        <h3>Var och när röstar jag?</h3>
+        <p>Förtidsröstning från 26 augusti, vallokalerna på valdagen — och därför kan ditt kryss avgöra.</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="trust-note">
+    <strong>✓ Källbelagt, inte heltäckande.</strong> Varje uppgift går att spåra till ett protokoll, ett
+    möte eller ett partiuttalande — leta efter den gröna källbelagt-markeringen. Allt är inte med:{" "}
+    <a href="/om-urvalet/">här står varför</a>.
+  </div>
+
+  <a class="hook-card" href="/ai/">
+    <p class="hook-card__eyebrow">Experiment, inte fakta</p>
+    <h3>AI-experimentet: krönikor och tankeexperiment</h3>
+    <p>
+      Bara 1 av 9 partier nämner AI i sitt valmanifest. Vi utforskade tomrummet: två AI-språkmodeller som tycker
+      till fritt om valet, och ett tankeexperiment om en AI-styrd kommun.
+    </p>
+  </a>
+
+  <p class="updated">Senast uppdaterad: {partierData.senast_uppdaterad}</p>
+</Layout>

@@ -1,0 +1,279 @@
+{
+  "senast_uppdaterad": "2026-08-13",
+  "kalla_metod": "Höörs kommunfullmäktiges sammanträdesportal anropar ett öppet Ciceron-API, vilket gjorde det möjligt att hämta oppositionens egna budgetförslag i fulltext (inte bara det formella motförslaget som blev föremål för votering). PDF-källorna finns även i src/data/protokoll_ksf/oppositionsbudgetar/.",
+  "forslag": [
+    {
+      "parti_id": "s",
+      "ar": 2024,
+      "typ": "prioritetslista",
+      "typ_not": "Kortare prioritetslista utan fullständiga nämndramar — inte sifferjämförbar med styrets budget.",
+      "skattesats": "21,75 kr (oförändrad, ingen differens mot styret)",
+      "total_diff_mnkr": null,
+      "namnd_diff_tkr": null,
+      "satsningar": [
+        "Fria kollektivresor för 75+",
+        "LSS: nya korttidslokaler",
+        "Minskad gruppstorlek i förskola/fritidshem",
+        "Ringsjöskolan: renovering + ny fritidsgård",
+        "Kulturskolan (utökning), ökat föreningsanslag till ungdomsföreningar, utredning kommunal elproduktion, fastighetsköp Grönalund, 100% fiberutbyggnad"
+      ],
+      "besparingar": "Inga besparingar föreslås — underskott täcks via resultatutjämningsreserven (RUR).",
+      "pdf": "/kallor/oppositionsbudgetar/S_budget2024.pdf"
+    },
+    {
+      "parti_id": "v",
+      "ar": 2024,
+      "typ": "fullstandig",
+      "typ_not": "Fullständig alternativbudget, men med bredare redovisningsomfattning i resultaträkningen än en ren nämndramsjämförelse — tolka totalsumman med viss försiktighet.",
+      "skattesats": "21,75 kr (oförändrad, ingen differens mot styret)",
+      "total_diff_mnkr": 23.9,
+      "namnd_diff_tkr": {
+        "Barn- och utbildningsnämnd": -9200,
+        "Socialnämnd": -1800,
+        "Nämnden för kultur, arbete och folkhälsa": -600
+      },
+      "satsningar": [
+        "Genomför Kulturskolan trots egen hyresrabatt-besparing",
+        "Avvisar styrets övriga besparingar inom Socialnämnden och Kultur/arbete/folkhälsa"
+      ],
+      "besparingar": "Nedläggning av Gudmundtorps skola (5,8 mnkr/år), vakanshållning inom Kommunstyrelsen (1 mnkr), minskade förfogandemedel inom KS (2 mnkr).",
+      "pdf": "/kallor/oppositionsbudgetar/V_budget2024.pdf"
+    },
+    {
+      "parti_id": "mp",
+      "ar": 2024,
+      "typ": "prioritetslista",
+      "typ_not": "Kortare prioritetslista utan fullständiga nämndramar — inte sifferjämförbar med styrets budget.",
+      "skattesats": "21,75 kr (oförändrad, ingen differens mot styret)",
+      "total_diff_mnkr": null,
+      "namnd_diff_tkr": null,
+      "satsningar": [
+        "Klimat/miljö: energieffektivisering, koldioxidbudget, mål nära-noll CO2 till 2035, plusenergikommun, solceller",
+        "Skola: tidigt stöd vid särskilda behov, ökad personaltäthet/mindre barngrupper i förskolan",
+        "Trygghet/omsorg: upprustning vattenledningar, fiberutbyggnad, fria kollektivresor 75+, äldremottagning, mödravård, fältassistenter, barnomsorg på obekväm arbetstid/nattis"
+      ],
+      "besparingar": "Inga besparingar föreslås — underskott täcks via resultatutjämningsreserven (RUR).",
+      "pdf": "/kallor/oppositionsbudgetar/MP_budget2024.pdf"
+    },
+    {
+      "parti_id": "s",
+      "ar": 2025,
+      "typ": "fullstandig",
+      "typ_not": "Fullständigt alternativt budgetförslag med jämförbara nämndramar.",
+      "skattesats": "21,75 kr — avslår uttryckligen styrets planerade 30-öres sänkning",
+      "total_diff_mnkr": 8.7,
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": 560,
+        "Socialnämnd": 2988,
+        "Barn- och utbildningsnämnd": 3330,
+        "Nämnden för kultur, arbete och folkhälsa": 1199
+      },
+      "satsningar": [
+        "SAS-tjänst (specialpedagog): 0,8 mnkr",
+        "Barn- och elevhälsochef: 0,8 mnkr",
+        "Skolbibliotek/timplan: 2,8 mnkr",
+        "SYV-förstärkning (studie- och yrkesvägledning): 0,8 mnkr",
+        "SVA-tjänst (svenska som andraspråk): 0,8 mnkr",
+        "Kulturskolan: 0,7 mnkr",
+        "Skånekort för gymnasieelever: 0,5 mnkr",
+        "Förstärkt räddningstjänst: 2,2 mnkr (från 2027)"
+      ],
+      "besparingar": "Socialnämndens effektiviseringskrav tas helt bort; ekonomiskt bistånd sänks 1,2 mnkr och omprioriteras till arbetsmarknadsåtgärder.",
+      "pdf": "/kallor/oppositionsbudgetar/S_budget2025.pdf"
+    },
+    {
+      "parti_id": "v",
+      "ar": 2025,
+      "typ": "andringsforslag",
+      "typ_not": "Ändringsförslag mot förvaltningens grundbudget, med fullständiga nämndramar.",
+      "skattesats": "Ingen sänkning för 2025 (0 öre) — öppnar för 10 öre i VEP 2026, men avstår till förmån för räddningstjänstfinansiering",
+      "total_diff_mnkr": 3.7,
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": -2800,
+        "Socialnämnd": 5999,
+        "Barn- och utbildningsnämnd": 0,
+        "Nämnden för kultur, arbete och folkhälsa": 554
+      },
+      "satsningar": [
+        "Socialnämnden: +6 mnkr för placeringsmarginaler (accepterar samtidigt styrets hemtjänstbesparing)",
+        "Nytt team mot skolfrånvaro + läsförståelsesatsning inom BUN, finansierat via Gudmundtorp-besparingen",
+        "Vägbidrag återställt till 6 kr/m: 0,5 mnkr",
+        "Friskvårdsbidrag fördubblat till 2000 kr/år: 0,7 mnkr",
+        "Räddningstjänst: +2,5 mnkr (etapp 1, ökad bemanning, från 2027)"
+      ],
+      "besparingar": "Nedläggning av Gudmundtorps skola (2,9 mnkr) och nedjusterad gymnasieprognos (-4 mnkr, baserat på historiskt överskott).",
+      "pdf": "/kallor/oppositionsbudgetar/V_budget2025.pdf"
+    },
+    {
+      "parti_id": "mp",
+      "ar": 2025,
+      "typ": "fullstandig",
+      "typ_not": "Fullständigt alternativt budgetförslag — enda oppositionsförslaget för 2025 som landar under styrets totalsumma.",
+      "skattesats": "21,75 kr — avslår uttryckligen styrets planerade 30-öres sänkning",
+      "total_diff_mnkr": -2.1,
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": -1150,
+        "Socialnämnd": -3480,
+        "Barn- och utbildningsnämnd": 2574,
+        "Nämnden för kultur, arbete och folkhälsa": 33
+      },
+      "satsningar": [
+        "Barn- och elevhälsochef: 0,8 mnkr",
+        "Skolbibliotek/timplan: 2,8 mnkr",
+        "Kulturskolan: 0,7 mnkr",
+        "Miljöprojekt: 2,5 mnkr under KS (biologisk mångfald, våtmarker, pollinatörer, koldioxidbudget), delvis EU-finansierat"
+      ],
+      "besparingar": "Socialnämndens effektiviseringskrav halveras (till 5,5 mnkr, ej helt borttaget som hos S); ekonomiskt bistånd sänks 1,2 mnkr; prioriterar inte Skånekort/ökad kollektivtrafik (till skillnad från S).",
+      "pdf": "/kallor/oppositionsbudgetar/MP_budget2025.pdf"
+    },
+    {
+      "parti_id": "s",
+      "ar": 2026,
+      "typ": "fullstandig",
+      "typ_not": "Gemensamt förslag med Miljöpartiet.",
+      "gemensamt_med": "mp",
+      "skattesats": "21,75 kr — avvisar uttryckligen styrets sänkning till 21,45 kr (0,30 kr högre skattesats än styret)",
+      "total_diff_mnkr": null,
+      "total_diff_not": "Ingen samlad totalsumma redovisad, men samtliga nämnder får mer än i styrets budget — sammanlagd ramökning 41,6 mnkr enligt förslagets egen sammanställning.",
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": 3400,
+        "Socialnämnd": 3550,
+        "Barn- och utbildningsnämnd": 8500,
+        "Nämnden för kultur, arbete och folkhälsa": 500
+      },
+      "satsningar": [
+        "Låglönesatsning: 3 mnkr",
+        "Nattis alla dagar: 3,5 mnkr",
+        "Speciallärare: 2,2 mnkr, elevhälsoteam: 2 mnkr",
+        "Habiliteringsersättning höjs 7 → 14 kr/timme",
+        "Fri kollektivtrafik för 70+ från 2026",
+        "Lovkort (fritidsaktiviteter för unga): 0,9 mnkr, Seniorkort (kollektivtrafik): 0,5 mnkr",
+        "Investering: +3 mnkr till GC-väg Norra Rörum–Höör",
+        "Landsbygdsstöd: 0,5 mnkr, Kommunekolog/energistrateg: 0,8 mnkr"
+      ],
+      "besparingar": "Ingen — den uteblivna skattesänkningen (30 öre) är den huvudsakliga finansieringskällan för satsningarna, snarare än utgiftsbesparingar.",
+      "pdf": "/kallor/oppositionsbudgetar/S_MP_budget2026.pdf"
+    },
+    {
+      "parti_id": "mp",
+      "ar": 2026,
+      "typ": "fullstandig",
+      "typ_not": "Gemensamt förslag med Socialdemokraterna — se posten för S 2026 för fullständig satsningslista (identisk).",
+      "gemensamt_med": "s",
+      "skattesats": "21,75 kr — avvisar uttryckligen styrets sänkning till 21,45 kr (0,30 kr högre skattesats än styret)",
+      "total_diff_mnkr": null,
+      "total_diff_not": "Se S 2026 — gemensamt förslag.",
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": 3400,
+        "Socialnämnd": 3550,
+        "Barn- och utbildningsnämnd": 8500,
+        "Nämnden för kultur, arbete och folkhälsa": 500
+      },
+      "satsningar": [
+        "Se S 2026 för fullständig lista — gemensamt förslag med identiska satsningar."
+      ],
+      "besparingar": "Ingen — den uteblivna skattesänkningen (30 öre) är den huvudsakliga finansieringskällan för satsningarna.",
+      "pdf": "/kallor/oppositionsbudgetar/S_MP_budget2026.pdf"
+    },
+    {
+      "parti_id": "v",
+      "ar": 2026,
+      "typ": "fullstandig",
+      "typ_not": "Eget förslag, går en annan finanspolitisk väg än S/MP — större skattesänkning kombinerad med riktade satsningar snarare än full skattebibehållning.",
+      "skattesats": "21,25 kr — sänker 50 öre totalt (0,20 kr lägre skattesats än styrets 21,45 kr)",
+      "total_diff_mnkr": 11.7,
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": 3300,
+        "Barn- och utbildningsnämnd": 11500,
+        "Socialnämnd": 1100,
+        "Nämnden för kultur, arbete och folkhälsa": 800
+      },
+      "satsningar": [
+        "2 speciallärare: 2,2 mnkr",
+        "'Skolpliktskommando' (mot skolfrånvaro): 2,0 mnkr",
+        "Nattis fullt utbyggt: 3,5 mnkr",
+        "Satsning på språkförståelse låg-/mellanstadiet: 3,0 mnkr",
+        "Habiliteringsersättning fördubblad: 0,3 mnkr",
+        "Seniorkort: 0,5 mnkr, Lovkort 13-19 år: 0,9 mnkr, Landsbygdsstöd: 0,5 mnkr",
+        "Vägföreningsanslag återställt till 7 kr/m: 0,7 mnkr",
+        "Energi- och hållbarhetsstrateg: 0,8 mnkr"
+      ],
+      "besparingar": "Inga separata besparingsposter utöver de redovisade ramtabellerna — satsningarna finansieras inom den utökade (men samtidigt skattesänkta) ramen.",
+      "pdf": "/kallor/oppositionsbudgetar/V_budget2026.pdf"
+    },
+    {
+      "parti_id": "s",
+      "ar": 2027,
+      "typ": "fullstandig",
+      "typ_not": "Fullständigt alternativt budgetförslag med jämförbara nämndramar.",
+      "skattesats": "21,45 kr — oförändrad jämfört med 2026, avvisar styrets sänkning till 20,95 kr (0,50 kr lägre)",
+      "total_diff_mnkr": 44.6,
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": -500,
+        "Socialnämnd": 17400,
+        "Barn- och utbildningsnämnd": 24600,
+        "Nämnden för kultur, arbete och folkhälsa": 3300
+      },
+      "satsningar": [
+        "Trygghetsvärdar/fältassistenter i skolan (t ex socialpedagog/socionom)",
+        "Höjt grundbelopp förskola/skola: 6,8 mnkr",
+        "Återinfört nattis: 3,5 mnkr",
+        "Förlängd vistelsetid förskola (t ex vid nyfött syskon): 2,0 mnkr",
+        "Kraftig låglönesatsning — hela lönepotten i löneförhandlingar till låga löner",
+        "Habiliteringsersättning fördubblad, 7 → 14 kr/timme: 0,3 mnkr",
+        "Sänkt måltidsavgift på SÄBO: 0,1 mnkr",
+        "Flexbuss/taxi-lösning för äldre på landsbygden till busshållplats/service",
+        "Multi-arena vid Kulturgården: 1 mnkr investering",
+        "Nya riktlinjer för idéburet offentligt partnerskap (IOP) med civilsamhället",
+        "Ökat LOK-stöd och höjd ersättning för feriearbete"
+      ],
+      "besparingar": "Ingen uttalad besparingspost — finansieras genom att avstå styrets skattesänkning (oförändrad skattesats).",
+      "pdf": "/kallor/oppositionsbudgetar/S_budget2027.pdf"
+    },
+    {
+      "parti_id": "v",
+      "ar": 2027,
+      "typ": "prioritetslista",
+      "typ_not": "Endast tre riktade satsningar denna gång, ingen fullständig nämndramstabell — förslaget bygger i övrigt på förvaltningens grundförslag.",
+      "skattesats": "21,20 kr — halverar styrets planerade sänkning (25 öre i stället för styrets 50 öre, från 21,45 kr)",
+      "total_diff_mnkr": null,
+      "total_diff_not": "Inget formellt sammanställt totalbelopp i förslaget. De tre satsningarna adderar till uppskattningsvis 12,3 mnkr utöver styrets grundförslag (7 mnkr höjt grundbelopp utöver styrets redan aviserade 3 mnkr, 0,3 mnkr till kulturföreningar, 5 mnkr låglönesatsning), finansierat genom att bara halvera styrets skattesänkning.",
+      "namnd_diff_tkr": null,
+      "namnd_diff_not": "Ingen nämndramstabell redovisad i år. Grundbeloppssatsningen faller sannolikt under Barn- och utbildningsnämnden, kulturföreningsbidraget under Nämnden för kultur, arbete och folkhälsa; låglönesatsningen är kommunövergripande och specificeras inte per nämnd.",
+      "satsningar": [
+        "Höjt grundbelopp förskola/grundskola: 10 mnkr årligen 2027–2028 (i stället för styrets 3 mnkr) — motsvarar ca tio kommunala lärartjänster plus fyra på friskolor",
+        "Ökat bidrag till kulturföreningar: +0,3 mnkr årligen 2027–2028",
+        "Låglönesatsning för de som tjänar under 30 000 kr/månad: 5 mnkr årligen 2027–2029"
+      ],
+      "besparingar": "Inga separata besparingar — satsningarna finansieras genom att halvera styrets planerade skattesänkning i stället för genom nedskärningar.",
+      "pdf": "/kallor/oppositionsbudgetar/V_budget2027.pdf"
+    },
+    {
+      "parti_id": "mp",
+      "ar": 2027,
+      "typ": "fullstandig",
+      "typ_not": "Fullständigt alternativt budgetförslag med jämförbara nämndramar.",
+      "skattesats": "21,45 kr — oförändrad jämfört med 2026, avvisar styrets sänkning till 20,95 kr (0,50 kr lägre)",
+      "total_diff_mnkr": 42.8,
+      "namnd_diff_tkr": {
+        "Kommunstyrelse": 100,
+        "Socialnämnd": 17100,
+        "Barn- och utbildningsnämnd": 22500,
+        "Nämnden för kultur, arbete och folkhälsa": 3300
+      },
+      "satsningar": [
+        "Kommunekolog (naturvård, energiplan, klimathandlingsplan): 0,8 mnkr",
+        "Våtmarksprojekt (återskapande/restaurering/skydd av vattenmiljöer): 0,5 mnkr",
+        "Personalförstärkning friluftsprojekt (1,5 helårseffekter): 0,4 mnkr",
+        "Busskort för alla kommuninvånare över 70 år",
+        "Socialnämnden: generell ramförstärkning — hela det beslutade 2026-tillskottet får behållas: 2,8 mnkr, plus kultursatsning: 0,35 mnkr",
+        "BUN: höjt grundbelopp för minskade barngrupper: 2,5 mnkr, återinfört nattis alla dagar: 3,5 mnkr, förstärkta skolbibliotek: 0,4 mnkr",
+        "Kultur: ökat stöd till kulturföreningar: 0,35 mnkr, förstärkt bemanning folkbiblioteket: 0,4 mnkr, LOK-stöd höjs 14 → 18 kr: 0,1 mnkr",
+        "Investeringsbudget: +2 mnkr/år för utbyggnad av cykelvägar (GC-vägar)",
+        "Uppdrag att ta fram förslag på medborgarbudget för landsbygdsområden till budget 2028"
+      ],
+      "besparingar": "Ingen separat besparingspost — finansieras genom att avstå styrets skattesänkning; ett starkare resultat minskar samtidigt kommunens lånebehov jämfört med styrets förslag.",
+      "pdf": "/kallor/oppositionsbudgetar/MP_budget2027.pdf"
+    }
+  ]
+}

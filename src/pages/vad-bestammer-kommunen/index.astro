@@ -1,0 +1,94 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// "Vad bestämmer kommunen egentligen?" (Fabel-granskningen §5.2). Utan den
+// här sidan kan en väljare inte bedöma vilka löften ett kommunparti ens kan
+// hålla. Ansvarsfördelningen är kontrollerad mot SKR:s sidor om kommunernas
+// respektive regionernas åtaganden, 2026-08-17.
+
+const rader = [
+  { fraga: "Förskola, grundskola och gymnasium", vem: "kommun", not: "Läroplaner och skollag beslutas dock av staten." },
+  { fraga: "Äldreomsorg och hemtjänst", vem: "kommun", not: null },
+  { fraga: "Socialtjänst och LSS-stöd", vem: "kommun", not: null },
+  { fraga: "Bygglov, detaljplaner och bostadsplanering", vem: "kommun", not: null },
+  { fraga: "Gator, vatten och avlopp, sophämtning", vem: "kommun", not: "Statliga vägar (t.ex. riksväg 23) sköter Trafikverket." },
+  { fraga: "Räddningstjänst", vem: "kommun", not: null },
+  { fraga: "Kommunalskatten", vem: "kommun", not: null },
+  { fraga: "Kultur, fritid och idrottsanläggningar", vem: "kommun", not: "Frivillig uppgift — kommunen väljer själv nivån." },
+  { fraga: "Vårdcentraler och sjukhus", vem: "region", not: null },
+  { fraga: "Bussar och tåg (Skånetrafiken)", vem: "region", not: "Kollektivtrafiken är enligt lag ett gemensamt ansvar, men i Skåne är regionen huvudman. Kommunen kan påverka — inte besluta." },
+  { fraga: "Polis, straff och rättsväsende", vem: "stat", not: null },
+  { fraga: "Migration och asylpolitik", vem: "stat", not: null },
+  { fraga: "Bränsleskatter och elpriser", vem: "stat", not: null },
+  { fraga: "Försvar, pensioner, a-kassa", vem: "stat", not: null },
+];
+
+const etikett: Record<string, string> = {
+  kommun: "Kommunen — avgörs i valet till kommunfullmäktige",
+  region: "Region Skåne — avgörs i regionvalet",
+  stat: "Staten — avgörs i riksdagsvalet",
+};
+---
+
+<Layout
+  title="Vad bestämmer kommunen?"
+  description="Förskolan, skolan, äldreomsorgen och byggloven är kommunens. Vårdcentralerna och bussarna är regionens. Polisen och migrationen är riksdagens. Guiden till vem som bestämmer vad."
+>
+  <h1>Vad bestämmer kommunen egentligen?</h1>
+  <p class="lead">
+    Kommunen bestämmer över förskolan, skolan, äldreomsorgen, byggloven och kommunalskatten. Vårdcentralen
+    och bussarna är Region Skånes. Polisen, straffen och migrationen är riksdagens. Därför kan ett
+    kommunparti inte lova vad som helst — och därför är det tre olika val den 13 september.
+  </p>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Fråga</th>
+          <th scope="col">Vem bestämmer?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rader.map((r) => (
+          <tr>
+            <th scope="row">{r.fraga}</th>
+            <td>
+              {etikett[r.vem]}
+              {r.not && <div class="not-box">{r.not}</div>}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <a
+    class="source-link"
+    href="https://skr.se/kommunerochregioner/kommunernasataganden.8280.html"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    SKR — kommunernas åtaganden (obligatoriska och frivilliga uppgifter)
+  </a>
+  {" "}
+  <a
+    class="source-link"
+    href="https://skr.se/kommunerochregioner/regionernasataganden.8285.html"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    SKR — regionernas åtaganden
+  </a>
+
+  <p>
+    Det här är också skälet till att <a href="/#valkompass">valkompassen</a> markerar vissa frågor som
+    nationella: ett parti kan driva dem lokalt, men besluten fattas i riksdagen. När du läser ett vallöfte
+    är den första frågan alltså inte om löftet är bra — utan om det är kommunen som bestämmer över saken.
+  </p>
+  <p>
+    Vad partierna i Höör lovar i de kommunala frågorna står i <a href="/jamforelse/">jämförelsen</a>, och
+    var och när du röstar står i <a href="/sa-rostar-du/">Så röstar du</a>.
+  </p>
+
+  <p class="updated">Ansvarsfördelningen kontrollerad mot SKR 2026-08-17.</p>
+</Layout>

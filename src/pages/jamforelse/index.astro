@@ -1,0 +1,212 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import partierData from "../../data/partier.json";
+
+// Partiernas egna rubriker (politikomrade i partier.json) är fritext från deras egna
+// sajter och skiljer sig åt även när sakinnehållet är samma tema ("Skola" vs
+// "Skola och elevhälsa" vs "Vård och hälsa" vs "Vård, trygghet och familj" osv).
+// Den här kartan grupperar dem under gemensamma, jämförbara teman utan att röra
+// själva datafilen. Partiets egen rubrik visas fortfarande på varje kort.
+const TEMA_KARTA: Record<string, string> = {
+  "Skola": "Skola och barnomsorg",
+  "Skola och elevhälsa": "Skola och barnomsorg",
+  "Barn och unga": "Skola och barnomsorg",
+
+  "Vård": "Vård och omsorg",
+  "Vård och omsorg": "Vård och omsorg",
+  "Vård och hälsa": "Vård och omsorg",
+  "Vård, trygghet och familj": "Vård och omsorg",
+  "Äldreomsorg": "Vård och omsorg",
+  "Välfärd": "Vård och omsorg",
+
+  "Trygghet": "Trygghet och migration",
+  "Migration": "Trygghet och migration",
+  "Frihet och trygghet": "Trygghet och migration",
+
+  "Vatten och avlopp": "Trafik, infrastruktur och bostäder",
+  "Kollektivtrafik": "Trafik, infrastruktur och bostäder",
+  "Trafik och ekonomi": "Trafik, infrastruktur och bostäder",
+  "Trafik": "Trafik, infrastruktur och bostäder",
+  "Infrastruktur": "Trafik, infrastruktur och bostäder",
+  "Transporter": "Trafik, infrastruktur och bostäder",
+  "Bostäder": "Trafik, infrastruktur och bostäder",
+
+  "Natur och rekreation": "Miljö, klimat och landsbygd",
+  "Natur och friluftsliv": "Miljö, klimat och landsbygd",
+  "Miljö och landsbygd": "Miljö, klimat och landsbygd",
+  "Miljö och VA": "Miljö, klimat och landsbygd",
+  "Landsbygd": "Miljö, klimat och landsbygd",
+  "Klimat och miljö": "Miljö, klimat och landsbygd",
+
+  "Näringsliv": "Näringsliv och ekonomi",
+  "Ekonomi": "Näringsliv och ekonomi",
+  "Ekonomi och skatt": "Näringsliv och ekonomi",
+
+  "Idrott och fritid": "Kultur, fritid och folkhälsa",
+  "Fritid och idrott": "Kultur, fritid och folkhälsa",
+  "Kultur och fritid": "Kultur, fritid och folkhälsa",
+  "Kultur": "Kultur, fritid och folkhälsa",
+  "Folkhälsa och kultur": "Kultur, fritid och folkhälsa",
+
+  "Demokrati": "Demokrati och lokalt inflytande",
+};
+
+const TEMA_ORDNING = [
+  "Skola och barnomsorg",
+  "Vård och omsorg",
+  "Trygghet och migration",
+  "Trafik, infrastruktur och bostäder",
+  "Miljö, klimat och landsbygd",
+  "Näringsliv och ekonomi",
+  "Kultur, fritid och folkhälsa",
+  "Demokrati och lokalt inflytande",
+];
+
+// Bygg en karta: tema -> lista av { parti, standpunkt, kalla_url, rå rubrik }
+const temaMap = new Map<string, Array<{ partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string }>>();
+
+for (const party of partierData.partier) {
+  for (const stance of party.manifest_2026) {
+    const tema = TEMA_KARTA[stance.politikomrade] ?? stance.politikomrade;
+    if (!temaMap.has(tema)) temaMap.set(tema, []);
+    temaMap.get(tema)!.push({
+      partiId: party.id,
+      partiNamn: party.namn,
+      block: party.block,
+      radRubrik: stance.politikomrade,
+      standpunkt: stance.standpunkt,
+      kalla_url: stance.kalla_url,
+      kalla_titel: "kalla_titel" in stance ? (stance as { kalla_titel?: string }).kalla_titel : undefined,
+    });
+  }
+}
+
+// Sortera enligt TEMA_ORDNING, med eventuella okända teman sist (bör inte hända
+// men kraschar inte om ett nytt politikomrade läggs till utan att mappas).
+const teman = Array.from(temaMap.entries()).sort((a, b) => {
+  const ia = TEMA_ORDNING.indexOf(a[0]);
+  const ib = TEMA_ORDNING.indexOf(b[0]);
+  return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+});
+
+// Bannern nedan renderas alltid: distinktionen mellan lokala löften, nationella
+// ståndpunkter och sociala medier-källor är sajtens viktigaste förbehåll på den
+// här sidan och får inte försvinna när ett partis manifest_status ändras.
+const mParti = partierData.partier.find((p) => p.id === "m");
+const mStatus = mParti?.manifest_status;
+const mAntalPunkter = mParti?.manifest_2026.length ?? 0;
+const ersattaPartier = partierData.partier.filter((p) => p.manifest_status === "ersatt").map((p) => p.namn);
+const ersattaText = new Intl.ListFormat("sv", { style: "long", type: "conjunction" }).format(ersattaPartier);
+---
+
+<Layout
+  title="Jämförelsevy"
+  description="Jämför vad partierna i Höör lovar inom respektive politikområde, styre mot opposition."
+  image="/og-jamforelse-v1.png"
+>
+  <h1>Jämförelsevy: styre mot opposition</h1>
+  <p class="lead">
+    Nedan är partiernas ståndpunkter grupperade i {teman.length} gemensamma teman så att styre och opposition går
+    att jämföra sida vid sida. Grupperingen är vår egen redaktionella sammanslagning av partiernas egna rubriker
+    (t.ex. läggs "Skola" och "Skola och elevhälsa" i samma tema) — partiets ursprungliga rubrik och källa visas
+    alltid på varje kort. Filtrera på ett tema i taget nedan.
+  </p>
+
+  <div class="banner">
+    {mStatus === "sociala_medier" && (
+      <Fragment>
+        <strong>Största partiet, Moderaterna, saknar publicerat lokalt program.</strong> Deras{" "}
+        {mAntalPunkter} punkter nedan bygger i stället på partiets egna Facebook-inlägg —{" "}
+        <a href="/partier/m/">så kontrollerade vi det</a>.
+      </Fragment>
+    )}
+    {mStatus === "saknas" && (
+      <Fragment>
+        <strong>Största partiet, Moderaterna, har inga kort nedan.</strong> Partiet saknar publicerat
+        Höör-specifikt program inför 2026 — en kontrollerad frånvaro, inte en lucka i vår research; se{" "}
+        <a href="/partier/m/">partisidan för Moderaterna</a> för vad kontrollen omfattade.
+      </Fragment>
+    )}
+    {ersattaPartier.length > 0 && (
+      <Fragment>
+        {" "}För {ersattaText} visar korten <strong>nationella</strong> ståndpunkter, eftersom partierna
+        saknar lokalt valmanifest för Höör. Vilket som gäller för vilket parti framgår på{" "}
+        <a href="/partier/">partisidorna</a>.
+      </Fragment>
+    )}
+  </div>
+
+  <div class="filter-bar" id="filter-bar" role="group" aria-label="Filtrera på tema">
+    <button type="button" data-filter="alla" aria-pressed="true">Alla teman</button>
+    {teman.map(([namn]) => (
+      <button type="button" data-filter={namn}>{namn}</button>
+    ))}
+  </div>
+
+  {teman.map(([namn, stances]) => {
+    const styre = stances.filter((s) => s.block === "styre");
+    const opposition = stances.filter((s) => s.block === "opposition");
+    return (
+      <section class="policy-block" data-omrade={namn}>
+        <h2>{namn}</h2>
+        <div class="compare-grid">
+          <div class="compare-col compare-col--styre">
+            <h3><span class="badge badge--styre">Styre</span></h3>
+            {styre.length === 0 ? (
+              <p class="no-data">Inget styrande parti har publicerat en ståndpunkt inom detta tema.</p>
+            ) : (
+              <div class="stance-grid">
+                {styre.map((s) => (
+                  <div class={`stance-card ${s.block}`}>
+                    <div class="stance-card__header">
+                      <a href={`/partier/${s.partiId}/`}>{s.partiNamn}</a>
+                    </div>
+                    <p class="stance-card__label">{s.radRubrik}</p>
+                    <p>{s.standpunkt}</p>
+                    <a class="source-link" href={s.kalla_url} target="_blank" rel="noopener noreferrer">{s.kalla_titel ?? "Källa →"}</a>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div class="compare-col compare-col--opposition">
+            <h3><span class="badge badge--opposition">Opposition</span></h3>
+            {opposition.length === 0 ? (
+              <p class="no-data">Inget oppositionsparti har publicerat en ståndpunkt inom detta tema.</p>
+            ) : (
+              <div class="stance-grid">
+                {opposition.map((s) => (
+                  <div class={`stance-card ${s.block}`}>
+                    <div class="stance-card__header">
+                      <a href={`/partier/${s.partiId}/`}>{s.partiNamn}</a>
+                    </div>
+                    <p class="stance-card__label">{s.radRubrik}</p>
+                    <p>{s.standpunkt}</p>
+                    <a class="source-link" href={s.kalla_url} target="_blank" rel="noopener noreferrer">{s.kalla_titel ?? "Källa →"}</a>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>("#filter-bar button");
+    const sections = document.querySelectorAll<HTMLElement>(".policy-block");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+        buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+        sections.forEach((section) => {
+          const show = filter === "alla" || section.dataset.omrade === filter;
+          section.style.display = show ? "" : "none";
+        });
+      });
+    });
+  </script>
+</Layout>

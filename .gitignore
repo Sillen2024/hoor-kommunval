@@ -1,0 +1,58 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# claude code session data
+.claude/
+
+# raw downloaded source documents (large, not needed in repo)
+data/raw/
+
+# sparade pressartiklar bakom betalvägg — får inte publiceras i repot
+skd_*.pdf
+
+# local-only notes
+UPPDATERA_VPS.txt
+astro_dev_out.txt
+
+# privat korrespondens — ska aldrig in i det publika repot
+src/data/mejl kommunen/
+mail till partierna/
+
+# råskrapade tredjepartsinlägg (upphovsrättslig gråzon i bulk)
+M_FACEBOOK_RAADATA.md
+
+# interna AI-utkast och arbetsmaterial från byggfasen
+CLAUDES_VISION_VALET2026.md
+CLAUDES_FORSLAG_UI_UX.md
+GEMINIS_VISION_VALET2026.md
+GEMINIS_FORSLAG_UI_UX.md
+AI_PARTIET_HOOR_VISION.md
+AI_KONVERGENS_ANALYS.md
+PROMPT_GEMINI_14-18.md
+MEDDELANDE_TILL_CLAUDE.md
+NOTEBOOK_LM_UNDERLAG.md
+
+# gamla git-historiken (privat, ligger pa GitHub som hoor-kommunval-arkiv)
+.git-arkiv/

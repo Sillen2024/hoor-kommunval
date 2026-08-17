@@ -1,0 +1,343 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import budgetData from "../../data/budget.json";
+import arendenData from "../../data/arenden.json";
+import partierData from "../../data/partier.json";
+import koladaData from "../../data/kolada.json";
+import valkompassData from "../../data/valkompass.json";
+import opinionData from "../../data/opinion.json";
+
+type Kalla = { url: string; beskrivning: string };
+
+const partiKallor: Kalla[] = [];
+for (const p of partierData.partier) {
+  partiKallor.push({ url: p.kalla_mandat, beskrivning: `${p.namn} — mandatfördelning 2022` });
+  for (const m of p.manifest_2026) {
+    partiKallor.push({ url: m.kalla_url, beskrivning: `${p.namn} — ${m.politikomrade}` });
+  }
+}
+// deduplicera på url
+const uniquePartiKallor = Array.from(new Map(partiKallor.map((k) => [k.url, k])).values()).sort((a, b) =>
+  a.url.localeCompare(b.url)
+);
+
+const budgetKallor: Kalla[] = budgetData.beslut.map((b) => ({ url: b.kalla_url, beskrivning: b.kalla_beskrivning }));
+
+// Kolada-avsnittet nedan beskriver datan i src/data/kolada.json. Siffrorna om
+// omfattning läses därför ur filen i stället för att skrivas i prosan — kör
+// scripts/hamta-kolada.mjs med fler nyckeltal och texten följer med.
+const koladaAntalNyckeltal = koladaData.nyckeltal.length;
+const koladaAntalKommuner = koladaData.skane.length;
+const koladaAntalGrupper = koladaData.grupper.length;
+const koladaAntalUtanfor = Object.keys(koladaData.kommuner).length - koladaData.skane.length;
+const koladaForstaAr = koladaData.ar[0];
+const koladaSistaAr = koladaData.ar[koladaData.ar.length - 1];
+// Alla preliminära år i datan är samma år (2025), men det är en egenskap hos
+// dagens hämtning, inte en garanti. Läs ut det som faktiskt står i filen.
+const koladaPreliminaraAr = [
+  ...new Set(koladaData.nyckeltal.map((n) => n.preliminar_fran_ar).filter((a): a is number => a !== null)),
+].sort();
+// Det datum då det preliminära året fastställs. Ligger efter valdagen, vilket
+// är hela skälet till att 2024 är huvudår i publiceringen.
+const koladaFaststallsDatum = [
+  ...new Set(
+    koladaData.nyckeltal
+      .filter((n) => n.preliminar_fran_ar !== null)
+      .map((n) => n.publicering.publication_date),
+  ),
+].sort().at(-1);
+// Huvudår i publiceringen = sista året som är fastställt. Räknas ur datan så
+// att den inte behöver ändras för hand när 2025 fastställs 2026-09-30.
+const koladaHuvudar = koladaPreliminaraAr.length > 0 ? Math.min(...koladaPreliminaraAr) - 1 : koladaSistaAr;
+
+const arendeKallor: Kalla[] = [];
+for (const a of arendenData.arenden) {
+  if (a.kalla_url) arendeKallor.push({ url: a.kalla_url, beskrivning: `${a.titel} — ${a.kalla_beskrivning}` });
+  if (a.kalla_url_2) arendeKallor.push({ url: a.kalla_url_2, beskrivning: `${a.titel} — ${a.kalla_url_2_beskrivning}` });
+  if (a.kalla_kritik) arendeKallor.push({ url: a.kalla_kritik, beskrivning: `${a.titel} — ${a.kalla_kritik_beskrivning}` });
+}
+---
+
+<Layout title="Om urvalet" description="Metodiken bakom sajten: varför den är ett urval, urvalskriterier, och vad som medvetet uteslutits.">
+  <h1>Om urvalet</h1>
+
+  <h2>Varför sajten är ett urval, inte en heltäckande genomgång</h2>
+  <p>
+    Idén till den här sajten uppkom <strong>11 augusti 2026</strong> — bara 15 dagar innan förtidsröstningen
+    startar 26 augusti 2026, inför valet till kommunfullmäktige i Höör 13 september 2026. Det korta tidsfönstret
+    är den direkta anledningen till att omfattningen är medvetet avgränsad. Det redovisas här öppet, i stället
+    för att gömmas.
+  </p>
+  <p>
+    Allt underliggande material är läst och strukturerat en gång, av en AI-assistent (Claude Code), under
+    byggfasen av sajten. Den färdiga sajten är helt statisk och gör inga AI- eller API-anrop när du besöker
+    den — inget innehåll genereras eller ändras i drift.
+  </p>
+
+  <h2>Vad som är med</h2>
+  <ul>
+    <li>Enbart <strong>kommunvalet i Höör</strong> — inte region- eller riksdagsvalet, trots att alla tre val hålls samma dag.</li>
+    <li>Samtliga 9 partier som satt i fullmäktige 2022–2026: Moderaterna, Liberalerna, Centerpartiet och
+      Kristdemokraterna (styre), samt Socialdemokraterna, Sverigedemokraterna, Vänsterpartiet, Miljöpartiet och
+      Medborgerlig Samling (opposition).</li>
+    <li>Partiernas publicerade 2026-valmanifest, strukturerade per politikområde utifrån vad som faktiskt finns
+      i respektive manifest — inga politikområden är påtvingade partier som inte tar upp dem, se{" "}
+      <a href="/partier/">partiöversikten</a> och <a href="/jamforelse/">jämförelsevyn</a>.</li>
+    <li>De fem budgetbesluten under mandatperioden och det direkt efterföljande budgetåret (budget för år 2023,
+      2024, 2025, 2026 och 2027).</li>
+    <li>Ett urval på {arendenData.arenden.length} ärenden/motioner från mandatperioden, utvalda enligt kriterierna nedan.</li>
+    <li>Riktiga röstandelar (inte bara mandat) för valen till Höörs kommunfullmäktige, se <a href="/historiska-val/">historiska val</a>.</li>
+    <li>Tre genvägar byggda ovanpå samma källbelagda grunddata: en <a href="/#valkompass">valkompass</a> med{" "}
+      {valkompassData.fragor.length} sakfrågor, sidan <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>,
+      och <a href="/din-vardag/">Din vardag</a> som sorterar löften efter livssituation.</li>
+    <li>Ett separat, tydligt märkt avsnitt, <a href="/ai/">AI-experimentet</a>, med krönikor, ett tankeexperiment
+      och AI-genererat media — skilt från resten av sajtens källbelagda genomgång.</li>
+  </ul>
+
+  <h2>Vad som medvetet uteslutits</h2>
+  <ul>
+    <li>Region- och riksdagsvalen, trots samma valdag.</li>
+    <li>En fullständig genomgång av samtliga protokoll och nämndmöten under mandatperioden — se Fas 2 nedan.</li>
+    <li>Oppositionens fullständiga alternativa budgetförslag för budget 2023 (föregår den sammanträdesportal
+      som gjort övriga år hämtningsbara). Se avsnittet om tekniska begränsningar nedan.</li>
+    <li>Nationella partiprogram som ståndpunkt för ett parti i Höör, om partiet saknar ett eget Höör-specifikt
+      program. I stället anges tydligt att lokalt manifest saknas.</li>
+  </ul>
+
+  <h2>Urvalskriterier för ärendelistan</h2>
+  <p>{arendenData.urvalskriterier_not}</p>
+
+  <h2>Tekniska begränsningar</h2>
+  <p>
+    Höörs kommun publicerar protokoll och handlingar för kommunfullmäktige från och med 2022 via en
+    JavaScript-baserad mötesportal (sok-hr.unikom.se), och Wayback Machine har inte arkiverat sidans renderade
+    innehåll. Portalen gick inte att läsa av med en enkel sidhämtning — men den visade sig anropa ett öppet,
+    oautentiserat JSON-RPC-API (byggt på plattformen Ciceron) för sina sökningar och nedladdningar. Det API:et
+    går att använda direkt, utan inloggning eller webbläsarautomation, när man känner till anropen, vilket
+    upptäcktes och användes under projektets gång. Det har gett tillgång till mötesprotokoll, exakta
+    antagandedatum och paragrafnummer, röstsiffror och beslutsunderlag (inklusive oppositionens egna
+    budgetförslag) för de budgetbeslut som portalen täcker. Portalens egen täckning börjar 2023-05-24, vilket
+    gör att den inte omfattar mötet där <strong>budget 2023</strong> klubbades (2022-11-30) — den handlingen och
+    dess röstsiffror fick vi i stället direkt från kommunens registrator via en begäran om utlämnande av allmän
+    handling.
+  </p>
+  <p>
+    Kommunens mötes-webb-TV-tjänst (numera hoor.socialcast.se) har använts som komplement: sändningarna har
+    egna nedladdningsbara undertextfiler (VTT) med en ordagrann transkribering av mötet, inklusive uppläsningar
+    av voteringsresultat. Sju mötestranskriptioner har laddats ner under projektet. Två av dem har använts:
+    en för att verifiera <strong>röstsiffrorna för budget 2027</strong> (26 ja / 13 nej) ordagrant mot
+    uppläsningen i kammaren — se <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a> — och en i
+    ärendelistan. De övriga fem ligger ännu oanvända; att gå igenom dem är en del av Fas 2 nedan. Det gör att:
+  </p>
+  <ul>
+    <li>Av de fem budgetbesluten 2023–2027 avgjordes <strong>tre genom votering om själva budgeten</strong>
+      (2023, 2025 och 2027), med fullständiga röstsiffror redovisade. Budget 2024 och budget 2026 klubbades
+      med acklamation. För 2024 finns däremot röstsiffrorna från kvällens <em>procedurvotering</em> (om
+      återremiss) redovisade separat, eftersom den visar hur ledamöterna ställde sig till att avgöra ärendet
+      alls. Se <a href="/budget/">budgetöversikten</a>.</li>
+    <li>Oppositionens (S, V och för 2026 även MP i ett gemensamt förslag med S) egna fullständiga
+      budgetförslag har hämtats och sparats som källmaterial för budget 2024, 2025 och 2026, via samma API. För
+      budget 2027 har S, MP och V:s egna fullständiga budgetförslag hämtats och sparats på samma sätt.
+      Motsvarande dokument för budget 2023 (föregår portalens täckning) har inte kunnat hämtas inom projektets
+      tidsram.</li>
+    <li>Enstaka uppgifter i ärendelistan bygger i undantagsfall på lokal press i stället för ett primärt
+      kommunalt dokument, tydligt markerat i varje sådant fall.</li>
+  </ul>
+  <p>
+    I augusti 2026 hämtades dessutom <strong>samtliga 27 kommunfullmäktigeprotokoll</strong> från 2023-05-24
+    till 2026-06-10 via samma API, och alla protokollförda voteringar — 31 stycken, med namngiven röstlängd —
+    extraherades maskinellt. Extraktionen kontrollräknades genom att antalet namngivna ledamöter per votering
+    jämfördes med protokollens egna röstsiffror: noll avvikelser. Det är den datan som ligger bakom
+    voteringstabellerna i <a href="/arenden/">ärendelistan</a> och avsnitten "Så har partiet röstat" på
+    partisidorna; de protokoll som citeras är publicerade i original under /kallor/protokoll/. Av de 31
+    voteringarna renderas de som hör till de bevakade ärendena — resten är verifierade men ännu oanvända.
+  </p>
+  <p>
+    Den enskilt största kvarvarande begränsningen i "vad har hänt"-delen av sajten är därför inte längre
+    röstsiffror, utan att all röstdata gäller kommunfullmäktige: nämndernas protokoll (barn- och
+    utbildningsnämnden och socialnämnden avgör mycket av det som påverkar vardagen) är inte genomgångna —
+    se Fas 2 nedan. Se <a href="/budget/">budgetöversikten</a> och{" "}
+    <a href="/arenden/">ärendelistan</a> för exakt vilka uppgifter som är verifierade och vilka som är
+    markerade som osäkra, ärende för ärende.
+  </p>
+
+  <h2>Budgetsiffrornas källor, år för år</h2>
+  <p>
+    Alla fem budgetbeslut (2023–2027) är kontrollerade mot kommunens egna protokoll eller mötesutsändningens
+    undertexter, med datum, paragraf och röstsiffror där de gått att hitta. Den sista luckan är stängd:
+    budget 2026 antogs vid kommunfullmäktige 2025-06-11, § 77, verifierat mot det fullständiga protokollet
+    (hämtat via Ciceron-API:et 2026-08-16) — utan votering, med skriftliga reservationer från S och MP
+    (gemensam) samt V.
+  </p>
+  <p>
+    För 2023–2027 har vi även hämtat "Verksamhetens nettokostnader" (ur resultaträkningen) och nämndvis
+    fördelning (ur avsnittet Budgetramar) direkt ur respektive års <strong>egen</strong> budgethandling — inte ur
+    senare års omräknade/restaurerade siffror, eftersom vi upptäckt att dessa kan skilja sig något (t.ex.
+    redovisas Budget 2023 som -1172,3 mnkr i 2023 års egen handling men -1172,9 mnkr i 2024 års handling).
+  </p>
+  <p>
+    Observera att nettokostnaden (hela resultaträkningens kostnadsmått) och "Totalt" i nämndfördelningen
+    (summan av nämndernas ramar plus centrala kompensationspotter) inte är samma sak och därför inte summerar
+    lika. Mellan dem ligger centrala poster som inte fördelas ut på nämnderna — dels kostnader som avskrivningar
+    och pensioner, dels intäkter, framför allt den interna kapitalkostnad nämnderna betalar för lokaler och
+    anläggningar. Eftersom intäktsposterna vuxit snabbare har skillnaden krympt över mandatperioden, och 2027 är
+    "Totalt" för första gången något högre än nettokostnaden. Det är en effekt av investeringsprogrammets
+    storlek, inte ett politiskt beslut.
+  </p>
+  <p>
+    2027 skiljer sig på en punkt: kommunen har inte publicerat någon antagen budgethandling för året på sin
+    webbplats. Siffrorna är därför hämtade ur kommunstyrelsens budgetförslag (via Ciceron-API:et 2026-08-13),
+    som är det förslag kommunfullmäktige antog oförändrat den 10 juni 2026 (§ 58, med röstsiffrorna 26–13) —
+    alltså samma innehåll som den antagna budgeten, men i förslagets dokumentform. Siffrorna är kontrollräknade
+    mot handlingens egna summeringar: nämndramarna summerar exakt till dokumentets SUMMA och TOTALT för
+    samtliga fyra årskolumner, och ramförändringen mot 2026 stämmer mot handlingens egen sammanställning.
+  </p>
+
+  <h2 id="kolada">Kolada — den första siffran som inte kommer ur ett protokoll</h2>
+  <p>
+    Allt annat på sajten går att spåra till ett dokument som någon i Höörs kommun har skrivit under: ett
+    protokoll, en budgethandling, ett valmanifest. Nyckeltalen från Kolada gör inte det, och det är värt att
+    säga rakt ut. <strong>Kolada</strong> är en öppen nationell databas över kommuner och regioner, som drivs
+    av <strong>Rådet för främjande av kommunala analyser (RKA)</strong> — en ideell förening där staten och
+    Sveriges Kommuner och Regioner är medlemmarna. Siffrorna där kommer i sin tur från SCB, Skolverket,
+    Socialstyrelsen och SKR, inte från Höörs kommun. Kommunen kan alltså inte ha valt vilka av dem som visas,
+    och Höör räknas på exakt samma sätt som alla andra kommuner. Det är hela poängen: en siffra som 1 330
+    miljoner kronor säger ingenting utan något att jämföra med.
+  </p>
+  <p>
+    Sajten hämtar {koladaAntalNyckeltal} nyckeltal för Skånes {koladaAntalKommuner} kommuner samt
+    {" "}{koladaAntalUtanfor} kommuner utanför Skåne, åren
+    {" "}{koladaForstaAr}–{koladaSistaAr}, via Koladas öppna API. De sistnämnda är medlemmar i Koladas
+    {" "}{koladaAntalGrupper} officiella <a href="/nyckeltal/#liknande">"Liknande kommuner"-grupper</a> för
+    Höör — kommuner som RKA matchat strukturellt mot Höör, verksamhet för verksamhet, och som därför ligger
+    utspridda över landet. Hämtningen görs för hand med ett skript
+    (<code>scripts/hamta-kolada.mjs</code>) och resultatet sparas som en fil i sajtens kod. Sajten anropar
+    alltså inte Kolada när du besöker den: du ser exakt de siffror som fanns när hämtningen gjordes
+    ({koladaData.hamtad}), och sidan fungerar även om Kolada ligger nere. Varje enskild siffra länkar till
+    samma API-anrop som hämtade den, så du kan klicka och se råvärdet själv.
+  </p>
+  <p>
+    <strong>Skillnaden mellan hämtat och uträknat är märkt i texten.</strong> Koladas användarvillkor tillåter
+    att data används fritt, men kräver att källan anges som "Kolada" — och förbjuder uttryckligen att egna
+    bearbetningar tillskrivs Kolada. Ett värde som står precis som det kom ur databasen bär därför sajtens
+    vanliga gröna märke. Ett värde vi själva har räknat fram — ett Skånesnitt, en placering i en rangordning,
+    en differens mellan två år — bär ett eget, annorlunda märke:
+  </p>
+  <ul>
+    <li><span class="source-link">Kolada, nyckeltal N11024 för Höör 2024</span></li>
+    <li><span class="derived-note">snitt för Skånes 33 kommuner, räknat ur Koladas råvärden</span></li>
+  </ul>
+  <p>
+    Skälet är inte bara juridiskt. Om en siffra vi räknat ut själva bar samma märke som ett protokollcitat
+    skulle märket sluta betyda något, och det märket är det enda sajten har att erbjuda i stället för att be
+    om förtroende. Sajten är inte och utger sig inte för att vara ett samarbete med RKA eller Kolada.
+  </p>
+  <p>
+    <strong>Ett år är preliminärt.</strong> {koladaPreliminaraAr.join(" och ")} års värden för
+    nettokostnadsavvikelser och kommunens ekonomi är publicerade, men fastställs först
+    {" "}{koladaFaststallsDatum} — efter valdagen. De kan alltså ändras. Där de visas är de märkta som
+    preliminära, och {koladaHuvudar} används som huvudår när något påstås utan förbehåll. Kolada aviserar inte
+    när äldre värden revideras, så hämtskriptet skriver ut en jämförelse mot föregående körning; ändras en
+    siffra vi citerat ska det synas, inte tystas.
+  </p>
+  <p>
+    Nyckeltalen är valda för att de rör det kommunen faktiskt beslutar om — förskola, grundskola, äldreomsorg
+    och kommunens egen ekonomi — och för att de går att jämföra över tid. Ett av dem,{" "}
+    <a href="/ordlista/#nettokostnadsavvikelse">nettokostnadsavvikelse</a>, är särskilt lätt att övertolka: det
+    mäter avståndet till en beräknad <a href="/ordlista/#referenskostnad">referenskostnad</a> för en kommun med
+    Höörs förutsättningar, inte kvalitet och inte politisk vilja. En låg kostnad kan kallas effektivitet av den
+    som beslutat om ramarna och underfinansiering av den som velat höja dem. Sajten redovisar utfallet och
+    värderar det inte — se <a href="/ordlista/">ordlistan</a> för de fyra statistikbegreppen.
+  </p>
+
+  <h2>Löfte: fakta, inga värderingar</h2>
+  <p>
+    Sajten spekulerar inte i valresultat och gör inga förutsägelser om vem som vinner. Grunden är hela vägen:
+    det här är vad som beslutats (med källa), och det här är vad partiet säger att det vill göra (med källa).
+    Du som läsare drar dina egna slutsatser.
+  </p>
+  <p>
+    Där vi ändå sammanfattar eller tolkar är det tydligt märkt. Sidan{" "}
+    <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a> innehåller "Vibben"-rutor som översätter
+    partiernas egna löften till klarspråk, och en "Slutsats"-ruta som drar ihop vad röstsiffrorna visar. Den
+    sidan beskriver också vad en röst på respektive block skulle innebära för inriktningen, utifrån vad
+    partierna själva säger och hur de faktiskt röstat — det är en tolkning, inte en förutsägelse, och den är
+    märkt som sammanfattning snarare än ren faktaredovisning.
+  </p>
+  <p>
+    Det enda avsnittet med fri, icke källbelagd åsikt är <a href="/ai/">AI-experimentet</a> (krönikor,
+    tankeexperiment och AI-genererat media). Det öppnar med en källbelagd observation — bara Liberalerna har en
+    uttalad AI-ståndpunkt i sitt 2026-manifest — men går sedan över i fri åsikt. Allt i avsnittet är tydligt
+    märkt som åsikt/experiment, inte fakta, och separerat från resten av sajten.
+  </p>
+  <p>
+    Löftet gäller bara om det går att pröva. Hittar du en uppgift som inte stämmer mot sin källa finns kanalen
+    för det på <a href="/ratta/">Rätta en uppgift</a>: där står hur en felanmälan prövas mot primärkällan, och
+    där ligger loggen över varje rättelse som gjorts — vad som stod, vad som står nu och vilket dokument som
+    avgjorde saken. Sakuppgifter ändras inte tyst.
+  </p>
+
+  <h2>Fas 2 — möjlig utbyggnad, inte del av det här bygget</h2>
+  <p>
+    En fullständig genomgång av samtliga protokoll och nämndmöten under mandatperioden är påbörjad men inte
+    klar: sju mötestranskriptioner är nedladdade (se ovan), varav bara en är genomgången och använd. Att gå
+    igenom resterande sex, regionvalet i Skåne, och löpande uppdatering efter valet är möjliga utbyggnader av
+    sajten, men ingår inte i det här bygget.
+  </p>
+
+  <h2 id="kallor">Källor</h2>
+  <p>
+    Samtliga källor som ligger till grund för uppgifterna på sajten, samlade på ett ställe. Varje enskild
+    uppgift länkar också direkt till sin källa där den förekommer.
+  </p>
+
+  <h3>Partiernas valmanifest och mandatfördelning</h3>
+  <ul>
+    {uniquePartiKallor.map((k) => (
+      <li><a href={k.url} target="_blank" rel="noopener noreferrer">{k.beskrivning}</a></li>
+    ))}
+  </ul>
+
+  <h3>Budgetbeslut 2023–2027</h3>
+  <ul>
+    {budgetKallor.map((k) => (
+      <li><a href={k.url} target="_blank" rel="noopener noreferrer">{k.beskrivning}</a></li>
+    ))}
+  </ul>
+
+  <h3>Ärenden och motioner</h3>
+  <ul>
+    {arendeKallor.map((k) => (
+      <li><a href={k.url} target="_blank" rel="noopener noreferrer">{k.beskrivning}</a></li>
+    ))}
+  </ul>
+
+  <h3>Nyckeltal och jämförelser</h3>
+  <ul>
+    <li><a href="https://www.kolada.se/" target="_blank" rel="noopener noreferrer">Kolada — nationell databas för kommuner och regioner, drivs av RKA</a></li>
+    <li><a href="https://www.kolada.se/om-oss/api/" target="_blank" rel="noopener noreferrer">Koladas API och användarvillkor</a></li>
+    {koladaData.nyckeltal.map((n) => (
+      <li>
+        <a href={`https://api.kolada.se/v3/data/kpi/${n.kpi_id}/municipality/${koladaData.hoor}/year/${koladaData.ar.join(",")}`} target="_blank" rel="noopener noreferrer">
+          {n.kolada_titel} ({n.kpi_id}) — Höör {koladaForstaAr}–{koladaSistaAr}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <h3>Övriga källor</h3>
+  <ul>
+    <li><a href="https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/" target="_blank" rel="noopener noreferrer">Höörs kommun — valresultat och mandatfördelning</a></li>
+    <li><a href="https://www.hoor.se/kommun-politik/politik-och-demokrati/moten-kallelser-och-protokoll/" target="_blank" rel="noopener noreferrer">Höörs kommun — möten, kallelser och protokoll</a></li>
+    {opinionData.undersokningar.map((u) => (
+      <li>
+        <a href={u.url} target="_blank" rel="noopener noreferrer">
+          {u.medium}/{u.utforare}: "{u.titel}", {u.publicerad}
+        </a>
+        {u.betalvagg ? " (betalvägg)" : ""} — opinionsmätning, {u.svarande_hoor.toLocaleString("sv-SE")} svarande i Höör.
+      </li>
+    ))}
+  </ul>
+
+  <p class="updated">Senast uppdaterad: {budgetData.senast_uppdaterad}.</p>
+</Layout>

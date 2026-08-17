@@ -1,0 +1,187 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import rattelserData from "../../data/rattelser.json";
+
+// Fälten dokumenteras i _instruktion i rattelser.json. Typen står här för att
+// loggen ska gå att fylla på utan att någon behöver gissa formatet.
+type Rattelse = {
+  datum: string;
+  sida: string;
+  sid_url: string;
+  vad_stod: string;
+  vad_star_nu: string;
+  kalla_url: string;
+  kalla_beskrivning: string;
+  rapporterad_av: string;
+};
+
+const kontakt = rattelserData.kontakt;
+
+// Sorteras nyast först. Loggen är tom vid lansering; tomma tillståndet nedan
+// säger det rakt ut i stället för att dölja avsnittet.
+const rattelser = ([...rattelserData.rattelser] as Rattelse[]).sort((a, b) => b.datum.localeCompare(a.datum));
+
+const mailtoAmne = "Rättelse: ";
+const mailtoBrodtext = [
+  "Sidans adress (klistra in URL:en):",
+  "",
+  "Vad står det nu:",
+  "",
+  "Vad borde det stå:",
+  "",
+  "Källa, om du har en (dokument, protokoll, paragraf, länk):",
+  "",
+].join("\n");
+const mailto = `mailto:${kontakt}?subject=${encodeURIComponent(mailtoAmne)}&body=${encodeURIComponent(mailtoBrodtext)}`;
+---
+
+<Layout
+  title="Rätta en uppgift"
+  description="Hittat ett fel på sajten? Så rapporterar du det, så hanteras rättelsen, och här är loggen över alla rättelser som gjorts."
+>
+  <h1>Rätta en uppgift</h1>
+  <p class="lead">
+    Hela sajten vilar på ett enda påstående: varje uppgift går att spåra till ett dokument. Det påståendet är
+    värt något bara om det går att pröva — och om fel går att anmäla och blir rättade så att det syns. Den här
+    sidan är den kanalen.
+  </p>
+
+  <div class="trust-note">
+    <p>
+      <strong>Det kommer att finnas fel här.</strong> Materialet är stort — 27 protokoll, fem budgetbeslut,
+      nio partiers manifest, 25 nyckeltal — och det är sammanställt på kort tid av en privatperson med hjälp av
+      AI-verktyg. Att låtsas om något annat vore det enda som gjorde sajten opålitlig på riktigt. Det som går
+      att lova är inte felfrihet, utan att fel rättas mot originalkällan och redovisas öppet i{" "}
+      <a href="#logg">rättelseloggen</a> längst ned på den här sidan.
+    </p>
+  </div>
+
+  <p class="ratta-cta">
+    <a href={mailto} class="ratta-cta__knapp">Rapportera ett fel via mejl</a>
+    <span class="ratta-cta__adress">eller skriv direkt till <a href={`mailto:${kontakt}`}>{kontakt}</a></span>
+  </p>
+  <p class="ratta-cta__not">
+    Varje sida på sajten har dessutom en egen rättelselänk längst ned i sidfoten, som fyller i vilken sida det
+    gäller åt dig.
+  </p>
+
+  <h2>Vad som är värt att rapportera</h2>
+  <ul>
+    <li>
+      <strong>Sakfel.</strong> En siffra, ett datum, ett paragrafnummer eller ett röstetal som inte stämmer mot
+      källan. Det här är den viktigaste kategorin: siffrorna är hela poängen.
+    </li>
+    <li>
+      <strong>Fel eller trasig källa.</strong> Länken är död, leder till fel dokument, eller till ett dokument
+      som inte säger det som påstås i texten.
+    </li>
+    <li>
+      <strong>Rätt siffra, fel sammanhang.</strong> Uppgiften stämmer men inramningen gör den missvisande — ett
+      beslut som återges utan det villkor som följde med, en votering som gällde en procedurfråga och inte
+      sakfrågan.
+    </li>
+    <li>
+      <strong>Ett parti som anser sig felaktigt återgivet.</strong> Ett löfte som inte står i manifestet, eller
+      står där med en annan innebörd än den sajten gett det. Se avsnittet för partier nedan.
+    </li>
+    <li>
+      <strong>Något som saknas och som ändrar bilden.</strong> Ett beslut, en reservation eller ett yrkande som
+      gör en redovisad händelse begriplig på ett annat sätt.
+    </li>
+  </ul>
+
+  <div class="banner">
+    <p>
+      <strong>En sak som inte är ett fel:</strong> att urvalet är begränsat. Sajten är ett urval, inte en
+      heltäckande genomgång, och vad som är med och vad som medvetet uteslutits står på{" "}
+      <a href="/om-urvalet/">Om urvalet</a>. Tycker du att urvalet snedvrider bilden är det ändå värt att
+      skriva — men det behandlas som en invändning mot ett redovisat val, inte som ett fel som rättas. Skillnaden
+      redovisas öppet i stället för att jämnas ut.
+    </p>
+  </div>
+
+  <h2>Vad som är bra att ha med</h2>
+  <ul>
+    <li>Adressen till sidan där uppgiften står, och gärna rubriken eller ärendets namn.</li>
+    <li>Vad som står nu, och vad du menar borde stå i stället.</li>
+    <li>Källan, om du har en: mötesdatum och paragraf, ett dokumentnamn, en länk.</li>
+  </ul>
+  <p>
+    <strong>Du behöver ingen källa för att skriva.</strong> "Det där stämmer inte, det var på mötet i mars" är
+    fullt tillräckligt för att jag ska gå tillbaka till protokollet och kontrollera. Det är mitt jobb att belägga
+    uppgifterna, inte ditt.
+  </p>
+
+  <h2 id="policy">Så hanteras en rättelse</h2>
+  <ol class="ratta-policy">
+    <li>
+      <strong>Kontroll mot primärkällan.</strong> Anmälan prövas mot protokollet, budgethandlingen eller
+      manifestet — inte mot minnet, och inte mot vad någon uppger per telefon. Går uppgiften inte att avgöra mot
+      ett dokument avgörs den inte alls.
+    </li>
+    <li>
+      <strong>Är det fel rättas det, och rättelsen loggas.</strong> Datum, vilken sida det gällde, vad som stod
+      och vad som står nu förs in i <a href="#logg">rättelseloggen</a>. Ingen sakuppgift ändras tyst. Stavfel,
+      trasig layout och döda länkar som byts mot samma dokument på ny adress loggas inte — de ändrar ingen
+      innebörd.
+    </li>
+    <li>
+      <strong>Är påståendet rätt men belägget svagt</strong> märks uppgiften som osäker eller tas bort. Sajten
+      har hellre en lucka som är utskriven än en uppgift som inte bär.
+    </li>
+    <li>
+      <strong>Handlar det om tolkning och inte fakta</strong> rättas ingenting, men invändningen kan skrivas in
+      i texten så att båda läsningarna syns. Var gränsen går mellan sammanfattning och faktaredovisning står
+      under "Löfte: fakta, inga värderingar" på <a href="/om-urvalet/">Om urvalet</a>.
+    </li>
+    <li>
+      <strong>Svar kan dröja.</strong> Sajten drivs på fritid av en person. Allt läses, men jag lovar ingen
+      svarstid. Rättelser som rör siffror i valrörelsens slutskede går före allt annat.
+    </li>
+  </ol>
+
+  <h2 id="partier">Till partierna</h2>
+  <p>
+    Alla nio partier i fullmäktige finns på sajten, och återgivningen bygger på partiets eget publicerade
+    material och på hur ledamöterna röstat enligt protokollen. Anser ett parti att det står fel — att ett löfte
+    inte finns i manifestet, att en ståndpunkt är felsammanfattad, eller att en votering återges utan det
+    sammanhang den hade — hanteras det som vilken annan felanmälan som helst, mot samma dokument.
+  </p>
+  <p>
+    Två saker är värda att säga rakt ut. Att ett parti är missnöjt med hur en uppgift ser ut är inte i sig ett
+    skäl att ta bort den; belägget avgör. Men om partiet har en egen formulering av sin ståndpunkt publiceras den
+    gärna, ordagrant och attribuerad, bredvid den sajten själv gjort — så att läsaren ser båda. Kontakt:{" "}
+    <a href={`mailto:${kontakt}`}>{kontakt}</a>.
+  </p>
+
+  <h2 id="logg">Rättelselogg</h2>
+  {rattelser.length === 0 ? (
+    <p class="not-box">
+      Inga rättelser är gjorda ännu. Det beror på att sajten är ny — inte på att allt är kontrollerat av någon
+      annan än den som skrev det. Loggen ligger här från början just för att den ska gå att jämföra mot senare:
+      en faktasajt utan rättelser efter en hel valrörelse har antingen haft väldigt tur, eller inte lyssnat.
+    </p>
+  ) : (
+    <ol class="rattelselogg">
+      {rattelser.map((r) => (
+        <li>
+          <p class="rattelselogg__meta">
+            <time datetime={r.datum}>{r.datum}</time> — <a href={r.sid_url}>{r.sida}</a>
+            {r.rapporterad_av ? <span class="rattelselogg__kalla">Rapporterat av: {r.rapporterad_av}</span> : null}
+          </p>
+          <p class="rattelselogg__fore"><strong>Stod:</strong> {r.vad_stod}</p>
+          <p class="rattelselogg__efter"><strong>Står nu:</strong> {r.vad_star_nu}</p>
+          {r.kalla_url ? (
+            <p>
+              <a class="source-link" href={r.kalla_url} target="_blank" rel="noopener noreferrer">
+                {r.kalla_beskrivning}
+              </a>
+            </p>
+          ) : null}
+        </li>
+      ))}
+    </ol>
+  )}
+
+  <p class="updated">Senast uppdaterad: {rattelserData.senast_uppdaterad}.</p>
+</Layout>

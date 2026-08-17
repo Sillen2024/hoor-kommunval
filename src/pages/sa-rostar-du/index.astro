@@ -1,0 +1,200 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import historiskaVal from "../../data/historiska_val.json";
+
+// Praktisk valinformation (Fabel-granskningen §5.1, TASK punkt 22).
+// Lokaler och tider är hämtade från hoor.se 2026-08-17; reglerna från val.se.
+// Personrösts-exemplet räknas ur historiska_val.json i stället för att skrivas
+// som siffror i löptext, så att det följer datan.
+
+const val2022 = historiskaVal.val.find((v) => v.ar === 2022)!;
+const giltigaRoster = 10959; // ur valdeltagande_not i historiska_val.json, länsstyrelsens protokoll
+const rosterPerMandat = Math.round(giltigaRoster / 41);
+const smaPartier = val2022.resultat.filter((r) => r.roster < 1000).length;
+const storsta = [...val2022.resultat].sort((a, b) => b.roster - a.roster)[0];
+const storstaKryss = Math.max(50, Math.ceil(storsta.roster * 0.05));
+
+// Vallokalerna på valdagen, per valdistrikt. Källa: hoor.se/kommun-politik/val-2026/,
+// kontrollerad 2026-08-17.
+const vallokaler = [
+  { distrikt: "Höör/Tjörnarp", lokal: "Församlingshemmet Tjörnarp" },
+  { distrikt: "Höör/Centrum", lokal: "Älvkullen, stora salen" },
+  { distrikt: "Höör/Veterinärsområdet", lokal: "Ringsjöskolan, idrottshallen" },
+  { distrikt: "Höör/Orup", lokal: "Sätoftaskolan, idrottshallen" },
+  { distrikt: "Höör/Åkersberg", lokal: "Maglehillsskolan, idrottshallen" },
+  { distrikt: "Höör/Stanstorp", lokal: "Församlingshemmet i Höör" },
+  { distrikt: "Höör/Ormanäs", lokal: "Maglehills särskilda boende" },
+  { distrikt: "Höör/Bokeslund", lokal: "Emiliaskolan" },
+  { distrikt: "Höör/Snogeröd", lokal: "Församlingshemmet i Bosjökloster" },
+  { distrikt: "Höör/Frostavallen", lokal: "Församlingshemmet i Hallaröd" },
+];
+---
+
+<Layout
+  title="Så röstar du"
+  description="Var, när och hur du röstar i Höörs kommunval 2026: förtidsröstning på Kulturhuset Anders från 26 augusti, tio vallokaler på valdagen 13 september — och därför kan ditt kryss avgöra."
+>
+  <h1>Så röstar du i Höör</h1>
+  <p class="lead">
+    Du kan rösta från onsdag <strong>26 augusti</strong> — i Höör gör du det på Kulturhuset Anders.
+    Valdagen är söndag <strong>13 september</strong>, och då har alla tio vallokaler öppet kl. 8–20.
+    Ta med legitimation. Mer än så krävs inte.
+  </p>
+
+  <section class="policy-block">
+    <h2>Vem får rösta i kommunvalet?</h2>
+    <p>Du får rösta till kommunfullmäktige i Höör om du fyller 18 senast på valdagen och dessutom:</p>
+    <ul>
+      <li>är svensk medborgare och folkbokförd i Höörs kommun, <em>eller</em></li>
+      <li>är medborgare i ett EU-land, Island eller Norge och folkbokförd i Höörs kommun, <em>eller</em></li>
+      <li>är medborgare i ett annat land och har varit folkbokförd i Sverige i minst tre år i rad före valdagen.</li>
+    </ul>
+    <p>
+      Fler får alltså rösta i kommunvalet än i riksdagsvalet, där bara svenska medborgare har rösträtt.
+      Röstkortet kommer senast 26 augusti — digitalt om du har en digital brevlåda, annars med posten.
+    </p>
+    <a
+      class="source-link"
+      href="https://www.val.se/sa-rostar-du/din-rostratt-och-ditt-rostkort/rostratt-for-dig-som-bor-i-sverige"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Valmyndigheten — rösträtt för dig som bor i Sverige
+    </a>
+  </section>
+
+  <section class="policy-block">
+    <h2>Rösta i förtid — från onsdag 26 augusti</h2>
+    <p>
+      Höörs förtidsröstningslokal är <strong>Kulturhuset Anders, Stenskogsvägen 2</strong>. Öppet vardagar
+      kl. 11–18 och helger kl. 10–14, med tre undantag: söndag 7 september kl. 11–14, lördag 12 september
+      kl. 9–15 och valdagen kl. 8–20.
+    </p>
+    <p>
+      Är du inte hemma går det lika bra att förtidsrösta i vilken förtidsröstningslokal som helst i hela
+      landet. Och en förtidsröst går att ångra: röstar du igen i din vallokal på valdagen är det den rösten
+      som gäller.
+    </p>
+    <a
+      class="source-link"
+      href="https://www.hoor.se/kommun-politik/val-2026/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Höörs kommun — Val 2026 (lokal och öppettider, kontrollerade 2026-08-17)
+    </a>
+  </section>
+
+  <section class="policy-block">
+    <h2>Rösta på valdagen — söndag 13 september</h2>
+    <p>
+      På valdagen röstar du i vallokalen för ditt valdistrikt — vilken det är står på ditt röstkort.
+      Alla tio har öppet kl. 8–20.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Valdistrikt</th>
+            <th scope="col">Vallokal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {vallokaler.map((v) => (
+            <tr>
+              <th scope="row">{v.distrikt}</th>
+              <td>{v.lokal}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <a
+      class="source-link"
+      href="https://www.hoor.se/kommun-politik/val-2026/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Höörs kommun — Val 2026 (vallokaler per valdistrikt, kontrollerade 2026-08-17)
+    </a>
+  </section>
+
+  <section class="policy-block">
+    <h2>Vad ska jag ha med mig?</h2>
+    <p>
+      <strong>Legitimation</strong> — id-kort, körkort eller pass. Röstkortet behöver du inte ha med dig,
+      varken när du förtidsröstar eller på valdagen; saknar du id-handling kan en annan person intyga din
+      identitet, men då måste den personen visa sin.
+    </p>
+    <p>
+      Det är tre val samma dag: riksdag (gula valsedlar), region (blå) och kommun (vita). Den här sajten
+      handlar om kommunvalet — de vita valsedlarna. Vad de tre valen faktiskt avgör står i{" "}
+      <a href="/vad-bestammer-kommunen/">Vad bestämmer kommunen?</a>
+    </p>
+    <a
+      class="source-link"
+      href="https://www.val.se/sa-rostar-du/fortidsrosta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Valmyndigheten — så röstar du
+    </a>
+  </section>
+
+  <section class="policy-block">
+    <h2>Krysset: därför kan personrösten avgöra i Höör</h2>
+    <p>
+      På valsedeln kan du sätta kryss för <strong>en</strong> kandidat. Får en kandidat kryss av minst
+      5 procent av partiets väljare i kommunen, och minst 50 kryss totalt, går den före partiets egen
+      listordning när platserna fördelas.
+    </p>
+    <p>
+      I en kommun av Höörs storlek är det låga trösklar. I valet 2022 räknades {giltigaRoster.toLocaleString("sv-SE")} giltiga
+      röster i kommunvalet, och {smaPartier} av de nio partierna fick under 1 000 röster var — för dem
+      räcker alltså 50 kryss för att ändra vem som tar partiets plats i fullmäktige. Även i det största
+      partiet, {storsta.parti} med {storsta.roster.toLocaleString("sv-SE")} röster, gick gränsen vid
+      {" "}{storstaKryss} kryss. Ett mandat motsvarade i praktiken ungefär {rosterPerMandat} röster.
+    </p>
+    <span class="derived-note">
+      trösklarna och röstetalet per mandat är uträknade här ur 2022 års valresultat (länsstyrelsens
+      protokoll) — se <a href="/historiska-val/">Historiska val</a> för siffrorna per parti
+    </span>
+    <a
+      class="source-link"
+      href="https://www.val.se/det-svenska-valsystemet/rostrakning-och-mandatfordelning/sa-utses-ledamoter"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Valmyndigheten — så utses ledamöter (personröstningens spärrar)
+    </a>
+  </section>
+
+  <section class="policy-block">
+    <h2>Svårt att ta dig till en lokal?</h2>
+    <p>
+      Kommunen har <strong>ambulerande röstmottagare</strong> som kommer hem till dig under hela perioden
+      26 augusti–13 september; de bokas på telefon 0702-03 59 08. Du kan också rösta med
+      {" "}<strong>bud</strong>: budet ska ha fyllt 18 år och kan vara en anhörig, en vän eller till exempel
+      din vårdare.
+    </p>
+    <a
+      class="source-link"
+      href="https://www.hoor.se/kommun-politik/val-2026/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Höörs kommun — Val 2026 (ambulerande röstmottagare och budröstning)
+    </a>
+  </section>
+
+  <p>
+    Osäker på vad du ska rösta på? Börja med <a href="/#valkompass">valkompassen</a>, läs{" "}
+    <a href="/styret-vs-oppositionen/">vad som skiljer blocken åt</a> eller se{" "}
+    <a href="/din-vardag/">vad partierna lovar just dig</a>.
+  </p>
+
+  <p class="updated">
+    Lokaler och tider enligt hoor.se, reglerna enligt val.se — båda kontrollerade 2026-08-17. Stämmer något
+    inte mot ditt röstkort är det röstkortet som gäller.
+  </p>
+</Layout>

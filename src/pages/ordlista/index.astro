@@ -1,0 +1,168 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Ordlista"
+  description="Förklaring av de kommunalpolitiska begrepp som återkommer i Höörs protokoll och på den här sajten."
+>
+  <h1>Ordlista</h1>
+  <p class="lead">
+    De flesta orden nedan är hämtade ur kommunfullmäktiges protokoll och återkommer därför i texterna på den
+    här sajten. Fyra av dem — nettokostnadsavvikelse, referenskostnad, standardkostnad och soliditet — kommer i
+    stället ur den nationella statistikdatabasen Kolada, och används när Höörs siffror sätts i relation till
+    andra kommuner. De förklaras här för att du ska slippa slå upp dem någon annanstans mitt i en text. Där det
+    finns ett belagt exempel från Höör står det med.
+  </p>
+
+  <dl class="ordlista">
+    <dt id="acklamation">Acklamation</dt>
+    <dd>
+      Ett beslut fattas utan att rösterna räknas: ordföranden frågar om fullmäktige kan anta förslaget och
+      konstaterar svaret på ropen i salen. Det används när ingen begär votering, alltså när utgången redan är
+      given. Budget 2024 antogs så i Höör den 14 juni 2023 (§ 77) — den omröstning som ändå hölls den kvällen
+      gällde en procedurfråga, inte budgeten. Se <a href="/budget/">budgetöversikten</a>.
+    </dd>
+
+    <dt id="huvudvotering">Huvudvotering</dt>
+    <dd>
+      Den avgörande omröstningen, där huvudförslaget ställs mot det motförslag som vunnit kontrapropositionen.
+      Det är här beslutet faktiskt fattas. I Höörs budget för 2023 vann kommunstyrelsens förslag över
+      Socialdemokraternas med 26 ja mot 13 nej, medan 2 ledamöter avstod. Se{" "}
+      <a href="/budget/">budgetöversikten</a>.
+    </dd>
+
+    <dt id="kontraproposition">Kontraproposition</dt>
+    <dd>
+      När det finns fler än två förslag måste fullmäktige först avgöra vilket av dem som ska få möta
+      huvudförslaget i den avgörande omröstningen. Den utslagsomröstningen kallas kontraproposition. Inför
+      budget 2023 ställdes Socialdemokraternas och Vänsterpartiets förslag mot varandra på det sättet: S vann
+      med 10 röster mot 3, och 28 ledamöter avstod. Samma sak upprepades inför budgetarna 2025 och 2027 — se{" "}
+      <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+    </dd>
+
+    <dt id="minoritetsstyre">Minoritetsstyre</dt>
+    <dd>
+      De partier som bildar styre har tillsammans färre än hälften av mandaten och behöver därför stöd från
+      andra partier för att få igenom sina förslag. I Höör styr M, L, C och KD med 17 av 41 mandat. Se{" "}
+      <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+    </dd>
+
+    <dt id="nettokostnadsavvikelse">Nettokostnadsavvikelse</dt>
+    <dd>
+      Skillnaden mellan vad kommunen faktiskt gör av med på en verksamhet och den{" "}
+      <a href="#referenskostnad">referenskostnad</a> som räknats fram för en kommun med Höörs befolkning,
+      åldersfördelning och bebyggelse. Ett negativt värde betyder att kommunen lägger mindre än vad som är
+      statistiskt förväntat, ett positivt att den lägger mer. <strong>Måttet är inte ett betyg och inte ett
+      sparbeting.</strong> Det säger ingenting om kvaliteten i verksamheten och ingenting om vilken nivå som
+      vore rätt — bara hur Höör förhåller sig till en beräknad jämförelsepunkt. En negativ avvikelse betyder
+      alltså inte att kommunen "sparar pengar": samma siffra kan beskrivas som effektivitet av den som
+      beslutat om ramarna och som underfinansiering av den som velat höja dem. Höörs förskola låg 2024 19,2
+      procent under referenskostnaden, vilket motsvarar 28,6 miljoner kronor — lägst i Skåne, och samma
+      slutsats som ett helt annat mått ger, se <a href="/nyckeltal/#forskola">Förskolan</a> under Nyckeltal.
+      Beräkningssättet lades om 2019, så år före och efter är inte helt jämförbara.{" "}
+      <a class="source-link" href="https://api.kolada.se/v3/data/kpi/N11024,N11038/municipality/1267/year/2024" target="_blank" rel="noopener noreferrer">Kolada, nyckeltal N11024 och N11038 för Höör 2024</a>
+    </dd>
+
+    <dt id="namndram">Nämndram</dt>
+    <dd>
+      Den summa pengar en enskild nämnd tilldelas i budgeten för ett år. Nämnden bestämmer själv hur pengarna
+      används inom sitt område, men kan inte överskrida ramen utan nytt beslut. Ramarna är den del av budgeten
+      som märks tydligast i verksamheten: i budget 2024 fick socialnämnden 371,7 miljoner kronor och barn- och
+      utbildningsnämnden 393,7 miljoner. Samtliga ramar finns i <a href="/budget/">budgetöversikten</a>.
+    </dd>
+
+    <dt id="referenskostnad">Referenskostnad</dt>
+    <dd>
+      Den kostnad en verksamhet beräknas ha i just den här kommunen, utifrån hur många barn, elever eller
+      äldre som bor här, hur de bor och vad det kostar — omräknat till det aktuella årets faktiska
+      kostnadsläge i riket. Referenskostnaden är varken en budget eller ett krav: ingen kommun är skyldig att
+      lägga sig på den, och de flesta gör det inte. Modellen är dessutom kalibrerad så att summan för alla
+      Sveriges kommuner blir lika med vad kommunerna faktiskt gjorde av med — den mäter alltså hur andra
+      kommuner gör, inte vad som vore rätt nivå. Den finns för att en liten landsbygdskommun och en storstad
+      annars inte går att jämföra. Avståndet mellan kommunens faktiska kostnad och referenskostnaden är{" "}
+      <a href="#nettokostnadsavvikelse">nettokostnadsavvikelsen</a>.
+    </dd>
+
+    <dt id="reservation">Reservation</dt>
+    <dd>
+      En ledamot som förlorar en omröstning kan anmäla reservation för att formellt markera att hen inte står
+      bakom beslutet. Den kan vara muntlig eller skriftlig och förs in i protokollet. Reservationen ändrar
+      ingenting i sak, men gör oenigheten spårbar i efterhand. Vid budgetbeslutet för 2025 anmälde Kent Staaf
+      (S) och Olle Krabbe (V) skriftliga reservationer, som finns i original på{" "}
+      <a href="/budget/">budgetöversikten</a>.
+    </dd>
+
+    <dt id="skattevaxling">Skatteväxling</dt>
+    <dd>
+      Skatten höjs på en nivå och sänks lika mycket på en annan, till exempel mellan region och kommun, så att
+      den totala skatten för invånaren blir oförändrad. Det används när ansvaret för en verksamhet flyttas
+      mellan huvudmän — pengarna följer med uppgiften.
+    </dd>
+
+    <dt id="soliditet">Soliditet</dt>
+    <dd>
+      Hur stor del av kommunens tillgångar som är betald med egna pengar i stället för med lån, mätt som eget
+      kapital delat med summa tillgångar. Ju högre värde, desto mindre av det kommunen äger är lånefinansierat.
+      Måttet redovisas normalt utan de pensionsåtaganden som tjänats in före 1998, vilka ligger utanför
+      balansräkningen — den verkliga skuldbördan är alltså större än siffran antyder. Höörs soliditet var 37,1
+      procent 2024, mot 51,2 procent 2018.{" "}
+      <a class="source-link" href="https://api.kolada.se/v3/data/kpi/N03106/municipality/1267/year/2018,2024" target="_blank" rel="noopener noreferrer">Kolada, nyckeltal N03106 för Höör 2018 och 2024</a>
+    </dd>
+
+    <dt id="standardkostnad">Standardkostnad</dt>
+    <dd>
+      Utjämningssystemets egen beräkning av vad en verksamhet borde kosta i kommunen, byggd på strukturvariabler
+      — för förskolan till exempel barnens genomsnittliga vistelsetid och andelen 1–5-åringar, plus delar av
+      delmodellerna för löner, bebyggelsestruktur och befolkningsutveckling. Standardkostnaden är det som styr
+      hur mycket kommunen får eller betalar i den kommunalekonomiska utjämningen.{" "}
+      <a href="#referenskostnad">Referenskostnaden</a> bygger på samma beräkning, men justerad till årets
+      faktiska kostnadsläge, och är den som används när{" "}
+      <a href="#nettokostnadsavvikelse">nettokostnadsavvikelsen</a> räknas fram.
+    </dd>
+
+    <dt id="votering">Votering / omröstning</dt>
+    <dd>
+      När fullmäktige inte är eniga räknas rösterna formellt: varje ledamot svarar ja, nej eller avstår. Vad ja
+      respektive nej står för avgörs av hur ordföranden ställt förslagen mot varandra, så en röstsiffra säger
+      lite utan sitt sammanhang. Tre av Höörs fem budgetar för 2023–2027 avgjordes genom votering om själva
+      budgeten. Se <a href="/budget/">budgetöversikten</a>.
+    </dd>
+
+    <dt id="vagmastare">Vågmästare</dt>
+    <dd>
+      Ett parti som varken tillhör styret eller den samlade oppositionen, men vars röster avgör vilken sida som
+      vinner eftersom ingen sida har egen majoritet. I Höör har styrets 17 mandat landat på exakt 26 ja-röster i
+      budgetvoteringarna: 2023 och 2025 fylldes de ut av hela Sverigedemokraternas grupp om 9 mandat, och 2027
+      av 8 SD-ledamöter plus Medborgerlig Samling. Se{" "}
+      <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+    </dd>
+
+    <dt id="yrkande">Yrkande</dt>
+    <dd>
+      Ett formellt förslag till beslut som en ledamot lägger fram under sammanträdet — till exempel bifall,
+      avslag eller återremiss. Yrkandena avgör vad som faktiskt går till omröstning. Inför budget 2024 yrkade
+      Olle Krabbe (V) på återremiss, vilket blev den enda fråga som gick till votering den kvällen. Se{" "}
+      <a href="/budget/">budgetöversikten</a>.
+    </dd>
+
+    <dt id="aterremiss">Återremiss</dt>
+    <dd>
+      Ärendet skickas tillbaka till förvaltningen eller nämnden för mer beredning i stället för att avgöras nu.
+      En tredjedel av ledamöterna räcker för att tvinga fram en återremiss (minoritetsåterremiss), vilket i
+      Höörs fullmäktige med 41 mandat betyder 14 röster. Det tydligaste Höör-exemplet är sammanträdesplaneringen
+      för 2025: styret vann voteringen med 24 mot 15, men eftersom nej-sidans 15 röster passerade gränsen på 14
+      återremitterades ärendet ändå — minoriteten fick sin vilja igenom trots att den förlorade omröstningen. Se{" "}
+      <a href="/arenden/#minskat-antal-sammantraden-for-fullmaktige-styrelse-och-arbetsutskott-2025">ärendet</a>.
+      Ett exempel på motsatsen: Vänsterpartiets yrkande om återremiss av budget 2024 föll med 26 ja mot 11 nej
+      och 3 som avstod — tre röster från gränsen. Se <a href="/budget/">budgetöversikten</a>.
+    </dd>
+  </dl>
+
+  <p class="updated">
+    Höör-exemplen är hämtade ur de protokollförda besluten på <a href="/budget/">budgetöversikten</a> och i{" "}
+    <a href="/arenden/">ärendelistan</a>, utom de fyra statistikbegreppen, vars exempel kommer ur Kolada och
+    länkar direkt till siffran i Koladas öppna API. Begrepp utan exempel saknar belagt Höör-exempel i sajtens underlag. Om hur Kolada används och
+    vad som skiljer en hämtad siffra från en vi räknat själva, se <a href="/om-urvalet/">Om urvalet</a>.
+  </p>
+</Layout>

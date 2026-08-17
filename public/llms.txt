@@ -1,0 +1,25 @@
+# Höörs kommunval 2026 - Faktasajt
+
+> Oberoende, ideell faktasammanställning inför kommunvalet i Höör 13 september 2026. Sajten drivs inte av något parti och gör inga värderingar av vad partierna säger — bara dokumenterade fakta med källa.
+
+Syftet är att presentera vad styret har beslutat och vad partierna lovar inför valet 2026 i Höörs kommun. All information är öppen för LLM:ar och AI-botar att läsa och indexera.
+
+## Sidor
+
+- [Startsida](https://hoor-kommunval.ibland.nu/): Översikt över sajten och valet 2026
+- [Partier](https://hoor-kommunval.ibland.nu/partier/): Lista över partier i Höörs kommunfullmäktige
+- [Ärenden](https://hoor-kommunval.ibland.nu/arenden/): Beslutade och pågående ärenden i kommunen
+- [Budget](https://hoor-kommunval.ibland.nu/budget/): Styrets och oppositionens budgetförslag 2024-2026
+- [Nyckeltal](https://hoor-kommunval.ibland.nu/nyckeltal/): Höörs kostnader och resultat jämförda med Skånes 33 kommuner, grannkommunerna och Koladas "Liknande kommuner"-grupper. Data ur Koladas öppna API; uträknade snitt och placeringar är märkta som egen bearbetning
+- [Styret vs oppositionen](https://hoor-kommunval.ibland.nu/styret-vs-oppositionen/): Jämförelse av röstningsmönster
+- [Jämförelse](https://hoor-kommunval.ibland.nu/jamforelse/): Jämför partiernas ståndpunkter
+- [Din vardag](https://hoor-kommunval.ibland.nu/din-vardag/): Hur besluten påverkar invånarna
+- [Historiska val](https://hoor-kommunval.ibland.nu/historiska-val/): Tidigare valresultat i Höör
+- [Valkompass](https://hoor-kommunval.ibland.nu/valkompass/): Interaktiv valkompass
+- [Ordlista](https://hoor-kommunval.ibland.nu/ordlista/): Förklaringar av vanliga kommunalpolitiska begrepp
+- [Om urvalet](https://hoor-kommunval.ibland.nu/om-urvalet/): Källförteckning och metod
+- [Om sajten](https://hoor-kommunval.ibland.nu/om/): Om projektet och dess syfte
+
+## Optional
+
+- [AI-innehåll](https://hoor-kommunval.ibland.nu/ai/): Samlat AI-relaterat innehåll om valet

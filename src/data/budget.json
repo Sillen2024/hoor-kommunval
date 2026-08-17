@@ -1,0 +1,371 @@
+{
+  "senast_uppdaterad": "2026-08-17 (de öronmärkta posterna backfyllda för budgetåren 2023–2026, kontrollräknade mot respektive års budgethandling och protokoll — alla fem åren visas nu som en flerårstabell)",
+  "beslut": [
+    {
+      "typ": "budget",
+      "ar": 2023,
+      "titel": "Budget 2023 med verksamhetsplan för 2024-2025",
+      "beskrivning": "Första budgeten som beslutades av den kommunfullmäktige som tillträdde efter valet 2022. Kommunstyrelsens arbetsutskott (KSAU) tog fram sitt budgetförslag 2022-11-08. Kommunfullmäktige antog budgeten 2022-11-30. Både Socialdemokraterna, Vänsterpartiet och Miljöpartiet hade egna alternativa budgetförslag med i beslutsunderlaget. Två omröstningar hölls: först en kontraproposition om vilket av S och V:s förslag som skulle bli motförslag till styrets (S vann, 10-3, 28 avstod), därefter huvudvoteringen mellan styrets (Alliansens) förslag och S (26-13, 2 avstod, MED avstod).",
+      "forslagsstallare": "Kommunstyrelsen/Kommunstyrelsens arbetsutskott (styre: M, L, C, KD)",
+      "forslag_datum": "2022-11-08",
+      "antagen_datum": "2022-11-30",
+      "antagen_paragraf": "§ 145",
+      "diarienummer": "KSF 2021/1167",
+      "kommunal_skattesats": "21,75 kr/hundralapp (oförändrad)",
+      "resultat": "Antagen 2022-11-30, § 145, av kommunfullmäktige, efter två omröstningar. Låneram 202 mkr, internränta 1,25%.",
+      "total_nettokostnad_mnkr": 1172.3,
+      "namndfordelning_tkr": {
+        "Kommunfullmäktige": 1031,
+        "Valnämnden": 20,
+        "Revision": 961,
+        "Kommunstyrelse": 229926,
+        "Socialnämnd": 330714,
+        "Barn- och utbildningsnämnd": 380641,
+        "Tillstånd- och tillsynsnämnd": 352,
+        "Nämnden för kultur, arbete och folkhälsa": 53207,
+        "VA/Räddningsnämnd (skattefinansierad del)": 15349,
+        "VA (avgiftsfinansierad del)": 0,
+        "Överförmyndarnämnd": 3436,
+        "Summa (nämndernas nettokostnader)": 1015637,
+        "Kompensationer (löne-, inflations- och demografikompensation)": 94911,
+        "Totalt (Budgetramar)": 1110548
+      },
+      "namndfordelning_kalla": "Budgetramar, samma dokument som ovan (KSAU:s förslag).",
+      "oronmarkta_poster": {
+        "beslutssats": "Budgetramarna för ekonomiskt bistånd, gymnasiekostnader, bostadsanpassning samt badet får inte användas av respektive nämnd till andra kostnader.",
+        "beslutssats_kalla": "Kommunfullmäktige 2022-11-30, § 145, beslutspunkt 2 (av sex). Ordagrant citat ur protokollet, skickat av kommunens registrator 2026-08-12 på begäran.",
+        "beslutspunkt": 2,
+        "beslutspunkt_av": 6,
+        "poster_tkr": {
+          "Gymnasieverksamhet": 94914,
+          "Badet": 8253,
+          "Ekonomiskt bistånd": 12000,
+          "Bostadsanpassningsbidrag": 1636
+        },
+        "poster_namnd": {
+          "Gymnasieverksamhet": "Kommunstyrelsen",
+          "Badet": "Nämnden för kultur, arbete och folkhälsa",
+          "Ekonomiskt bistånd": "Socialnämnden",
+          "Bostadsanpassningsbidrag": "Kommunstyrelsen"
+        },
+        "summa_tkr": 116803,
+        "not": "Beloppen står som \"varav\"-rader i tabellen Budgetramar i årets budgethandling (kolumnen Budget 2023) och ingår redan i respektive nämnds ram — de ska inte adderas till nämndsummorna. Kontrollräknade i två oberoende extraktionslägen (pdftotext -table respektive -fixed) 2026-08-17.",
+        "aterkommande": "Samma beslutssats, med samma fyra poster, återkommer i samtliga fem budgetbeslut under mandatperioden (budgetåren 2023–2027). Paragraf- och beslutspunktnummer skiljer sig mellan åren."
+      },
+      "rostning": {
+        "ja": 26,
+        "nej": 13,
+        "avstar": 2,
+        "franvarande": 0
+      },
+      "rostning_not": "Huvudvotering (Omröstning 2): kommunstyrelsens/Alliansens förslag (26 ja) mot Socialdemokraternas förslag (13 nej), 2 avstod (Medborgerlig Samling). Föregicks av en kontraproposition (Omröstning 1) mellan S och V:s förslag om vilket som skulle bli motförslag: S vann med 10 ja mot V:s 3, 28 ledamöter avstod. Stefan Lissmark (S) reserverade sig muntligt för hela S-gruppen mot huvudbeslutet. En separat skriftlig reservation från S rör en avslagen begäran om att bifoga ett 'klarläggande' dokument till protokollet, inte själva budgetbeslutet.",
+      "kalla_url": "https://www.hoor.se/app/uploads/budget-2023-vep-2024-2025-forslag-ksau-221108.pdf",
+      "kalla_beskrivning": "KSAU:s budgetförslag (samma dokument som kommunens egen budgetsida listar som 'Budget för år 2023'). Röstsiffror och paragraf verifierade mot protokollet 'Kommunfullmäktige 2022-11-30 (2022-11-30 KF §145).pdf', skickat av kommunens registrator 2026-08-12 på begäran.",
+      "oppositionsbudget_not": "S, V och MP:s alternativa budgetförslag för 2023 finns inte digitalt i kommunens Ciceron-portal (sok-hr.unikom.se) — den täcker bara möten från och med 2023-05-24, och beslutsmötet 2022-11-30 ligger före det fönstret. Förslagen finns sannolikt i kommunens fysiska/digitala arkiv, men kräver en separat begäran till registrator för att tas fram."
+    },
+    {
+      "typ": "budget",
+      "ar": 2024,
+      "titel": "Budget 2024 med verksamhetsplan för 2025-2026",
+      "beskrivning": "Antagen av kommunfullmäktige. Själva budgeten avgjordes utan votering: sedan fullmäktige beslutat att avgöra ärendet samma dag ställde ordföranden budgetförslagen mot varandra och fann att Alliansens förslag antogs (acklamation). Den enda omröstningen på mötet gällde en procedurfråga — Olle Krabbes (V) yrkande om återremiss. Roger Orwén (MP) lämnade sammanträdet klockan 20:50, innan voteringen. Skriftliga reservationer lämnades av Stefan Lissmark (S) och Olle Krabbe (V).",
+      "forslagsstallare": "Kommunstyrelsen (styre: M, L, C, KD)",
+      "forslag_datum": null,
+      "antagen_datum": "2023-06-14",
+      "antagen_paragraf": "§ 77",
+      "diarienummer": "2022-01111",
+      "kommunal_skattesats": "21,75 kr/hundralapp (oförändrad)",
+      "resultat": "Antagen 2023-06-14, § 77, av kommunfullmäktige, med acklamation. Den votering som hölls gällde en procedurfråga (återremiss), inte budgeten.",
+      "total_nettokostnad_mnkr": 1239.3,
+      "namndfordelning_tkr": {
+        "Kommunfullmäktige": 1004,
+        "Valnämnden": 261,
+        "Revision": 1000,
+        "Kommunstyrelse": 241624,
+        "Socialnämnd": 371697,
+        "Barn- och utbildningsnämnd": 393707,
+        "Tillstånd- och tillsynsnämnd": 353,
+        "Nämnden för kultur, arbete och folkhälsa": 51940,
+        "VA/Räddningsnämnd (skattefinansierad del)": 15892,
+        "VA (avgiftsfinansierad del)": 0,
+        "Överförmyndarnämnd": 3445,
+        "Summa (nämndernas nettokostnader)": 1080924,
+        "Kompensationer (löne-, inflations- och demografikompensation)": 88909,
+        "Totalt (Budgetramar)": 1169833
+      },
+      "namndfordelning_kalla": "Budgetramar, samma antagna dokument som ovan.",
+      "oronmarkta_poster": {
+        "beslutssats": "Budgetramarna för ekonomiskt bistånd, gymnasiekostnader, bostadsanpassning samt badet får inte användas av respektive nämnd till andra kostnader.",
+        "beslutssats_kalla": "Kommunfullmäktige 2023-06-14, § 77, beslutspunkt 2 (av fem). Ordagrant citat ur protokollet, skickat av kommunens registrator 2026-08-12 på begäran.",
+        "beslutspunkt": 2,
+        "beslutspunkt_av": 5,
+        "poster_tkr": {
+          "Gymnasieverksamhet": 98871,
+          "Badet": 8911,
+          "Ekonomiskt bistånd": 11500,
+          "Bostadsanpassningsbidrag": 1485
+        },
+        "poster_namnd": {
+          "Gymnasieverksamhet": "Kommunstyrelsen",
+          "Badet": "Nämnden för kultur, arbete och folkhälsa",
+          "Ekonomiskt bistånd": "Socialnämnden",
+          "Bostadsanpassningsbidrag": "Kommunstyrelsen"
+        },
+        "summa_tkr": 120767,
+        "not": "Beloppen står som \"varav\"-rader i tabellen Budgetramar i årets budgethandling (kolumnen Budget 2024) och ingår redan i respektive nämnds ram — de ska inte adderas till nämndsummorna. Kontrollräknade i två oberoende extraktionslägen (pdftotext -table respektive -fixed) 2026-08-17.",
+        "aterkommande": "Samma beslutssats, med samma fyra poster, återkommer i samtliga fem budgetbeslut under mandatperioden (budgetåren 2023–2027). Paragraf- och beslutspunktnummer skiljer sig mellan åren."
+      },
+      "rostning": null,
+      "procedurvotering": {
+        "ja": 26,
+        "nej": 11,
+        "avstar": 3,
+        "franvarande": 1
+      },
+      "procedurvotering_not": "Det här är inte en budgetomröstning. Voteringen gällde om ärendet skulle avgöras samma dag eller återremitteras: JA = ärendet avgörs idag, NEJ = bifall till Olle Krabbes (V) förslag om återremiss till förvaltningen. 26 röstade ja, 11 nej (8 S + 3 V) och 3 avstod: Andrew Briggs (MP), Anna Jung (MED) och Johan Karlsson (MED). För minoritetsåterremiss hade krävts 14 nej. Själva budgeten togs därefter med acklamation — ordföranden ställde budgetförslagen mot varandra och fann att Alliansens förslag antogs. Att Sverigedemokraterna stödde budgeten framgår i stället av yrkandena: Stefan Liljenberg, Helena Lindblom Ohlson och Rolf Streijffert (SD) yrkade uttryckligen bifall till Alliansens förslag. De 26 ja-rösterna i procedurvoteringen var styrets 17 mandat plus SD:s 9. Roger Orwén (MP) lämnade sammanträdet klockan 20:50, före voteringen. Skriftliga reservationer från Stefan Lissmark (S) och Olle Krabbe (V) — båda finns att läsa i sin helhet bland källdokumenten nedan. Socialdemokraternas fullständiga motförslag samt Vänsterpartiets och Miljöpartiets egna budgetförslag (som inte blev formellt motförslag men fanns med i beslutsunderlaget) finns i fulltext under \"Vad ville oppositionen göra annorlunda?\" ovan.",
+      "kalla_url": "https://www.hoor.se/app/uploads/budget-2024-vep-2025-2026-antagen-kf-2023-06-14-c2a7-77.pdf",
+      "kalla_beskrivning": "Antagen budget, med datum/paragraf/diarienummer angivet i dokumentets försättsblad. Beslutsgång, röstsiffror och namngiven röstlängd verifierade mot protokollet 'Beslut-202201111-KSF-§ 77.pdf' s. 2–3, skickat av kommunens registrator 2026-08-12 på begäran.",
+      "bilagor": [
+        {
+          "titel": "Skriftlig reservation, Socialdemokraterna (KF 2023-06-14 § 77)",
+          "url": "/kallor/reservationer/reservation_S_230614_par77.pdf"
+        },
+        {
+          "titel": "Skriftlig reservation, Vänsterpartiet (KF 2023-06-14 § 77)",
+          "url": "/kallor/reservationer/reservation_V_230614_par77.pdf"
+        }
+      ]
+    },
+    {
+      "typ": "budget",
+      "ar": 2025,
+      "titel": "Budget 2025 med verksamhetsplan för 2026-2027",
+      "beskrivning": "Antagen av kommunfullmäktige 2024-06-19, tidigare i kalenderåret än vad kommunallagen kräver (styret ville ge mer tid för beslutade åtgärder att få effekt). Fyra förslag ställdes mot varandra: kommunstyrelsens/Alliansens, samt egna förslag från S, V och MP. Efter en flerstegs kontraproposition (S:s förslag valdes till motförslag före V:s och MP:s) vann kommunstyrelsens förslag huvudvoteringen med 26-13. Tidigare felaktig uppgift i detta dataset (att budgeten beslutades 2024-09-25) är nu korrigerad - det datumet innehöll inget budgetärende alls.",
+      "forslagsstallare": "Kommunstyrelsen (styre: M, L, C, KD)",
+      "forslag_datum": null,
+      "antagen_datum": "2024-06-19",
+      "antagen_paragraf": "§ 75",
+      "diarienummer": "KSF-2023-00923",
+      "kommunal_skattesats": "21,75 kr/hundralapp (oförändrad)",
+      "resultat": "Antagen 2024-06-19, § 75, av kommunfullmäktige. Låneram 200 mkr, internränta 2,5%, PO-pålägg 37,54%.",
+      "total_nettokostnad_mnkr": 1283.2,
+      "namndfordelning_tkr": {
+        "Kommunfullmäktige": 1160,
+        "Valnämnden": 20,
+        "Revision": 1100,
+        "Kommunstyrelse": 268177,
+        "Socialnämnd": 390221,
+        "Barn- och utbildningsnämnd": 429914,
+        "Tillstånd- och tillsynsnämnd": 354,
+        "Nämnden för kultur, arbete och folkhälsa": 55022,
+        "VA/Räddningsnämnd (skattefinansierad del)": 0,
+        "VA (avgiftsfinansierad del)": 0,
+        "Överförmyndarnämnd": 3613,
+        "Summa (nämndernas nettokostnader)": 1149581,
+        "Kompensationer (löne-, inflations- och demografikompensation)": 94677,
+        "Totalt (Budgetramar)": 1244258
+      },
+      "namndfordelning_kalla": "Budgetramar, Alliansens/kommunstyrelsens ursprungliga budgetförslag (samma dokument som ovan).",
+      "oronmarkta_poster": {
+        "beslutssats": "Budgetramarna för ekonomiskt bistånd, gymnasiekostnader, bostadsanpassning samt badet får inte användas av respektive nämnd till andra kostnader.",
+        "beslutssats_kalla": "Kommunfullmäktige 2024-06-19, § 75, beslutspunkt 3 (av sju). Ordagrant citat ur protokollet, som finns i sin helhet bland källdokumenten nedan.",
+        "beslutspunkt": 3,
+        "beslutspunkt_av": 7,
+        "poster_tkr": {
+          "Gymnasieverksamhet": 99743,
+          "Badet": 10283,
+          "Ekonomiskt bistånd": 10311,
+          "Bostadsanpassningsbidrag": 1490
+        },
+        "poster_namnd": {
+          "Gymnasieverksamhet": "Kommunstyrelsen",
+          "Badet": "Nämnden för kultur, arbete och folkhälsa",
+          "Ekonomiskt bistånd": "Socialnämnden",
+          "Bostadsanpassningsbidrag": "Kommunstyrelsen"
+        },
+        "summa_tkr": 121827,
+        "not": "Beloppen står som \"varav\"-rader i tabellen Budgetramar i årets budgethandling (kolumnen Budget 2025) och ingår redan i respektive nämnds ram — de ska inte adderas till nämndsummorna. Kontrollräknade i två oberoende extraktionslägen (pdftotext -table respektive -fixed) 2026-08-17. Badets ram för 2025 står som 10 283 tkr i årets egen handling men som 10 531 tkr i 2026 års handling, som räknat om året — sajten följer genomgående respektive års egen handling.",
+        "aterkommande": "Samma beslutssats, med samma fyra poster, återkommer i samtliga fem budgetbeslut under mandatperioden (budgetåren 2023–2027). Paragraf- och beslutspunktnummer skiljer sig mellan åren."
+      },
+      "rostning": {
+        "ja": 26,
+        "nej": 13,
+        "avstar": 0,
+        "franvarande": 2
+      },
+      "rostning_not": "Huvudvotering (Omröstning 2): kommunstyrelsens förslag (26 ja) mot Socialdemokraternas förslag (13 nej, inkl. MP:s och V:s ledamöter som röstade med S i huvudomröstningen). Föregicks av en kontraproposition (Omröstning 1) om vilket av S, V och MP:s förslag som skulle bli motförslag: S:s förslag vann mot V:s med 8 ja - 3 nej - 28 avstod (MP:s förslag ställdes aldrig mot S:s). Skriftliga reservationer anmäldes av Kent Staaf (S) och Olle Krabbe (V) — båda finns att läsa i sin helhet bland källdokumenten nedan. Samtliga tre oppositionsförslag (S, V och MP) finns i fulltext under \"Vad ville oppositionen göra annorlunda?\" ovan.",
+      "kalla_url": "https://www.hoor.se/app/uploads/alliansens-forslag-till-budget-2025-vep-2026-2027-pub.pdf",
+      "kalla_beskrivning": "Alliansens/kommunstyrelsens ursprungliga budgetförslag. Antagandedatum, paragraf, diarienummer och röstsiffror verifierade mot det fullständiga mötesprotokollet (35 sidor), hämtat ur kommunens mötesportal och publicerat bland källdokumenten nedan.",
+      "kalla_nyhet": "https://www.hoor.se/nyheter/sa-ser-nasta-ars-satsningar-ut-i-hoor/",
+      "bilagor": [
+        {
+          "titel": "Fullständigt protokoll, kommunfullmäktige 2024-06-19 (§ 75 på s. 11–13, med namngiven röstlängd)",
+          "url": "/kallor/protokoll/Protokoll_KF_240619.pdf"
+        },
+        {
+          "titel": "Skriftlig reservation, Socialdemokraterna (KF 2024-06-19 § 75)",
+          "url": "/kallor/reservationer/reservation_S_240619_par75.pdf"
+        },
+        {
+          "titel": "Skriftlig reservation, Vänsterpartiet (KF 2024-06-19 § 75)",
+          "url": "/kallor/reservationer/reservation_V_240619_par75.pdf"
+        }
+      ]
+    },
+    {
+      "typ": "budget",
+      "ar": 2026,
+      "titel": "Budget 2026 med verksamhetsplan för 2027-2028",
+      "beskrivning": "Kommunens nyhetsartikel publicerad 2025-09-02 ('Det här planerar Höörs kommun att satsa på nästa år') beskriver budgeten, bland annat en ny familjecentral, ökat föreningsstöd och en skattesänkning från 2026 (kommunalskatt sänks 30 öre till 21,45 kr/hundralapp).",
+      "forslagsstallare": "Styre (M, L, C, KD)",
+      "forslag_datum": null,
+      "antagen_datum": "2025-06-11",
+      "antagen_datum_not": "Verifierat mot det fullständiga skriftliga protokollet KF 2025-06-11 § 77 (dnr KSF-2024-00898), hämtat ur kommunens mötesportal 2026-08-16 och publicerat bland källdokumenten nedan. Tidigare verifierades datumet enbart via webbsändningen.",
+      "antagen_paragraf": "§ 77",
+      "kommunal_skattesats": "21,45 kr/hundralapp (sänkning med 30 öre från 21,75)",
+      "resultat": "Antagen 2025-06-11, § 77, av kommunfullmäktige utan votering. Socialdemokraterna och Miljöpartiet lämnade en gemensam skriftlig reservation, Vänsterpartiet en egen — båda publicerade bland källdokumenten nedan.",
+      "total_nettokostnad_mnkr": 1330.8,
+      "namndfordelning_tkr": {
+        "Kommunfullmäktige": 1156,
+        "Valnämnden": 261,
+        "Revision": 1182,
+        "Kommunstyrelse": 286380,
+        "Socialnämnd": 421357,
+        "Barn- och utbildningsnämnd": 455760,
+        "Tillstånd- och tillsynsnämnd": 360,
+        "Nämnden för kultur, arbete och folkhälsa": 58385,
+        "VA/Räddningsnämnd (skattefinansierad del)": 0,
+        "VA (avgiftsfinansierad del)": 0,
+        "Överförmyndarnämnd": 3701,
+        "Summa (nämndernas nettokostnader)": 1228542,
+        "Kompensationer (löne-, inflations- och demografikompensation)": 93340,
+        "Totalt (Budgetramar)": 1321882
+      },
+      "namndfordelning_kalla": "Budgetramar, budgethandlingen 'Budget för år 2026 med verksamhetsplan för år 2027-2028'.",
+      "kalla_budgethandling_url": "https://www.hoor.se/app/uploads/budget-for-ar-2026-med-verksamhetsplan-for-ar-2027-2028.pdf",
+      "oronmarkta_poster": {
+        "beslutssats": "Budgetramarna för ekonomiskt bistånd, gymnasiekostnader, bostadsanpassning samt badet får inte användas av respektive nämnd till andra kostnader.",
+        "beslutssats_kalla": "Kommunfullmäktige 2025-06-11, § 77, beslutspunkt 3 (av sju). Ordagrant citat ur protokollet, som finns i sin helhet bland källdokumenten nedan.",
+        "beslutspunkt": 3,
+        "beslutspunkt_av": 7,
+        "poster_tkr": {
+          "Gymnasieverksamhet": 103404,
+          "Badet": 9361,
+          "Ekonomiskt bistånd": 10811,
+          "Bostadsanpassningsbidrag": 1490
+        },
+        "poster_namnd": {
+          "Gymnasieverksamhet": "Kommunstyrelsen",
+          "Badet": "Nämnden för kultur, arbete och folkhälsa",
+          "Ekonomiskt bistånd": "Socialnämnden",
+          "Bostadsanpassningsbidrag": "Kommunstyrelsen"
+        },
+        "summa_tkr": 125066,
+        "not": "Beloppen står som \"varav\"-rader i tabellen Budgetramar i årets budgethandling (kolumnen Budget 2026) och ingår redan i respektive nämnds ram — de ska inte adderas till nämndsummorna. Kontrollräknade i två oberoende extraktionslägen (pdftotext -table respektive -fixed) 2026-08-17.",
+        "aterkommande": "Samma beslutssats, med samma fyra poster, återkommer i samtliga fem budgetbeslut under mandatperioden (budgetåren 2023–2027). Paragraf- och beslutspunktnummer skiljer sig mellan åren."
+      },
+      "rostning": null,
+      "rostning_not": "Ingen votering — protokollet (§ 77) bekräftar att beslutet togs utan omröstning, med skriftliga reservationer från Socialdemokraterna och Miljöpartiet (gemensam) samt Vänsterpartiet. Oppositionens egna budgetförslag finns i fulltext under \"Vad ville oppositionen göra annorlunda?\" ovan: ett gemensamt förslag från Socialdemokraterna och Miljöpartiet, och ett eget från Vänsterpartiet. Innehållsmässigt går de åt olika håll: S och MP ville behålla oförändrad skattesats (21,75 kr, dvs ingen skattesänkning) och lägga mer pengar på skola och socialtjänst, medan Vänsterpartiet tvärtom ville gå längre än styret och sänka skatten med totalt 50 öre (mot styrets 30 öre), samtidigt som man stärkte flera nämnders ramar och en låglönesatsning inom äldreomsorgen.",
+      "kalla_url": "https://hoor.socialcast.se/b/hoors-kommunfullmaktige-17",
+      "kalla_beskrivning": "Höörs kommunfullmäktige 11 juni 2025 (webbsändning). Nettokostnad och nämndfördelning hämtade från budgethandlingen, se kalla_budgethandling_url.",
+      "kalla_nyhet": "https://www.hoor.se/nyheter/det-har-planerar-hoors-kommun-att-satsa-pa-nasta-ar/",
+      "bilagor": [
+        {
+          "titel": "Fullständigt protokoll, kommunfullmäktige 2025-06-11 (§ 77)",
+          "url": "/kallor/protokoll/Protokoll_KF_250611.pdf"
+        },
+        {
+          "titel": "Skriftlig reservation, Socialdemokraterna och Miljöpartiet (§ 77)",
+          "url": "/kallor/reservationer/reservation_S_MP_250611_par77.pdf"
+        },
+        {
+          "titel": "Skriftlig reservation, Vänsterpartiet (§ 77)",
+          "url": "/kallor/reservationer/reservation_V_250611_par77.pdf"
+        }
+      ]
+    },
+    {
+      "typ": "budget",
+      "ar": 2027,
+      "titel": "Budget 2027 med verksamhetsplan för 2028-2029",
+      "beskrivning": "Antagen vid kommunfullmäktige 2026-06-10. Förslaget från kommunstyrelsen ställdes mot Socialdemokraternas budgetförslag.",
+      "forslagsstallare": "Kommunstyrelsen (styret)",
+      "forslag_datum": null,
+      "antagen_datum": "2026-06-10",
+      "antagen_datum_not": "Verifierat genom ordagrann genomgång av webbsändningens undertexter och senare bekräftat mot det fullständiga protokollet (§ 58), hämtat ur kommunens mötesportal 2026-08-13 och publicerat bland källdokumenten nedan.",
+      "antagen_paragraf": "§ 58",
+      "diarienummer": "KSF-2025-00297",
+      "kommunal_skattesats": "20,95 kr",
+      "resultat": "Antagen 2026-06-10, § 58, av kommunfullmäktige, efter två omröstningar (första om vilket oppositionsförslag som skulle utgöra motförslag, andra huvudomröstningen).",
+      "total_nettokostnad_mnkr": 1379.9,
+      "namndfordelning_tkr": {
+        "Kommunfullmäktige": 1136,
+        "Valnämnden": 20,
+        "Revision": 1292,
+        "Kommunstyrelse": 298373,
+        "Socialnämnd": 445670,
+        "Barn- och utbildningsnämnd": 485065,
+        "Tillstånd- och tillsynsnämnd": 367,
+        "Nämnden för kultur, arbete och folkhälsa": 62369,
+        "VA (avgiftsfinansierad del)": 0,
+        "Överförmyndarnämnd": 3830,
+        "Summa (nämndernas nettokostnader)": 1298122,
+        "Kompensationer (löne-, inflations- och demografikompensation)": 85203,
+        "Totalt (Budgetramar)": 1383325
+      },
+      "namndfordelning_kalla": "Budgetramar, sid. 41 i kommunstyrelsens antagna budgetförslag för 2027 (kolumnen \"Budget 2027\"). Posten \"VA/Räddningsnämnd (skattefinansierad del)\", som fanns tidigare år, saknas i 2027 års handling och redovisas därför inte. Handlingens \"varav\"-rader (gymnasieverksamhet, bostadsanpassningsbidrag, ekonomiskt bistånd, badet) är delposter inom respektive nämnds ram och ingår alltså redan i nämndbeloppen.",
+      "namndfordelning_not": "Siffrorna är kontrollräknade mot handlingens egna summeringar: alla fyra årskolumner på sid. 41 summerar exakt till dokumentets SUMMA och TOTALT, och nämndernas totalram stämmer mot resultaträkningens not på sid. 40. Ramförändringen mot 2026 (+30,7 mnkr) stämmer likaså mot sammanställningstabellen på sid. 32.",
+      "oronmarkta_poster": {
+        "beslutssats": "Budgetramarna för ekonomiskt bistånd, gymnasiekostnader, bostadsanpassning samt badet får inte användas av respektive nämnd till andra kostnader.",
+        "beslutssats_kalla": "Kommunfullmäktige 2026-06-10, § 58, beslutspunkt 3 (av sex). Ordagrant citat ur protokollet, som finns i sin helhet bland källdokumenten nedan.",
+        "beslutspunkt": 3,
+        "beslutspunkt_av": 6,
+        "poster_tkr": {
+          "Gymnasieverksamhet": 107177,
+          "Badet": 9579,
+          "Ekonomiskt bistånd": 9011,
+          "Bostadsanpassningsbidrag": 2012
+        },
+        "poster_namnd": {
+          "Gymnasieverksamhet": "Kommunstyrelsen",
+          "Badet": "Nämnden för kultur, arbete och folkhälsa",
+          "Ekonomiskt bistånd": "Socialnämnden",
+          "Bostadsanpassningsbidrag": "Kommunstyrelsen"
+        },
+        "summa_tkr": 127779,
+        "not": "Beloppen står som \"varav\"-rader i Budgetramar-tabellen på sid. 41 och ingår redan i respektive nämnds ram — de ska alltså inte adderas till nämndsummorna. Gymnasieposten är den överlägset största: 107,2 mnkr, drygt en tredjedel av hela kommunstyrelsens ram på 298,4 mnkr. Höörs kommun driver inga nationella gymnasieprogram, så pengarna går i allt väsentligt till utbildningsplatser i andra kommuner. Kommunen driver däremot två introduktionsprogram (individuellt alternativ och språkintroduktion) vid Höörs Lärcentrum.",
+        "not_kalla": "https://www.hoor.se/utbildning-barnomsorg/gymnasium/",
+        "aterkommande": "Samma beslutssats, med samma fyra poster, har antagits vid samtliga fem budgetbeslut under mandatperioden (budgetåren 2023–2027) — kontrollerat ordagrant mot respektive års protokoll 2026-08-17. Paragraf- och beslutspunktnummer skiljer sig mellan åren."
+      },
+      "rostning": {
+        "ja": 26,
+        "nej": 13,
+        "avstar": 0,
+        "franvarande": 2
+      },
+      "rostning_not": "Huvudvotering (punkt 1-2): kommunstyrelsens förslag (26 ja) ställdes mot Socialdemokraternas förslag som utsetts till motförslag (13 nej), efter en kontraproposition där S:s förslag vann över MP:s och V:s. Fullständig röstlängd med samtliga 41 ledamöters namn finns i protokollet (§ 58): de 26 ja-rösterna var styrets samtliga 17 mandat (11 M, 2 C, 2 L, 2 KD) plus 8 av SD:s 9 mandat (Jack Ljungberg, SD, var frånvarande utan ersättare enligt upprop § 54) plus Hans Nava-Barrefors (Medborgerlig Samling) — alltså inte hela SD-gruppen som i 2025 års votering, utan 8 SD + 1 MED. Skriftlig reservation från Socialdemokraterna och Vänsterpartiet, muntlig reservation från Miljöpartiet (Arno Werner).",
+      "kalla_url": "https://hoor.socialcast.se/b/hoors-kommunfullmaktige-25",
+      "kalla_beskrivning": "Höörs kommunfullmäktige 10/6 2026, webbsändning. Röstsiffror och reservationer verifierade ordagrant mot mötets undertexter och senare korsverifierade mot det fullständiga skriftliga protokollet KF 2026-06-10 § 58, hämtat ur kommunens mötesportal 2026-08-13 och publicerat bland källdokumenten nedan.",
+      "bilagor": [
+        {
+          "titel": "Fullständigt protokoll, kommunfullmäktige 2026-06-10 (§ 58, med namngiven röstlängd)",
+          "url": "/kallor/protokoll/Protokoll_KF_260610.pdf"
+        },
+        {
+          "titel": "Kommunstyrelsens antagna budgetförslag för 2027",
+          "url": "/kallor/budget2027/KS_forslag_budget2027.pdf"
+        }
+      ],
+      "skattesankning_resultatrakning": {
+        "rad": "Skattesänkning 30 öre 2026 och 50 öre 2027",
+        "beskrivning": "Egen rad i resultaträkningen i kommunstyrelsens budgetförslag 2027 (avsnittet Resultaträkning, s. 38). Kolumnvärdena visar intäktsminskningen i mnkr per år: 2026 avser 30-öressteget, 2027 och framåt avser 50-öressteget räknat mot föregående skattesats. Hela 80-öressänkningens årseffekt är alltså summan av stegen och måste räknas fram — den summan är en egen bearbetning, inte ett tal ur handlingen.",
+        "mnkr_per_ar": {
+          "2026": -14.1,
+          "2027": -24.2,
+          "2028": -25.3,
+          "2029": -26.4
+        },
+        "kalla_pdf": "/kallor/budget2027/KS_forslag_budget2027.pdf"
+      }
+    }
+  ]
+}

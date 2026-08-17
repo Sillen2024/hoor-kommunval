@@ -1,0 +1,6 @@
+{
+  "kontakt": "hej@ibland.nu",
+  "senast_uppdaterad": "2026-08-16",
+  "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
+  "rattelser": []
+}

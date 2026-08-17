@@ -1,0 +1,312 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import partierData from "../../../data/partier.json";
+import arendenData from "../../../data/arenden.json";
+import oppositionsbudgetar from "../../../data/oppositionsbudgetar.json";
+import koladaData from "../../../data/kolada.json";
+
+export function getStaticPaths() {
+  return partierData.partier.map((p) => ({
+    params: { id: p.id },
+    props: { party: p },
+  }));
+}
+
+const { party } = Astro.props;
+const blockLabel = party.block === "styre" ? "Styre" : "Opposition";
+const partyName = (id: string) => partierData.partier.find((p) => p.id === id)?.namn ?? id.toUpperCase();
+
+function slug(titel: string) {
+  return titel
+    .toLowerCase()
+    .replace(/[åä]/g, "a")
+    .replace(/ö/g, "o")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+// Ärenden där partiet nämns som förslagsställare (textmatchning mot partinamnet)
+const relatedArenden = arendenData.arenden.filter((a) =>
+  typeof a.forslagsstallare === "string" && a.forslagsstallare.toLowerCase().includes(party.namn.toLowerCase())
+);
+
+// Track record: alla protokollförda voteringar där partiet deltog.
+// `per_parti` innehåller bara partier som deltog — saknas partiet i en
+// votering renderas den inte (frånvaro är inte en åsikt).
+type Votering = {
+  datum: string;
+  paragraf: string;
+  fraga: string;
+  ja_betyder: string;
+  nej_betyder: string;
+  utfall: string;
+  per_parti: Record<string, { ja: number; nej: number; avstar: number }>;
+  kalla_protokoll: string;
+};
+
+const voteringsArenden = arendenData.arenden
+  .filter((a) => "rostning" in a && a.rostning)
+  .map((a) => ({
+    arende: a,
+    voteringar: ((a as { rostning?: Votering[] }).rostning ?? []).filter((r) => party.id in r.per_parti),
+  }))
+  .filter((x) => x.voteringar.length > 0)
+  .sort((x, y) => (x.voteringar[0].datum < y.voteringar[0].datum ? -1 : 1));
+
+const partiSplittrad = (r: Votering) =>
+  [r.per_parti[party.id].ja, r.per_parti[party.id].nej, r.per_parti[party.id].avstar].filter((n) => n > 0).length > 1;
+
+const antalVoteringar = voteringsArenden.reduce((sum, x) => sum + x.voteringar.length, 0);
+const antalSplittrade = voteringsArenden.reduce((sum, x) => sum + x.voteringar.filter(partiSplittrad).length, 0);
+
+const rostText = (r: Votering) => {
+  const p = r.per_parti[party.id];
+  const delar = [];
+  if (p.ja > 0) delar.push(`${p.ja} ja`);
+  if (p.nej > 0) delar.push(`${p.nej} nej`);
+  if (p.avstar > 0) delar.push(`${p.avstar} avstod`);
+  return delar.join(", ");
+};
+
+// Egna budgetförslag partiet lämnat under mandatperioden (endast opposition har detta)
+const budgetHistorik = oppositionsbudgetar.forslag
+  .filter((f) => f.parti_id === party.id)
+  .sort((a, b) => a.ar - b.ar);
+
+// ——— "Löftet och pengarna" (Fabel-granskningen §2D) ————————————————————
+// Partiets senaste budgetförslag med fullständiga nämndramar, omräknat till
+// mnkr-skillnad mot styrets budget. Rent deskriptivt: vad partiet själv
+// avsatte, bredvid sajtens jämförelsepunkt (förskoleavvikelsen).
+const sv = (n: number, d = 1) =>
+  n.toLocaleString("sv-SE", { minimumFractionDigits: d, maximumFractionDigits: d });
+const senasteMedRamar = [...budgetHistorik]
+  .reverse()
+  .find((f) => f.namnd_diff_tkr && Object.keys(f.namnd_diff_tkr).length > 0);
+const ramDiffar = senasteMedRamar
+  ? Object.entries(senasteMedRamar.namnd_diff_tkr as Record<string, number>)
+      .map(([namnd, tkr]) => ({ namnd, mnkr: tkr / 1000 }))
+      .filter((d) => d.mnkr !== 0)
+      .sort((a, b) => b.mnkr - a.mnkr)
+  : null;
+
+const HÖÖR = koladaData.hoor;
+const koladaPreliminara = [
+  ...new Set(koladaData.nyckeltal.map((n) => n.preliminar_fran_ar).filter((a): a is number => a !== null)),
+];
+const koladaHuvudar =
+  koladaPreliminara.length > 0 ? Math.min(...koladaPreliminara) - 1 : koladaData.ar[koladaData.ar.length - 1];
+const forskolaAvvikelse =
+  koladaData.nyckeltal.find((n) => n.kpi_id === "N11038")?.varden[HÖÖR]?.[String(koladaHuvudar)] ?? null;
+
+// Långa metodnoter (M, S) visas som två meningar + veck; korta visas hela.
+function delaNot(not: string | null | undefined): { kort: string | null; resten: string | null } {
+  if (!not) return { kort: null, resten: null };
+  if (not.length < 400) return { kort: not, resten: null };
+  const meningar = not.split(/(?<=[.!?]) (?=[A-ZÅÄÖ"])/);
+  if (meningar.length <= 2) return { kort: not, resten: null };
+  return { kort: meningar.slice(0, 2).join(" "), resten: meningar.slice(2).join(" ") };
+}
+const manifestNot = delaNot(party.manifest_not);
+---
+
+<Layout
+  title={`${party.namn} i Höör — Kommunvalet 2026`}
+  description={`Allt om ${party.namn} i Höör inför valet 2026. Läs om deras hjärtefrågor, vallöften och kandidater till kommunfullmäktige.`}
+  image="/og-partier-v1.png"
+>
+  <p><a href="/partier/">&larr; Alla partier</a></p>
+  <h1 class="party-header">
+    {party.logo && <img class="party-logo" src={party.logo} alt={`${party.namn} logotyp Höör`} />}
+    <span>{party.namn} i Höör</span>
+    <span class={`badge badge--${party.block}`}>{blockLabel}</span>
+  </h1>
+  <p class="lead">{party.mandat_2022} mandat i kommunfullmäktige (valet 2022).{" "}
+    <a class="source-link" href={party.kalla_mandat} target="_blank" rel="noopener noreferrer">Mandatfördelning, hoor.se</a>
+  </p>
+
+  {party.hemsida && (
+    <p>
+      <a class="source-link" href={party.hemsida} target="_blank" rel="noopener noreferrer">{party.hemsida}</a>
+      {party.id === "medborgerlig-samling" && (
+        <span class="updated"> (nationell webbplats — ingen lokal Höör-sida hittad)</span>
+      )}
+    </p>
+  )}
+
+  <h2>Valmanifest 2026</h2>
+
+  {party.manifest_status === "saknas" ? (
+    <div class="banner">
+      <strong>Inget Höör-specifikt valmanifest för 2026 hittades.</strong>
+      <p>{party.manifest_not}</p>
+    </div>
+  ) : (
+    <>
+      <div class="not-box">
+        <p>{manifestNot.kort}</p>
+        {manifestNot.resten && (
+          <details>
+            <summary>Hela metodnoten</summary>
+            <p>{manifestNot.resten}</p>
+          </details>
+        )}
+      </div>
+      <div class="stance-grid">
+        {party.manifest_2026.map((m) => (
+          <div class={`stance-card ${party.block}`}>
+            <div class="stance-card__header">{m.politikomrade}</div>
+            <p>{m.standpunkt}</p>
+            <a class="source-link" href={m.kalla_url} target="_blank" rel="noopener noreferrer">
+              {"kalla_titel" in m ? m.kalla_titel : m.kalla_url}
+            </a>
+          </div>
+        ))}
+      </div>
+    </>
+  )}
+
+  <h2>Kandidater till fullmäktige 2026</h2>
+
+  {party.kandidater_2026_status === "saknas" ? (
+    <div class="banner">
+      <strong>Ingen kandidatlista för Höör hittades.</strong>
+      <p>{party.kandidater_2026_not}</p>
+    </div>
+  ) : (
+    <>
+      <p class="not-box">{party.kandidater_2026_not}</p>
+      <ul class="candidate-list">
+        {party.kandidater_2026.map((k) => (
+          <li>
+            <strong>{k.namn}</strong>{k.roll ? <> — {k.roll}</> : null}
+            {" "}<a class="source-link" href={k.kalla_url} target="_blank" rel="noopener noreferrer">{k.kalla_url}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {voteringsArenden.length > 0 && (
+    <>
+      <h2>Så har {party.namn} röstat i fullmäktige</h2>
+      <p class="not-box">
+        Sammanställningen bygger på kommunfullmäktiges protokollförda voteringar med namngiven röstlängd,
+        i de <a href="/arenden/">ärenden sajten bevakar</a> (ett urval, inte alla voteringar under
+        mandatperioden — se <a href="/om-urvalet/">Om urvalet</a>). Antalet röster varierar mellan
+        voteringarna eftersom närvaron varierar; frånvaro redovisas inte som att partiet avstod.
+      </p>
+      <p>
+        {party.namn} deltog i {antalVoteringar} av de protokollförda voteringarna i de bevakade ärendena.
+        {antalSplittrade === 0
+          ? " Partiets närvarande ledamöter röstade likadant i samtliga — full gruppdisciplin i det här materialet."
+          : ` I ${antalSplittrade} av dem delade partiets närvarande ledamöter sig.`}
+      </p>
+      {voteringsArenden.map(({ arende, voteringar }) => (
+        <div class="policy-block track-record">
+          <h3><a href={`/arenden/#${slug(arende.titel)}`}>{arende.titel}</a></h3>
+          {voteringar.map((r) => (
+            <div class={`track-record__votering${partiSplittrad(r) ? " track-record__votering--splittrad" : ""}`}>
+              <p class="track-record__fraga">
+                <strong>Votering {r.datum}, {r.paragraf}:</strong> {r.fraga}
+              </p>
+              <p class="votering__ordning">
+                <strong>JA</strong> betydde: {r.ja_betyder}<br />
+                <strong>NEJ</strong> betydde: {r.nej_betyder}
+              </p>
+              <p>
+                <strong>{party.namn}: {rostText(r)}.</strong>
+                {partiSplittrad(r) && <span class="votering__splittrat"> Gruppen delade sig.</span>}
+                {" "}{r.utfall}
+              </p>
+              <a class="source-link" href={r.kalla_protokoll} target="_blank" rel="noopener noreferrer">
+                Protokollet {r.datum} {r.paragraf}, med namngiven röstlängd (PDF)
+              </a>
+            </div>
+          ))}
+        </div>
+      ))}
+    </>
+  )}
+
+  {relatedArenden.length > 0 && (
+    <>
+      <h2>Ärenden där {party.namn} varit förslagsställare</h2>
+      <ul>
+        {relatedArenden.map((a) => (
+          <li>
+            <a href={`/arenden/#${slug(a.titel)}`}>{a.titel}</a> — {a.politikomrade}
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {senasteMedRamar && ramDiffar && ramDiffar.length > 0 && (
+    <>
+      <h2>Löftet och pengarna</h2>
+      <p>
+        Löften kostar. Så här mycket mer — eller mindre — än styrets budget avsatte {party.namn} per nämnd
+        i sitt senaste fullständiga budgetförslag (budget {senasteMedRamar.ar}
+        {senasteMedRamar.gemensamt_med ? `, gemensamt med ${partyName(senasteMedRamar.gemensamt_med)}` : ""}):
+      </p>
+      <ul>
+        {ramDiffar.map((d) => (
+          <li>
+            <strong>{d.mnkr > 0 ? "+" : "−"}{sv(Math.abs(d.mnkr))} mnkr</strong> — {d.namnd.toLowerCase()}
+          </li>
+        ))}
+      </ul>
+      {forskolaAvvikelse !== null && (
+        <p>
+          Som jämförelsepunkt: förskolans avstånd till sin referenskostnad {koladaHuvudar} var
+          {" "}{sv(Math.abs(forskolaAvvikelse))} miljoner kronor, och styrets skattesänkning kostar
+          kommunen i samma storleksordning per år — se <a href="/nyckeltal/#forskola">Nyckeltal</a> och
+          {" "}<a href="/budget/#vad-kostar-80-ore">Budget</a>. En höjd ram styr inte automatiskt vilken
+          verksamhet pengarna hamnar i; talen visar prioritering, inte utfall.
+        </p>
+      )}
+      <a class="source-link" href={senasteMedRamar.pdf} target="_blank" rel="noopener noreferrer">
+        {party.namn}s budgetförslag {senasteMedRamar.ar} (PDF)
+      </a>
+      <span class="derived-note">
+        mnkr-beloppen är partiets egna nämndramar omräknade här till skillnad mot styrets antagna budget
+      </span>
+    </>
+  )}
+
+  {budgetHistorik.length > 0 && (
+    <>
+      <h2>Budget genom åren: vad ville {party.namn} göra annorlunda?</h2>
+      <p class="not-box">
+        {party.namn}s egna budgetförslag är hämtade i fulltext direkt ur kommunens mötesportal
+        (<a href="/om-urvalet/">metod</a>) — inte bara det formella motförslaget. Se{" "}
+        <a href="/budget/">budgetöversikten</a> för hur förslagen jämförs mot styrets antagna budget och{" "}
+        <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a> för hur voteringarna gick.
+      </p>
+      {budgetHistorik.map((f) => (
+        <div class="policy-block">
+          <h3>
+            Budget {f.ar}
+            {f.gemensamt_med && <> (gemensamt förslag med {partyName(f.gemensamt_med)})</>}
+          </h3>
+          <p>
+            <strong>Skattesats:</strong> {f.skattesats}
+          </p>
+          {f.typ_not && <p class="not-box">{f.typ_not}</p>}
+          <p><strong>Det här ville {party.namn} satsa på:</strong></p>
+          <ul>
+            {f.satsningar.map((s) => <li>{s}</li>)}
+          </ul>
+          {f.besparingar && (
+            <p><strong>Finansiering/besparingar:</strong> {f.besparingar}</p>
+          )}
+          <a class="source-link" href={f.pdf} target="_blank" rel="noopener noreferrer">
+            {party.namn}s budgetförslag {f.ar} (PDF)
+          </a>
+        </div>
+      ))}
+    </>
+  )}
+
+  <p><a href="/jamforelse/">Se hur {party.namn} jämför med andra partier &rarr;</a></p>
+</Layout>

@@ -1,0 +1,87 @@
+---
+// Renderar en protokollförd votering ur ett ärendes `rostning`-array
+// (datamodellen i ROSTDATA_PLAN.md §5.1). Beslutsordningen (vad JA
+// respektive NEJ betydde) visas alltid före siffrorna — den är ofta
+// kontraintuitiv (JA kan betyda avslag) och utan den blir siffrorna
+// vilseledande. `per_parti` innehåller bara partier som deltog i
+// voteringen; frånvaro är inte detsamma som att avstå och renderas
+// därför inte som en nolla.
+import partierData from "../data/partier.json";
+
+interface PartiRoster {
+  ja: number;
+  nej: number;
+  avstar: number;
+}
+
+interface Props {
+  rostning: {
+    datum: string;
+    paragraf: string;
+    fraga: string;
+    ja_betyder: string;
+    nej_betyder: string;
+    ja: number;
+    nej: number;
+    avstar: number;
+    utfall: string;
+    per_parti: Record<string, PartiRoster>;
+    kalla_protokoll: string;
+  };
+}
+
+const { rostning } = Astro.props;
+
+// Partierna i samma ordning som partier.json (styret först), begränsat
+// till dem som deltog i just den här voteringen.
+const rader = partierData.partier
+  .filter((p) => p.id in rostning.per_parti)
+  .map((p) => ({
+    namn: p.namn,
+    roster: rostning.per_parti[p.id],
+    splittrat:
+      [rostning.per_parti[p.id].ja, rostning.per_parti[p.id].nej, rostning.per_parti[p.id].avstar].filter(
+        (n) => n > 0
+      ).length > 1,
+  }));
+---
+
+<div class="votering">
+  <p class="votering__rubrik">
+    <strong>Votering {rostning.datum}, {rostning.paragraf}:</strong> {rostning.fraga}
+  </p>
+  <p class="votering__ordning">
+    <strong>JA</strong> betydde: {rostning.ja_betyder}<br />
+    <strong>NEJ</strong> betydde: {rostning.nej_betyder}
+  </p>
+  <p class="votering__resultat">
+    <strong>{rostning.ja} ja – {rostning.nej} nej{rostning.avstar > 0 ? ` – ${rostning.avstar} avstod` : ""}.</strong>
+    {" "}{rostning.utfall}
+  </p>
+  <table class="votering__tabell">
+    <thead>
+      <tr>
+        <th>Parti</th>
+        <th>Ja</th>
+        <th>Nej</th>
+        <th>Avstod</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rader.map((r) => (
+        <tr>
+          <th scope="row">
+            {r.namn}
+            {r.splittrat && <span class="votering__splittrat"> — splittrat</span>}
+          </th>
+          <td>{r.roster.ja || ""}</td>
+          <td>{r.roster.nej || ""}</td>
+          <td>{r.roster.avstar || ""}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <a class="source-link" href={rostning.kalla_protokoll} target="_blank" rel="noopener noreferrer">
+    Protokollet {rostning.datum} {rostning.paragraf}, med namngiven röstlängd (PDF)
+  </a>
+</div>

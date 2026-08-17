@@ -1,0 +1,57 @@
+{
+  "senast_uppdaterad": "2026-08-12",
+  "metod_not": "Siffrorna nedan avser röster och röstandelar (inte bara mandat) i valet till Höörs kommunfullmäktige. Mandatfördelningen för 2022 är sedan tidigare känd och redovisad på hoor.se (som dock enbart listar mandat, inte röstsiffror eller röstandelar — se kalla_mandat i partier.json). Röstsiffror och röstandelar per parti är hämtade från Valmyndighetens officiella resultatdatabas — för 2022 länsstyrelsens protokoll 'Slutlig rösträkning och mandatfördelning' (resultat.val.se), för 2018 det historiska resultatarkivet (historik.val.se) — och avstämda mot SVT Nyheters valresultatsida, som i sin tur bygger på Valmyndighetens data. Båda åren är dessutom internt kontrollerade genom att röstsummor och röstandelar stämmer mot kommunens totala antal giltiga röster och valdeltagande — se resultat_not per år för exakt avstämning. För 2022 är samtliga nio partiers mandat kryssade mot mandatfördelningen i partier.json (M 11, SD 9, S 8, V 3, C 2, L 2, KD 2, MP 2, Medborgerlig Samling 2 — totalt 41), vilket stämmer. För 2018 är mandaten avlästa ur Valmyndighetens lista över valda ledamöter (SD 9, M 8, S 6, L 5, C 4, V 3, MP 3, KD 2, MED 1 — totalt 41). Endast valen 2022 och 2018 finns med; äldre val (2014 och tidigare) har inte tagits med eftersom motsvarande röstsiffror inte gått att verifiera med samma säkerhet inom projektets tidsram. Se även /om-urvalet/ för sajtens generella källkritiska metod.",
+  "val": [
+    {
+      "ar": 2022,
+      "typ": "Val till kommunfullmäktige",
+      "valdag": "2022-09-11",
+      "valdeltagande": "83,93 %",
+      "valdeltagande_not": "Beräknat: 11 149 avgivna röster (10 959 giltiga + 190 ogiltiga) av 13 283 röstberättigade i Höörs kommun.",
+      "kalla_url": "https://resultat.val.se/protokoll/protokoll_Val_20220911_1267_KF.pdf",
+      "kalla_beskrivning": "Länsstyrelsens protokoll 'Slutlig rösträkning och mandatfördelning', val till kommunfullmäktige i Höörs kommun (kommunkod 1267), valdag 2022-09-11. Publicerat av Valmyndigheten på resultat.val.se.",
+      "kalla_url_2": "https://valresultat.svt.se/2022/kommunval-1267-hoor.html",
+      "kalla_url_2_beskrivning": "SVT Nyheters valresultatsida för Höörs kommunval 2022, byggd på Valmyndighetens data. Använd som oberoende avstämning: samtliga nio partiers röstetal, andelar och mandat stämmer exakt mot länsstyrelsens protokoll (dnr 201-20278-2022), som är primärkällan ovan.",
+      "resultat": [
+        { "parti": "Moderaterna", "roster": 2920, "andel": "26,64 %", "mandat": 11 },
+        { "parti": "Sverigedemokraterna", "roster": 2397, "andel": "21,87 %", "mandat": 9 },
+        { "parti": "Socialdemokraterna", "roster": 2077, "andel": "18,95 %", "mandat": 8 },
+        { "parti": "Vänsterpartiet", "roster": 755, "andel": "6,89 %", "mandat": 3 },
+        { "parti": "Centerpartiet", "roster": 645, "andel": "5,89 %", "mandat": 2 },
+        { "parti": "Miljöpartiet de gröna", "roster": 606, "andel": "5,53 %", "mandat": 2 },
+        { "parti": "Medborgerlig Samling", "roster": 555, "andel": "5,06 %", "mandat": 2 },
+        { "parti": "Kristdemokraterna", "roster": 495, "andel": "4,52 %", "mandat": 2 },
+        { "parti": "Liberalerna", "roster": 454, "andel": "4,14 %", "mandat": 2 }
+      ],
+      "resultat_not": "Summan av rösterna för de nio partierna ovan (10 904) är något lägre än det totala antalet giltiga röster i kommunen (10 959) — mellanskillnaden (55 röster, ca 0,5 %) utgörs av röster på mindre partier utan mandat i Höörs kommunfullmäktige. Mandatsiffrorna ovan stämmer mot den sedan tidigare kända mandatfördelningen (se partier.json/hoor.se).",
+      "styre_efter_valet": "Moderaterna, Liberalerna, Centerpartiet och Kristdemokraterna bildade en minoritetsstyrande koalition (17 av 41 mandat) för mandatperioden 2023-2026.",
+      "styre_partier": ["Moderaterna", "Liberalerna", "Centerpartiet", "Kristdemokraterna"]
+    },
+    {
+      "ar": 2018,
+      "typ": "Val till kommunfullmäktige",
+      "valdag": "2018-09-09",
+      "valdeltagande": "86,0 %",
+      "valdeltagande_not": "10 976 avgivna röster (varav 178 ogiltiga) i Höörs kommun.",
+      "kalla_url": "https://valresultat.svt.se/2018/31267.html",
+      "kalla_beskrivning": "SVT Nyheters valresultatsida för Höörs kommunval 2018, byggd på Valmyndighetens data.",
+      "kalla_url_2": "https://historik.val.se/val/val2018/slutresultat/K/kommun/12/67/index.html",
+      "kalla_url_2_beskrivning": "Valmyndighetens historiska resultatarkiv för Höörs kommun (kommunkod 12/67), val till kommunfullmäktige 2018. Röstetal, andelar, röstberättigade och valdeltagande är avlästa direkt här och stämmer exakt mot SVT:s valresultatsida. Mandatfördelningen är hämtad från arkivets sida över valda ledamöter (.../valda.html).",
+      "resultat": [
+        { "parti": "Sverigedemokraterna", "roster": 2447, "andel": "22,7 %", "mandat": 9 },
+        { "parti": "Moderaterna", "roster": 2084, "andel": "19,3 %", "mandat": 8 },
+        { "parti": "Socialdemokraterna", "roster": 1594, "andel": "14,8 %", "mandat": 6 },
+        { "parti": "Liberalerna", "roster": 1351, "andel": "12,5 %", "mandat": 5 },
+        { "parti": "Centerpartiet", "roster": 1066, "andel": "9,9 %", "mandat": 4 },
+        { "parti": "Vänsterpartiet", "roster": 669, "andel": "6,2 %", "mandat": 3 },
+        { "parti": "Miljöpartiet de gröna", "roster": 659, "andel": "6,1 %", "mandat": 3 },
+        { "parti": "Kristdemokraterna", "roster": 424, "andel": "3,9 %", "mandat": 2 },
+        { "parti": "Medborgerlig Samling", "roster": 226, "andel": "2,1 %", "mandat": 1 },
+        { "parti": "Feministiskt initiativ", "roster": 105, "andel": "1,0 %", "mandat": 0 }
+      ],
+      "resultat_not": "Summan av rösterna för de tio partierna ovan (10 625) är lägre än det totala antalet giltiga röster (10 976 - 178 ogiltiga = 10 798). Mellanskillnaden är 173 röster och redovisas av Valmyndigheten som 'Övriga anmälda partier' (1,60 %). De 178 ogiltiga rösterna fördelar sig på 161 blanka, 14 på ej anmälda partier och 3 övriga. Antalet röstberättigade var 12 763, valdeltagandet 86,00 %.",
+      "mandat_not": "Mandatfördelningen 2018 är hämtad från Valmyndighetens historiska resultatarkiv (historik.val.se, valda ledamöter för Höörs kommun, kommunkod 12/67) och summerar till 41 mandat. Jämfört med 2014: SD +1, M -2, S -4, L +2, C +1, V +1, MP -1, KD +1, MED +1 (första mandatet). Feministiskt initiativ fick inget mandat.",
+      "styre_efter_valet": "Alliansen (M 8 + L 5 + C 4 + KD 2 = 19 mandat) styrde Höör i minoritet under mandatperioden 2018-2022 — 19 av 41. Mandatsiffrorna är verifierade mot historik.val.se; att just dessa fyra partier utgjorde styret bygger på sekundärkälla (svenska Wikipedia samt kommunens egna sidor)."
+    }
+  ]
+}

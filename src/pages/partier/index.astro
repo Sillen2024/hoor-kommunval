@@ -1,0 +1,113 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import partierData from "../../data/partier.json";
+
+const styre = partierData.partier.filter((p) => p.block === "styre");
+const opposition = partierData.partier.filter((p) => p.block === "opposition");
+const mandatStyre = styre.reduce((sum, p) => sum + p.mandat_2022, 0);
+const mandatOpposition = opposition.reduce((sum, p) => sum + p.mandat_2022, 0);
+const mandatTotalt = mandatStyre + mandatOpposition;
+
+const namnLista = (ps: typeof partierData.partier) => ps.map((p) => p.namn).join(", ");
+const medLokaltManifest = partierData.partier.filter((p) => p.manifest_status === "hittat");
+const baraSocialaMedier = partierData.partier.filter((p) => p.manifest_status === "sociala_medier");
+const nationelltIStallet = partierData.partier.filter((p) => p.manifest_status === "ersatt");
+const heltUtanManifest = partierData.partier.filter((p) => p.manifest_status === "saknas");
+const utanPublicerat = [...baraSocialaMedier, ...nationelltIStallet, ...heltUtanManifest];
+const mandatUtanPublicerat = utanPublicerat.reduce((sum, p) => sum + p.mandat_2022, 0);
+
+const manifestEtikett = (status: string) =>
+  status === "hittat"
+    ? "lokalt manifest"
+    : status === "sociala_medier"
+      ? "endast sociala medier"
+      : status === "ersatt"
+        ? "endast nationellt"
+        : "inget manifest";
+---
+
+<Layout
+  title="Partierna i Höör — Kommunvalet 2026"
+  description="Alla politiska partier i Höörs kommunfullmäktige: mandat, styre mot opposition, hemsida och valmanifest 2026."
+  image="/og-partier-v1.png"
+>
+  <h1>Politiska partier i Höörs kommunfullmäktige 2026</h1>
+  <p class="lead">
+    {mandatTotalt} mandat totalt. Styret är en minoritetskoalition med {mandatStyre} av {mandatTotalt} mandat.
+  </p>
+
+  <section class="policy-block">
+    <h2 id="lokala-valmanifest">Vilka har lokala valmanifest?</h2>
+    <p>
+      Av {partierData.partier.length} partier i fullmäktige är det {medLokaltManifest.length} som publicerat ett eget
+      valmanifest eller kommunalpolitiskt program för Höör inför 2026: {namnLista(medLokaltManifest)}. Där går det att
+      läsa vad partiet vill göra i just den här kommunen.
+    </p>
+    <p>
+      För de övriga {utanPublicerat.length} finns inget publicerat program att läsa, trots att de tillsammans har
+      {" "}{mandatUtanPublicerat} av {mandatTotalt} mandat.
+      {baraSocialaMedier.length > 0 && (
+        <>
+          {" "}{namnLista(baraSocialaMedier)} har en innehållslös webbplats, men driver en omfattande och
+          Höör-specifik valkommunikation i sociala medier. Den redovisar vi med det enskilda inlägget som källa.
+        </>
+      )}
+      {nationelltIStallet.length > 0 && (
+        <>
+          {" "}{namnLista(nationelltIStallet)} redovisar vi i stället med partiets nationella ståndpunkter, tydligt
+          märkta som nationella och inte som lokala löften.
+        </>
+      )}
+      {heltUtanManifest.length > 0 && (
+        <>
+          {" "}{namnLista(heltUtanManifest)} saknar det helt: vi har inte kunnat verifiera några vallöften för 2026.
+        </>
+      )}
+    </p>
+    <p>
+      Klicka in på partierna här nedanför och läs mer. På varje partisida står det vad vi hittat, var vi hittat det
+      och när vi kontrollerade det — och när vi inte hittat något står det också.
+    </p>
+  </section>
+
+  <h2><span class="badge badge--styre">Styre</span> — {mandatStyre} mandat</h2>
+  <ul class="party-list">
+    {styre.map((p) => (
+      <li>
+        <a href={`/partier/${p.id}/`}>
+          <span class="party-list__name">
+            {p.logo && <img class="party-list__logo" src={p.logo} alt={`${p.namn} logotyp Höör`} />}
+            {p.namn}
+          </span>
+          <span class="updated">{p.mandat_2022} mandat<br />{manifestEtikett(p.manifest_status)}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <h2><span class="badge badge--opposition">Opposition</span> — {mandatOpposition} mandat</h2>
+  <ul class="party-list">
+    {opposition.map((p) => (
+      <li>
+        <a href={`/partier/${p.id}/`}>
+          <span class="party-list__name">
+            {p.logo && <img class="party-list__logo" src={p.logo} alt={`${p.namn} logotyp Höör`} />}
+            {p.namn}
+          </span>
+          <span class="updated">{p.mandat_2022} mandat<br />{manifestEtikett(p.manifest_status)}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <p class="updated">Senast uppdaterad: {partierData.senast_uppdaterad}</p>
+</Layout>
+
+<style>
+  .party-list .updated {
+    text-align: right;
+    line-height: 1.3;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+</style>

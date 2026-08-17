@@ -1,0 +1,231 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import budgetData from "../../data/budget.json";
+import partierData from "../../data/partier.json";
+
+const budget2027 = budgetData.beslut.find((b) => b.ar === 2027);
+
+// 41-prickarsfiguren: mandaten läses ur partier.json så att figuren följer
+// datan i stället för att rita ett hårdkodat antal prickar.
+const mandatStyre = partierData.partier
+  .filter((p) => p.block === "styre")
+  .reduce((s, p) => s + p.mandat_2022, 0);
+const mandatSD = partierData.partier.find((p) => p.id === "sd")?.mandat_2022 ?? 0;
+const mandatTotalt = partierData.partier.reduce((s, p) => s + p.mandat_2022, 0);
+const mandatOvriga = mandatTotalt - mandatStyre - mandatSD;
+---
+
+<Layout
+  title="Styret vs oppositionen"
+  description="Fem minuters läsning: vad skiljer det sittande styret och oppositionen åt i Höör inför valet 2026, och vad visar de dokumenterade budgetomröstningarna 2023, 2025 och 2027?"
+  image="/og-styret-v1.png"
+>
+  <h1>Styret vs oppositionen — fem minuter</h1>
+  <p class="lead">
+    Vart är Höör på väg? Röstar du på det sittande styret får du en sak — röstar du på oppositionen kan det bli
+    något annat. Här är en snabb genomgång av vad som skiljer blocken åt inför valet 2026, byggd på partiernas
+    egna löften och de beslut som faktiskt fattats under mandatperioden 2022–2026.
+  </p>
+
+  <h2>1. Vad har hänt under mandatperioden 2022–2026?</h2>
+  <p>
+    Höör styrs idag av den så kallade Alliansen (Moderaterna, Liberalerna, Centerpartiet och Kristdemokraterna).
+    De styr i minoritet med 17 av 41 mandat.
+  </p>
+  <ul>
+    <li><strong>Skattesänkning, i två steg:</strong> Kommunalskatten sänktes med 30 öre inför 2026 (till 21,45 kr) och med ytterligare 50 öre i Budget 2027, antagen 2026-06-10 (till 20,95 kr) — totalt 80 öre lägre än de 21,75 kr som gällde 2022–2025. Vad det blir i kronor för dig står i <a href="/budget/#vad-kostar-80-ore">Vad kostar 80 öre mig?</a> på budgetöversikten.</li>
+    <li><strong>Gratis kollektivtrafik för 70+ (beslutat, gäller från 2027):</strong> En S-motion om detta röstades ner 2025-10-14, men styret gjorde en helomvändning och fick igenom reformen som del av Budget 2027, antagen av kommunfullmäktige 2026-06-10 — den är alltså inte genomförd under innevarande mandatperiod, utan träder i kraft först 2027.</li>
+    <li>
+      <strong>Organisation och demokrati:</strong> Antalet sammanträden i kommunfullmäktige och styrelser bantades
+      från 9 till 8 per år för att spara pengar, vilket oppositionen kritiserat. Kommunen saknar också möjlighet
+      till "medborgarförslag" — något styret försvarat med att man litar på andra kanaler för medborgardialog.
+    </li>
+    <li><strong>Skolinvesteringar:</strong> Ringsjöskolan byggs ut för 130 miljoner kronor, och en ny handbollsakademi startar 2026.</li>
+    <li>
+      <strong>Rivningen av Kvarnen/Magasinet:</strong> Höörs äldsta industribyggnad har varit en flerårig
+      bevarandestrid utan att någon egentlig lösning funnits i sikte. Det som till slut fällde avgörandet var
+      att en entreprenör dök upp med konkreta planer på ett nytt synthmuseum ("Elektrish") på platsen —
+      entreprenören försökte först foga in ett bevarande av den gamla byggnaden i planen, men konstaterade att
+      det inte gick. Kommunfullmäktige beslutade därför 2025-12-17 att riva byggnaden och bereda plats för
+      nybygget — en känslomässig lokal kulturkonflikt som gått mandatperioden igenom.
+    </li>
+  </ul>
+  <p><strong>Kort sagt:</strong> Ett styre som fokuserar på sänkt skatt och effektivisering av den politiska organisationen, men också satsningar på äldre och skolinfrastruktur.</p>
+
+  <h2>2. Om du röstar på det sittande styret (M, L, C, KD)</h2>
+  <p>Väljer du styret blir inriktningen förmodligen en fortsättning på inslagen väg. Här är vad partierna i styret lovar:</p>
+  <ul>
+    <li><strong>Trygghet i fokus:</strong> Liberalerna vill se återinförd nattvandring. Moderaterna har ingen tydlig publicerad politik vi kunnat hitta (partiets webbplats saknar innehåll, kontrollerat 2026-08-14).</li>
+    <li><strong>Skolans utmaningar:</strong> Centerpartiet lovar (nationellt) behöriga lärare i varje klassrum. Liberalerna lovar tillräcklig bemanning (lärare, speciallärare, kuratorer m.fl.) och vill pilotera AI för att minska lärares administration.</li>
+    <li><strong>Näringslivet:</strong> Liberalerna vill ha ännu snabbare handläggning och enklare tillstånd för företag vid nyetablering.</li>
+    <li><strong>Vård, mat och hälsa:</strong> Fortsatta satsningar på god mat inom hemtjänsten (Liberalerna), bibehållna byskolor (Liberalerna) och starkare primärvård (Centerpartiet, nationellt löfte). Kristdemokraterna prioriterar nationellt vård, trygghet och familjepolitik — inget Höör-specifikt program hittat.</li>
+    <li><strong>Idrott och fritid:</strong> Styret har uttalat en ambition om en ny ishall och handbollshall inom en 10–15-årsperiod (kommunfullmäktige) — inget bestämt löfte om byggstartsår, och inte specifikt kopplat till ett enskilt parti.</li>
+  </ul>
+  <div class="not-box">
+    <strong>Vibben:</strong> Ordning och reda, effektiviseringar, lägre skatt, valfrihet och fokus på
+    kärnverksamheterna, företagen och tryggheten.
+  </div>
+  <p>
+    <strong>Bakgrund att känna till:</strong> Alliansen framstår som enad, men partierna har utvecklats mycket
+    olika sedan 2018. Moderaterna växte kraftigt (från 19,3 % till 26,64 % av rösterna 2018→2022) och gick om SD
+    som kommunens största parti, medan Liberalerna rasade från 12,5 % till 4,14 % och Centerpartiet från 9,9 % till
+    5,89 %. M dominerar alltså allt mer sitt eget styre. Se <a href="/historiska-val/">historiska val</a>.
+  </p>
+
+  <h2>3. Om du röstar på oppositionen (S, SD, V, MP, MED)</h2>
+  <p>
+    Om du i stället röstar på oppositionspartierna — och om de (förmodligen vänsterblocket) skulle samla en
+    majoritet — får du en annorlunda prioritering. Viktigt: SD och MED tillhör inte samma block som S, V och MP,
+    så oppositionen är splittrad.
+  </p>
+
+  <div class="compare-grid">
+    <div class="compare-col compare-col--opposition">
+      <h3>S, V och MP — det rödgröna alternativet</h3>
+      <ul>
+        <li>
+          <strong>Satsningar på personal och välfärd:</strong> S lovar att satsa "dubbelt så mycket
+          på förskolan som dagens borgerliga styre", bygga ut trygghetsboenden för äldre och stärka stödet enligt LSS. V
+          vill höja minimilönen för kommunanställda till 29 690 kr, och MP vill minska barngrupperna och
+          anställa fler.
+        </li>
+        <li>
+          <strong>Klimat och miljö:</strong> MP vill ha nära noll utsläpp i kommunens verksamhet senast 2035, vill
+          inte bygga på jordbruksmark, och vill styra kommunens ekonomi enligt "Munkmodellen" (doughnut economics)
+          — ett unikt löfte som inget annat parti har.
+        </li>
+        <li>
+          <strong>Demokrati och landsbygd:</strong> V vill ha "demokratiska investeringsprogram" där zoner på
+          landsbygden får direkta pengar att besluta över (3 miljoner var tredje år). S vill skapa ett
+          "kulturkvarter" runt Kulturhuset Anders och inför en sommarjobbsgaranti för unga.
+        </li>
+      </ul>
+      <div class="not-box"><strong>Vibben:</strong> Mer resurser till välfärdens personal, stopp för vinster i välfärden, ambitiösa klimatmål och riktade pengar ut till landsbygden.</div>
+    </div>
+    <div class="compare-col compare-col--opposition">
+      <h3>SD och MED</h3>
+      <ul>
+        <li><strong>SD:</strong> Ett stenhårt fokus på skärpta straff, restriktiv lokal migrationspolitik för att minska segregationen, och krav på att det ska vara billigare att köra bil på landsbygden.</li>
+        <li><strong>MED:</strong> Fokuserar (nationellt) på skarpa vårdgarantier (vård inom 48 timmar) och satsningar på landsbygden.</li>
+      </ul>
+      <div class="not-box"><strong>Vibben:</strong> Hårdare tag mot brott, strikt migrationspolitik, värna bilisten på landsbygden och hårda krav på vårdköerna.</div>
+    </div>
+  </div>
+
+  <h2>4. Verkligheten i kammaren: oppositionen röstar inte som ett block</h2>
+  <p>
+    Ovan beskrivs löften och vibbar block för block. Men de dokumenterade omröstningarna från mandatperioden
+    visar att verkligheten är mer splittrad än så — och mönstret är förvånansvärt konsekvent.
+  </p>
+  <p>
+    Av de fem budgetarna 2023–2027 avgjordes <strong>tre genom votering om själva budgeten</strong>:
+  </p>
+  <ul>
+    {budgetData.beslut.filter((b) => b.rostning).map((b) => (
+      <li>
+        <strong>Budget {b.ar}</strong> ({b.antagen_datum}): <strong>{b.rostning?.ja} ja mot {b.rostning?.nej} nej</strong>
+        {b.rostning?.avstar ? `, ${b.rostning.avstar} avstod` : ""}
+        {b.rostning?.franvarande ? `, ${b.rostning.franvarande} frånvarande` : ""}.
+      </li>
+    ))}
+  </ul>
+  <p>
+    De två övriga togs utan votering om budgeten. <strong>Budget 2024</strong> (2023-06-14) klubbades med{" "}
+    <a href="/ordlista/#acklamation">acklamation</a>; den votering som hölls den kvällen gällde en procedurfråga
+    — Vänsterpartiets yrkande om återremiss, som föll med 26 ja mot 11 nej och 3 som avstod. Att SD stod bakom
+    budgeten framgår i stället av yrkandena i protokollet, där tre SD-ledamöter uttryckligen yrkade bifall till
+    Alliansens förslag.
+    <strong> Budget 2026</strong> (2025-06-11) klubbades också med acklamation, där oppositionen nöjde sig med
+    reservationer. Se <a href="/budget/">budgetöversikten</a> för protokollen.
+  </p>
+  <div
+    class="mandatprickar"
+    role="img"
+    aria-label={`Fullmäktiges ${mandatTotalt} mandat: ${mandatStyre} styret, ${mandatSD} SD, ${mandatOvriga} övriga oppositionen. Styret plus SD är ${mandatStyre + mandatSD} — en majoritet.`}
+  >
+    {Array.from({ length: mandatStyre }).map(() => <span class="prick--styre" />)}
+    {Array.from({ length: mandatSD }).map(() => <span class="prick--sd" />)}
+    {Array.from({ length: mandatOvriga }).map(() => <span class="prick--ovriga" />)}
+  </div>
+  <p class="mandatprickar__legend" aria-hidden="true">
+    <span class="prick-inline prick--styre"></span>Styret (M, L, C, KD): {mandatStyre} &nbsp;
+    <span class="prick-inline prick--sd"></span>SD: {mandatSD} &nbsp;
+    <span class="prick-inline prick--ovriga"></span>S, V, MP och MED: {mandatOvriga} &nbsp;—&nbsp;
+    {mandatStyre} + {mandatSD} = {mandatStyre + mandatSD} av {mandatTotalt}
+  </p>
+  <p>
+    Styret har bara 17 av 41 mandat i fullmäktige. Ändå landar styrets förslag på exakt
+    <strong> 26 ja-röster i samtliga tre budgetvoteringar</strong> — 2023, 2025 och 2027 — liksom i
+    procedurvoteringen 2024. 17 + 9 = 26, och i 2023 och 2025 går det ihop just så: <strong>hela
+    Sverigedemokraternas grupp (9 mandat) röstade med styret</strong>. Detsamma gäller procedurvoteringen 2024.
+    I 2027 års votering var en SD-ledamot (Jack Ljungberg) frånvarande utan ersättare — då fylldes de 26 rösterna
+    i stället ut av Medborgerlig Samling, som röstade med styret för första och enda dokumenterade gången.
+    Nettoeffekten är densamma (26 ja, styret vinner), men vågmästarrollen har alltså i praktiken delats mellan SD
+    och MED snarare än att SD ensamt hållit i den varje gång. S och V har röstat nej och reserverat sig varje
+    gång; MP har röstat nej i budgetvoteringarna men avstod i procedurvoteringen 2024.
+  </p>
+  <p>
+    Att de rödgröna inte är eniga är inte en tolkning — det står i röstlängderna. Innan fullmäktige kan rösta om
+    budgeten måste man först avgöra <em>vilket</em> oppositionsförslag som ska ställas mot styrets. Den voteringen
+    kallas kontraproposition, och där har S, V och MP röstat mot varandra:
+  </p>
+  <ul>
+    <li>
+      <strong>Budget 2023</strong> (2022-11-30, § 145): Socialdemokraternas förslag vann över Vänsterpartiets med
+      <strong> 10 ja mot 3 nej</strong>. 28 ledamöter avstod.
+    </li>
+    <li>
+      <strong>Budget 2025</strong> (2024-06-19, § 75): S, V och MP gick fram med <strong>tre separata
+      budgetar</strong>. S:s förslag vann över V:s med <strong>8 ja mot 3 nej</strong> — alltså S-gruppen mot
+      V-gruppen — medan 28 ledamöter avstod, bland dem Miljöpartiets båda ledamöter Roger Orwén och Andrew Briggs.
+      MP:s eget förslag ställdes aldrig ens mot S:s. Röstlängden är namngiven i protokollet.
+    </li>
+    <li>
+      <strong>Budget 2027</strong> (2026-06-10, § 58): samma sak igen — S:s förslag utsågs till motförslag före
+      både V:s och MP:s.
+    </li>
+  </ul>
+  <p>
+    Först efter det ställs det vinnande oppositionsförslaget mot styrets, och då röstar S, V och MP nej
+    tillsammans. Den enigheten uppstår alltså i sista ledet, efter att partierna redan röstat ned varandras
+    alternativ.
+  </p>
+  <p>
+    <a class="source-link" href="/kallor/protokoll/Protokoll_KF_240619.pdf" target="_blank" rel="noopener noreferrer">
+      Protokoll, kommunfullmäktige 2024-06-19 § 75, s. 11–13 — Omröstning 1 med namngiven röstlängd (PDF)
+    </a>
+  </p>
+  <p>
+    Oppositionen är inte heller enig om vad man vill i stället — och mönstret skiftar från år till år.
+    Partiernas egna fullständiga budgetförslag för 2024–2027 visar det.
+    I budget 2026 ville Socialdemokraterna och Miljöpartiet (i ett gemensamt förslag)
+    behålla oförändrad skatt och satsa mer på skola och socialtjänst, medan Vänsterpartiet i sitt eget förslag i
+    stället ville gå <strong>längre</strong> än styret och sänka skatten ännu mer — med totalt 50 öre mot styrets 30
+    öre. Året efter, i budget 2027, vände det: S och MP höll fast vid att avvisa skattesänkningen helt, medan
+    Vänsterpartiet den här gången i stället ville <strong>halvera</strong> styrets sänkning (25 öre mot styrets 50
+    öre) — alltså en mindre sänkning än styret, tvärtemot 2026 års mönster. Se respektive års röstningsavsnitt på{" "}
+    <a href="/budget/">budgetöversikten</a> för källorna.
+  </p>
+  <a class="source-link" href={budget2027?.kalla_url} target="_blank" rel="noopener noreferrer">{budget2027?.kalla_beskrivning}</a>
+
+  <div class="trust-note" style="margin-top: 1rem;">
+    <strong>Slutsats:</strong> Bilden av "styret mot ett enat oppositionsblock" stämmer inte. I praktiken
+    är det styret + SD — en gång med Medborgerlig Samling i SD:s ställe — mot S, V och MP, år efter år.
+    Och S, V och MP är samtidigt inte eniga om vad de skulle göra i styrets ställe.
+  </div>
+
+  <h2>Sammanfattning: fyra snabba frågor till dig som väljare i Höör</h2>
+  <ol>
+    <li><strong>Skatt vs välfärd:</strong> Föredrar du skattesänkningar och effektivisering (styret) eller vill du lägga de pengarna på till exempel högre löner för kommunanställda och mer resurser till förskolan (rödgröna)?</li>
+    <li><strong>Medborgarinflytande:</strong> Är du nöjd med hur kommunen styrs idag (bantade nämnder för att spara pengar), eller vill du se direktinflytande på landsbygden och medborgarförslag (oppositionen)?</li>
+    <li><strong>Trygghet och trafik:</strong> Är hårdare straff och migrationskrav rätt väg för tryggheten (SD) — frågor som avgörs i riksdagen, inte i fullmäktige, men som är centrala i partiets profil — och hur ska landsbygden leva: mer kollektivtrafik (MP/V) eller billigare bilkörning (SD)?</li>
+    <li><strong>Vem styr egentligen?</strong> Räknar du SD som opposition eller som styrets faktiska vågmästare, givet att partiet fyllt ut styrets 26 röster i budgetvoteringarna 2023 och 2025 (med Medborgerlig Samling i samma roll 2027)?</li>
+  </ol>
+
+  <p>
+    Testa vad du själv lutar mest åt i <a href="/#valkompass">valkompassen på startsidan</a>, eller gå vidare till{" "}
+    <a href="/jamforelse/">jämförelsevyn</a> för att gräva i sakfrågorna en och en.
+  </p>
+
+  <p class="updated">Baserat på partiernas egna lokala löften och de beslut som fattats 2022–2026. Senast uppdaterad: {budgetData.senast_uppdaterad}.</p>
+</Layout>

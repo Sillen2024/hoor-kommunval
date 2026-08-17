@@ -1,0 +1,253 @@
+---
+// Jämförelsestapel för en lista kommuner. Sajtens första diagramkomponent.
+//
+// Tre krav styr utformningen (KOLADA_PLAN.md §6, etapp 2.3):
+//  1. Ingen JavaScript. Staplarna är rena divar med inline-bredd, uträknade
+//     vid byggtid. Sidan fungerar identiskt med JS avstängt.
+//  2. Ingen horisontell scroll på mobil. Därför en <ol> med grid, inte en
+//     tabell — kommunnamn och värde bryter ner på egen rad under 40rem.
+//  3. Stapeln är dekoration, inte information. Varje rad har namnet och
+//     siffran i klartext, så en skärmläsare eller en utskrift förlorar
+//     ingenting. Stapeln är aria-hidden.
+//
+// Färgsättning: alla staplar har samma neutrala färg, bara Höör markeras.
+// Att färga negativa värden röda vore en värdering — en nettokostnads-
+// avvikelse under noll betyder att kommunen lägger mindre än referens-
+// kostnaden, vilket kan läsas som sparsamt eller som underfinansierat
+// beroende på vad man tycker. Sajten ska inte välja åt läsaren.
+
+interface Rad {
+  namn: string;
+  varde: number | null;
+  /** Markeras visuellt och i text. Används för Höör. */
+  markerad?: boolean;
+  /** Streckad stapel + egen-bearbetning-märkning. Används för snitt. */
+  harledd?: boolean;
+  /** Sätter asterisk och not. Används för preliminära år. */
+  preliminar?: boolean;
+}
+
+interface Props {
+  rubrik: string;
+  enhet: string;
+  rader: Rad[];
+  decimaler?: number;
+  /** Visas under rubriken, före staplarna. */
+  beskrivning?: string;
+  /** Länk till API-anropet som gav råvärdena. Utelämnas för härledda listor. */
+  kallaUrl?: string;
+  kallaText?: string;
+  /** Text för egen-bearbetning-märket, om listan innehåller uträknade värden. */
+  bearbetning?: string;
+}
+
+const {
+  rubrik,
+  enhet,
+  rader,
+  decimaler = 1,
+  beskrivning,
+  kallaUrl,
+  kallaText = "Källa: Kolada — se råvärdet",
+  bearbetning,
+} = Astro.props;
+
+const tal = (v: number) =>
+  v.toLocaleString("sv-SE", { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler });
+
+const medVarde = rader.filter((r): r is Rad & { varde: number } => r.varde !== null);
+const varden = medVarde.map((r) => r.varde);
+
+// Skalan sätts av datan, inte av noll. Att alltid börja på noll skulle göra
+// skillnaden mellan −21,8 och −16,1 osynlig; att alltid börja på minsta värdet
+// skulle överdriva den. Kompromissen: skalan spänner över datan, men nollan
+// ritas alltid ut som en linje när den ligger inom intervallet, så att läsaren
+// ser var den är.
+const max = varden.length > 0 ? Math.max(...varden, 0) : 0;
+const min = varden.length > 0 ? Math.min(...varden, 0) : 0;
+const spann = max - min || 1;
+const pct = (v: number) => Math.round(((v / spann) * 100 + Number.EPSILON) * 100) / 100;
+const nollPct = pct(0 - min);
+
+const stapel = (v: number) => {
+  const bredd = pct(Math.abs(v));
+  return v >= 0
+    ? { left: nollPct, width: bredd }
+    : { left: nollPct - bredd, width: bredd };
+};
+
+const harPreliminar = rader.some((r) => r.preliminar);
+---
+
+<figure class="jmf">
+  <figcaption class="jmf__rubrik">
+    {rubrik}{" "}
+    <span class="jmf__enhet">{enhet}</span>
+  </figcaption>
+  {beskrivning && <p class="jmf__beskrivning">{beskrivning}</p>}
+
+  <ol class="jmf__rader">
+    {rader.map((rad) => {
+      const s = rad.varde === null ? null : stapel(rad.varde);
+      return (
+        <li
+          class:list={["jmf__rad", { "jmf__rad--markerad": rad.markerad, "jmf__rad--harledd": rad.harledd }]}
+        >
+          <span class="jmf__namn">
+            {rad.namn}
+            {rad.preliminar && <abbr title="Preliminärt värde, ännu inte fastställt av Kolada">*</abbr>}
+          </span>
+          <span class="jmf__spar" aria-hidden="true">
+            {nollPct > 0 && nollPct < 100 && <span class="jmf__noll" style={`left:${nollPct}%`} />}
+            {s && <span class="jmf__fyll" style={`left:${s.left}%;width:${s.width}%`} />}
+          </span>
+          <span class="jmf__varde">{rad.varde === null ? "–" : tal(rad.varde)}</span>
+        </li>
+      );
+    })}
+  </ol>
+
+  {harPreliminar && (
+    <p class="jmf__fotnot">* Preliminärt värde. Fastställs av Kolada senare — se <a href="/om-urvalet/#kolada">Om urvalet</a>.</p>
+  )}
+  {kallaUrl && (
+    <a class="source-link" href={kallaUrl} target="_blank" rel="noopener noreferrer">{kallaText}</a>
+  )}
+  {bearbetning && <span class="derived-note">{bearbetning}</span>}
+</figure>
+
+<style>
+  .jmf {
+    margin: 1.6rem 0;
+    padding: 0;
+  }
+
+  .jmf__rubrik {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .jmf__enhet {
+    font-weight: 400;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .jmf__enhet::before { content: "("; }
+  .jmf__enhet::after { content: ")"; }
+
+  .jmf__beskrivning {
+    margin: 0 0 0.7rem;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  .jmf__rader {
+    list-style: none;
+    margin: 0.6rem 0 0.7rem;
+    padding: 0;
+  }
+
+  .jmf__rad {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr 4.2rem;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.18rem 0;
+    font-size: 0.92rem;
+  }
+
+  .jmf__namn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .jmf__varde {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .jmf__spar {
+    position: relative;
+    display: block;
+    height: 1.1rem;
+    background: #f4f4f4;
+    border-radius: 2px;
+  }
+
+  .jmf__noll {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    width: 1px;
+    background: var(--color-border);
+  }
+
+  .jmf__fyll {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    background: #9bb3c4;
+    border-radius: 2px;
+    /* Ett värde nära noll får ändå en synlig strimma, annars ser raden
+       tom ut och läsaren tror att data saknas. */
+    min-width: 1px;
+  }
+
+  .jmf__rad--markerad .jmf__namn,
+  .jmf__rad--markerad .jmf__varde {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .jmf__rad--markerad .jmf__fyll {
+    background: var(--color-accent);
+  }
+
+  .jmf__rad--harledd .jmf__namn,
+  .jmf__rad--harledd .jmf__varde {
+    color: #7a4f1a;
+    font-style: italic;
+  }
+
+  .jmf__rad--harledd .jmf__fyll {
+    background: repeating-linear-gradient(
+      45deg,
+      #d8bc95,
+      #d8bc95 3px,
+      #f0e2cd 3px,
+      #f0e2cd 6px
+    );
+  }
+
+  .jmf__namn abbr {
+    text-decoration: none;
+    color: var(--color-muted);
+  }
+
+  .jmf__fotnot {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+
+  /* Under 40rem får namnet en egen rad ovanför stapeln. Alternativet vore
+     att korta namnkolumnen, men "Östra Göinge" och "Staffanstorp" bryts då
+     mitt i ordet. */
+  @media (max-width: 40rem) {
+    .jmf__rad {
+      grid-template-columns: 1fr auto;
+      gap: 0.15rem 0.6rem;
+      padding: 0.3rem 0;
+    }
+    .jmf__namn { grid-column: 1; }
+    .jmf__varde { grid-column: 2; }
+    .jmf__spar { grid-column: 1 / -1; height: 0.85rem; }
+  }
+</style>

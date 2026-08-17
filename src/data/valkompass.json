@@ -1,0 +1,111 @@
+{
+  "senast_uppdaterad": "2026-08-14",
+  "metod_not": "Detta är en förenklad valkompass, inte en vetenskaplig mätning. Varje påstående är kopplat till konkreta, källbelagda ståndpunkter från partiernas 2026-manifest (se /partier/ och /jamforelse/) eller till dokumenterade beslut under mandatperioden (se /styret-vs-oppositionen/). Grupperingen styre / rödgröna / SD och MED följer samma blockindelning som resten av sajten. Verkligheten är mer splittrad än så — se resultatet för en viktig brasklapp om hur Höör faktiskt röstar. Resultatet räknas som andel av de frågor du faktiskt tagit ställning till, och två av frågorna är märkta som nationella.",
+  "grupper": {
+    "styre": {
+      "namn": "Styret",
+      "partier": [
+        "m",
+        "l",
+        "c",
+        "kd"
+      ]
+    },
+    "rodgrona": {
+      "namn": "S, V och MP",
+      "partier": [
+        "s",
+        "v",
+        "mp"
+      ]
+    },
+    "sd_med": {
+      "namn": "SD och Medborgerlig Samling",
+      "partier": [
+        "sd",
+        "medborgerlig-samling"
+      ]
+    }
+  },
+  "fragor": [
+    {
+      "id": "sankt-skatt",
+      "text": "Jag vill att kommunalskatten fortsätter att sänkas.",
+      "grupp": "styre",
+      "kalla_not": "Styret sänkte skatten med 30 öre inför 2026 och ytterligare 50 öre inför 2027. Som en del av samma effektiviseringslinje minskades antalet sammanträden i fullmäktige och styrelser från 9 till 8 per år. Vad sänkningen ger dig och kostar kommunen står på Budget.",
+      "kalla_url": "/styret-vs-oppositionen/"
+    },
+    {
+      "id": "ishall",
+      "text": "Jag tycker kommunen ska bygga en ny ishall, även om andra investeringar då kan få vänta.",
+      "grupp": "styre",
+      "kalla_not": "Styret har i fullmäktige uttalat en ambition om en ny ishall och handbollshall inom en 10–15-årsperiod. Moderaterna gjorde i valrörelsen 2026 en ny ishall till ett uttalat vallöfte med byggstart 2030 och samlokalisering med badet (partiets Facebook 2026-07-26, se partisidan).",
+      "kalla_url": "/partier/m/"
+    },
+    {
+      "id": "privata-alternativ",
+      "text": "Jag tycker det är bra att kommunen öppnar för fler privata skol- och omsorgsalternativ, som komplement när kommunen inte räcker till.",
+      "grupp": "styre",
+      "kalla_not": "Liberalerna ser privata skolalternativ som en viktig del av Höörs skolutbud, och vill öppna för privata äldreboenden om kommunen inte kan erbjuda plats inom rimlig tid.",
+      "kalla_url": "/partier/l/"
+    },
+    {
+      "id": "larare-garanti",
+      "text": "Jag tycker kommunen ska garantera behöriga lärare i varje klassrum, som en tydlig kvalitetsgaranti för skolan.",
+      "grupp": "styre",
+      "kalla_not": "Centerpartiet lovar behöriga lärare i varje klassrum.",
+      "kalla_url": "/partier/c/"
+    },
+    {
+      "id": "personaltathet",
+      "text": "Jag vill att kommunen lägger mer pengar på personaltäthet i skola och omsorg, även om det höjer kostnaderna.",
+      "grupp": "rodgrona",
+      "kalla_not": "Socialdemokraterna lovar att satsa \"dubbelt så mycket på förskolan som dagens borgerliga styre\". Vänsterpartiet och Miljöpartiet vill minska barngruppernas storlek och öka personaltätheten.",
+      "kalla_url": "/partier/s/"
+    },
+    {
+      "id": "klimat-2035",
+      "text": "Jag vill att kommunens egen verksamhet ska nå nära noll koldioxidutsläpp senast 2035, även om det kräver stora investeringar nu.",
+      "grupp": "rodgrona",
+      "kalla_not": "Miljöpartiet vill att kommunens verksamheter ska ha nära noll koldioxidutsläpp 2035, med bland annat solceller på kommunala fastigheter och utbyggd förnybar energiproduktion.",
+      "kalla_url": "/partier/mp/"
+    },
+    {
+      "id": "landsbygd-demokrati",
+      "text": "Jag vill att landsbygden i Höör ska få egna pengar och egen beslutanderätt över lokala investeringar, i stället för att allt beslutas centralt.",
+      "grupp": "rodgrona",
+      "kalla_not": "Vänsterpartiet vill inrätta ett demokratiskt investeringsprogram där kommunen delas in i tre landsbygdszoner som roterande får 3 miljoner kronor vart tredje år till lokalt beslutade investeringar.",
+      "kalla_url": "/partier/v/"
+    },
+    {
+      "id": "minimilon",
+      "text": "Jag tycker kommunalt anställda bör garanteras en minimilön på minst 29 690 kr i månaden, även om det höjer kommunens kostnader.",
+      "grupp": "rodgrona",
+      "kalla_not": "Vänsterpartiet vill se en minimilön på 29 690 kr/månad för kommunanställda.",
+      "kalla_url": "/partier/v/"
+    },
+    {
+      "id": "trygghet-migration",
+      "text": "Jag vill se en mer restriktiv migrationspolitik lokalt och hårdare straff för brott.",
+      "grupp": "sd_med",
+      "kompetens": "nationell",
+      "kalla_not": "Sverigedemokraterna fokuserar på skärpta straff och en restriktiv, seriös migrationspolitik i kommunen.",
+      "kalla_url": "/partier/sd/"
+    },
+    {
+      "id": "bilism",
+      "text": "Jag tycker det ska bli billigare att köra bil på landsbygden.",
+      "grupp": "sd_med",
+      "kompetens": "nationell",
+      "kalla_not": "Sverigedemokraterna driver krav på sänkta bränslepriser för att möjliggöra ett fungerande liv utanför centralorten. Miljöpartiet och Vänsterpartiet prioriterar i stället utbyggd kollektivtrafik.",
+      "kalla_url": "/partier/sd/"
+    },
+    {
+      "id": "vardgaranti",
+      "text": "Jag tycker kommunen bör garantera vård inom 48 timmar, även om det kräver omprioriteringar i budgeten.",
+      "grupp": "sd_med",
+      "kalla_not": "Medborgerlig Samling vill införa skarpa vårdgarantier med vård inom 48 timmar.",
+      "kalla_url": "/partier/medborgerlig-samling/"
+    }
+  ]
+}

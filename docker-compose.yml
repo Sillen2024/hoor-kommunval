@@ -1,0 +1,11 @@
+services:
+  hoor-kommunval-2026:
+    build: .
+    container_name: hoor-kommunval-2026
+    restart: unless-stopped
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true

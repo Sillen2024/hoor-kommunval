@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import partierData from "../../data/partier.json";
+---
+
+<Layout
+  title="AI-experimentet"
+  description="Sajtens egna AI-experiment: krönikor och ett tankeexperiment — tydligt skilt från den källbelagda faktadelen. Bara 1 av 9 partier nämner AI i sitt 2026-manifest."
+>
+  <p class="hook-card__eyebrow">Experiment, inte fakta</p>
+  <h1>AI-experimentet på den här sajten</h1>
+  <p class="lead">
+    Resten av sajten redovisar bara dokumenterade fakta och partiernas egna ord. Här samlar vi istället det som är
+    fritt AI-genererat innehåll och tankeexperiment — allt tydligt märkt, allt skilt från faktaredovisningen.
+  </p>
+
+  <div class="dig-deeper">
+    <h2>Vad vi byggde</h2>
+    <div class="card-grid">
+      <a class="card" href="/ai/kronika/">
+        <h3>Krönika</h3>
+        <p>Två AI-språkmodeller, Claude och Gemini, läste samma underlag och fick tycka till fritt om valet — och
+          gick i mothugg mot varandra.</p>
+      </a>
+      <a class="card" href="/ai/partiet/">
+        <h3>AI-partiet</h3>
+        <p>Ett tankeexperiment: om en AI fick styra Höör — inte ersätta politikerna, utan vara systemet de styr
+          med — vad skulle det faktiskt ge dig?</p>
+      </a>
+    </div>
+  </div>
+
+  <p>
+    <em>
+      Allt under det här avsnittet är tydligt märkt åsikt eller tankeexperiment — ingenting här är sajtens
+      faktaredovisning. Se <a href="/om-urvalet/">Om urvalet</a> för sajtens fulla metod och löfte om fakta i
+      övrigt.
+    </em>
+  </p>
+
+  <p class="updated">Senast uppdaterad: {partierData.senast_uppdaterad}.</p>
+</Layout>

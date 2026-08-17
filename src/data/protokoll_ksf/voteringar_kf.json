@@ -1,0 +1,6860 @@
+[
+ {
+  "datum": "2026-06-10",
+  "fil": "0_Protokoll KF 260610.txt",
+  "paragraf": "58",
+  "rubrik": "Budget 2027 VEP 2028-2029 Höörs kommun",
+  "ja_betyder": "Socialdemokraternas förslag till budget för 2027 samt VEP 2028 -2029 ska utgöra motförslag i huvudomröstningen.",
+  "nej_betyder": "Vänsterpartiets förslag till budget för 2027 samt VEP 2028-2029 ska utgöra motförslag i huvudomröstningen. Efter beslut att Socialdemokraternas förslag till budget för 2027 samt VEP 2028- 2029 ska utgöra motförslag i huvudomröstningen godkänner kommunfullmäktige följande beslutsordning:",
+  "antal_ja": 10,
+  "antal_nej": 3,
+  "antal_avstar": 26,
+  "per_parti": {
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "M": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 11
+   },
+   "C": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "L": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "KD": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 8
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 1
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 10 ledamöter röstar JA, 3 ledamöter röstar NEJ och 26 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar att Socialdemokraternas förslag till budget för 2027 samt VEP 2028-2029 ska utgöra motförslag i huvudomröstningen. Följande ledamöter röstar JA: Lena Stigsdotter (S), Stefan Lissmark (S), Clas Paulsson (S), Jill Andersson (S), Kent Staaf (S), Evalisa Forshell (S), Jan Waad (S), Kerstin von Seth (MP), Arno Werner (MP) och Lena Larsson (S). Följande ledamöter röstar NEJ: Olle Krabbe (V), Christel Lindqvist (V) ",
+  "ja": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Arno Werner",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "nej": [
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ]
+  ],
+  "avstar": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Bo Hansson",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ]
+ },
+ {
+  "datum": "2026-06-10",
+  "fil": "0_Protokoll KF 260610.txt",
+  "paragraf": "58",
+  "rubrik": "Budget 2027 VEP 2028-2029 Höörs kommun",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, satserna 1-2.",
+  "nej_betyder": "Bifall till Socialdemokraternas förslag till budget för 2027 samt VEP 2028- 2029, satserna 1-2. Ordföranden frågar avslutningsvis beträffande satserna 3-7 om kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut och finner frågan med ja besvarad.",
+  "antal_ja": 26,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 26 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut, satserna 1-2. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Johan Hårleman (M), Tom Ström (M), Bo Hansson (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan L",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Bo Hansson",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Arno Werner",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2026-06-10",
+  "fil": "0_Protokoll KF 260610.txt",
+  "paragraf": "66",
+  "rubrik": "Motion: Arbetsskor till omsorgspersonalen i Höörs kommun - Lena Stigsdotter (S)",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 25,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 25 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Johan Hårleman (M), Tom Ström (M), Bo Hansson (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan Liljenberg (SD), Helena Lindblom Ohlson (SD), Willy Wikbourn (SD), La",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Bo Hansson",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Arno Werner",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2026-04-22",
+  "fil": "1_Protokoll KF 260422.txt",
+  "paragraf": "46",
+  "rubrik": "Motion: Offentlig toalett i Tjörnarp - Evalisa Forshell (S)",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 24,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 5,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 24 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Bo Hansson (M), Gunilla Malmqvist (M), Tom Ström (M), Hans Lindén (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Willy Wikbourn (SD), Marie- Louise Palm (SD), Eskil Öhrn (SD), Hans Clair",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Bo Hansson",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Hans Lindén",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie- Louise Palm",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Anna Jung",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2026-02-04",
+  "fil": "3_Protokoll KF 260204.txt",
+  "paragraf": "5",
+  "rubrik": "Fråga från Miljöpartiet angående frivillig återvandring",
+  "ja_betyder": "Miljöpartiets fråga får inte ställas.",
+  "nej_betyder": "Miljöpartiets fråga får ställas.",
+  "antal_ja": 22,
+  "antal_nej": 15,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 7,
+    "nej": 1,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 7,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 22 ledamöter röstar JA och 15 ledamöter röstar NEJ vilket innebär att kommunfullmäktige beslutar att Miljöpartiets fråga inte får ställas. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Johan Hårleman (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan Liljenberg (SD), Helena Lindblom Ohlson (SD), Marie-Louise Pal",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2026-02-04",
+  "fil": "3_Protokoll KF 260204.txt",
+  "paragraf": "11",
+  "rubrik": "Revidering av styrande dokument gällande kommunens bolagskoncern",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till Evalisa Forshells (S) yrkande. Efter genomförd omröstning frågar ordföranden om kommunfullmäktige beslutar i enlighet med Johan Svahnbergs (M) yrkande gällande borttagande av avsnitt 2.4 i dokumentet Ägardirektiv Höörs Fastighets Bostads AB och finner frågan med ja besvarad.",
+  "antal_ja": 20,
+  "antal_nej": 16,
+  "antal_avstar": 1,
+  "per_parti": {
+   "M": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 1
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 4,
+    "nej": 4,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 7,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 20 ledamöter röstar JA, 16 ledamöter röstar NEJ och 1 ledamot AVSTÅR från att rösta vilket innebär att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Nino Dervisagic (M), Johan Hårleman (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan Lilje",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": [
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ]
+  ]
+ },
+ {
+  "datum": "2026-02-04",
+  "fil": "3_Protokoll KF 260204.txt",
+  "paragraf": "14",
+  "rubrik": "Motion: Inför språktester inom vård- och omsorg i Höörs kommun - Emma Öster (SD)",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 27,
+  "antal_nej": 9,
+  "antal_avstar": 1,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 7,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 1
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 1,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 27 ledamöter röstar JA, 9 ledamöter röstar NEJ och 1 ledamot AVSTÅR från att rösta vilket innebär att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Johan Hårleman (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Lena S",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ]
+  ],
+  "avstar": [
+   [
+    "Christel Lindqvist",
+    "V"
+   ]
+  ]
+ },
+ {
+  "datum": "2025-12-17",
+  "fil": "4_Protokoll KF 251217.txt",
+  "paragraf": "148",
+  "rubrik": "Rivning av Magasinet (Bävern 10)",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Avslag på kommunstyrelsens förslag till beslut.",
+  "antal_ja": 29,
+  "antal_nej": 6,
+  "antal_avstar": 4,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 1
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 4,
+    "nej": 1,
+    "avstar": 3
+   },
+   "SD": {
+    "ja": 7,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 29 ledamöter röstar JA, 6 ledamöter röstar NEJ och 4 ledamöter AVSTÅR från att rösta vilket innebär att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Johan Hårleman (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Lena",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Willy WIkbourn",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ]
+  ],
+  "avstar": [
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ]
+  ]
+ },
+ {
+  "datum": "2025-11-05",
+  "fil": "5_Protokoll KF 251105.txt",
+  "paragraf": "137",
+  "rubrik": "Motion: Utred möjligheter att åter öppna upp skolan för ett ömsesidigt samarbete med våra ungdomsföreningar - Stefan Lissmark (S) m.fl.",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 27,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 27 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Johan Hårleman (M), Oscar Blixt (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Martin Olsson (C), Ingemar Kristensson (C), Anna Ramberg (L), Christina Pehrson (L), Erik Mårtensson (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan Liljenberg (SD), Willy Wikbourn ",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Oscar Blixt",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Ingemar Kristensson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2025-10-01",
+  "fil": "6_Protokoll KF 251001.txt",
+  "paragraf": "113",
+  "rubrik": "Gudmuntorps skola - Framtida hantering",
+  "ja_betyder": "Ärendet avgörs idag.",
+  "nej_betyder": "Bifall till Olle Krabbes (V) yrkande, att återremittera ärendet till förvaltningen. Sedan kommunfullmäktige beslutat att ärendet avgörs idag fortsätter debatten. Efter avslutad debatt och förslagsställan ställer ordföranden kommunstyrelsens förslag till beslut mot Olle Krabbes (V) yrkande om avslag och finner att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut. Ordföranden ställer härefter Johan Svahnbergs (M) ändringsyrkande gällande sats 2 mot kommunstyrelsens förslag till beslut och finner att kommunfullmäktige beslutar i enlighet med Johan Svahnbergs (M) yrkande.",
+  "antal_ja": 35,
+  "antal_nej": 3,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 7,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 35 ledamöter röstar JA, och 3 ledamöter röstar NEJ, vilket medför att kommunfullmäktige beslutar att ärendet avgörs idag. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Johan Hårleman (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Ingemar Kristensson (C), Katarina Gisow (L), Cristina Pehrson (L), Erik Mårtensson (KD), Margareta Johansson (KD), Lena Stigsdotter (S), Stefan Lissmark (S), Mona Schill Ingvarsson (S), J",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Ingemar Kristensson",
+    "C"
+   ],
+   [
+    "Katarina Gisow",
+    "L"
+   ],
+   [
+    "Cristina Pehrson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2025-08-27",
+  "fil": "7_Protokoll.txt",
+  "paragraf": "99",
+  "rubrik": "Motion: Seniorkort för fri kollektivtrafik för alla över 70 år - Kent Staaf (S), Olle Krabbe (V), Roger Orwén (MP)",
+  "ja_betyder": "bifall till kommunstyrelsens förslag att avslå motionen.",
+  "nej_betyder": "bifall till Kent Staafs (S) med fleras förslag att bifalla motionen. Omröstning sker med upprop: Johan Svahnberg (M) - JA Camilla Kampf (M) - JA Johan Hårleman (M) - JA Lars-Håkan Persson (M) - JA Nino Dervisagic (M) - JA Gunilla Malmqvist (M) - JA Tom Ström (M) - JA Gabriella Salomonsson Bicki (M) - JA Fredrik Stålhandske (M) - JA Magnus Haara (C) - JA Martin Olsson (C) - JA Christina Pehrson (L) - JA Martin Ekstrand (KD) - JA Margareta Johansson (KD) - JA Lena Stigsdotter (S) - NEJ Stefan Lissmark (S) - NEJ Mona Schill-Ingvarsson (S) - NEJ Jill Andersson (S) - NEJ Kent Staaf (S) - NEJ Evalisa Forshell (S) - NEJ Jan Waad (S) - NEJ Olle Krabbe (V) - NEJ Bengt Johansson (V) - NEJ Pierre Malmberg Nyborg (V) - NEJ Roger Orwén (MP) - NEJ Andrew Briggs (MP) - NEJ Emma Öster (SD) - NEJ Stefan Liljenberg (SD) - JA Helena Lindblom Ohlson (SD) – NEJ Marie-Louise Palm (SD) - JA Lars Andersson (SD) - NEJ Eskil Öhrn (SD) - NEJ Willy Wikbourn (SD) - JA Hans Clair (SD) - NEJ Hans Nava-Barrefors (MED) - JA Rolf Streijffert (SD) - NEJ Lena Larsson (S) - NEJ Anders Netterheim (M) – JA När omröstningen genomförts, biträds ordföranden av de två ledamöter som har",
+  "antal_ja": 19,
+  "antal_nej": 19,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 3,
+    "nej": 6,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "utsetts att justera protokollet. Omröstningen utfaller med lika röstetal, 19 Ja-röster och 19 Nej-röster. Enligt kommunallagen (2017:725) 5 kap. 56 § har ordföranden utslagsröst vid lika röstetal. I ärenden som avser val eller anställning av personal fattas beslutet dock genom lottning. Ordförande Anders Netterheim (M) beslutar, enligt sin utslagsröst vid lika röstetal, att bifalla kommunstyrelsens förslag och motionen avslås därmed av kommunfullmäktige.",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill-Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2025-06-11",
+  "fil": "8_Protokoll KF 250611.txt",
+  "paragraf": "68",
+  "rubrik": "Borgensram Höörs Fastighets Bostads AB - HFB AB - 2026",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till Lars-Håkan Perssons (M) yrkande.",
+  "antal_ja": 15,
+  "antal_nej": 21,
+  "antal_avstar": 3,
+  "per_parti": {
+   "M": {
+    "ja": 9,
+    "nej": 1,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 1,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 1
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 15 ledamöter röstar JA, 21 ledamöter röstar NEJ och 3 ledamöter AVSTÅR från att rösta, vilket medför att kommunfullmäktige beslutar i enlighet med Lars-Håkan Perssons (M) yrkande. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Nino Dervisagic (M), Johan Hårleman (M), Tom Ström (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias Svensson (L), Martin Ekstrand (KD), Margareta Johansson (KD) och Anders Netterheim (M). Följande ledamöter rösta",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": [
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Hans Nava- Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ]
+  ]
+ },
+ {
+  "datum": "2025-04-23",
+  "fil": "9_Protokoll KF 250423.txt",
+  "paragraf": "56",
+  "rubrik": "Motion: \"Begäran att kommunrevisionen granskar turerna kring Höörs kommuns anlitande av tjänster från Höörs Handelsklubb\" - Kent Staaf (S) m.fl.",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 25,
+  "antal_nej": 16,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 8,
+    "nej": 1,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 25 ledamöter röstar JA och 16 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Johan Hårleman (M), Oscar Blixt (M), Martin Olsson (C), Ingemar Kristensson (C), Anna Ramberg (L), Mattias Svensson (L), Lena Olsson (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan Liljenberg (SD), Helena Lindblom O",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Oscar Blixt",
+    "M"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Ingemar Kristensson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Lena Olsson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Raimo Ojala",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2025-03-12",
+  "fil": "10_Protokoll KF 250312.txt",
+  "paragraf": "26",
+  "rubrik": "Motion: \"gällande vind- och regnskydd\" - Stefan Lissmark (S) - Återremitterat ärende",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 28,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 28 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Oscar Blixt (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Martin Ekstrand (KD) Margareta Johansson (KD), Lukas Nilsson (SD), Stefan Liljenberg (SD), Willy Wikbourn",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Oscar Blixt",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2025-03-12",
+  "fil": "10_Protokoll KF 250312.txt",
+  "paragraf": "28",
+  "rubrik": "Motion: \"Kostnadsfria valbodar i Höörs kommun\" - Evalisa Forshell (S)",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 28,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 28 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Oscar Blixt (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Christina Pehrson (L), Martin Ekstrand (KD) Margareta Johansson (KD), Lukas Nilsson (SD), Stefan Liljenberg (SD), Willy Wikbourn",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Oscar Blixt",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2025-01-29",
+  "fil": "11_Protokoll KF 250129.txt",
+  "paragraf": "5",
+  "rubrik": "Budget 2026 VEP 2027-2028 Höörs kommun - Tidplan",
+  "ja_betyder": "Avslag på Roger Orwéns (MP) yrkande.",
+  "nej_betyder": "Bifall till Roger Orwéns (MP) yrkande.",
+  "antal_ja": 26,
+  "antal_nej": 13,
+  "antal_avstar": 1,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 1
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 26 ledamöter röstar JA, 13 ledamöter röstar NEJ och 1 ledamot AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar avslå tilläggsyrkandet. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Johan Hårleman (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias Svensson (L), Martin Ekstrand (KD), Margareta Johansson (KD), Stefan Liljenberg (SD), Lukas Nil",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Fredrik Hanell",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": [
+   [
+    "Emma Öster",
+    "SD"
+   ]
+  ]
+ },
+ {
+  "datum": "2024-11-06",
+  "fil": "13_Protokoll KF 241106.txt",
+  "paragraf": "129",
+  "rubrik": "Sammanträdesplanering 2025 för kommunstyrelsens arbetsutskott, kommunstyrelsen och kommunfullmäktige",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till Kent Staafs (S) yrkande.",
+  "antal_ja": 26,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 7,
+    "nej": 2,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 7,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 1,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 26 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Johan Hårleman (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias Svensson (L), Erik Mårtensson (KD), Margareta Johansson (KD), Lukas Nilsson (SD), Ste",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Raimo Ojala",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-09-25",
+  "fil": "14_Protokoll KF 240925.txt",
+  "paragraf": "109",
+  "rubrik": "VA-taxa 2025 Höörs Kommun",
+  "ja_betyder": "Yrkandet om återremiss tas upp till avgörande direkt.",
+  "nej_betyder": "Debatten i ärendet ska fortsätta. Efter avslutad debatt och förslagsställan frågar ordföranden om ärendet ska återremitteras till förvaltningen för omräkning av VA-taxa 2025 eller avgöras idag och finner att kommunfullmäktige beslutar att återremittera ärendet till förvaltningen. Omröstning begärs. Kommunfullmäktige godkänner följande beslutsordning:",
+  "antal_ja": 18,
+  "antal_nej": 19,
+  "antal_avstar": 3,
+  "per_parti": {
+   "M": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 1
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 3,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 9,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 18 ledamöter röstar JA, 19 ledamöter röstar NEJ och 3 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar att debatten i ärendet ska fortsätta. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Christina Pehrson (L), Mattias Svensson (L), Olle Krabbe (V), Bengt Johansson (V), Pierre Malmberg Nyborg (V), Hans Nava-Barrefors (MED)",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": [
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ]
+  ]
+ },
+ {
+  "datum": "2024-09-25",
+  "fil": "14_Protokoll KF 240925.txt",
+  "paragraf": "109",
+  "rubrik": "VA-taxa 2025 Höörs Kommun",
+  "ja_betyder": "Bifall till Johan Svahnbergs (M) yrkande, att återremittera ärendet till förvaltningen.",
+  "nej_betyder": "Ärendet avgörs idag.",
+  "antal_ja": 30,
+  "antal_nej": 9,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 3,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 9,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 30 ledamöter röstar JA och 9 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att återremittera ärendet till förvaltningen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Christina Pehrson (L), Mattias Svensson (L), Martin Ekstrand (KD) Margareta Johansson (KD), Clas Paulsson (S), Stefan Lissmark (S), Mona Schill Ingvarsson (S), Jill Andersso",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-09-25",
+  "fil": "14_Protokoll KF 240925.txt",
+  "paragraf": "111",
+  "rubrik": "Sammanträdesplanering 2025 för kommunstyrelsens arbetsutskott, kommunstyrelsen och kommunfullmäktige",
+  "ja_betyder": "Ärendet avgörs idag.",
+  "nej_betyder": "Bifall till Kent Staafs (S) yrkande, att återremittera ärendet till förvaltningen.",
+  "antal_ja": 24,
+  "antal_nej": 15,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 24 ledamöter röstar JA och 15 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att återremittera ärendet till förvaltningen, då det för minoritetsåterremiss endast krävs att en tredjedel av ledamöterna ställer sig bakom ett sådant yrkande. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Christina Pehrson (L), Mattias Svensson (L), Martin Ekstr",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-09-25",
+  "fil": "14_Protokoll KF 240925.txt",
+  "paragraf": "114",
+  "rubrik": "Motion: \"För ett hållbart arbetsliv - anmäl kommunen till det svenska forskningsprojektet 4 Day Week\" - Olle Krabbe (V) m.fl",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 26,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 26 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Christina Pehrson (L), Mattias Svensson (L), Martin Ekstrand (KD) Margareta Johansson (KD), Emma Öster (SD), Stefan Liljenberg (SD), Helena Lindblom Ohlson (SD), Marie-Louise Palm (SD), Lars Anderss",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Christina Pehrson",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Kerstin von Seth",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-08-28",
+  "fil": "15_Protokoll KF 240828.txt",
+  "paragraf": "100",
+  "rubrik": "Motion: \"Inför en strategisk kompetensförsörjningsplan\" - Christel Lindqvist (V)",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut, att avslå motionen.",
+  "nej_betyder": "Bifall till motionen.",
+  "antal_ja": 27,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 27 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att avslå motionen. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Johan Hårleman (M), Fredrik Stålhandske (M), Bo Hansson (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias Svensson (L), Erik Mårtensson (KD), Margareta Johansson (KD), Emma Öster (SD), Stefan Liljenberg (SD), Helena Lindblom Ohlson (SD),",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Bo Hansson",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Maria Truedsson",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-06-19",
+  "fil": "16_Protokoll KF 240619.txt",
+  "paragraf": "75",
+  "rubrik": "Budget 2025 VEP 2026- 2027 samt investeringar och exploateringar - samtliga nämnder",
+  "ja_betyder": "Socialdemokraternas förslag till budget 2025 VEP 2026-2027 ska utgöra motförslag i huvudomröstningen.",
+  "nej_betyder": "Vänsterpartiets förslag till budget 2025 VEP 2026-2027 ska utgöra motförslag i huvudomröstningen. Efter beslut att Socialdemokraternas förslag till budget 2025 VEP 2026-2027 ska utgöra motförslag i huvudomröstningen godkänner kommunfullmäktige följande beslutsordning:",
+  "antal_ja": 8,
+  "antal_nej": 3,
+  "antal_avstar": 28,
+  "per_parti": {
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "M": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 11
+   },
+   "C": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "L": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "KD": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 9
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 8 ledamöter röstar JA, 3 ledamöter röstar NEJ och 28 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar att Socialdemokraternas förslag till budget 2025 VEP 2026-2027 ska utgöra motförslag i huvudomröstningen. Följande ledamöter röstar JA: Lena Stigsdotter (S), Stefan Lissmark (S), Mona Schill Ingvarsson (S), Jill Andersson (S), Kent Staaf (S), Evalisa Forshell (S), Jessica Homonnay (S) och Lena Larsson (S). Följande ledamöter röstar NEJ: Olle Krabbe (V), Bengt Johansson (V) och Pierre Malmberg Nyborg (V). Följa",
+  "ja": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "nej": [
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ]
+  ],
+  "avstar": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ]
+ },
+ {
+  "datum": "2024-06-19",
+  "fil": "16_Protokoll KF 240619.txt",
+  "paragraf": "75",
+  "rubrik": "Budget 2025 VEP 2026- 2027 samt investeringar och exploateringar - samtliga nämnder",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till Socialdemokraternas förslag till budget 2025 VEP 2026-2027.",
+  "antal_ja": 26,
+  "antal_nej": 13,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 26 ledamöter röstar JA och 13 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att bifalla kommunstyrelsens förslag till beslut. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Johan Hårleman (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias Svensson (L), Erik Mårtensson (KD), Margareta Johansson (KD), Lukas Nilsson (SD), Stefan ",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-06-19",
+  "fil": "16_Protokoll KF 240619.txt",
+  "paragraf": "80",
+  "rubrik": "Beslut om utträde ur Kommunalförbundet AV Media Skåne",
+  "ja_betyder": "Ärendet avgörs idag.",
+  "nej_betyder": "Bifall till Evalisa Forshells (S) yrkande, att återremittera ärendet till förvaltningen. Efter att kommunfullmäktige beslutat avgöra ärendet idag ställer ordföranden kommunstyrelsens förslag till beslut mot Stefan Lissmarks (S), Jill Anderssons (S), Jessica Homonnays (S) och Olle Krabbes (V) yrkande om avslag och finner att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut.",
+  "antal_ja": 29,
+  "antal_nej": 11,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 29 ledamöter röstar JA och 11 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar att ärendet ska avgöras idag, då det för minoritetsåterremiss hade krävts att 14 ledamöter röstat NEJ. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Sarah Nystedt (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Tom Ström (M), Gabriella Salomonsson Bicki (M), Johan Hårleman (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias Svensson (L), Erik Mårtensson (KD), ",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2024-06-19",
+  "fil": "16_Protokoll KF 240619.txt",
+  "paragraf": "81",
+  "rubrik": "Taxa och riktlinjer för uthyrning av kommunala lokaler och anläggningar",
+  "ja_betyder": "Bifall till Bengt Johanssons (V) yrkande, att återremittera ärendet till förvaltningen.",
+  "nej_betyder": "Ärendet avgörs idag. Efter att kommunfullmäktige beslutat avgöra ärendet idag frågar ordföranden om kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut och finner frågan med ja besvarad. Härefter frågar ordföranden om kommunfullmäktige beslutar bifalla Johan Svahnbergs (M) tilläggsyrkande och finner frågan med ja besvarad.",
+  "antal_ja": 11,
+  "antal_nej": 27,
+  "antal_avstar": 2,
+  "per_parti": {
+   "S": {
+    "ja": 7,
+    "nej": 0,
+    "avstar": 1
+   },
+   "V": {
+    "ja": 3,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 1,
+    "nej": 0,
+    "avstar": 1
+   },
+   "M": {
+    "ja": 0,
+    "nej": 11,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 9,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 1,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 11 ledamöter röstar JA, 27 ledamöter röstar NEJ och 2 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar att ärendet ska avgöras idag, då det för minoritetsåterremiss hade krävts att 14 ledamöter röstat JA. Följande ledamöter röstar JA: Stefan Lissmark (S), Mona Schill Ingvarsson (S), Jill Andersson (S), Kent Staaf (S), Evalisa Forshell (S), Jessica Homonnay (S), Olle Krabbe (V), Bengt Johansson (V), Pierre Malmberg Nyborg (V), Roger Orwén (MP) och Lena Larsson (S). Följande ledamöter röstar NEJ: Johan Svahnberg",
+  "ja": [
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jessica Homonnay",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Bengt Johansson",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "nej": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Johan Hårleman",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Erik Mårtensson",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Willy Wikbourn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Hans Nava-Barrefors",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "avstar": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ]
+  ]
+ },
+ {
+  "datum": "2023-10-11",
+  "fil": "23_Protokoll KF 231011.txt",
+  "paragraf": "104",
+  "rubrik": "VA-taxa 2024 för Höörs kommun",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till Sverigedemokraternas förslag till beslut.",
+  "antal_ja": 25,
+  "antal_nej": 16,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 9,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 25 ledamöter röstar JA och 16 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar i enlighet med kommunstyrelsens förslag till beslut. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Tore Christensson (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Tom Ström (M), Jessica Falk (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Maria Jönsson (C), Anna Ramberg (L), Mattias Svensson (L), Martin Ekstrand (KD), Margareta Johansson (KD) Clas Paulsson (S), St",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Tore Christensson",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Jessica Falk",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Maria Jönsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Maria Truedsson",
+    "MP"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Roger Stenberg",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Anna Jung",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ]
+  ],
+  "avstar": []
+ },
+ {
+  "datum": "2023-10-11",
+  "fil": "23_Protokoll KF 231011.txt",
+  "paragraf": "106",
+  "rubrik": "Redovisning av partistödets användning 2022 och utbetalning av partistöd 2024",
+  "ja_betyder": "Bifall till Nino Dervisagics (M) yrkande.",
+  "nej_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "antal_ja": 31,
+  "antal_nej": 2,
+  "antal_avstar": 7,
+  "per_parti": {
+   "M": {
+    "ja": 10,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 3,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 7
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 31 ledamöter röstar JA, 2 ledamöter röstar NEJ och 7 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar i enlighet med Nino Dervisagics (M) yrkande. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Tore Christensson (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Tom Ström (M), Jessica Falk (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Maria Jönsson (C), Anna Ramberg (L), Mattias Svensson (L), Martin Ekstrand (KD), Margareta Johansson (KD), Clas Paulsson (S), Stefan L",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Tore Christensson",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Tom Ström",
+    "M"
+   ],
+   [
+    "Jessica Falk",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Maria Jönsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Maria Truedsson",
+    "MP"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Anna Jung",
+    "MED"
+   ],
+   [
+    "Tom Espgård",
+    "MED"
+   ]
+  ],
+  "avstar": [
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Roger Stenberg",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ]
+  ]
+ },
+ {
+  "datum": "2023-06-14",
+  "fil": "25_Protokoll KF 230614.txt",
+  "paragraf": "76",
+  "rubrik": "Kommunfullmäktige mål för perioden 2024 till 2027",
+  "ja_betyder": "Bifall till Stefan Liljenbergs (SD) yrkande.",
+  "nej_betyder": "Avslag på Stefan Liljenbergs (SD) yrkande.",
+  "antal_ja": 22,
+  "antal_nej": 17,
+  "antal_avstar": 2,
+  "per_parti": {
+   "S": {
+    "ja": 8,
+    "nej": 0,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 3,
+    "nej": 0,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "M": {
+    "ja": 0,
+    "nej": 11,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 22 ledamöter röstar JA 17 ledamöter röstar NEJ och 2 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar i enlighet med Stefan Liljenbergs (SD) yrkande. Följande ledamöter röstar JA: Lena Stigsdotter (S), Stefan Lissmark (S), Mona Schill Ingvarsson (S), Jill Andersson (S), Kent Staaf (S), Evalisa Forshell (S), Jan Waad (S), Olle Krabbe (V), Christel Lindqvist (V), Pierre Malmberg Nyborg (V), Roger Orwén (MP), Andrew Briggs (MP), Marie-Louise Palm (SD), Stefan Liljenberg (SD), Helena Lindblom Ohlson (SD), Roger St",
+  "ja": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Roger Stenberg",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "nej": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Tore Christensson",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Jessica Falk",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "avstar": [
+   [
+    "Anna Jung",
+    "MED"
+   ],
+   [
+    "Johan Karlsson",
+    "MED"
+   ]
+  ]
+ },
+ {
+  "datum": "2023-06-14",
+  "fil": "25_Protokoll KF 230614.txt",
+  "paragraf": "77",
+  "rubrik": "Budget 2024 VEP 2025- 2026 samt investeringar och exploateringar - samtliga nämnder.",
+  "ja_betyder": "Ärendet avgörs idag.",
+  "nej_betyder": "Bifall till Olle Krabbes (V) förslag, att återremittera ärendet till förvaltningen. Sedan kommunfullmäktige beslutat avgöra ärendet idag ställer ordföranden budgetförslagen mot varandra och finner att kommunfullmäktige beslutar anta Alliansens förslag till budget 2024 VEP 2025-2026 version KF och kommunstyrelsens förslag till beslut beträffande satserna 2-5.",
+  "antal_ja": 26,
+  "antal_nej": 11,
+  "antal_avstar": 3,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 9,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 1
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 0,
+    "avstar": 2
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 26 ledamöter röstar JA 11 ledamöter röstar NEJ och 3 ledamöter AVSTÅR från att rösta, vilket innebär att kommunfullmäktige beslutar avgöra ärendet idag då det för minoritetsåterremiss hade krävts att 14 ledamöter röstat NEJ. Följande ledamöter röstar JA: Johan Svahnberg (M), Camilla Kampf (M), Tore Christensson (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Jessica Falk (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Martin Olsson (C), Anna Ramberg (L), Mattias ",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Camilla Kampf",
+    "M"
+   ],
+   [
+    "Tore Christensson",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Jessica Falk",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Martin Olsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Marie- Louise Palm",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Roger Stenberg",
+    "SD"
+   ],
+   [
+    "Lars Andersson",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Lukas Nilsson",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Mona Schill Ingvarsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": [
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Anna Jung",
+    "MED"
+   ],
+   [
+    "Johan Karlsson",
+    "MED"
+   ]
+  ]
+ },
+ {
+  "datum": "2023-05-24",
+  "fil": "26_Protokoll KF 230524.txt",
+  "paragraf": "60",
+  "rubrik": "Reglemente för kommunstyrelsen",
+  "ja_betyder": "Bifall till kommunstyrelsens förslag till beslut.",
+  "nej_betyder": "Bifall till Stefan Lissmarks (S) yrkande.",
+  "antal_ja": 17,
+  "antal_nej": 24,
+  "antal_avstar": 0,
+  "per_parti": {
+   "M": {
+    "ja": 11,
+    "nej": 0,
+    "avstar": 0
+   },
+   "C": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "L": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "KD": {
+    "ja": 2,
+    "nej": 0,
+    "avstar": 0
+   },
+   "S": {
+    "ja": 0,
+    "nej": 8,
+    "avstar": 0
+   },
+   "V": {
+    "ja": 0,
+    "nej": 3,
+    "avstar": 0
+   },
+   "MP": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   },
+   "SD": {
+    "ja": 0,
+    "nej": 9,
+    "avstar": 0
+   },
+   "MED": {
+    "ja": 0,
+    "nej": 2,
+    "avstar": 0
+   }
+  },
+  "utfall": "Omröstningen genomförs med upprop och utfaller med att 17 ledamöter röstar JA och 24 ledamöter röstar NEJ, vilket innebär att kommunfullmäktige beslutar i enlighet med Stefan Lissmarks (S) yrkande. Följande ledamöter röstar JA: Johan Svahnberg (M), Sarah Nystedt (M), Tore Christensson (M), Lars-Håkan Persson (M), Nino Dervisagic (M), Gunilla Malmqvist (M), Jessica Falk (M), Gabriella Salomonsson Bicki (M), Fredrik Stålhandske (M), Oscar Wassbjer (M), Magnus Haara (C), Maria Jönsson (C), Anna Ramberg (L), Mattias Svensson (L), Martin Ekstrand (KD), Margareta Johansson (KD) och Anders Netterheim",
+  "ja": [
+   [
+    "Johan Svahnberg",
+    "M"
+   ],
+   [
+    "Sarah Nystedt",
+    "M"
+   ],
+   [
+    "Tore Christensson",
+    "M"
+   ],
+   [
+    "Lars-Håkan Persson",
+    "M"
+   ],
+   [
+    "Nino Dervisagic",
+    "M"
+   ],
+   [
+    "Gunilla Malmqvist",
+    "M"
+   ],
+   [
+    "Jessica Falk",
+    "M"
+   ],
+   [
+    "Gabriella Salomonsson Bicki",
+    "M"
+   ],
+   [
+    "Fredrik Stålhandske",
+    "M"
+   ],
+   [
+    "Oscar Wassbjer",
+    "M"
+   ],
+   [
+    "Magnus Haara",
+    "C"
+   ],
+   [
+    "Maria Jönsson",
+    "C"
+   ],
+   [
+    "Anna Ramberg",
+    "L"
+   ],
+   [
+    "Mattias Svensson",
+    "L"
+   ],
+   [
+    "Martin Ekstrand",
+    "KD"
+   ],
+   [
+    "Margareta Johansson",
+    "KD"
+   ],
+   [
+    "Anders Netterheim",
+    "M"
+   ]
+  ],
+  "nej": [
+   [
+    "Lena Stigsdotter",
+    "S"
+   ],
+   [
+    "Stefan Lissmark",
+    "S"
+   ],
+   [
+    "Clas Paulsson",
+    "S"
+   ],
+   [
+    "Jill Andersson",
+    "S"
+   ],
+   [
+    "Kent Staaf",
+    "S"
+   ],
+   [
+    "Evalisa Forshell",
+    "S"
+   ],
+   [
+    "Jan Waad",
+    "S"
+   ],
+   [
+    "Olle Krabbe",
+    "V"
+   ],
+   [
+    "Christel Lindqvist",
+    "V"
+   ],
+   [
+    "Pierre Malmberg Nyborg",
+    "V"
+   ],
+   [
+    "Roger Orwén",
+    "MP"
+   ],
+   [
+    "Andrew Briggs",
+    "MP"
+   ],
+   [
+    "Emma Öster",
+    "SD"
+   ],
+   [
+    "Stefan Liljenberg",
+    "SD"
+   ],
+   [
+    "Helena Lindblom Ohlson",
+    "SD"
+   ],
+   [
+    "Roger Stenberg",
+    "SD"
+   ],
+   [
+    "Marie-Louise Palm",
+    "SD"
+   ],
+   [
+    "Eskil Öhrn",
+    "SD"
+   ],
+   [
+    "Jack Ljungberg",
+    "SD"
+   ],
+   [
+    "Hans Clair",
+    "SD"
+   ],
+   [
+    "Anna Jung",
+    "MED"
+   ],
+   [
+    "Johan Karlsson",
+    "MED"
+   ],
+   [
+    "Rolf Streijffert",
+    "SD"
+   ],
+   [
+    "Lena Larsson",
+    "S"
+   ]
+  ],
+  "avstar": []
+ }
+]

@@ -1,0 +1,181 @@
+---
+import partierData from "../data/partier.json";
+import valkompassData from "../data/valkompass.json";
+
+const fragor = valkompassData.fragor;
+const forstaFragan = fragor[0];
+const grupper = valkompassData.grupper;
+const partierForKompass = partierData.partier.map((p) => ({
+  id: p.id,
+  namn: p.namn,
+  block: p.block,
+  logo: p.logo,
+}));
+---
+
+<div class="valkompass" id="valkompass">
+  <div id="vk-question-panel">
+    <p class="valkompass__progress" id="vk-progress">Fråga 1 av {fragor.length}</p>
+    <p class="valkompass__question" id="vk-question-text">{forstaFragan.text}</p>
+    <p class="valkompass__kalla" id="vk-question-nationell" style="display: none; margin-bottom: 0.5rem;"></p>
+    <p class="valkompass__kalla" id="vk-question-kalla">{forstaFragan.kalla_not}</p>
+    <div class="valkompass__actions">
+      <button type="button" data-answer="for">Håller med</button>
+      <button type="button" data-answer="vet-ej">Vet ej / hoppa över</button>
+      <button type="button" data-answer="emot">Håller inte med</button>
+    </div>
+    <noscript>
+      <p class="valkompass__kalla">
+        Valkompassen kräver JavaScript för att räkna ihop svaren. Utan JavaScript går det i stället att jämföra
+        partierna direkt i <a href="/jamforelse/">jämförelsevyn</a>.
+      </p>
+    </noscript>
+  </div>
+
+  <div class="valkompass__result" id="vk-result">
+    <p><strong id="vk-result-headline"></strong></p>
+    <div class="valkompass__result-bars" id="vk-result-bars"></div>
+    <p id="vk-result-parties"></p>
+    <div class="trust-note">
+      <strong>Kom ihåg:</strong> Höör styrs inte riktigt av block. Styret har 17 av 41 mandat, och i de
+      dokumenterade budgetomröstningarna under mandatperioden (2023, 2025 och 2027) har SD — och en gång
+      Medborgerlig Samling — röstat med styret och i praktiken varit vågmästare. Läs mer i{" "}
+      <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+    </div>
+    <button type="button" class="valkompass__restart" id="vk-restart">Gör om testet</button>
+  </div>
+</div>
+
+<script define:vars={{ fragor, grupper, partier: partierForKompass }}>
+  const instammer = {};
+  const avvisar = {};
+  for (const key of Object.keys(grupper)) {
+    instammer[key] = 0;
+    avvisar[key] = 0;
+  }
+
+  let index = 0;
+  let vetEjCount = 0;
+
+  const progressEl = document.getElementById("vk-progress");
+  const questionTextEl = document.getElementById("vk-question-text");
+  const questionKallaEl = document.getElementById("vk-question-kalla");
+  const questionNationellEl = document.getElementById("vk-question-nationell");
+  const panelEl = document.getElementById("vk-question-panel");
+  const resultEl = document.getElementById("vk-result");
+  const resultHeadlineEl = document.getElementById("vk-result-headline");
+  const resultBarsEl = document.getElementById("vk-result-bars");
+  const resultPartiesEl = document.getElementById("vk-result-parties");
+
+  function replay(el) {
+    el.classList.remove("fade-in");
+    void el.offsetWidth;
+    el.classList.add("fade-in");
+  }
+
+  function renderQuestion() {
+    const f = fragor[index];
+    progressEl.textContent = `Fråga ${index + 1} av ${fragor.length}`;
+    questionTextEl.textContent = f.text;
+    questionKallaEl.textContent = f.kalla_not;
+    if (f.kompetens === "nationell") {
+      questionNationellEl.innerHTML = 'Nationell fråga — avgörs i riksdagen, inte i Höörs kommunfullmäktige (<a href="/vad-bestammer-kommunen/">vem bestämmer vad?</a>). Frågan är med för att den är central i partiets egen profil.';
+      questionNationellEl.style.display = "block";
+    } else {
+      questionNationellEl.textContent = "";
+      questionNationellEl.style.display = "none";
+    }
+    replay(panelEl);
+  }
+
+  function renderResult() {
+    panelEl.style.display = "none";
+    resultEl.style.display = "block";
+    replay(resultEl);
+
+    const scores = {};
+    for (const key of Object.keys(grupper)) {
+      const bas = instammer[key] + avvisar[key];
+      scores[key] = bas > 0 ? Math.round((instammer[key] / bas) * 100) : null;
+    }
+
+    const validScores = Object.entries(scores).filter(([, v]) => v !== null);
+    const maxScore = validScores.length > 0 ? Math.max(...validScores.map(([, v]) => v)) : -1;
+    const leaders = validScores.filter(([, v]) => v === maxScore && maxScore > 0).map(([k]) => k);
+
+    if (leaders.length === 0 && vetEjCount === fragor.length) {
+      resultHeadlineEl.textContent =
+        "Du svarade \"vet ej\" på alla frågor, så testet kan inte peka åt något håll.";
+    } else if (maxScore === 0) {
+      resultHeadlineEl.textContent = "Du höll inte med om något av påståendena.";
+    } else if (leaders.length === 1) {
+      resultHeadlineEl.textContent = `Du lutar mest åt: ${grupper[leaders[0]].namn}`;
+    } else {
+      resultHeadlineEl.textContent = `Du lutar lika mycket åt: ${leaders.map((k) => grupper[k].namn).join(" och ")}`;
+    }
+
+    resultBarsEl.innerHTML = "";
+    for (const [key, group] of Object.entries(grupper)) {
+      const bas = instammer[key] + avvisar[key];
+      const pct = scores[key];
+      const total = fragor.filter(f => f.grupp === key).length;
+      const row = document.createElement("div");
+      
+      let scoreText;
+      if (pct === null) {
+        scoreText = "– (inga besvarade frågor)";
+      } else {
+        scoreText = `${pct} % (${bas} av ${total} besvarade)`;
+      }
+
+      row.innerHTML = `
+        <div class="valkompass__bar-label"><span>${group.namn}</span><span>${scoreText}</span></div>
+        <div class="valkompass__bar-track"><div class="valkompass__bar-fill" style="width:${pct !== null ? pct : 0}%"></div></div>
+      `;
+      resultBarsEl.appendChild(row);
+    }
+
+    if (leaders.length > 0) {
+      const relevantIds = leaders.flatMap((k) => grupper[k].partier);
+      const relevantParties = partier.filter((p) => relevantIds.includes(p.id));
+      resultPartiesEl.innerHTML =
+        "Partierna i den gruppen: " +
+        relevantParties.map((p) => `<a href="/partier/${p.id}/">${p.namn}</a>`).join(", ") +
+        ". Se hela bilden i <a href=\"/jamforelse/\">jämförelsevyn</a>.";
+    } else if (vetEjCount === fragor.length) {
+      resultPartiesEl.innerHTML = "Utforska gärna <a href=\"/jamforelse/\">jämförelsevyn</a> i stället.";
+    } else {
+      resultPartiesEl.innerHTML = "Utforska partierna direkt i <a href=\"/jamforelse/\">jämförelsevyn</a> i stället.";
+    }
+  }
+
+  document.querySelectorAll(".valkompass__actions button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const answer = btn.dataset.answer;
+      const f = fragor[index];
+      if (answer === "for") instammer[f.grupp] += 1;
+      if (answer === "emot") avvisar[f.grupp] += 1;
+      if (answer === "vet-ej") vetEjCount += 1;
+      index += 1;
+      if (index >= fragor.length) {
+        renderResult();
+      } else {
+        renderQuestion();
+      }
+    });
+  });
+
+  document.getElementById("vk-restart").addEventListener("click", () => {
+    for (const key of Object.keys(instammer)) {
+      instammer[key] = 0;
+      avvisar[key] = 0;
+    }
+    index = 0;
+    vetEjCount = 0;
+    resultEl.style.display = "none";
+    panelEl.style.display = "block";
+    renderQuestion();
+  });
+
+  renderQuestion();
+</script>

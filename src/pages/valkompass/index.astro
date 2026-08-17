@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Valkompass from "../../components/Valkompass.astro";
+import valkompassData from "../../data/valkompass.json";
+import partierData from "../../data/partier.json";
+
+const fragor = valkompassData.fragor;
+---
+
+<Layout
+  title="Höör valkompass 2026"
+  description={`Höörs egen valkompass inför kommunvalet 13 september 2026. Svara på ${fragor.length} frågor om vardagen i Höör och se vilket block du lutar mest åt — varje påstående har källa till protokoll eller partiprogram.`}
+  image="/og-valkompass-v1.png"
+>
+  <h1>Höör valkompass 2026</h1>
+  <p class="lead">
+    Det här är en lokal valkompass för <strong>kommunvalet i Höör</strong>, helt fristående från de stora
+    rikstäckande valkompasserna. Frågorna handlar uteslutande om sådant som styrs eller påverkas av Höörs
+    kommunfullmäktige — skola, äldreomsorg, bostäder och landsbygd i just Höörs kommun — och varje påstående går
+    att spåra till ett protokoll, ett budgetbeslut eller ett partis eget valmanifest 2026.
+  </p>
+
+  <section class="hero-cta">
+    <h2>Gör testet — {fragor.length} frågor, tar ett par minuter</h2>
+    <p class="hero-cta__intro">
+      Svara med "Håller med", "Håller inte med" eller hoppa över. På slutet ser du vilket politiskt block
+      (styret M/L/C/KD eller oppositionen) du lutar mest åt, och vilka partier som står bakom det.
+    </p>
+
+    <Valkompass />
+  </section>
+
+  <section>
+    <h2>Vad är hoor-kommunval.ibland.nu?</h2>
+    <p>
+      Den här sajten är en oberoende, ideell faktasammanställning inför kommunvalet i Höör söndagen den
+      13 september 2026. Den samlar två saker, alltid med källa: vad det sittande styret faktiskt har{" "}
+      <a href="/styret-vs-oppositionen/">beslutat</a> under mandatperioden 2022–2026, och vad alla nio partier i
+      fullmäktige säger att de vill göra i nästa mandatperiod, enligt deras <a href="/partier/">valmanifest</a>.
+    </p>
+    <p>
+      Utöver valkompassen ovan går det att läsa en <a href="/styret-vs-oppositionen/">5-minuters genomgång</a> av
+      vad som skiljer blocken åt, se vad partierna lovar just din <a href="/din-vardag/">vardag</a>, jämföra
+      partierna <a href="/jamforelse/">politikområde för politikområde</a>, gå igenom <a href="/budget/">de fem
+      budgetbesluten</a> 2023–2027 och ett urval <a href="/arenden/">ärenden och motioner</a>.
+      Sajten värderar inte vad partierna säger — bara dokumenterade fakta med källa, med undantag för{" "}
+      <a href="/ai/">AI-experimentet</a>, tydligt märkt som åsikt.
+    </p>
+    <div class="trust-note">
+      <strong>✓ Källbelagt, inte heltäckande.</strong> Sajten är ett urval, inte en fullständig genomgång av
+      mandatperioden — se <a href="/om-urvalet/">Om urvalet</a> för exakt vad som är med och vad som medvetet
+      uteslutits.
+    </div>
+  </section>
+
+  <p class="updated">Senast uppdaterad: {partierData.senast_uppdaterad}</p>
+</Layout>

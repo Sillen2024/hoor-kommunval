@@ -1,0 +1,723 @@
+{
+  "senast_uppdaterad": "2026-08-17",
+  "partier": [
+    {
+      "id": "m",
+      "namn": "Moderaterna",
+      "block": "styre",
+      "mandat_2022": 11,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://hoor.moderatweb.se/",
+      "logo": "/logos/m.svg",
+      "logo_kalla": "Wikimedia Commons, File:M v1.svg (PD-textlogo)",
+      "manifest_status": "sociala_medier",
+      "manifest_not": "Moderaterna har inget publicerat valmanifest. hoor.moderatweb.se och alla undersidor under 'Vår politik' (trygghet, kultur och fritid, utbildning, äldreomsorg, sjukvård) är innehållslösa platshållare (omkontrollerat 2026-08-15). Partiets valplattform kommuniceras i stället som korta videor på Facebook: 84 reels publicerade mellan 2024-12-01 och 2026-08-15, varav 61 under 2026. Punkterna nedan är hämtade därifrån och bygger på inläggens egen text samt maskinell transkription av talet i videorna. Vi har låtit varje punkt motsvara ett enskilt inlägg i stället för att slå ihop flera, så att den länkade källan alltid går att kontrollera mot påståendet. Urvalet är de mest konkreta utspelen — det är inte hela flödet, och inlägg av typen hälsningar, invigningar och delningar från riksnivån är utelämnade.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Vill sänka kommunalskatten med ytterligare 50 öre 2027, utöver sänkningen på 30 öre som gäller från 2026. Motivet partiet anger är att den som bor i Höör inte ska behöva betala mer i skatt än den som bor i Lund eller Malmö, och att en stark kommunal ekonomi ska komma invånarna till del. Målet är att Höör ska ligga på en för Skåne genomsnittlig skattenivå.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-08-08",
+          "kalla_url": "https://www.facebook.com/reel/1422605836429980/"
+        },
+        {
+          "politikomrade": "Fritid och idrott",
+          "standpunkt": "Uttalat vallöfte om en ny ishall i Höör med byggstart 2030. Hallen ska enligt partiet samlokaliseras med badet för effektivare drift och gemensam service, och bilda ett samlat idrottscentrum. Motiveras med folkhälsa, möjligheter inom ishockey och konståkning samt ökad attraktivitet för barnfamiljer.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-26",
+          "kalla_url": "https://www.facebook.com/reel/2155011161712868/"
+        },
+        {
+          "politikomrade": "Kollektivtrafik",
+          "standpunkt": "Uttalat vallöfte om att införa flexbuss i hela kommunen: anropsstyrd trafik utan tidtabell, där resenären beställer resan och bussen kommer till en virtuell hållplats nära resenärens position. Riktas särskilt till boende på landsbygden.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-22",
+          "kalla_url": "https://www.facebook.com/reel/1692859525328025/"
+        },
+        {
+          "politikomrade": "Kollektivtrafik",
+          "standpunkt": "Vill införa fria resor inom Höörs kommun för alla som fyllt 70 år. Reformen ingår i budget 2027. Frågans historik — tre nedröstade S-motioner innan styret bytte ståndpunkt — redovisas under Ärenden.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-16",
+          "kalla_url": "https://www.facebook.com/reel/1095451969880835/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill se fler vuxna i skolan, fler specialpedagoger, fler kuratorer och fler tillfällen för pedagoger att vidareutbilda sig i det kommande budgetarbetet. Partiet räknar samtidigt upp vad man gjort under mandatperioden: färdigställt Maglehillsskolan, renoverat Ringsjöskolan, ordnat nya lokaler på Gudmuntorps skola, inrättat en handbollsakademi, startat en resursskola och satsat på skolluncherna.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-03-22",
+          "kalla_url": "https://www.facebook.com/reel/834458756342039/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill höja grundbeloppen till skolan med 6 miljoner kronor, utöver partiets övriga skolsatsningar.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-18",
+          "kalla_url": "https://www.facebook.com/reel/1344784200482968/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill ge skolpersonalen kontinuerlig och kvalitetssäkrad kompetensutveckling genom ett professionsprogram.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-08-11",
+          "kalla_url": "https://www.facebook.com/reel/4525247157747437/"
+        },
+        {
+          "politikomrade": "Barn och unga",
+          "standpunkt": "Vill stärka elevhälsan med fler kuratorer för att förebygga psykisk ohälsa bland unga.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-30",
+          "kalla_url": "https://www.facebook.com/reel/1044429038383264/"
+        },
+        {
+          "politikomrade": "Barn och unga",
+          "standpunkt": "Vill öppna en familjecentral 2027, med motiveringen att möta nyblivna föräldrar bättre.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-06-27",
+          "kalla_url": "https://www.facebook.com/reel/4506945509631750/"
+        },
+        {
+          "politikomrade": "Barn och unga",
+          "standpunkt": "Har tillsammans med Alliansen skrivit en motion om att inrätta ett ungdomsråd i Höörs kommun, som plattform för dialog mellan ungdomar och beslutsfattare.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2025-12-22",
+          "kalla_url": "https://www.facebook.com/reel/1373334817621056/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill införa Ung Omsorg i Höörs kommun, där högstadieelever kan ansöka om att arbeta med aktiviteter för äldre.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-08",
+          "kalla_url": "https://www.facebook.com/reel/2364236967397226/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill avsätta 1,2 miljoner kronor till förebyggande arbete nästa år, bland annat för att motverka ofrivillig ensamhet bland äldre.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-02",
+          "kalla_url": "https://www.facebook.com/reel/1353040343456834/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill att alla äldre med hemtjänst ska ha tillgång till god och näringsrik mat, och vill utreda hur det kan införas i Höörs kommun.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-08-01",
+          "kalla_url": "https://www.facebook.com/reel/2166121087292875/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Föreslår tillsammans med Alliansen att området kring Tjörnarps station ska kamerabevakas i budget 2027, som nästa steg efter kamerorna vid Höörs stationsområde. Partiet anger att polisens trygghetsmätningar visar att den upplevda tryggheten ökat.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-03-15",
+          "kalla_url": "https://www.facebook.com/reel/4345972819053936/"
+        },
+        {
+          "politikomrade": "Trafik",
+          "standpunkt": "Vill lägga extra resurser i budget 2027 på gång- och cykelvägar: mer belysning vid övergångar, nya cykelöverfarter och bättre gång- och cykelvägar, med särskilt fokus kring kommunens skolor.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-03-17",
+          "kalla_url": "https://www.facebook.com/reel/901082292920083/"
+        },
+        {
+          "politikomrade": "Kultur",
+          "standpunkt": "Vill satsa ytterligare 800 000 kronor om året på kulturen i Höör.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-08-09",
+          "kalla_url": "https://www.facebook.com/reel/1048789934457036/"
+        },
+        {
+          "politikomrade": "Miljö och VA",
+          "standpunkt": "Planerar för ett nytt avloppsreningsverk i Höörs kommun.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-19",
+          "kalla_url": "https://www.facebook.com/reel/1694056878343638/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill satsa mer på kommunens arbetsmarknadsavdelning för att hålla arbetslösheten i Höör fortsatt låg.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-08-14",
+          "kalla_url": "https://www.facebook.com/reel/1598188775215199/"
+        },
+        {
+          "politikomrade": "Barn och unga",
+          "standpunkt": "Har tillsammans med Alliansen föreslagit ett nytt Ungdomens hus i Höör, med större lokaler där ungdomar kan träffas, ha aktiviteter och caféverksamhet.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-24",
+          "kalla_url": "https://www.facebook.com/reel/27588822874105672/"
+        },
+        {
+          "politikomrade": "Trafik",
+          "standpunkt": "Vill att kommunen tar över huvudmannaskapet för Landsvägen i Tjörnarp från Trafikverket. Kommunen ansvarar i dag för de flesta gator i Tjörnarp men inte för Landsvägen, vilket enligt partiet gör det svårt att genomföra trafiksäkerhetsåtgärder. Ett övertagande skulle möjliggöra en gång- och cykelväg längs vägen.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-04-07",
+          "kalla_url": "https://www.facebook.com/reel/1438147268090193/"
+        },
+        {
+          "politikomrade": "Fritid och idrott",
+          "standpunkt": "Har höjt det lokala aktivitetsstödet till barn- och ungdomsföreningar i budget 2026 och uppger att man avser göra det även i budget 2027.",
+          "kalla_titel": "Moderaterna i Höör på Facebook (odaterat inlägg)",
+          "kalla_url": "https://www.facebook.com/reel/852136754506593/"
+        },
+        {
+          "politikomrade": "Natur och friluftsliv",
+          "standpunkt": "Vill skapa fler mötesplatser utomhus och utveckla befintliga: enkla byggnader med tak och vindskydd, fastmonterade bord och bänkar samt grillmöjligheter där det är lämpligt.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-04-28",
+          "kalla_url": "https://www.facebook.com/reel/25598874203122970/"
+        },
+        {
+          "politikomrade": "Landsbygd",
+          "standpunkt": "Rustar upp kommunens badplatser. Arbetet med badplatsen i Gamla Bo har påbörjats, med bland annat uteduschar och toaletter; Sätofta och Vaxsjön uppges vara upprustade tidigare.",
+          "kalla_titel": "Moderaterna i Höör på Facebook, 2025-09-19",
+          "kalla_url": "https://www.facebook.com/reel/765934723098971/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar 24 kandidater på Moderaternas valsedel till Höörs kommunfullmäktige, med sittande kommunalrådet Johan Svahnberg i topp. Nedan de fem första; fullständig lista finns via länken.",
+      "kandidater_2026": [
+        { "namn": "Johan Svahnberg", "roll": "Listetta, kommunalråd (sittande), civilekonom", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Kenny Hansson", "roll": "Reg. fastighetsmäklare, Karlslund", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Camilla Kampf", "roll": "Företagare, Hallaröd", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Lars Håkan Persson", "roll": "Egenföretagare, Jularp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Sarah Nystedt", "roll": "Student, Sätofta", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "l",
+      "namn": "Liberalerna",
+      "block": "styre",
+      "mandat_2022": 2,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://hoor.liberalerna.se/",
+      "logo": "/logos/l.svg",
+      "logo_kalla": "Wikimedia Commons, File:L v1.svg (PD-textlogo/PD-self)",
+      "manifest_status": "hittat",
+      "manifest_not": "Lokal webbplats med sidor per politikområde, senast uppdaterad 2026-07-29.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Bibehåll byskolorna för att säkerställa utbildningsaccess i hela kommunen. Mål till 2025: meritvärde åk 9 över 260 (nuvarande 225,2), över 90% med godkänt i alla ämnen efter åk 6 (nuvarande 79,9%), över 95% efter åk 9 (nuvarande 75,5%). Prioriterar tillräcklig bemanning (lärare, speciallärare, kuratorer, skolsköterskor) och vill pilotera AI-verktyg i mellan- och högstadiet för att minska lärares administration. Ser privata skolalternativ som en viktig del av Höörs skolutbud.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/skola-utbildning/"
+        },
+        {
+          "politikomrade": "Vård och omsorg",
+          "standpunkt": "Vill behålla och utveckla nattbemanningsfunktionen 'Trappan' på särskilda boenden. Vill säkerställa god och näringsrik, vällagad mat till hemtjänsttagare. Öppnar för privata äldreboendealternativ om kommunen inte kan erbjuda plats inom rimlig tid, under kvalitetsuppföljning. Vill stärka personalens kompetens.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/vard-omsorg/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill behålla tät kontakt mellan kommun och företagare, snabbare handläggning vid nyetablering, tydlig vägledning i tillstånds- och tillsynsfrågor, transparent kommunal fakturering. Vill utveckla samverkan med lokala företag (ca 2000 st) kring praktikplatser för arbetssökande.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/foretagande/"
+        },
+        {
+          "politikomrade": "Kultur och fritid",
+          "standpunkt": "Vill inrätta en 'föreningslots' och indexjustera startbidrag till föreningar. Vill förenkla bidragsansökningar för kulturarrangemang, inklusive ett förstagångsbidrag för nya arrangörer. Vill utveckla biblioteket som mötesplats med digitala skapandeverktyg. Vill återinföra nattvandring/liknande trygghetsskapande aktiviteter i samverkan med föreningar.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/kultur-fritid/"
+        },
+        {
+          "politikomrade": "Vatten och avlopp",
+          "standpunkt": "Vill skydda dricksvattenkällor vid kris, minska vattenförbrukning genom differentierad taxa och ökad regnvattenanvändning, samt utreda säsongs- och toppbaserad prissättning. Hänvisar till Svenskt Vattens P120-rekommendationer för avgiftsjusteringar.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/vatten-avlopp/"
+        },
+        {
+          "politikomrade": "Kollektivtrafik",
+          "standpunkt": "Vill öka turtäthet för buss och tåg, undersöka samordnad anropsstyrd trafik (kombinera skolskjuts, kollektivtrafik, turism), och att en framtida stambana förläggs nära befintlig central infrastruktur så Höörs stationsläge bevaras.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/kollektivtrafik/"
+        },
+        {
+          "politikomrade": "Natur och rekreation",
+          "standpunkt": "Vill marknadsföra Höör som naturkommun och stötta utomhusturism. Vill utöka antalet odlingslotter för medborgare, inklusive tillfälliga odlingsytor på mark som väntar på exploatering.",
+          "kalla_url": "https://hoor.liberalerna.se/politik/natur-rekreation/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar samtliga 6 kandidater på Liberalernas valsedel till Höörs kommunfullmäktige. Hela listan visas nedan.",
+      "kandidater_2026": [
+        { "namn": "Emil Nordström", "roll": "Listetta, marknadskoordinator", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Fredrik Johansson", "roll": "Logistiker", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Clas Gärdebring", "roll": "Pensionär", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Christina Pehrson", "roll": "Biomedicinsk analytiker", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Jonatan Manna", "roll": "Civilingenjör", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Anna Ramberg", "roll": "Civilingenjör", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "c",
+      "namn": "Centerpartiet",
+      "block": "styre",
+      "mandat_2022": 2,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://www.centerpartiet.se/centerpartiet-lokalt/skane/hoor",
+      "logo": "/logos/c.svg",
+      "logo_kalla": "Wikimedia Commons, File:C v1.svg (PD-textlogo)",
+      "manifest_status": "ersatt",
+      "manifest_not": "Inget lokalt valmanifest för Höör publicerat, och partiets lokala Höör-sida saknar sakpolitiskt innehåll (kontrollerat 2026-08-14). Punkterna nedan är därför inte Höör-specifika utan partiets nationella ståndpunkter inför valet 2026, som gäller lokalt i den mån de påverkar kommunal politik.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Lovar behöriga lärare i varje klassrum (nationellt löfte: alla lärare behöriga inom tio år).",
+          "kalla_url": "https://www.vilarare.se/nyheter/vi-larare-debatt/vi-lovar-behoriga-larare-i-varje-klassrum/"
+        },
+        {
+          "politikomrade": "Vård och hälsa",
+          "standpunkt": "Vill stärka primärvården (nära vård) och satsa på ungas psykiska hälsa (nationellt valmanifest 'Sverige kan mer').",
+          "kalla_url": "https://val2026.centerpartiet.se/"
+        },
+        {
+          "politikomrade": "Miljö och landsbygd",
+          "standpunkt": "Prioriterar minskade utsläpp och att vård, skola och infrastruktur ska fungera i hela landet, inklusive landsbygden (nationellt valmanifest 'Sverige kan mer').",
+          "kalla_url": "https://val2026.centerpartiet.se/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar 22 kandidater på Centerpartiets valsedel till Höörs kommunfullmäktige. Nedan de fem första; fullständig lista finns via länken.",
+      "kandidater_2026": [
+        { "namn": "Magnus Haara", "roll": "Listetta, jurist", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Hanna Ershytt", "roll": "Ekologisk ekonom", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Martin Olsson", "roll": "Ekologisk lantbrukare, Snogeröd", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Ingemar Kristensson", "roll": "IT-chef", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Anette Roslund", "roll": "God man/förvaltare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "kd",
+      "namn": "Kristdemokraterna",
+      "block": "styre",
+      "mandat_2022": 2,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://kristdemokraterna.se/",
+      "logo": "/logos/kd.svg",
+      "logo_kalla": "Wikimedia Commons, File:Kd v1.svg (PD-textlogo)",
+      "manifest_status": "ersatt",
+      "manifest_not": "Inget specifikt valmanifest för Höör publicerat än. Partiets tidigare lokala webbplats (wp.kristdemokraterna.se/hoor) är fortfarande nedtagen (404, omkontrollerat 2026-08-14) och har inte kommit igång igen. Uppgiften nedan är därför partiets nationella politiska inriktning inom vård, trygghet och familj, inte ett Höör-specifikt löfte.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Vård, trygghet och familj",
+          "standpunkt": "Nationell inriktning: vård (bl.a. primärvård, psykiatri), trygghet (brottsbekämpning, polisen) och familjepolitik (föräldraförsäkring, barnbidrag). Inget Höör-specifikt program hittat.",
+          "kalla_url": "https://kristdemokraterna.se/var-politik/politik-a-till-o"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar 14 kandidater på Kristdemokraternas valsedel till Höörs kommunfullmäktige. Nedan de fem första; fullständig lista finns via länken.",
+      "kandidater_2026": [
+        { "namn": "George Emilson", "roll": "Listetta, ombudsman", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Margareta Johansson", "roll": "Socionom", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Erik Mårtensson", "roll": "Egenföretagare, Jularp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Håkan Essy-Ehsing", "roll": "Väktare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Lena Ohlsson", "roll": "Taxichaufför, Ljungstorp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "s",
+      "namn": "Socialdemokraterna",
+      "block": "opposition",
+      "mandat_2022": 8,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://www.socialdemokraternahoor.se/",
+      "logo": "/logos/s.svg",
+      "logo_kalla": "Wikimedia Commons, File:2022 Stockholm City Council election (cropped).svg (CC BY 4.0, av Quinnnnnby)",
+      "manifest_status": "hittat",
+      "manifest_not": "Socialdemokraterna är det parti i Höör som publicerar mest om sin egen politik. Underlaget nedan är hämtat 2026-08-17 från tre källor på socialdemokraternahoor.se: de nio ämnessidorna under \"Vår politik 2026–2030\", det tryckta kommunalpolitiska handlingsprogrammet \"För ett Höör som håller ihop\" (PDF, publicerad 2026-06-27), och partiets egen presentation av sitt budgetförslag för 2027 (2026-05-28). Webbsidorna och PDF:en har ordagrant samma innehåll; webbsidorna uppdaterades senast 2026-08-07. Några av URL:erna har kvar slugg-namn från 2022 års sajt och stämmer därför inte alltid med rubriken — sidan /var-politik/gymnasieskolan-och-vuxenutbildningen/ innehåller i dag avsnittet \"Demokrati & förvaltning\". Två punkter kommer från partiets motion respektive initiativärende till fullmäktige i juli 2026, och en från Facebook. Punkterna är hämtade ordagrant ur programmets egna att-satser och sammanfogade högst några stycken i taget inom samma ämnessida, så att den länkade källan alltid går att kontrollera mot påståendet. Partiets budgetförslag redovisas dessutom med nämndramar och siffror under Budget.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill höja personaltätheten i förskola och skola genom höjd skolpeng, så att barngrupperna blir mindre och det går mer pedagogisk personal per barn. Vill också höja rätten till antal timmar i förskolan för barn vars förälder är föräldraledig med ett syskon, med sikte på 30 timmar i veckan.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Förskola & skola",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/forskola-grundskola-och-fritidshem/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill utöka den pedagogiska omsorgen på obekväm arbetstid till att också omfatta nattid — så kallad nattis.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Förskola & skola",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/forskola-grundskola-och-fritidshem/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill införa läxhjälpsgaranti och individanpassad lovskola, och värna de mindre förskolorna, skolorna och fritidshemmen i kommunens mindre orter och byar.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Förskola & skola",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/forskola-grundskola-och-fritidshem/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "I partiets eget budgetförslag för 2027 är skolan den enskilt största prioriteringen: 6 miljoner kronor till höjt grundbelopp för förskola och grundskola, återinfört nattis, förlängd vistelsetid i förskolan för barn med nyfödda syskon samt satsningar på specialpedagoger och kuratorer. Fullständiga nämndramar och jämförelse med styrets budget finns under Budget.",
+          "kalla_titel": "Socialdemokraterna i Höör om sitt budgetförslag för 2027, 2026-05-28",
+          "kalla_url": "https://www.socialdemokraternahoor.se/2026/05/28/budget-2027/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill satsa \"dubbelt så mycket på förskolan som dagens borgerliga styre\". I videon i samma inlägg formulerar Lucas Nilsson (S) löftet något bredare: dubbelt så mycket i ökade resurser till både förskolan och skolan som styret gör i dag, för att kunna öka bemanningen. Hur mycket partiets budget faktiskt lägger på just förskolan framgår inte av inlägget — Höörs eget kostnadsläge för förskolan redovisas under Nyckeltal.",
+          "kalla_titel": "Socialdemokraterna i Höör på Facebook, 2026-08-04",
+          "kalla_url": "https://www.facebook.com/1379993262240982/posts/1571317451855635"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Vill återinföra fältsekreterare och fältassistenter, och satsa på tidiga insatser med stärkt uppsökande arbete för att nå ungdomar. Fältverksamheten lades ned under förra mandatperioden, vilket partiet reserverade sig mot redan 2021.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Trygghet",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/tryggheten/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Vill stärka stödet till dem som lever med psykisk ohälsa, bland annat genom att verka för en utökad verksamhet av Fontänhus i Höör.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Trygghet",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/tryggheten/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Vill arbeta med familjer och ge utökat föräldrastöd, samt motverka ofrivillig ensamhet i samverkan med det lokala föreningslivet.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Trygghet",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/tryggheten/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill avveckla de hemtjänstscheman som räknar minuter per brukare och i stället införa scheman som ger personalen tid att utföra arbetet.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Omsorg",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/nar-saker-blir-jobbiga/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill förstärka LSS och höja habiliteringsersättningen till dem som arbetar i daglig verksamhet, samt skapa fler trygghetsboenden och seniorboenden.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Omsorg",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/nar-saker-blir-jobbiga/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill sänka avgifterna för mat för dem som har kommunal matdistribution och en biståndsbedömd insats, och säkerställa att det går att ta del av kultur och aktiviteter på alla boenden.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Omsorg",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/nar-saker-blir-jobbiga/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Budget 2027 innehåller satsningar på hemtjänsten, förbättrad mat för äldre, transportlösningar för äldre på landsbygden och en fördubbling av habiliteringsersättningen inom LSS från 7 till 14 kronor i timmen.",
+          "kalla_titel": "Socialdemokraterna i Höör om sitt budgetförslag för 2027, 2026-05-28",
+          "kalla_url": "https://www.socialdemokraternahoor.se/2026/05/28/budget-2027/"
+        },
+        {
+          "politikomrade": "Kollektivtrafik",
+          "standpunkt": "Vill införa gratis kollektivtrafik för seniorer i kommunen. Partiet har drivit frågan i flera nedröstade motioner under mandatperioden och välkomnar nu styrets införande av fria resor för 70+ — ärendets historik redovisas under Ärenden.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Samhällsbyggnad",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/bostad-och-byggande/"
+        },
+        {
+          "politikomrade": "Kollektivtrafik",
+          "standpunkt": "Vill se till att busstrafiken är pålitlig och anpassad till tågtidtabellen, säkerställa god tillgång till pendlarparkeringar vid kommunens båda tågstationer och satsa på fler cykelleder, exempelvis till Norra Rörum och Ormanäs/Stanstorp.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Samhällsbyggnad",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/bostad-och-byggande/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Vill säkerställa att nybyggnation av bostäder är blandad — villor, bostadsrätter och hyresrätter anpassade för olika inkomster och olika faser i livet.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Samhällsbyggnad",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/bostad-och-byggande/"
+        },
+        {
+          "politikomrade": "Infrastruktur",
+          "standpunkt": "Vill verka för att de nya stambanorna dras i anslutning till kommunens två tågstationer, för att säkra Höörs position som pendlarkommun.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill utreda möjligheterna att bygga en solcellspark och arbeta för att kommunens verksamhet ska bli fossilfri.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Miljö & klimat",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/trafiken-klimatet-och-miljon/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill bevara skogs- och jordbruksmark i så stor utsträckning som möjligt vid nybyggnation, värna strandskyddet och biotoperna, samt bevara stora och gamla träd i stället för att rutinmässigt avverka dem vid byggnation.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Miljö & klimat",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/trafiken-klimatet-och-miljon/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill att inga beslut ska fattas utan att en konsekvensanalys görs för hur naturvärdena i Höör påverkas.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Miljö & klimat",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/trafiken-klimatet-och-miljon/"
+        },
+        {
+          "politikomrade": "Natur och friluftsliv",
+          "standpunkt": "Initiativärende om att göra Ringsjön tillgänglig för allmänheten: fler stigar, trappor, bryggor och passager ner till vattnet. Partiets argument är att det inte räcker att allemansrätten finns på papperet — \"allemansrätten i praktiken\".",
+          "kalla_titel": "Initiativärende till kommunfullmäktige, 2026-07-03",
+          "kalla_url": "https://www.socialdemokraternahoor.se/2026/07/05/initiativarende-ringsjon-ska-vara-allas-sjo-inte-bara-nagra-fas/"
+        },
+        {
+          "politikomrade": "Landsbygd",
+          "standpunkt": "Vill införa en byapeng där byinvånarna själva bestämmer vad kommunen ska satsa på i närområdet. Förslaget lyfts fram som ett av de fem viktigaste i handlingsprogrammet och motiveras med att över hälften av kommunens invånare bor utanför centralorten.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Landsbygd & byar",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/utanfor-centralorten-hoor/"
+        },
+        {
+          "politikomrade": "Landsbygd",
+          "standpunkt": "Vill att hela kommunen ska ha möjlighet att ansluta sig till fibernät och att kollektivtrafiken på landsbygden utökas med fler turer.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Landsbygd & byar",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/utanfor-centralorten-hoor/"
+        },
+        {
+          "politikomrade": "Landsbygd",
+          "standpunkt": "Vill värna förskolor, skolor och pedagogisk omsorg också på landsbygden, och säkerställa att både skolvägar och skolskjutsar är trygga och anpassade för alla barns behov.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Landsbygd & byar",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/utanfor-centralorten-hoor/"
+        },
+        {
+          "politikomrade": "Kultur och fritid",
+          "standpunkt": "Vill göra kvarteret runt Kulturhuset Anders till ett kulturkvarter och verka för en fritidsgård som komplement till Kulturgården.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Kultur & föreningsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/kultur-och-upplevelser/"
+        },
+        {
+          "politikomrade": "Kultur och fritid",
+          "standpunkt": "Vill stärka idrotts-, ungdoms- och kulturföreningar genom utökade bidrag och lokaler, öka anslagen till kommunens egna arrangemang och stärka föreningslivets band till skolan genom samarbeten och temadagar.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Kultur & föreningsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/kultur-och-upplevelser/"
+        },
+        {
+          "politikomrade": "Kultur och fritid",
+          "standpunkt": "Budget 2027 innehåller ökade anslag till kulturföreningar, Kulturgården, kulturskolan och ungdomsföreningar via höjt LOK-stöd, en investering i en ny multiarena för unga vid Kulturgården samt höjd ersättning till feriearbetande ungdomar.",
+          "kalla_titel": "Socialdemokraterna i Höör om sitt budgetförslag för 2027, 2026-05-28",
+          "kalla_url": "https://www.socialdemokraternahoor.se/2026/05/28/budget-2027/"
+        },
+        {
+          "politikomrade": "Kultur och fritid",
+          "standpunkt": "Motion om att barn upp till och med 12 år i vuxens sällskap ska få gratis inträde på Höörs Bad- och Sportcentrum. Motiveras som en social investering i folkhälsa och simkunnighet, och med att medföljande vuxna som betalar entré delvis finansierar reformen.",
+          "kalla_titel": "Motion till kommunfullmäktige, 2026-07-03",
+          "kalla_url": "https://www.socialdemokraternahoor.se/2026/07/05/motion-gratis-intrade-pa-hoors-bad-och-sportcentrum-for-barn-upp-till-12-ar/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill stärka arbetet med medborgardialoger, föreningssamråd och öppna processer där kommuninvånare bjuds in för att vara med och forma de beslut som berör dem.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Demokrati & förvaltning",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/gymnasieskolan-och-vuxenutbildningen/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill genomföra ett pilotprojekt med en \"demokratitimme\" där kommunanställda, likt en friskvårdstimme, får använda en arbetstimme i veckan till ideellt engagemang i en förening i Höör.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Kultur & föreningsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/kultur-och-upplevelser/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill genomföra en låglönesatsning för kommunens välfärdsarbetare och göra kommunen till en attraktiv arbetsplats med hög delaktighet och tillit bland personalen på alla nivåer.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Demokrati & förvaltning",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/gymnasieskolan-och-vuxenutbildningen/"
+        },
+        {
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Vill sköta kommunens ekonomi ansvarsfullt \"med ambitionen att sänka den kommunala skatten, dock aldrig på bekostnad av välfärden\". I praktiken har partiet avvisat båda styrets sänkningar: budgetförslaget för 2026 behöll 21,75 kronor och förslaget för 2027 behåller 21,45 kronor i stället för styrets 20,95. Den uteblivna sänkningen är den huvudsakliga finansieringen av partiets satsningar.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Demokrati & förvaltning",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/gymnasieskolan-och-vuxenutbildningen/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill införa sommarjobbsgaranti för unga.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill bredda och utveckla arbetsmarknadsenhetens uppdrag och på sikt verka för en lokal arbetsförmedling.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill stötta och utveckla den kommunala Företagslotsen — bland annat för att förenkla administration, regelhantering och stöd vid offentlig upphandling — samt säkra relevant mark för företagsetableringar.",
+          "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Partiets egen fastställda lista till kommunfullmäktige 2027–2030, publicerad som PDF på socialdemokraternahoor.se 2026-04-06 och här återgiven i sin helhet med yrke och bostadsort. Listan har 21 namn — samma antal som Valmyndighetens officiella kandidatregister för val 2026 (öppna data, \"kandidaturer.csv\", hämtat 2026-08-12) anger för Socialdemokraternas valsedel i Höör. Namnen och ordningen nedan kommer från partiets egen PDF; någon namn-för-namn-avstämning mot Valmyndighetens fil är inte gjord. Partiet uppger själv att listan är förnyad: 10 kvinnor och 11 män, omkring 30 procent nya medlemmar på valbar plats, lägre medelålder än tidigare och att ungefär hälften av namnen bor utanför tätorten Höör — vilket speglar att omkring hälften av kommunens invånare gör det.",
+      "kandidater_2026": [
+        { "namn": "Kent Staaf", "roll": "Listetta och förstanamn inför valet — senior förskollärare, Sätofta", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Katinka Holgersson", "roll": "Plats 2 — Enhetschef, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Stefan Lissmark", "roll": "Plats 3 — Socialarbetare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Evalisa Forshell", "roll": "Plats 4 — Egen företagare, Norra Rörum", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Lucas Nilsson", "roll": "Plats 5 — Styrelseordförande, Jularp", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Jill Andersson", "roll": "Plats 6 — Egen företagare, Nyby", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Jan Waad", "roll": "Plats 7 — Byggnadsarbetare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Cecilia Levander Kangas", "roll": "Plats 8 — IT-chef, Trulstorp", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Lena Larsson", "roll": "Plats 9 — Bygglovshandläggare/nämndssekreterare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Clas Paulsson", "roll": "Plats 10 — Lantmästare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Lena Stigsdotter", "roll": "Plats 11 — Studie- och yrkesvägledare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Ardren Bermudez", "roll": "Plats 12 — Lagerarbetare, Stanstorp", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Emelie Dahl", "roll": "Plats 13 — Lärare, Sätofta", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Martin Zippert", "roll": "Plats 14 — Projektledare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Lars Oscarsson", "roll": "Plats 15 — Förskollärare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Anna-Karin Persson", "roll": "Plats 16 — Marknadsansvarig, Sätofta", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Göran Dahlgren", "roll": "Plats 17 — Arkitekt, Stenskogen", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Theodor Christell", "roll": "Plats 18 — Lärare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Thomas Hult", "roll": "Plats 19 — Senior, Sätofta", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Ellinor Dahlgren", "roll": "Plats 20 — Ekonom, Stenskogen", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" },
+        { "namn": "Emilie Hoff", "roll": "Plats 21 — Egen företagare, Höör", "kalla_url": "https://www.socialdemokraternahoor.se/wp-content/uploads/2026/04/KF-listan-2026-2030.pdf" }
+      ]
+    },
+    {
+      "id": "sd",
+      "namn": "Sverigedemokraterna",
+      "block": "opposition",
+      "mandat_2022": 9,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://hoor.sd.se/",
+      "logo": "/logos/sd.svg",
+      "logo_kalla": "Wikimedia Commons, File:Sweden Democrats textlogo.svg (PD-textlogo)",
+      "manifest_status": "ersatt",
+      "manifest_not": "Saknar specifikt publicerat valmanifest för Höör. Utgår från partiets lokala plattform och riksnivåns inriktning inför 2026.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Fokuserar på skärpta straff och ökat skydd för laglydiga medborgare lokalt.",
+          "kalla_url": "https://www.sd.se/hoor/"
+        },
+        {
+          "politikomrade": "Migration",
+          "standpunkt": "Vill se en restriktiv och seriös migrationspolitik i kommunen för att motverka segregation och utanförskap.",
+          "kalla_url": "https://www.sd.se/hoor/"
+        },
+        {
+          "politikomrade": "Välfärd",
+          "standpunkt": "Fokus på att välfärden ska fungera lokalt oberoende av individens ekonomiska förutsättningar.",
+          "kalla_url": "https://www.sd.se/hoor/"
+        },
+        {
+          "politikomrade": "Trafik och ekonomi",
+          "standpunkt": "Driver krav på sänkta bränslepriser för att möjliggöra ett fungerande liv även utanför centralorten.",
+          "kalla_url": "https://www.sd.se/hoor/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar 12 kandidater på Sverigedemokraternas valsedel till Höörs kommunfullmäktige. Nedan de fem första; fullständig lista finns via länken.",
+      "kandidater_2026": [
+        { "namn": "Emma Öster", "roll": "Listetta, ambulanssjukvårdare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Helena Lindblom Ohlson", "roll": "Ekonomihandläggare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Stefan Gärdebring", "roll": "F.d. kyltekniker", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Eskil Öhrn", "roll": "F.d. säljare, Tjörnarp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Marie-Louise Palm", "roll": "Bokförare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "v",
+      "namn": "Vänsterpartiet",
+      "block": "opposition",
+      "mandat_2022": 3,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://hoor.vansterpartiet.se/",
+      "logo": "/logos/v.svg",
+      "logo_kalla": "Wikimedia Commons, File:Vänsterpartiet logo.svg (PD-textlogo)",
+      "manifest_status": "hittat",
+      "manifest_not": "Lokalt 2026 valprogram publicerat på hoor.vansterpartiet.se.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Skolan ska få de medel som krävs för att alla barn ska få en likvärdig och bra utbildning. Vill minska förskolegruppernas storlek, minska personalens arbetsstress, återinföra nattöppen barnomsorg, prioritera läsning/matematik i tidiga år, utöka elevhälsopersonal (kuratorer) och bevara Tjörnarpsskolan.",
+          "kalla_url": "https://hoor.vansterpartiet.se/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill införa en modell inspirerad av Mörbylånga med fasta omsorgsgrupper (samma personal följer den äldre) och minskad minutstyrd schemaläggning, med fokus på individuella behov.",
+          "kalla_url": "https://hoor.vansterpartiet.se/"
+        },
+        {
+          "politikomrade": "Trafik",
+          "standpunkt": "Vill bygga ut cykelvägnätet med säkrare cykelvägar, ordna cykelparkering vid tågstationen, och erbjuda gratis kollektivtrafikkort för gymnasieelever. Vill att järnvägen mellan Lund och Hässleholm byggs ut med nya spår längs befintlig sträckning, utan höghastighetsjärnväg genom Mellanskåne.",
+          "kalla_url": "https://hoor.vansterpartiet.se/"
+        },
+        {
+          "politikomrade": "Ekonomi",
+          "standpunkt": "Vill se en minimilön på 29 690 kr/månad för kommunanställda.",
+          "kalla_url": "https://hoor.vansterpartiet.se/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill inrätta ett demokratiskt investeringsprogram för landsbygden: kommunen delas in i tre geografiska zoner som roterande får 3 miljoner kronor vart tredje år till lokalt beslutade investeringar/arrangemang.",
+          "kalla_url": "https://hoor.vansterpartiet.se/wp/files/2022/07/Motion-landsbygdsprogram-2022.pdf"
+        },
+        {
+          "politikomrade": "Infrastruktur",
+          "standpunkt": "Vill säkerställa snabb fiberanslutning för alla i kommunen.",
+          "kalla_url": "https://hoor.vansterpartiet.se/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar 22 kandidater på Vänsterpartiets valsedel till Höörs kommunfullmäktige. Nedan de fem första; fullständig lista finns via länken.",
+      "kandidater_2026": [
+        { "namn": "Olle Krabbe", "roll": "Listetta, Norra Rörum", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Terese Herrström", "roll": "Tjörnarp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Christel Lindqvist", "roll": "Tjörnarp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Bengt Johansson", "roll": "Höör", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Björn Lindqvist", "roll": "Tjörnarp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "mp",
+      "namn": "Miljöpartiet",
+      "block": "opposition",
+      "mandat_2022": 2,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://www.mp.se/hoor/",
+      "logo": "/logos/mp.svg",
+      "logo_kalla": "mp.se (partiets egen officiella webbplats)",
+      "manifest_status": "hittat",
+      "manifest_not": "Fullständigt valmanifest 2026 för Höör, publicerat på mp.se/hoor, uppdaterat 2026-05-29.",
+      "manifest_2026": [
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill att kommunens verksamheter ska ha nära noll koldioxidutsläpp 2035, solceller på lämpliga kommunala fastigheter, en plan för återställande av våtmarker, utbyggd förnybar energiproduktion så kommunen blir självförsörjande, samt beredskapsåtgärder för extremväder (mat, vatten, reservkraft). Vill införa 'Munkmodellen' för att styra ekonomin med hänsyn till sociala behov och planetära gränser.",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        },
+        {
+          "politikomrade": "Transporter",
+          "standpunkt": "Vill öka turtäthet för buss och järnväg, bygga fler pendlarparkeringar, ordna hyrbara cykelgarage med laddning vid stationen, bygga klart cykelvägen på gamla Hörbyvägen mot Hörby, samt erbjuda gratis kollektivtrafik för pensionärer från 70 år.",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Vill ta fram principer för klimatvänligt byggande, prioritera bilpooler vid parkering, tillåta odling i rabatter mellan hus, och att ny bebyggelse i första hand förtätar befintliga områden nära station/kollektivtrafik. Vill inte bygga på jordbruksmark.",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        },
+        {
+          "politikomrade": "Barn och unga",
+          "standpunkt": "Vill sätta in individuellt stöd tidigt till elever med särskilda behov, öka personaltätheten och minska barngruppernas storlek, bygga ut skolbiblioteken med utbildade bibliotekarier, samt återinföra nattöppen barnomsorg inklusive under storhelger/sommar. Vill värna Höörs fristående, icke vinstdrivande skolor.",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        },
+        {
+          "politikomrade": "Vård och omsorg",
+          "standpunkt": "Vill verka för en äldremottagning med återkommande specialistbesök, erbjuda kulturupplevelser och rehab/simbassäng på äldreboenden, samt fortbildning och goda arbetsvillkor för personalen.",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        },
+        {
+          "politikomrade": "Folkhälsa och kultur",
+          "standpunkt": "Vill göra Höör till 'Sveriges bästa friluftskommun', bygga fler utegym och cykel-/promenadstråk, utrusta fler badplatser, ordna fler replokaler, samt utveckla kulturhuset Anders (bl.a. skiljevägg mellan café och salong för fler samtida arrangemang).",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill stärka småföretag och möjligheten att försörja sig som småskalig jordbrukare, ställa krav på upphandling av lokalt producerade varor/tjänster, starta torgdagar för odlare, och återinföra en turistbyrå vid stationen.",
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar 13 kandidater på Miljöpartiets valsedel till Höörs kommunfullmäktige. Nedan de fem första; fullständig lista finns via länken.",
+      "kandidater_2026": [
+        { "namn": "Annika Kruuse", "roll": "Listetta, ekolog", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Arno Werner", "roll": "Gymnasielärare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Kerstin von Seth", "roll": "Författare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Fredrik Hanell", "roll": "Universitetslektor", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Richard Andersson", "roll": "Systemförvaltare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    },
+    {
+      "id": "medborgerlig-samling",
+      "namn": "Medborgerlig Samling",
+      "block": "opposition",
+      "mandat_2022": 2,
+      "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
+      "hemsida": "https://med.se",
+      "logo": "/logos/medborgerlig-samling.png",
+      "logo_kalla": "med.se (partiets egen officiella webbplats)",
+      "manifest_status": "ersatt",
+      "manifest_not": "Inget lokalt publicerat valmanifest för Höör. Uppgifterna nedan är partiets nationella inriktning, inte Höör-specifika löften. Ett tidigare påstående om att partiet vill 'reformera LSS' har tagits bort eftersom vi inte kunnat hitta stöd för det, varken lokalt eller nationellt (kontrollerat 2026-08-14).",
+      "manifest_2026": [
+        {
+          "politikomrade": "Vård",
+          "standpunkt": "Vill införa skarpa vårdgarantier: vård inom 48 timmar, i hela landet.",
+          "kalla_url": "https://med.se"
+        },
+        {
+          "politikomrade": "Landsbygd",
+          "standpunkt": "Vill satsa på landsbygden: bl.a. sänkta skatter för jordbruk, satsningar på vägar/järnväg/laddinfrastruktur och ökad självförsörjningsgrad.",
+          "kalla_url": "https://med.se/politik/landsbygd-infrastruktur"
+        }
+      ],
+      "kandidater_2026_status": "hittat",
+      "kandidater_2026_not": "Valmyndighetens officiella kandidatregister för val 2026 (öppna data, filen 'kandidaturer.csv', hämtat 2026-08-12) listar samtliga 7 kandidater på Medborgerlig Samlings valsedel till Höörs kommunfullmäktige. Partiet har inte gjort en formell 'anmälan' av kandidaterna (spärrat listnamn) utan kandidaterna står med genom eget samtycke till en öppen namnvalsedel — valsedeln är ändå giltig och offentlig. Hela listan visas nedan.",
+      "kandidater_2026": [
+        { "namn": "Anna Jung", "roll": "Listetta, landsbygdsföretagare, Rolsberga", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Hans Nava-Barrefors", "roll": "Pensionär", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Adam Arfwedson", "roll": "Skötare", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Tom Espgård", "roll": "Lantbrukskonsulent, Långstorp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Susanne Andersson", "roll": "Fd sjuksköterska/egen företagare, Jularp", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Marie af Ugglas", "roll": "Kriminalvårdare, Sövröd", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" },
+        { "namn": "Magnus Lanner", "roll": "Börsmäklare, Rolsberga", "kalla_url": "https://data.val.se/val2026/partier/valsedlar/valtyp/KF/omrade/1267" }
+      ]
+    }
+  ]
+}

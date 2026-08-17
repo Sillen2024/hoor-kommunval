@@ -1,0 +1,7 @@
+25|10/6 2026|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/51ad76ea-dc90-4990-b867-a8e71f29514c_sv.vtt
+21|1/10 2025|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/7bcd21f3-6ad0-4e7f-b05c-f3ff58b48018_sv.vtt
+20|27/8 2025|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/59a98abf-4f2b-4277-a9fc-03b76ea53e4f_sv.vtt
+19|5/11 2025|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/3e69f844-1685-42d3-9601-085460bcbcc2_sv.vtt
+18|17/12 2025|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/20fc6fcf-d0c3-4da7-a565-de239441244e_sv.vtt
+17|Unknown|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/76899f5d-3a48-42f4-b92f-b0c3993e6b87_sv.vtt
+16|Unknown|https://cdn.socialcast.se/tenants/5d57a58f-93b9-4dd5-85aa-6ec9cba656f0/subtitles/d3dc3f52-e283-41b1-b961-9e48464fed77_sv.vtt

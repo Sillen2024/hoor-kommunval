@@ -1,0 +1,348 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Votering from "../../components/Votering.astro";
+import arendenData from "../../data/arenden.json";
+
+function slug(titel: string) {
+  return titel
+    .toLowerCase()
+    .replace(/[åä]/g, "a")
+    .replace(/ö/g, "o")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+interface Rostning {
+  datum: string;
+  paragraf: string;
+  fraga: string;
+  ja_betyder: string;
+  nej_betyder: string;
+  ja: number;
+  nej: number;
+  avstar: number;
+  utfall: string;
+  per_parti: Record<string, { ja: number; nej: number; avstar: number }>;
+  kalla_protokoll: string;
+}
+
+interface Arende {
+  titel: string;
+  datum: string | null;
+  antagen_paragraf?: string;
+  politikomrade: string;
+  forslagsstallare?: string;
+  beskrivning: string;
+  datum_not?: string;
+  resultat: string;
+  urvalsmotivering: string;
+  rostning?: Rostning[];
+  [key: string]: unknown;
+}
+
+// Tema-gruppering. Politikområdena i arenden.json är skrivna per ärende och
+// ger tretton unika värden på femton ärenden — som filter vore de värdelösa.
+// Här grupperas de till ett fåtal teman, på samma sätt som /jamforelse/
+// grupperar partiernas egna rubriker. Grupperingen är enbart en navigations-
+// hjälp: ärendets ursprungliga politikområde står kvar på varje ärende och är
+// det som gäller. Ett område som saknas i tabellen blir sitt eget tema, så
+// att nya ärenden aldrig tyst hamnar i fel hög.
+const TEMA_PER_OMRADE: Record<string, string> = {
+  "Demokrati och styrning": "Demokrati och organisation",
+  "Kommunal organisation och samverkan": "Demokrati och organisation",
+  "Ekonomi och styrning": "Ekonomi och avgifter",
+  "Ekonomi och kommunala bolag": "Ekonomi och avgifter",
+  "Vatten och avlopp": "Ekonomi och avgifter",
+  "Klimat och miljö": "Miljö, bygg och bostäder",
+  Bostäder: "Miljö, bygg och bostäder",
+  "Kultur och stadsutveckling": "Miljö, bygg och bostäder",
+  "Skola / Fritid och idrott": "Skola",
+  "Skola och bygg": "Skola",
+  "Trafik / äldreomsorg": "Vård och omsorg",
+  "Vård och omsorg": "Vård och omsorg",
+};
+
+// Käll-URL:erna ligger som kalla_url, kalla_url_2 … kalla_url_4. De
+// renderades tidigare som upp till fyra lösa länkrader; här samlas de i en
+// lista per ärende. Värden som inte är publika adresser (t.ex.
+// kalla_transkription, som pekar in i källträdet) är provenance i datan och
+// hoppas över — annars hade sajten publicerat länkar som ger 404.
+//
+// kalla_kritik hanteras separat och får aldrig det gröna "Källbelagt"-märket.
+// Det är opinionsmaterial, citerat som belägg för att ärendet debatterats —
+// inte som källa för någon sakuppgift. Samma principiella skillnad som
+// .derived-note gör mot .source-link.
+function kallor(a: Arende) {
+  const nycklar = ["kalla_url", "kalla_url_2", "kalla_url_3", "kalla_url_4"];
+  return nycklar.flatMap((nyckel) => {
+    const url = a[nyckel];
+    if (typeof url !== "string" || !/^(https?:\/\/|\/)/.test(url)) return [];
+    const beskrivning = a[`${nyckel === "kalla_url" ? "kalla" : nyckel}_beskrivning`];
+    return [{ url, text: typeof beskrivning === "string" ? beskrivning : url }];
+  });
+}
+
+function debatt(a: Arende) {
+  if (typeof a.kalla_kritik !== "string" || !a.kalla_kritik) return null;
+  return {
+    url: a.kalla_kritik,
+    text: typeof a.kalla_kritik_beskrivning === "string" ? a.kalla_kritik_beskrivning : a.kalla_kritik,
+  };
+}
+
+// "Mest omdiskuterat" (Fabel-granskningen §4): grunden är utskriven och
+// mekanisk — ärendet har både förekommit i pressen och avgjorts med votering.
+// Ingen redaktionell rangordning utöver de två kriterierna.
+const PRESSDOMANER = ["skd.se", "skanskadagbladet", "sydsvenskan", "svt.se"];
+function harPress(a: Arende) {
+  const urls = ["kalla_url", "kalla_url_2", "kalla_url_3", "kalla_url_4", "kalla_kritik"]
+    .map((k) => a[k])
+    .filter((u): u is string => typeof u === "string")
+    .join(" ");
+  return PRESSDOMANER.some((d) => urls.includes(d));
+}
+
+// Tudelningen (§4): de två första meningarna svarar på "vad hände", resten
+// ligger i ett veck. Korta beskrivningar visas hela.
+function delaBeskrivning(b: string): { vadHande: string; resten: string | null } {
+  if (b.length < 300) return { vadHande: b, resten: null };
+  const meningar = b.split(/(?<=[.!?]) (?=[A-ZÅÄÖ"])/);
+  if (meningar.length <= 2) return { vadHande: b, resten: null };
+  return {
+    vadHande: meningar.slice(0, 2).join(" "),
+    resten: meningar.slice(2).join(" "),
+  };
+}
+
+const arenden = (arendenData.arenden as unknown as Arende[])
+  .map((a) => ({
+    ...a,
+    anchor: slug(a.titel),
+    tema: TEMA_PER_OMRADE[a.politikomrade] ?? a.politikomrade,
+    voteringar: a.rostning ?? [],
+    kallor: kallor(a),
+    debatt: debatt(a),
+    omdiskuterat: harPress(a) && (a.rostning?.length ?? 0) > 0,
+    beskrivningDelad: delaBeskrivning(a.beskrivning),
+  }))
+  // Nyast först: sidan handlar om vad som beslutats under mandatperioden, och
+  // det senaste beslutet är det som fortfarande gäller. Ärenden utan datum
+  // hamnar sist i stället för att sorteras som tomma strängar.
+  .sort((a, b) => (b.datum ?? "").localeCompare(a.datum ?? ""));
+
+const teman = [...new Set(arenden.map((a) => a.tema))]
+  .map((namn) => ({ namn, antal: arenden.filter((a) => a.tema === namn).length }))
+  .sort((a, b) => b.antal - a.antal || a.namn.localeCompare(b.namn, "sv"));
+
+const antalMedVotering = arenden.filter((a) => a.voteringar.length > 0).length;
+const antalVoteringar = arenden.reduce((summa, a) => summa + a.voteringar.length, 0);
+const datum = arenden.map((a) => a.datum).filter((d): d is string => Boolean(d));
+const forstaAret = datum[datum.length - 1]?.slice(0, 4);
+const sistaAret = datum[0]?.slice(0, 4);
+---
+
+<Layout
+  title="Ärenden och motioner"
+  description="Beslut och motioner som märkts i Höör under mandatperioden 2022–2026: vad som hände, hur partierna röstade, och källan."
+  image="/og-arenden-v1.png"
+>
+  <h1>Ärenden och motioner 2022–2026</h1>
+  <p class="lead">
+    {arenden.length} beslut som märkts i Höör den här mandatperioden — från rivningen av Kvarnen till
+    busskortet för alla över 70. För varje beslut: vad som hände, hur partierna röstade där votering hölls,
+    och källan.
+  </p>
+
+  <p class="arende-summering">
+    <span><strong>{arenden.length}</strong> ärenden</span>
+    <span><strong>{antalMedVotering}</strong> avgjorda med votering</span>
+    <span><strong>{antalVoteringar}</strong> protokollförda omröstningar</span>
+    <span><strong>{forstaAret}–{sistaAret}</strong></span>
+  </p>
+
+  <nav class="arende-index" id="listan" aria-label="Alla ärenden">
+    <h2>Alla ärenden, nyast först</h2>
+    <p class="arende-index__not">
+      Datumen är kommunala beslutsdatum där inget annat anges. Avvikelser redovisas i "Not om datum" på
+      respektive ärende.
+    </p>
+    <ul>
+      {arenden.map((a) => (
+        <li data-tema={a.tema} data-votering={a.voteringar.length > 0 ? "ja" : "nej"}>
+          <a href={`#${a.anchor}`}>
+            <span class="arende-index__datum">{a.datum ?? "Odaterat"}</span>
+            <span class="arende-index__titel">{a.titel}</span>
+            {a.voteringar.length > 0 && <span class="arende-index__votering">Votering</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="arende-filter" id="arende-filter" hidden>
+    <div class="arende-filter__teman" role="group" aria-label="Filtrera på tema">
+      <button type="button" data-tema="alla" aria-pressed="true">Alla teman</button>
+      {teman.map((t) => (
+        <button type="button" data-tema={t.namn}>
+          {t.namn} <span class="arende-filter__antal">{t.antal}</span>
+        </button>
+      ))}
+    </div>
+    <div class="arende-filter__rad">
+      <button type="button" id="votering-toggle" class="arende-filter__toggle" aria-pressed="false">
+        Bara med votering
+      </button>
+      <p class="arende-filter__status" id="arende-status" role="status" aria-live="polite"></p>
+      <a class="arende-filter__topp" href="#listan">↑ Till listan</a>
+    </div>
+  </div>
+
+  {arenden.map((a) => (
+    <article
+      class="arende"
+      id={a.anchor}
+      data-tema={a.tema}
+      data-votering={a.voteringar.length > 0 ? "ja" : "nej"}
+    >
+      <p class="arende__meta">
+        <span class="arende__datum">{a.datum ?? "Datum ej fastställt"}</span>
+        {a.antagen_paragraf && <span class="arende__paragraf">{a.antagen_paragraf}</span>}
+        <span class="badge badge--neutral">{a.politikomrade}</span>
+        {a.voteringar.length > 0 && (
+          <span class="badge badge--votering">
+            {a.voteringar.length > 1 ? `${a.voteringar.length} voteringar` : "Votering"}
+          </span>
+        )}
+        {a.omdiskuterat && (
+          <span class="badge badge--omdiskuterat" title="Ärendet har både förekommit i pressen och avgjorts med votering">
+            Omdiskuterat: press + votering
+          </span>
+        )}
+      </p>
+      <h2>
+        {a.titel}{" "}
+        <a class="arende__ankare" href={`#${a.anchor}`} aria-label={`Direktlänk till ${a.titel}`}>#</a>
+      </h2>
+      <p class="arende__resultat">
+        <span class="arende__resultat-etikett">Resultat</span> {a.resultat}
+      </p>
+      {a.forslagsstallare && (
+        <p class="arende__forslagsstallare">Förslagsställare: {a.forslagsstallare}</p>
+      )}
+      <p>{a.beskrivningDelad.vadHande}</p>
+      {a.beskrivningDelad.resten && (
+        <details class="not-box">
+          <summary>Hela förloppet</summary>
+          <p>{a.beskrivningDelad.resten}</p>
+        </details>
+      )}
+      {a.datum_not && (
+        <details class="not-box">
+          <summary>Not om datum</summary>
+          <p>{a.datum_not}</p>
+        </details>
+      )}
+      {a.voteringar.map((r) => <Votering rostning={r} />)}
+      <div class="arende__kallor">
+        <h3>Källor</h3>
+        {a.kallor.length === 0 ? (
+          <p class="no-data">Ingen fristående källa hittad — se urvalsmotiveringen nedan.</p>
+        ) : (
+          <ul>
+            {a.kallor.map((k) => (
+              <li>
+                <a class="source-link source-link--wrap" href={k.url} target="_blank" rel="noopener noreferrer">
+                  {k.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+        {a.debatt && (
+          <p class="arende__debatt">
+            <a class="debatt-link" href={a.debatt.url} target="_blank" rel="noopener noreferrer">
+              {a.debatt.text}
+            </a>
+          </p>
+        )}
+      </div>
+      <details class="not-box">
+        <summary>Varför är det här ärendet med?</summary>
+        <p>{a.urvalsmotivering}</p>
+      </details>
+    </article>
+  ))}
+
+  <p class="no-data" id="arende-tomt" hidden>
+    Inga ärenden matchar filtret. Välj "Alla teman" för att se hela listan igen.
+  </p>
+
+  {arendenData.exkluderade_kandidater_not && (
+    <div class="banner">
+      <strong>Uteslutet ärende:</strong> {arendenData.exkluderade_kandidater_not}
+    </div>
+  )}
+
+  <p class="updated">
+    Så valdes ärendena: de har förekommit i lokal press, rör något partierna själva lyfter inför 2026,
+    eller avgjordes med en protokollförd votering — hela motiveringen står på{" "}
+    <a href="/om-urvalet/">Om urvalet</a>. Senast uppdaterad: {arendenData.senast_uppdaterad}.
+  </p>
+
+  <script>
+    // Filtrering av ärendelistan. Sidan fungerar utan JavaScript — då visas
+    // alla ärenden och filterraden är dold via hidden-attributet nedan, i
+    // stället för att erbjuda knappar som inte gör något.
+    const filterbar = document.getElementById("arende-filter");
+    const status = document.getElementById("arende-status");
+    const tomt = document.getElementById("arende-tomt");
+    const voteringToggle = document.getElementById("votering-toggle");
+    const temaKnappar = document.querySelectorAll<HTMLButtonElement>(".arende-filter__teman button");
+    const arenden = document.querySelectorAll<HTMLElement>(".arende");
+    const indexrader = document.querySelectorAll<HTMLElement>(".arende-index li");
+
+    if (filterbar && status && tomt && voteringToggle) {
+      filterbar.hidden = false;
+
+      let tema = "alla";
+      let baraVotering = false;
+
+      const matchar = (el: HTMLElement) =>
+        (tema === "alla" || el.dataset.tema === tema) &&
+        (!baraVotering || el.dataset.votering === "ja");
+
+      function uppdatera() {
+        let synliga = 0;
+        arenden.forEach((el) => {
+          const visa = matchar(el);
+          el.hidden = !visa;
+          if (visa) synliga++;
+        });
+        indexrader.forEach((el) => {
+          el.hidden = !matchar(el);
+        });
+        tomt.hidden = synliga > 0;
+        status.textContent =
+          synliga === arenden.length
+            ? `Visar alla ${arenden.length} ärenden`
+            : `Visar ${synliga} av ${arenden.length} ärenden`;
+      }
+
+      temaKnappar.forEach((knapp) => {
+        knapp.addEventListener("click", () => {
+          tema = knapp.dataset.tema ?? "alla";
+          temaKnappar.forEach((k) => k.setAttribute("aria-pressed", String(k === knapp)));
+          uppdatera();
+        });
+      });
+
+      voteringToggle.addEventListener("click", () => {
+        baraVotering = !baraVotering;
+        voteringToggle.setAttribute("aria-pressed", String(baraVotering));
+        uppdatera();
+      });
+
+      uppdatera();
+    }
+  </script>
+</Layout>
