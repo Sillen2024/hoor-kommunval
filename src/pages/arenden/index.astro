@@ -62,6 +62,7 @@ const TEMA_PER_OMRADE: Record<string, string> = {
   "Trafik / äldreomsorg": "Vård och omsorg",
   "Vård och omsorg": "Vård och omsorg",
   "Folkhälsa och förebyggande arbete": "Vård och omsorg",
+  Samhällsplanering: "Miljö, bygg och bostäder",
 };
 
 // Käll-URL:erna ligger som kalla_url, kalla_url_2 … kalla_url_4. De
@@ -75,7 +76,7 @@ const TEMA_PER_OMRADE: Record<string, string> = {
 // inte som källa för någon sakuppgift. Samma principiella skillnad som
 // .derived-note gör mot .source-link.
 function kallor(a: Arende) {
-  const nycklar = ["kalla_url", "kalla_url_2", "kalla_url_3", "kalla_url_4"];
+  const nycklar = ["kalla_url", "kalla_url_2", "kalla_url_3", "kalla_url_4", "kalla_url_5"];
   return nycklar.flatMap((nyckel) => {
     const url = a[nyckel];
     if (typeof url !== "string" || !/^(https?:\/\/|\/)/.test(url)) return [];
@@ -153,15 +154,16 @@ const sistaAret = datum[0]?.slice(0, 4);
   <p class="lead">
     {arenden.length} beslut som märkts i Höör den här mandatperioden — från rivningen av Kvarnen till
     busskortet för alla över 70. För varje beslut: vad som hände, hur partierna röstade där votering hölls,
-    och källan. {antalNamnd} av besluten kommer från nämnderna, där mycket av vardagen avgörs — skolan,
-    omsorgen, avgifterna. Nämndbeslut är märkta med nämndens namn; övriga är kommunfullmäktiges.
+    och källan. {antalNamnd} av besluten är fattade i en nämnd eller i kommunstyrelsen — där avgörs
+    mycket av vardagen: skolan, omsorgen, avgifterna, byggplanerna. De är märkta med organets namn;
+    övriga beslut är kommunfullmäktiges.
   </p>
 
   <p class="arende-summering">
     <span><strong>{arenden.length}</strong> ärenden</span>
     <span><strong>{antalMedVotering}</strong> avgjorda med votering</span>
     <span><strong>{antalVoteringar}</strong> protokollförda omröstningar</span>
-    <span><strong>{antalNamnd}</strong> från nämnderna</span>
+    <span><strong>{antalNamnd}</strong> utanför fullmäktige</span>
     <span><strong>{forstaAret}–{sistaAret}</strong></span>
   </p>
 
@@ -177,7 +179,11 @@ const sistaAret = datum[0]?.slice(0, 4);
           <a href={`#${a.anchor}`}>
             <span class="arende-index__datum">{a.datum ?? "Odaterat"}</span>
             <span class="arende-index__titel">{a.titel}</span>
-            {a.organ && <span class="arende-index__organ">Nämnd</span>}
+            {a.organ && (
+              <span class="arende-index__organ">
+                {a.organ === "Kommunstyrelsen" ? "Kommunstyrelsen" : "Nämnd"}
+              </span>
+            )}
             {a.voteringar.length > 0 && <span class="arende-index__votering">Votering</span>}
           </a>
         </li>
