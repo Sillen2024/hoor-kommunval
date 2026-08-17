@@ -1,6 +1,6 @@
 {
-  "senast_uppdaterad": "2026-08-16",
-  "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa.",
+  "senast_uppdaterad": "2026-08-17",
+  "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa. Sedan 2026-08-17 ingår även ett urval beslut från facknämnderna (barn- och utbildningsnämnden, socialnämnden och VA-nämnden), hämtade och verifierade på samma sätt som fullmäktigeprotokollen. Samtliga sex facknämnders protokoll 2023–2026 har genomsökts. Alla voteringar med namngiven röstlängd i de tre nämnda nämnderna är med. Två avgränsningar är gjorda: tillstånds- och tillsynsnämndens två bygglovsvoteringar har utelämnats eftersom de rör myndighetsutövning mot enskilda, och voteringarna i nämnden för kultur, arbete och folkhälsa (förenings- och projektbidrag samt en procedurfråga) ingår inte i denna första omgång. Nämndernas röstsiffror redovisas per ärende med namngiven röstlängd i källan; de räknas inte in i partisidornas fullmäktigestatistik, eftersom nämndgrupperna är för små för statistik.",
   "arenden": [
     {
       "typ": "arende",
@@ -529,6 +529,248 @@
       "kalla_url_3": "/kallor/protokoll/Protokoll_KF_241218.pdf",
       "kalla_url_3_beskrivning": "Kommunfullmäktiges protokoll 2024-12-18, § 148 — den omräknade VA-taxan 2025 antas (PDF).",
       "urvalsmotivering": "Direkt plånbokspåverkan för alla hushåll med kommunalt VA, och det tydligaste exemplet i materialet på att S och SD spelar olika oppositionsroller: S röstade med styret om 2024 års taxa medan SD, V, MP och MED röstade emot — och i återremissen 2024 stod SD ensamt mot alla andra."
+    },
+    {
+      "typ": "arende",
+      "organ": "Socialnämnden",
+      "titel": "Socialnämnden beordrade besparingar på 4 miljoner i vård och omsorg",
+      "datum": "2023-05-25",
+      "antagen_paragraf": "§ 72",
+      "politikomrade": "Vård och omsorg",
+      "forslagsstallare": "Margareta Johansson (KD), socialnämndens ordförande",
+      "beskrivning": "Socialnämnden gav socialchefen i uppdrag att spara 4 miljoner kronor med full effekt 2024. Det är ungefär en tredjedel av det underskott på 11,6 miljoner som nämndens prognos i maj 2023 pekade mot. Underskottet drevs främst av externa placeringar och personlig assistans. Yrkandet kom från ordföranden Margareta Johansson (KD). SD ville i stället ta underskottet ur kommunens sparreserv, och menade att sparförslagen skulle drabba enskilda och personalens arbetsmiljö. Voteringen slutade 4–3–2: M och KD för, SD och V emot, S avstod. SD reserverade sig muntligen. S godtog beslutet i en anteckning till protokollet — men bara om inget skars ner i nämndens budget för 2024. När nämnden antog den budgeten i november reserverade sig V ensamt (§ 126).",
+      "resultat": "Beslutad 2023-05-25, § 72: socialchefen fick i uppdrag att vidta besparingsåtgärder om 4 miljoner kronor i helårseffekt 2024.",
+      "rostning": [
+        {
+          "datum": "2023-05-25",
+          "paragraf": "§ 72",
+          "fraga": "Skulle nämnden beordra besparingar på 4 miljoner, eller ta underskottet ur kommunens reserv?",
+          "ja_betyder": "Bifall till Margareta Johanssons (KD) yrkande: uppdra åt socialchefen att vidta besparingsåtgärder om 4 miljoner kronor i helårseffekt 2024.",
+          "nej_betyder": "Bifall till Emma Östers (SD) yrkande: underskottet tas ur resultat- och utjämningsreserven 2024.",
+          "ja": 4,
+          "nej": 3,
+          "avstar": 2,
+          "utfall": "Bifall till besparingsuppdraget.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 0, "avstar": 2 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 2, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_SN_230525.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_SN_230525.pdf",
+      "kalla_beskrivning": "Socialnämndens protokoll 2023-05-25, § 72, med namngiven röstlängd, SD:s reservation och S protokollsanteckning (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_SN_231109.pdf",
+      "kalla_url_2_beskrivning": "Socialnämndens protokoll 2023-11-09, § 126: budgeten för 2024 antogs, V reserverade sig muntligen (PDF).",
+      "urvalsmotivering": "Sajtens röstdata gällde tidigare bara fullmäktige — det här är första nämndärendet. Det valdes för att det gäller att spara i det område där flest Höörsbor möter kommunen, och för att voteringen bryter blockmönstret: SD och V röstade ihop mot M och KD, medan S avstod. Vad Höörsborna själva vill spara på syns i opinionsmätningen på nyckeltalssidan."
+    },
+    {
+      "typ": "arende",
+      "organ": "Barn- och utbildningsnämnden",
+      "titel": "Pedagogisk omsorg i Norra Rörum: kvar, men med nedläggningsvillkor",
+      "datum": "2024-11-25",
+      "antagen_paragraf": "§ 104",
+      "politikomrade": "Skola",
+      "forslagsstallare": "Barn- och utbildningssektorn (förvaltningsförslag), med tilläggsyrkande av Jack Ljungberg (SD)",
+      "beskrivning": "Den pedagogiska omsorgen i Norra Rörum — kommunens enda alternativ till fritidshem, med 8 inskrivna barn i åldern 6–9 år — får finnas kvar så länge minst tio elever är inskrivna vid varje läsårsstart. Blir de färre ska nämnden pröva nedläggning. Villkoret kom från ett tilläggsyrkande av SD. Vid beslutet var alltså antalet inskrivna redan under gränsen. Förvaltningen beskrev verksamheten som underfinansierad — det krävs 19 elever för ekonomisk balans — och pekade på att lokalerna vid en avveckling skulle gå till förskolan i Norra Rörum, som är överfull. Voteringen slutade 5–4: M och SD för, S, C och V emot. C:s Maria Jönsson röstade därmed mot styrets egen linje. S och V reserverade sig skriftligen: skollagen säger att kommunen ska sträva efter att erbjuda pedagogisk omsorg, drygt 42 procent av kommunens invånare bor på landsbygden, och ett fast elevtal tar inte hänsyn till att barnkullarna växlar mellan åren.",
+      "resultat": "Beslutad 2024-11-25, § 104: verksamheten behålls så länge minst tio elever är inskrivna vid läsårsstart; därunder prövas nedläggning.",
+      "rostning": [
+        {
+          "datum": "2024-11-25",
+          "paragraf": "§ 104",
+          "fraga": "Skulle den pedagogiska omsorgen i Norra Rörum behållas med SD:s nedläggningsvillkor, eller skulle förslaget avslås?",
+          "ja_betyder": "Bifall till liggande förslag med Jack Ljungbergs (SD) tilläggsyrkande: behåll verksamheten, men pröva nedläggning om antalet elever understiger tio vid läsårsstart.",
+          "nej_betyder": "Bifall till Jessica Homonnays (S) yrkande att avslå liggande förslag.",
+          "ja": 5,
+          "nej": 4,
+          "avstar": 0,
+          "utfall": "Bifall till förslaget med nedläggningsvillkoret.",
+          "per_parti": {
+            "m": { "ja": 3, "nej": 0, "avstar": 0 },
+            "c": { "ja": 0, "nej": 1, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 2, "nej": 0, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_BUN_241125.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_BUN_241125.pdf",
+      "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2024-11-25, § 104, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/reservationer/reservation_S_V_241125_par104.pdf",
+      "kalla_url_2_beskrivning": "S och V:s skriftliga reservation mot beslutet, bilaga § 104 (PDF).",
+      "urvalsmotivering": "Service på landsbygden är ett tema flera partier driver inför 2026, och voteringen är ett av få dokumenterade fall under mandatperioden där C röstat mot M. Ärendet hänger ihop med öppettidsbeslutet för pedagogisk omsorg på obekväm tid, som också finns i listan."
+    },
+    {
+      "typ": "arende",
+      "organ": "Barn- och utbildningsnämnden",
+      "titel": "Natt- och helgomsorgen försvann när budgetramen krympte",
+      "datum": "2025-01-13",
+      "antagen_paragraf": "§ 5",
+      "politikomrade": "Skola",
+      "forslagsstallare": "Barn- och utbildningssektorn, till följd av kommunfullmäktiges budgetbeslut för 2025",
+      "beskrivning": "Pedagogisk omsorg på obekväm tid finns sedan 1 augusti 2025 bara på vardagar, klockan 18–22, vid Maglehills förskola. Omsorgen på nätter och helger togs bort. Bakgrunden är fullmäktiges budget för 2025. Den minskade nämndens ram med 974 000 kronor, med kortare öppettider som angiven grund. Öppet som förut hade kostat 3,9 miljoner kronor — budgeten gav 1,5. Vid beslutet använde 12 familjer med 20 barn omsorgen. 7 av familjerna använde natten, och alla barn hade någon gång använt helgen. Underlaget lyfte också barnens sida av saken: några barn var i kommunens verksamheter upp emot 65 timmar i veckan. S och V reserverade sig muntligen. SD ville enligt sin anteckning avgöra ärendet samma dag, för att ge föräldrarna längsta möjliga tid att ställa om. Ärendet visar hur en rad i fullmäktiges budget blir konkret vardag. Själva budgetvoteringen finns på budgetsidan.",
+      "resultat": "Beslutad 2025-01-13, § 5: öppet måndag–fredag klockan 18–22 från 1 augusti 2025. Natt- och helgomsorgen upphör.",
+      "kalla_url": "/kallor/protokoll/Protokoll_BUN_250113.pdf",
+      "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2025-01-13, § 5, med reservationer och SD:s protokollsanteckning (PDF).",
+      "urvalsmotivering": "Det tydligaste exemplet i materialet på kedjan budget → nämndbeslut → vardag. Samma familjer kan se både fullmäktiges budgetvotering och nämndens beslut, med källa. Ingen votering hölls. S och V:s reservationer är den dokumenterade skiljelinjen."
+    },
+    {
+      "typ": "arende",
+      "organ": "Barn- och utbildningsnämnden",
+      "titel": "Vem beslutar om skolskjutsupphandlingar? Styret förlorade med 4–5",
+      "datum": "2025-09-22",
+      "antagen_paragraf": "§ 68",
+      "politikomrade": "Demokrati och styrning",
+      "forslagsstallare": "Barn- och utbildningssektorn (förvaltningsförslag)",
+      "beskrivning": "Förvaltningen ville flytta beslut om upphandling av skolskjuts från nämndens politiker till utbildningschefen. Skälet: upphandlingar ska hanteras lika i hela kommunen. Nämnden sa nej. S, V och SD röstade ihop och behöll besluten hos nämndens arbetsutskott. Det gäller både skolskjutsköpen och undantag från avgiftsreglerna. Ärendet krävde tre voteringar. Ordföranden hann först klubba förvaltningens linje. SD begärde då att ärendet skulle tas upp på nytt, och fick igenom det med 5 röster mot 4. I huvudvoteringen förlorade styrets ledamöter (M, L och C) igen, 4–5. Moderaterna reserverade sig muntligen. Protokollet skriver på ett ställe (M) efter Jack Ljungbergs namn. Av protokollets övriga sidor framgår att han är (SD).",
+      "resultat": "Beslutad 2025-09-22, § 68: upphandlings- och avgiftsbesluten ligger kvar hos nämndens arbetsutskott. Delegationsordningen i övrigt fastställd, gäller från 2025-10-01.",
+      "rostning": [
+        {
+          "datum": "2025-09-22",
+          "paragraf": "§ 68",
+          "fraga": "Skulle ärendet anses färdigbehandlat, eller tas upp på nytt samma möte?",
+          "ja_betyder": "Bifall till ordförandens linje: ärendet anses färdigbehandlat.",
+          "nej_betyder": "Bifall till Jack Ljungbergs (SD) yrkande: ärendet tas upp för ny behandling vid dagens sammanträde.",
+          "ja": 4,
+          "nej": 5,
+          "avstar": 0,
+          "utfall": "Ärendet togs upp på nytt — mot ordförandens linje.",
+          "per_parti": {
+            "m": { "ja": 2, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 2, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_BUN_250922.pdf"
+        },
+        {
+          "datum": "2025-09-22",
+          "paragraf": "§ 68",
+          "fraga": "Vilket yrkande skulle bli motförslag i huvudvoteringen — S:s eller SD:s?",
+          "ja_betyder": "Jill Anderssons (S) yrkande blir motförslag: arbetsutskottet behåller beslutspunkterna C.1.2–C.1.5.",
+          "nej_betyder": "Jack Ljungbergs (SD) yrkande blir motförslag: arbetsutskottet behåller skolskjutsupphandlingarna (C.1.3) och avgiftsavvikelserna (C.2.1).",
+          "ja": 1,
+          "nej": 5,
+          "avstar": 3,
+          "utfall": "SD:s yrkande blev motförslag.",
+          "per_parti": {
+            "m": { "ja": 1, "nej": 0, "avstar": 1 },
+            "c": { "ja": 0, "nej": 0, "avstar": 1 },
+            "l": { "ja": 0, "nej": 0, "avstar": 1 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 2, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_BUN_250922.pdf"
+        },
+        {
+          "datum": "2025-09-22",
+          "paragraf": "§ 68",
+          "fraga": "Vem ska besluta om skolskjutsupphandlingarna — utbildningschefen eller nämndens arbetsutskott?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag: utbildningschefen beslutar.",
+          "nej_betyder": "Bifall till Jack Ljungbergs (SD) yrkande: nämndens arbetsutskott beslutar även i fortsättningen.",
+          "ja": 4,
+          "nej": 5,
+          "avstar": 0,
+          "utfall": "Besluten ligger kvar hos nämndens arbetsutskott.",
+          "per_parti": {
+            "m": { "ja": 2, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "l": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 2, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 2, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_BUN_250922.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_BUN_250922.pdf",
+      "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2025-09-22, § 68, med tre namngivna röstlängder och M:s reservation (PDF).",
+      "urvalsmotivering": "Voteringar där styret förlorar är ett av sajtens urvalskriterier. Det här är det tydligaste exemplet i en nämnd: styrets fyra ledamöter röstades ner av S, V och SD i alla tre voteringarna. Frågan — ska politiker eller tjänstemän besluta — är principiell."
+    },
+    {
+      "typ": "arende",
+      "organ": "Barn- och utbildningsnämnden",
+      "titel": "Busskort till idrottsakademiernas elever utanför tätorten",
+      "datum": "2025-11-24",
+      "antagen_paragraf": "§ 93",
+      "politikomrade": "Skola / Fritid och idrott",
+      "forslagsstallare": "Camilla Kampf (M), Anna Ramberg (L) och Martin Olsson (C), initiativärende",
+      "beskrivning": "Elever som är folkbokförda i Höörs kommun, bor utanför Höörs tätort och går på idrottsakademierna vid Ringsjöskolan erbjuds kort till kollektivtrafiken från höstterminen 2026. Beslutet följde ett initiativärende från M, L och C. Från hösten 2026 finns två akademier i anslutning till skoldagen: MFF:s fotbollsakademi och H65:s handbollsakademi. Kostnaden beräknas till som mest cirka 318 000 kronor per år fullt utbyggt — begränsningen till elever utanför tätorten valdes framför alternativet att ge alla Höörselever kort, som hade kostat upp till 813 000. Transporten räknas som en del av akademiernas verksamhet, inte som skolskjuts, och ryms enligt förvaltningen inte i nämndens budgetram utan bör in i budgetprocessen för 2027. Hösten 2025 var bara omkring 40 procent av fotbollsakademins elever folkbokförda i Höör. SD:s två ledamöter reserverade sig muntligen; ingen motivering fördes till protokollet. Ingen votering hölls.",
+      "resultat": "Beslutad 2025-11-24, § 93: kollektivtrafikkort för akademielever folkbokförda i kommunen utanför tätorten, från höstterminen 2026.",
+      "kalla_url": "/kallor/protokoll/Protokoll_BUN_251124.pdf",
+      "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2025-11-24, § 93, med SD:s reservation (PDF).",
+      "urvalsmotivering": "Uppföljning av handbollsakademi-ärendet som redan finns i listan: akademierna beslutades 2024, det här är nästa konkreta beslut i samma fråga. Skiljelinjen — SD reserverade sig ensamt — är dokumenterad även utan votering."
+    },
+    {
+      "typ": "arende",
+      "organ": "Barn- och utbildningsnämnden",
+      "titel": "Vårdnadshavare ska bjudas in till skolans arrangemang igen",
+      "datum": "2026-06-08",
+      "antagen_paragraf": "§ 49",
+      "politikomrade": "Skola",
+      "forslagsstallare": "Camilla Kampf (M), Anna Ramberg (L) och Martin Olsson (C), initiativärende med stöd av KD",
+      "beskrivning": "Alla vårdnadshavare ska bjudas in till alla arrangemang som skolan ordnar för deras egna barn. Det gäller kommunens alla skolor och förskolor. Bakgrunden: föräldrars möjlighet att vara med på skolavslutningar togs bort under pandemin, och kom inte tillbaka överallt. Skollagen har sedan 1 juli 2025 också ett nytt kapitel om säkerhet. Utan inbjudan räknas föräldrar som obehöriga och ska inte släppas in när verksamhet pågår. Rektor måste göra en riskanalys inför varje öppet arrangemang. V:s Björn Lindqvist yrkade avslag, med hänvisning till barn som lever med skyddad identitet. Han reserverade sig muntligen när nämnden i stället sa ja. M, S och SD yrkade bifall. Ingen votering behövdes.",
+      "resultat": "Beslutad 2026-06-08, § 49: initiativärendet bifallet, med tillägget att alla vårdnadshavare ska bjudas in till skolans egna arrangemang för deras barn.",
+      "kalla_url": "/kallor/protokoll/Protokoll_BUN_260608.pdf",
+      "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2026-06-08, § 49, med yrkanden och V:s reservation (PDF).",
+      "urvalsmotivering": "Färskt beslut från juni 2026 som rör de flesta barnfamiljer i kommunen, med en ovanlig konfliktlinje: V ensamt mot M, L, C, KD, S och SD — och V:s motivering, skyddade identiteter, är protokollförd."
+    },
+    {
+      "typ": "arende",
+      "organ": "Barn- och utbildningsnämnden",
+      "titel": "AV Media-utträdet: sex av nio ledamöter reserverade sig, beslutet stod fast",
+      "datum": "2024-03-18",
+      "antagen_paragraf": "§ 25",
+      "politikomrade": "Skola",
+      "forslagsstallare": "Remiss från kommunstyrelsens arbetsutskott",
+      "beskrivning": "Nämnden ställde sig bakom att Höör lämnar kommunalförbundet AV Media. Kommunen betalade för två tjänster med i stort sett samma strömmade skolinnehåll: AV Media för cirka 640 000 kronor om året och Nationalencyklopedin för cirka 100 000. Att lämna AV Media skulle spara runt 540 000 kronor per år utan sämre utbud, enligt yttrandet. Bara SD yrkade bifall, och ingen begärde votering. Men efter beslutet reserverade sig sex av nämndens nio ledamöter. S gjorde det skriftligt — tjänsteskrivelsen kallades ofullständig. Två från M, två från V och KD:s ledamot gjorde det muntligt. En M-ledamot lämnade också en anteckning till protokollet: frågan borde ha avgjorts av nämnden själv, inte som remissvar, och efter mer dialog. Två ledamöter var jäviga och ersattes under paragrafen. Klubban gick under tiden till vice ordföranden.",
+      "resultat": "Beslutad 2024-03-18, § 25: nämnden antog yttrandet som ställer sig bakom utträde ur AV Media och skickade det till kommunstyrelsen.",
+      "kalla_url": "/kallor/protokoll/Protokoll_BUN_240318.pdf",
+      "kalla_beskrivning": "Barn- och utbildningsnämndens protokoll 2024-03-18, § 25, med reservationer, protokollsanteckning och jävsnoteringar (PDF).",
+      "urvalsmotivering": "Materialets enda ärende där en majoritet av ledamöterna reserverade sig mot ett beslut som ändå gäller. En reservation stoppar inget när ingen begär votering. Ärendet visar hur nämndbeslut går till, utöver sakfrågan om 540 000 kronor per år."
+    },
+    {
+      "typ": "arende",
+      "organ": "VA-nämnden",
+      "titel": "VA-nämndens enda votering: konferensresan som röstades ner",
+      "datum": "2025-06-13",
+      "antagen_paragraf": "§ 53",
+      "politikomrade": "Vatten och avlopp",
+      "forslagsstallare": "Stefan Lissmark (S), yrkande",
+      "beskrivning": "VA-nämndens ordförande Lars-Håkan Persson (M) ville åka på branschmässan Vatten2025 i Göteborg. Stefan Lissmark (S) yrkade att nämnden skulle stå för resan, mot en skriftlig rapport efteråt. Lars-Göran Ritmer (M) yrkade avslag. Voteringen slutade 2–3. För: Lissmark (S) och Stefan Liljenberg (SD). Emot: Ritmer (M), Alve Andersson (C) och Christina Nilsson (SD). SD:s två ledamöter röstade alltså åt olika håll. M röstade ner sin egen ordförande, som inte deltog i beslutet. Lissmark reserverade sig skriftligen. Där lyfte han också en olöst fråga: vem betalar de förtroendevaldas kurser och resor i VA-nämnden — VA-kollektivet eller skattebetalarna? Det här är nämndens enda votering med namngiven röstlängd i de protokoll som publicerats sedan nämnden kom till 2025.",
+      "resultat": "Beslutad 2025-06-13, § 53: nämnden skickar ingen representant till Vatten2025.",
+      "rostning": [
+        {
+          "datum": "2025-06-13",
+          "paragraf": "§ 53",
+          "fraga": "Skulle nämnden bekosta ordförandens deltagande på branschmässan Vatten2025?",
+          "ja_betyder": "Bifall till Stefan Lissmarks (S) yrkande: ordföranden deltar, nämnden bekostar resa och övernattning, och en skriftlig redogörelse lämnas efteråt.",
+          "nej_betyder": "Avslag på Stefan Lissmarks (S) yrkande.",
+          "ja": 2,
+          "nej": 3,
+          "avstar": 0,
+          "utfall": "Avslag. Ordföranden deltog inte i beslutet.",
+          "per_parti": {
+            "m": { "ja": 0, "nej": 1, "avstar": 0 },
+            "c": { "ja": 0, "nej": 1, "avstar": 0 },
+            "s": { "ja": 1, "nej": 0, "avstar": 0 },
+            "sd": { "ja": 1, "nej": 1, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_VAN_250613.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_VAN_250613.pdf",
+      "kalla_beskrivning": "VA-nämndens protokoll 2025-06-13, § 53, med namngiven röstlängd (PDF).",
+      "kalla_url_2": "/kallor/reservationer/reservation_S_250613_par53.pdf",
+      "kalla_url_2_beskrivning": "Stefan Lissmarks (S) skriftliga reservation, bilaga § 53 (PDF).",
+      "urvalsmotivering": "Litet i pengar, men det enda voteringsärendet i VA-nämnden — och materialets enda där ett partis båda ledamöter röstar åt olika håll samtidigt som M röstar mot sin egen ordförande. Visar att blocken inte styr röstningen i de små nämnderna. Reservationens fråga om vem som betalar är dessutom principiell för VA-taxan."
     }
   ],
   "exkluderade_kandidater_not": "En tidigare version av den här noten uppgav att Vänsterpartiets motion om ökade budgetramar för barn- och utbildningsnämnden och socialnämnden (fördelning 5:2, Olle Krabbe m.fl.) inte kunnat källbeläggas i något officiellt beslutsdokument. Det stämmer inte längre: sedan samtliga fullmäktigeprotokoll hämtats ur kommunens mötesportal är motionen fullt dokumenterad — den anmäldes vid KF 2023-10-11 (§ 113) och avslogs vid KF 2023-12-06 (§ 149) efter omröstning med upprop, där S, V och MP röstade för motionen och alla övriga emot. Ärendet är ändå inte medtaget i listan: budgetramarna för 2024 täcks redan av budgetgenomgången (se /budget/ och oppositionsbudgetarna), och listan omfattar 15 ärenden, vilket fyller instruktionens ram om 10-15. En läsare som vill granska voteringen hittar den i protokollet för 2023-12-06 — observera att protokollet där innehåller ett skrivfel: båda röstlängderna rubriceras 'röstar JA', men den andra listan (S-, V- och MP-ledamöterna) är uppenbart nej-rösterna. Ytterligare ett dussintal verifierade voteringar 2023-2026 är medvetet inte medtagna; urvalsprincipen redovisas på metodiksidan."
