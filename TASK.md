@@ -125,6 +125,23 @@ Gemini körde punkt 14–18 enligt `PROMPT_GEMINI_14-18.md` (commit `15cddda`). 
 
 ---
 
+## Fabel-granskning 2 (2026-08-17) — punkt 30
+
+Underlag: `FABEL_GRANSKNING_2_2026-08-17.md` (full revision av UI/UX och målgruppsanpassning, samma dag som första granskningens åtgärder genomförts). Kvitto i §1: hela första granskningens P1 + nästan hela P2 verifierade genomförda i byggd HTML; länkkontroll 0 fel på hela sajten.
+
+- [x] **30. P1 genomförd 2026-08-17** (commits `47fd61b`–`b7f2572`):
+  1. Stale "listan omfattar 15 ärenden"-noten i `arenden.json` omskriven utan antalsuppgifter som kan ruttna.
+  2. `/historiska-val/` vänd: datadriven lead (största parti/största skifte räknas ur `historiska_val.json`), JSON-fältnamnen borta ur läsartext, `metod_not` omskriven, avstämningsnoterna i `<details>` — noll öppna not-boxar kvar.
+  3. Ärendefiltret flyttat ovanför 35-radersindexet på `/arenden/`.
+  4. Skip-länk ("Hoppa till innehållet") på alla sidor, synlig endast vid tangentbordsfokus.
+  5. 404-sidans "Kurerad" ersatt + max en Om urvalet-länk i brödtext per sida (svep över alla 29 sidor: ingen över gränsen).
+- [ ] **30b. P2 kvar** (före 13 september, se granskningens §5): TOC på `/om-urvalet/` + KS-dubbleringen, årsgruppering i ärendeindexet, `/valkompass/`-beslutet (länka eller dokumentera som delningssida), `.table-scroll` på tre tabeller, `lix.mjs`-metodnoten (räkna bort tabeller/citat så mätaren blir användbar som grind).
+- [ ] **30c. P3 kvar:** dela `trygghet-migration`-frågan, sidfotens dubbellänkar, "Löftet och pengarna" per parti.
+
+**Byggmiljönot:** `astro build` kraschar nu ofta i allra sista städsteget (EBUSY på `dist/.prerender` — Dropbox låser färska filer; libuv-assertion vid exit). **Alla 29 sidor genereras korrekt ändå**; bara sitemap-steget uteblir lokalt. Deployen påverkas inte — Docker-bygget kör `npm run build` i containern. `dist` och `.astro` är markerade `com.dropbox.ignored` (NTFS-ström) 2026-08-17; hjälper det inte, verifiera med `--outDir` utanför Dropbox.
+
+---
+
 ## Strukna punkter
 
 - [–] **Geminis punkt 5: accordions i jämförelsevyn.** Bygger på en felaktig premiss. `/jamforelse/` innehåller ingen tabell — det är en `compare-grid` av kort som redan kollapsar till en kolumn på mobil. Sajtens enda horisontellt scrollande tabeller ligger på `/budget/`, `/historiska-val/` och `/arenden/`. **Rör inte jämförelsevyn.** Kvarstående åtgärd var den ursprungliga: sänk `minmax(18rem, 1fr)` till 15rem för skärmar under 350 px — **åtgärdad 2026-08-17** (media query i `global.css`).
