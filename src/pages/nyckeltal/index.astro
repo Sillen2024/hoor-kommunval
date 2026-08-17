@@ -269,6 +269,36 @@ const forskolaUnderAllaSnitt = [
   snitt("N11024", gruppFor("N11024").medlemmar, huvudar).varde,
 ].filter((s) => s !== null && (forskolaHoor ?? 0) < s).length;
 
+// ——— Äldreomsorgen ————————————————————————————————————————————————————
+//
+// Den enda verksamheten som ligger tydligt över sin referenskostnad, och den
+// enda där sidan har ett kvalitetsmått som mäter samma sak som pengarna: hur
+// länge den som beviljats plats får vänta. De två talen står ihop just därför
+// — ett kostnadsmått ensamt säger inget om vad kommuninvånaren får.
+const VANTETID = "U23401";
+
+const aldreHoor = varde("N20900", HÖÖR, huvudar);
+const aldreMnkr = varde("N20029", HÖÖR, huvudar);
+const aldrePlats = placering("N20900", skane, huvudar);
+const aldreSkaneSnitt = snitt("N20900", skane, huvudar);
+
+// Väntetiden har egen insamlingstakt och saknas för flera kommuner varje år,
+// därför läses både året och antalet kommuner ur datan i stället för att
+// skrivas ut. Höörs senaste år kan vara ett annat än huvudåret.
+const vantHoor = varde(VANTETID, HÖÖR, huvudar);
+const vantPlats = placering(VANTETID, skane, huvudar);
+const vantSkane = snitt(VANTETID, skane, huvudar);
+const vantSenasteAr = [...koladaAr].reverse().find((a) => a > huvudar && varde(VANTETID, HÖÖR, a) !== null);
+const vantSenaste = vantSenasteAr ? varde(VANTETID, HÖÖR, vantSenasteAr) : null;
+const vantSenastePlats = vantSenasteAr ? placering(VANTETID, skane, vantSenasteAr) : null;
+const vantSenasteSkane = vantSenasteAr ? snitt(VANTETID, skane, vantSenasteAr) : null;
+
+// Grannkommunerna med värde samma år — den jämförelse en Höörsbo faktiskt gör.
+const vantGrannar = grannar
+  .map((k) => ({ namn: kommunnamn[k] ?? k, v: varde(VANTETID, k, huvudar) }))
+  .filter((p): p is { namn: string; v: number } => p.v !== null)
+  .sort((a, b) => a.v - b.v);
+
 // Överlapp mellan Skåne och grupperna: hur många av gruppmedlemmarna som
 // också ligger i Skåne. Förklarar varför de tre referenserna skiljer sig.
 const gruppKoder = [...new Set(koladaData.grupper.flatMap((g) => g.medlemmar))];
@@ -359,6 +389,7 @@ const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "nume
     <nav class="sidnav" aria-label="Innehåll på sidan">
       <ul>
         <li><a href="#forskola">Förskolan</a></li>
+        <li><a href="#aldreomsorg">Äldreomsorgen och väntetiden</a></li>
         <li><a href="#skane">Höör i Skåne</a></li>
         <li><a href="#grannar">Höör mot grannkommunerna</a></li>
         <li><a href="#liknande">Höör mot liknande kommuner</a></li>
@@ -398,8 +429,8 @@ const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "nume
         den enskilda kommunens struktur — åldersfördelning, tätortsgrad, socioekonomi, geografi. Måttet
         visar var Höör ligger i förhållande till hur andra kommuner gör — inte i förhållande till vad som
         vore rätt. Det betyder också att invändningen "men vi har ju en annan befolkning" redan är
-        besvarad: att Höör har många äldre höjer referenskostnaden för äldreomsorgen, att kommunen har få
-        små barn sänker den för förskolan. En avvikelse är det som återstår <em>efter</em> att strukturen
+        besvarad: att en kommun har många äldre höjer dess referenskostnad för äldreomsorgen, att den har
+        få små barn sänker den för förskolan. En avvikelse är det som återstår <em>efter</em> att strukturen
         räknats bort. Det gäller åt båda hållen: att Höör har få barn kan inte förklara ett minus, för
         det är redan inräknat. Ett minus betyder att Höör lägger mindre än vad andra i snitt lägger på en
         befolkning som Höörs. Om det är effektivitet eller besparing säger måttet inte — därför står
@@ -621,6 +652,71 @@ const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "nume
           Frågan till dig: vad väger tyngst — lägre skatt, eller mer resurser per förskolebarn?
         </p>
       </div>
+    </section>
+
+    <section>
+      <h2 id="aldreomsorg">Äldreomsorgen kostar mer — går det snabbare att få plats?</h2>
+      <p>
+        <strong>Nej. Höör lägger mer än sin referenskostnad på äldreomsorgen, men väntetiden till
+        särskilt boende är längre än i Skåne.</strong>
+      </p>
+      {aldreHoor !== null && (
+        <p>
+          Äldreomsorgen är den verksamhet där Höör ligger tydligast <em>över</em> sin referenskostnad:
+          {" "}{abs(aldreHoor)} procent {huvudar}, eller {abs(aldreMnkr)} miljoner kronor
+          {" "}{riktning(aldreMnkr)} referenskostnaden. Skånesnittet var {sv(aldreSkaneSnitt.varde)}
+          {" "}procent, och Höör låg på plats {aldrePlats?.plats} av {aldrePlats?.av} räknat från lägst.
+          Åldersstrukturen är redan borträknad — det är vad referenskostnaden gör — så plusset betyder att
+          Höör lägger mer än andra kommuner lägger på en befolkning som Höörs.
+        </p>
+      )}
+
+      <h3>Vad får den som söker plats?</h3>
+      <p>
+        Ett kostnadsmått säger inget om vad kommuninvånaren får. Väntetiden gör det: så många dagar tog det
+        i snitt från ansökan till det första erbjudna inflyttningsdatumet, för dem som beviljats plats.
+      </p>
+      <Jamforelse
+        rubrik={`Väntetid till särskilt boende, ${huvudar}`}
+        enhet="dagar"
+        decimaler={0}
+        rader={rader(VANTETID, skane, huvudar, true, `Snitt Skåne (${vantSkane.antal} kommuner)`).filter(
+          (r) => r.varde !== null,
+        )}
+        beskrivning="Sorterad från kortast till längst väntetid. Kommuner som inte rapporterat värdet för året saknas i listan."
+        kallaUrl={kallaUrl([VANTETID], skane, [huvudar])}
+        kallaText={`Källa: Kolada — ${VANTETID} för Skånes kommuner ${huvudar}`}
+        bearbetning="snittraden är uträknad här"
+      />
+      {vantHoor !== null && (
+        <p>
+          Höör låg på {sv(vantHoor, 0)} dagar {huvudar}, mot ett Skånesnitt på {sv(vantSkane.varde, 0)}
+          {" "}dagar — plats {vantPlats?.plats} av {vantPlats?.av} räknat från kortast väntetid.
+          {vantGrannar.length > 0 && (
+            <>
+              {" "}Bland grannkommunerna samma år:
+              {" "}{vantGrannar.map((g) => `${g.namn} ${sv(g.v, 0)}`).join(", ")} dagar.
+            </>
+          )}
+          {vantSenaste !== null && (
+            <>
+              {" "}För {vantSenasteAr} är Höörs värde {sv(vantSenaste, 0)} dagar, plats
+              {" "}{vantSenastePlats?.plats} av {vantSenastePlats?.av}, mot ett snitt på
+              {" "}{sv(vantSenasteSkane?.varde ?? null, 0)} dagar.
+            </>
+          )}
+        </p>
+      )}
+      <p class="updated">
+        Väntetiden mäts på ett annat sätt än talen ovan. Den bygger på kommunernas egen inrapportering och
+        avser ansökningar som avslutades under första halvåret. Flera kommuner saknas varje år, och därför
+        är antalet kommuner i "plats av" lägre här. Kolada avråder själv från att jämföra medelvärdena
+        innan årets insamling är klar. Ett år med få platser kan svänga på enstaka ärenden.
+      </p>
+      <p>
+        Frågan till dig: räcker det att äldreomsorgen kostar mer än i jämförbara kommuner, om kön till
+        särskilt boende ändå är längre?
+      </p>
     </section>
 
     <section>
