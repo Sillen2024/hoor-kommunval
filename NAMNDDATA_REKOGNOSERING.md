@@ -4,9 +4,10 @@
 > (commits `688e263` + `5a7c416`). Senare samma dag beslutade Jonas att även
 > NKAF:s tre voteringsärenden skulle in (→ 26 ärenden totalt på /arenden/) och
 > att TTN:s bygglov förblir uteslutna (myndighetsutövning mot enskilda).
-> Detaljer i TASK.md punkt 21. KS-rekognosering körd samma dag: 19 av
-> kommunstyrelsens protokoll innehåller voteringar, ~29 begärda omröstningar —
-> KS är ett eget punkt-19-stort jobb om det ska göras.
+> Detaljer i TASK.md punkt 21. **KS-delen genomförd senare samma dag** (Jonas
+> beslut) — 27 voteringar extraherade, 9 nya ärenden + 6 komplement, se TASK.md
+> punkt 29. Kvar ohämtat: arbetsutskotten, bolagsstyrelserna, TTN:s bygglov
+> (uteslutna med avsikt) och KS-ärendet om "Mossen 1" (§ 249, 2025-12-02).
 
 **Utförd:** 2026-08-17. Samtliga protokoll från de sex facknämnderna hämtade via
 Ciceron-API:et (samma flöde som `scripts/hamta-protokoll.py`, se
