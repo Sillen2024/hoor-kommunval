@@ -1,5 +1,9 @@
 # Nämnddata — rekognosering för TASK punkt 21
 
+> **Utfall 2026-08-17:** Jonas valde urvalet "kärnfynden". 8 ärenden inlagda på
+> sajten (commits `688e263` + `5a7c416`), detaljer i TASK.md punkt 21. NKAF:s
+> voteringar och TTN:s bygglov ligger kvar här som ohämtat urval.
+
 **Utförd:** 2026-08-17. Samtliga protokoll från de sex facknämnderna hämtade via
 Ciceron-API:et (samma flöde som `scripts/hamta-protokoll.py`, se
 KALLLUCKOR-RAPPORT.md §1) och genomsökta efter voteringar, reservationer och
