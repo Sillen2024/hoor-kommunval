@@ -1,6 +1,6 @@
 {
   "senast_uppdaterad": "2026-08-17",
-  "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa. Sedan 2026-08-17 ingår även ett urval beslut från facknämnderna (barn- och utbildningsnämnden, socialnämnden och VA-nämnden), hämtade och verifierade på samma sätt som fullmäktigeprotokollen. Samtliga sex facknämnders protokoll 2023–2026 har genomsökts. Alla voteringar med namngiven röstlängd i de tre nämnda nämnderna är med. Två avgränsningar är gjorda: tillstånds- och tillsynsnämndens två bygglovsvoteringar har utelämnats eftersom de rör myndighetsutövning mot enskilda, och voteringarna i nämnden för kultur, arbete och folkhälsa (förenings- och projektbidrag samt en procedurfråga) ingår inte i denna första omgång. Nämndernas röstsiffror redovisas per ärende med namngiven röstlängd i källan; de räknas inte in i partisidornas fullmäktigestatistik, eftersom nämndgrupperna är för små för statistik.",
+  "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa. Sedan 2026-08-17 ingår även ett urval beslut från facknämnderna (barn- och utbildningsnämnden, socialnämnden och VA-nämnden), hämtade och verifierade på samma sätt som fullmäktigeprotokollen. Samtliga sex facknämnders protokoll 2023–2026 har genomsökts. Alla voteringar med namngiven röstlängd i de tre nämnda nämnderna är med. Två avgränsningar är gjorda: tillstånds- och tillsynsnämndens två bygglovsvoteringar har utelämnats eftersom de rör myndighetsutövning mot enskilda, medan nämnden för kultur, arbete och folkhälsas tre voteringsärenden lades till 2026-08-17 i en andra omgång. Nämndernas röstsiffror redovisas per ärende med namngiven röstlängd i källan; de räknas inte in i partisidornas fullmäktigestatistik, eftersom nämndgrupperna är för små för statistik.",
   "arenden": [
     {
       "typ": "arende",
@@ -771,6 +771,137 @@
       "kalla_url_2": "/kallor/reservationer/reservation_S_250613_par53.pdf",
       "kalla_url_2_beskrivning": "Stefan Lissmarks (S) skriftliga reservation, bilaga § 53 (PDF).",
       "urvalsmotivering": "Litet i pengar, men det enda voteringsärendet i VA-nämnden — och materialets enda där ett partis båda ledamöter röstar åt olika håll samtidigt som M röstar mot sin egen ordförande. Visar att blocken inte styr röstningen i de små nämnderna. Reservationens fråga om vem som betalar är dessutom principiell för VA-taxan."
+    },
+    {
+      "typ": "arende",
+      "organ": "Nämnden för kultur, arbete och folkhälsa",
+      "titel": "Maglasäte Musikscen nekades projektbidrag på 120 000",
+      "datum": "2024-02-27",
+      "antagen_paragraf": "§ 9",
+      "politikomrade": "Kultur och fritid",
+      "forslagsstallare": "Musikmakarna Edgren HB (ansökan om projektbidrag)",
+      "beskrivning": "Maglasätefestivalen och sex konsertkvällar om året drivs av Musikmakarna Edgren HB. Bolaget sökte 120 000 kronor i projektbidrag från kommunen. Nämnden sa nej. M och KD:s skäl enligt protokollet: sökanden är inte en ideell förening, och pengarna ryms inte i nämndens budget. MP ville bevilja hälften. S ville i stället skicka frågan till kommunstyrelsen, för att se om pengar fanns där — och fick stöd av både V och L. Huvudvoteringen slutade 5–4: M, KD och SD för avslag; S, L, V och MP emot. L röstade alltså mot styrets övriga partier. S och V aviserade skriftliga reservationer och MP reserverade sig muntligen. I mötesportalen finns bara V:s bilaga publicerad. V skriver där att nämnden inte ens borde ha fått ärendet på sitt bord, eftersom den bara hanterar föreningar — och pekar på kommunens inflyttningsmål: 250 nya invånare om året, mot 79 året innan.",
+      "resultat": "Beslutad 2024-02-27, § 9: ansökan om projektbidrag avslås.",
+      "rostning": [
+        {
+          "datum": "2024-02-27",
+          "paragraf": "§ 9",
+          "fraga": "Vilket yrkande skulle bli motförslag i huvudvoteringen — MP:s halva bidrag eller S:s väg via kommunstyrelsen?",
+          "ja_betyder": "Arno Werners (MP) yrkande blir motförslag: ansökan beviljas med 50 procent.",
+          "nej_betyder": "Stefan Lissmarks (S) yrkande blir motförslag: ärendet skickas till kommunstyrelsen för att undersöka om medel kan bidras därifrån.",
+          "ja": 1,
+          "nej": 2,
+          "avstar": 4,
+          "utfall": "S:s yrkande blev motförslag. Protokollet redovisar bara sju av nämndens nio ledamöter i den här omröstningen.",
+          "per_parti": {
+            "m": { "ja": 0, "nej": 1, "avstar": 1 },
+            "kd": { "ja": 0, "nej": 0, "avstar": 1 },
+            "s": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 1, "nej": 0, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 0, "avstar": 2 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_NKAF_240227.pdf"
+        },
+        {
+          "datum": "2024-02-27",
+          "paragraf": "§ 9",
+          "fraga": "Skulle ansökan avslås, eller skickas till kommunstyrelsen?",
+          "ja_betyder": "Bifall till arbetsutskottets förslag: ansökan avslås.",
+          "nej_betyder": "Bifall till Stefan Lissmarks (S) yrkande: ärendet skickas till kommunstyrelsen för att undersöka om medel kan bidras därifrån.",
+          "ja": 5,
+          "nej": 4,
+          "avstar": 0,
+          "utfall": "Avslag.",
+          "per_parti": {
+            "m": { "ja": 2, "nej": 0, "avstar": 0 },
+            "l": { "ja": 0, "nej": 1, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 1, "avstar": 0 },
+            "v": { "ja": 0, "nej": 1, "avstar": 0 },
+            "mp": { "ja": 0, "nej": 1, "avstar": 0 },
+            "sd": { "ja": 2, "nej": 0, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_NKAF_240227.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_NKAF_240227.pdf",
+      "kalla_beskrivning": "Nämndens protokoll 2024-02-27, § 9, med två namngivna röstlängder (PDF).",
+      "kalla_url_2": "/kallor/reservationer/reservation_V_240227_par9.pdf",
+      "kalla_url_2_beskrivning": "Vänsterpartiets skriftliga reservation, bilaga § 9 (PDF).",
+      "urvalsmotivering": "Nämndmaterialets mest splittrade votering. Fyra linjer i samma ärende: avslå, halva bidraget, eller via kommunstyrelsen. L röstade mot styrets övriga partier. Det är också MP:s enda protokollförda yrkande i en nämnd i materialet — MP sitter varken i skolnämnden eller socialnämnden."
+    },
+    {
+      "typ": "arende",
+      "organ": "Nämnden för kultur, arbete och folkhälsa",
+      "titel": "Operan Abjekt fick 10 000 — SD ville vänta på ekonomisk redovisning",
+      "datum": "2024-05-07",
+      "antagen_paragraf": "§ 32",
+      "politikomrade": "Kultur och fritid",
+      "forslagsstallare": "Föreningen Alltet (ansökan om bidrag)",
+      "beskrivning": "Den ideella kulturföreningen Alltet beviljades 10 000 kronor för att sätta upp operan Abjekt på Kulturhuset Anders hösten 2024. Orkestern Höör Barock och skådespelare från Höör medverkar. SD ville återremittera ärendet för att först få en ekonomisk redogörelse. Voteringen gällde därför om ärendet skulle avgöras samma dag. Den slutade 7–2: alla partier utom SD ville avgöra direkt. Därefter beviljades bidraget utan votering. SD lämnade en anteckning till protokollet om att det utskickade underlaget var bristfälligt. Jämfört med Maglasäte-ärendet tre månader tidigare gick det här åt andra hållet: sökanden är en ideell förening, och beloppet var en tolftedel så stort.",
+      "resultat": "Beslutad 2024-05-07, § 32: Föreningen Alltets ansökan beviljas med 10 000 kronor.",
+      "rostning": [
+        {
+          "datum": "2024-05-07",
+          "paragraf": "§ 32",
+          "fraga": "Skulle ärendet avgöras samma dag, eller återremitteras för en ekonomisk redogörelse?",
+          "ja_betyder": "Bifall till Ingemar Kristenssons (C) och Johan Hårlemans (M) yrkande: ärendet avgörs vid dagens sammanträde.",
+          "nej_betyder": "Bifall till Jack Ljungbergs (SD) yrkande: ärendet återremitteras till förvaltningen för att underlaget ska kompletteras med en ekonomisk redogörelse.",
+          "ja": 7,
+          "nej": 2,
+          "avstar": 0,
+          "utfall": "Ärendet avgjordes samma dag. Bidraget beviljades sedan utan votering.",
+          "per_parti": {
+            "m": { "ja": 2, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 1, "nej": 0, "avstar": 0 },
+            "v": { "ja": 1, "nej": 0, "avstar": 0 },
+            "mp": { "ja": 1, "nej": 0, "avstar": 0 },
+            "sd": { "ja": 0, "nej": 2, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_NKAF_240507.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_NKAF_240507.pdf",
+      "kalla_beskrivning": "Nämndens protokoll 2024-05-07, § 32, med namngiven röstlängd och SD:s protokollsanteckning (PDF).",
+      "urvalsmotivering": "Det enda ärendet i nämndmaterialet där SD stod ensamt mot samtliga övriga partier. Tillsammans med Maglasäte-ärendet visar det hur nämnden hanterade två olika bidragsansökningar: en ideell förening med litet belopp beviljades, ett handelsbolag som sökte tolv gånger mer fick nej."
+    },
+    {
+      "typ": "arende",
+      "organ": "Nämnden för kultur, arbete och folkhälsa",
+      "titel": "Initiativärendet om ungas förebyggande arbete: svar på fyra av fem frågor",
+      "datum": "2023-04-25",
+      "antagen_paragraf": "§ 34",
+      "politikomrade": "Folkhälsa och förebyggande arbete",
+      "forslagsstallare": "Jill Andersson (S), initiativärende; Stefan Lissmark (S) tog över som avsändare",
+      "beskrivning": "Jill Andersson (S) begärde i ett initiativärende en rapport om kommunens nya arbetssätt för det förebyggande arbetet med unga i åldern 12–17. Hon ställde fem frågor. Bland annat: vad kostar den nya strategin, när är den på plats — och har verksamheten märkt någon skillnad sedan fältverksamheten lades ner? Fråga 1 gällde vilka tjänstemän som ingått i arbetsgruppen. C yrkade att förvaltningen skulle svara på frågorna 2–5, och fick med sig M, KD och SD. S och V ville bifalla det liggande förslaget. Voteringen slutade 6–3. Beslutet blev att förvaltningen svarar på fyra av de fem frågorna. Frågan om vilka tjänstemän som deltagit ingår inte. Andersson hade lämnat nämnden när ärendet togs upp, så Stefan Lissmark (S) tog över som avsändare.",
+      "resultat": "Beslutad 2023-04-25, § 34: ärendet överlämnas till förvaltningen att svara på fråga 2–5.",
+      "rostning": [
+        {
+          "datum": "2023-04-25",
+          "paragraf": "§ 34",
+          "fraga": "Skulle förvaltningen svara på frågorna 2–5, eller skulle det liggande förslaget bifallas?",
+          "ja_betyder": "Bifall till Ingemar Kristenssons (C) yrkande: förvaltningen svarar på frågorna 2–5.",
+          "nej_betyder": "Bifall till Stefan Lissmarks (S) yrkande: det liggande förslaget bifalls.",
+          "ja": 6,
+          "nej": 3,
+          "avstar": 0,
+          "utfall": "Förvaltningen fick uppdraget att svara på frågorna 2–5.",
+          "per_parti": {
+            "m": { "ja": 2, "nej": 0, "avstar": 0 },
+            "c": { "ja": 1, "nej": 0, "avstar": 0 },
+            "kd": { "ja": 1, "nej": 0, "avstar": 0 },
+            "s": { "ja": 0, "nej": 1, "avstar": 0 },
+            "v": { "ja": 0, "nej": 2, "avstar": 0 },
+            "sd": { "ja": 2, "nej": 0, "avstar": 0 }
+          },
+          "kalla_protokoll": "/kallor/protokoll/Protokoll_NKAF_230425.pdf"
+        }
+      ],
+      "kalla_url": "/kallor/protokoll/Protokoll_NKAF_230425.pdf",
+      "kalla_beskrivning": "Nämndens protokoll 2023-04-25, § 34, med namngiven röstlängd (PDF).",
+      "urvalsmotivering": "Ett exempel på oppositionens verktyg i nämnderna: initiativärendet. Skiljelinjen — styret och SD mot S och V — gällde inte sakfrågan utan hur stor del av den som skulle besvaras. Ärendet dokumenterar också att fältverksamheten lagts ner, en uppgift som annars inte syns i sajtens material."
     }
   ],
   "exkluderade_kandidater_not": "En tidigare version av den här noten uppgav att Vänsterpartiets motion om ökade budgetramar för barn- och utbildningsnämnden och socialnämnden (fördelning 5:2, Olle Krabbe m.fl.) inte kunnat källbeläggas i något officiellt beslutsdokument. Det stämmer inte längre: sedan samtliga fullmäktigeprotokoll hämtats ur kommunens mötesportal är motionen fullt dokumenterad — den anmäldes vid KF 2023-10-11 (§ 113) och avslogs vid KF 2023-12-06 (§ 149) efter omröstning med upprop, där S, V och MP röstade för motionen och alla övriga emot. Ärendet är ändå inte medtaget i listan: budgetramarna för 2024 täcks redan av budgetgenomgången (se /budget/ och oppositionsbudgetarna), och listan omfattar 15 ärenden, vilket fyller instruktionens ram om 10-15. En läsare som vill granska voteringen hittar den i protokollet för 2023-12-06 — observera att protokollet där innehåller ett skrivfel: båda röstlängderna rubriceras 'röstar JA', men den andra listan (S-, V- och MP-ledamöterna) är uppenbart nej-rösterna. Ytterligare ett dussintal verifierade voteringar 2023-2026 är medvetet inte medtagna; urvalsprincipen redovisas på metodiksidan."
