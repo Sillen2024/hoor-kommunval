@@ -8,6 +8,9 @@
       "mandat_2022": 11,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://hoor.moderatweb.se/",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/mihoor/" }
+      ],
       "logo": "/logos/m.svg",
       "logo_kalla": "Wikimedia Commons, File:M v1.svg (PD-textlogo)",
       "manifest_status": "sociala_medier",
@@ -169,6 +172,10 @@
       "mandat_2022": 2,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://hoor.liberalerna.se/",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/liberalerna.hoor/" },
+        { "plattform": "Instagram", "url": "https://www.instagram.com/liberalernaihoor/" }
+      ],
       "logo": "/logos/l.svg",
       "logo_kalla": "Wikimedia Commons, File:L v1.svg (PD-textlogo/PD-self)",
       "manifest_status": "hittat",
@@ -228,6 +235,9 @@
       "mandat_2022": 2,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://www.centerpartiet.se/centerpartiet-lokalt/skane/hoor",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/centerpartiethoor/" }
+      ],
       "logo": "/logos/c.svg",
       "logo_kalla": "Wikimedia Commons, File:C v1.svg (PD-textlogo)",
       "manifest_status": "ersatt",
@@ -294,6 +304,10 @@
       "mandat_2022": 8,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://www.socialdemokraternahoor.se/",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/socialdemokraternaihoor/" },
+        { "plattform": "Instagram", "url": "https://www.instagram.com/socialdemokraternahoor/" }
+      ],
       "logo": "/logos/s.svg",
       "logo_kalla": "Wikimedia Commons, File:2022 Stockholm City Council election (cropped).svg (CC BY 4.0, av Quinnnnnby)",
       "manifest_status": "hittat",
@@ -537,6 +551,9 @@
       "mandat_2022": 9,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://hoor.sd.se/",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/Hoorsd/" }
+      ],
       "logo": "/logos/sd.svg",
       "logo_kalla": "Wikimedia Commons, File:Sweden Democrats textlogo.svg (PD-textlogo)",
       "manifest_status": "ersatt",
@@ -580,6 +597,10 @@
       "mandat_2022": 3,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://hoor.vansterpartiet.se/",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/vansterpartiethoor/" },
+        { "plattform": "Instagram", "url": "https://www.instagram.com/vansterpartiet_hoor/" }
+      ],
       "logo": "/logos/v.svg",
       "logo_kalla": "Wikimedia Commons, File:Vänsterpartiet logo.svg (PD-textlogo)",
       "manifest_status": "hittat",
@@ -633,6 +654,9 @@
       "mandat_2022": 2,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://www.mp.se/hoor/",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/Mphoor/" }
+      ],
       "logo": "/logos/mp.svg",
       "logo_kalla": "mp.se (partiets egen officiella webbplats)",
       "manifest_status": "hittat",
@@ -691,6 +715,9 @@
       "mandat_2022": 2,
       "kalla_mandat": "https://www.hoor.se/kommun-politik/kommunfakta/valresultat-och-mandatfordelning/",
       "hemsida": "https://med.se",
+      "sociala_medier_hoor": [
+        { "plattform": "Facebook", "url": "https://www.facebook.com/MEDMittskane/" }
+      ],
       "logo": "/logos/medborgerlig-samling.png",
       "logo_kalla": "Medborgerlig Samlings officiella Facebook-sida (partiets logotyp)",
       "manifest_status": "ersatt",

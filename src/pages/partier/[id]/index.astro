@@ -164,6 +164,15 @@ const utfallTeman = TEMA_ORDNING.filter(
     </p>
   )}
 
+  {party.sociala_medier_hoor && party.sociala_medier_hoor.length > 0 && (
+    <p>
+      <strong>{party.namn} i Höör på sociala medier:</strong>{" "}
+      {party.sociala_medier_hoor.map((sm: { plattform: string; url: string }) => (
+        <a class="source-link" href={sm.url} target="_blank" rel="noopener noreferrer">{sm.plattform}</a>
+      ))}
+    </p>
+  )}
+
   <h2>Valmanifest 2026</h2>
 
   {party.manifest_status === "saknas" ? (
