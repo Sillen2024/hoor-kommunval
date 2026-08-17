@@ -3,8 +3,9 @@
 **Skapad:** 2026-08-15
 **Motsvarar:** TASK.md punkt 20 (D7), `OPUS_GRANSKNING_2026-08-15.md` §D7
 **Status:** etapp 0, 1 och 2 klara 2026-08-16 (commit `fad5e40`, `1fadfb7`, `90ce9c3`,
-`5542b38`, `3824330`). Punkt 20 i TASK.md är därmed avklarad. Etapp 3 och 4 är
-frivillig fortsättning, inte krav för lansering.
+`5542b38`, `3824330`). Punkt 20 i TASK.md är därmed avklarad. **Etapp 3 klar
+2026-08-17** (commit `ff859b8`). Etapp 4 avvaktas enligt Jonas beslut 2026-08-17
+— spärren i 4.3 väger tyngre än nyttan så nära valet.
 
 > Den här filen är trådhållaren för Kolada-arbetet. Allt som verifierats mot API:et
 > står under §2–§4 så att ingen session behöver upptäcka det på nytt. Kryssa av i §6.
@@ -311,21 +312,35 @@ färg, bara Höörs är accentfärgad. Att färga negativa värden röda vore en
 — en nettokostnadsavvikelse under noll kan läsas som sparsamt eller som
 underfinansierat, och sajten ska inte välja åt läsaren (jfr B3).
 
-### Etapp 3 — utfall mot löfte
+### Etapp 3 — utfall mot löfte — KLAR 2026-08-17 (commit `ff859b8`)
 
-- [ ] **3.1** Koppla nyckeltal till teman i `partier.json` / `TEMA_KARTA`
-      (`din-vardag/index.astro:7–44`). Ett parti som skriver "vi satsar på förskolan"
-      ställs mot förskolans faktiska utveckling 2018–2024.
-- [ ] **3.2** Rendera på `/jamforelse/` och `/partier/[id]/`.
-- [ ] **3.3 — spärr.** Formuleringen får inte antyda att ett enskilt parti orsakat
-      ett utfall. Styret är ett minoritetsstyre med 17 av 41 mandat och SD har fällt
-      avgörandet i budgetvoteringarna. Skriv "under mandatperioden", inte "partiets
-      politik har lett till". Låt granska mot samma måttstock som B3
-      ("görs inga värderingar") innan publicering.
+- [x] **3.1** Temakopplingen ligger i `TEMA_NYCKELTAL` i nya `src/lib/tema-karta.ts`,
+      dit även `TEMA_KARTA`/`TEMA_ORDNING` flyttats (låg tidigare kopierade i
+      `/jamforelse/` och `/din-vardag/` och hade glidit isär — sex rubriker saknades
+      i `/din-vardag/`, nu åtgärdat). Tre teman har nyckeltal: Skola och barnomsorg
+      (6 mått), Vård och omsorg (3), Näringsliv och ekonomi (4). Övriga teman saknar
+      nyckeltal i uttaget och `Utfall.astro` renderar då ingenting — medveten frånvaro.
+      **Avvikelse från planens "2018–2024":** spannet är valåret 2022 → senaste
+      fastställda året. Metodbytet 2019 gör 2018-jämförelser skeva för
+      nettokostnadsavvikelserna, och "under mandatperioden" (3.3) är det spann som
+      hör ihop med löftena från valet 2022. Långa serien finns kvar på `/nyckeltal/`.
+- [x] **3.2** `src/components/Utfall.astro` renderas sist i varje temasektion på
+      `/jamforelse/` ("Hur har det gått hittills?") och på `/partier/[id]/` under
+      rubriken "Hur har det gått i områdena X skriver om?" — bara för teman där
+      partiet har ståndpunkter. Kolonner: Höör 2022, Höör huvudår, Snitt Skåne
+      (märkt `derived-note`; råvärdena `source-link` till API-anropet).
+- [x] **3.3 — spärr.** Noten renderas alltid: "Siffrorna visar hur det blev — inte
+      vilket parti som orsakat det", mandaten 17 av 41 räknas ur `partier.json`,
+      och länkarna går till /arenden/ (vem röstade hur) och /nyckeltal/. Ingen
+      formulering värderar eller pekar ut parti; granskad mot B3-måttstocken.
 
-**Klar när:** manifestlöften kan läsas mot utfall utan att sajten tar ställning.
+**Klar när:** manifestlöften kan läsas mot utfall utan att sajten tar ställning. ✔
 
-### Etapp 4 — enhetsnivå på `/din-vardag/`
+### Etapp 4 — enhetsnivå på `/din-vardag/` — AVVAKTAS (Jonas beslut 2026-08-17)
+
+Byggs inte före valet. Spärren i 4.3 väger tyngre än nyttan: små enheter ger
+slumpvariation och namngivna verksamheter är namngivna arbetsplatser. Punkterna
+står kvar ifall frågan öppnas igen efter valet.
 
 - [ ] **4.1** Kartlägg vilka nyckeltal som har `has_ou_data: true` och faktiskt har
       värden för Höörs enheter.
