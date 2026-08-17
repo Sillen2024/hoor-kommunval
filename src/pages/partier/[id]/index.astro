@@ -1,9 +1,11 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Utfall from "../../../components/Utfall.astro";
 import partierData from "../../../data/partier.json";
 import arendenData from "../../../data/arenden.json";
 import oppositionsbudgetar from "../../../data/oppositionsbudgetar.json";
 import koladaData from "../../../data/kolada.json";
+import { TEMA_KARTA, TEMA_NYCKELTAL, TEMA_ORDNING } from "../../../lib/tema-karta";
 
 export function getStaticPaths() {
   return partierData.partier.map((p) => ({
@@ -109,6 +111,16 @@ function delaNot(not: string | null | undefined): { kort: string | null; resten:
   return { kort: meningar.slice(0, 2).join(" "), resten: meningar.slice(2).join(" ") };
 }
 const manifestNot = delaNot(party.manifest_not);
+
+// ——— "Hur har det gått?" (Kolada etapp 3) ——————————————————————————————
+// De gemensamma teman partiets ståndpunkter faller under, begränsat till dem
+// som har nyckeltal i TEMA_NYCKELTAL. Utfall.astro bär spärren mot
+// orsakspåståenden (KOLADA_PLAN.md §6 etapp 3.3).
+const utfallTeman = TEMA_ORDNING.filter(
+  (t) =>
+    t in TEMA_NYCKELTAL &&
+    party.manifest_2026.some((m) => (TEMA_KARTA[m.politikomrade] ?? m.politikomrade) === t),
+);
 ---
 
 <Layout
@@ -164,6 +176,15 @@ const manifestNot = delaNot(party.manifest_not);
           </div>
         ))}
       </div>
+    </>
+  )}
+
+  {utfallTeman.length > 0 && (
+    <>
+      <h2>Hur har det gått i områdena {party.namn} skriver om?</h2>
+      {utfallTeman.map((t, i) => (
+        <Utfall tema={t} rubrik={t} visaIntro={i === 0} visaNot={i === utfallTeman.length - 1} />
+      ))}
     </>
   )}
 

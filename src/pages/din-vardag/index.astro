@@ -1,47 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import partierData from "../../data/partier.json";
-
-// Samma temakarta som jamforelse/index.astro — se den filen för bakgrund till varför
-// grupperingen behövs (partiernas egna rubriker på samma sakfråga stavas olika).
-const TEMA_KARTA: Record<string, string> = {
-  "Skola": "Skola och barnomsorg",
-  "Skola och elevhälsa": "Skola och barnomsorg",
-  "Barn och unga": "Skola och barnomsorg",
-
-  "Vård": "Vård och omsorg",
-  "Vård och omsorg": "Vård och omsorg",
-  "Vård och hälsa": "Vård och omsorg",
-  "Vård, trygghet och familj": "Vård och omsorg",
-  "Äldreomsorg": "Vård och omsorg",
-  "Välfärd": "Vård och omsorg",
-
-  "Trygghet": "Trygghet och migration",
-  "Migration": "Trygghet och migration",
-  "Frihet och trygghet": "Trygghet och migration",
-
-  "Vatten och avlopp": "Trafik, infrastruktur och bostäder",
-  "Kollektivtrafik": "Trafik, infrastruktur och bostäder",
-  "Trafik och ekonomi": "Trafik, infrastruktur och bostäder",
-  "Trafik": "Trafik, infrastruktur och bostäder",
-  "Infrastruktur": "Trafik, infrastruktur och bostäder",
-  "Transporter": "Trafik, infrastruktur och bostäder",
-  "Bostäder": "Trafik, infrastruktur och bostäder",
-
-  "Natur och rekreation": "Miljö, klimat och landsbygd",
-  "Miljö och landsbygd": "Miljö, klimat och landsbygd",
-  "Landsbygd": "Miljö, klimat och landsbygd",
-  "Klimat och miljö": "Miljö, klimat och landsbygd",
-
-  "Näringsliv": "Näringsliv och ekonomi",
-  "Ekonomi": "Näringsliv och ekonomi",
-
-  "Idrott och fritid": "Kultur, fritid och folkhälsa",
-  "Kultur och fritid": "Kultur, fritid och folkhälsa",
-  "Folkhälsa och kultur": "Kultur, fritid och folkhälsa",
-
-  "Demokrati": "Demokrati och lokalt inflytande",
-};
+import { TEMA_KARTA } from "../../lib/tema-karta";
 
 type Stance = { partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string };
 

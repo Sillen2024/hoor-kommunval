@@ -1,0 +1,136 @@
+---
+import koladaData from "../data/kolada.json";
+import partierData from "../data/partier.json";
+import { TEMA_NYCKELTAL } from "../lib/tema-karta";
+
+// Kolada etapp 3 (KOLADA_PLAN.md §6): utfallet bredvid löftena. Komponenten
+// renderar ingenting för teman utan nyckeltal i TEMA_NYCKELTAL — frånvaron är
+// medveten, inte en lucka.
+//
+// SPÄRR (etapp 3.3): ingen formulering får antyda att ett enskilt parti
+// orsakat ett utfall — styret är ett minoritetsstyre och budgetarna har
+// avgjorts i fullmäktige. Noten sist i komponenten renderas alltid.
+//
+// Spannet är valåret 2022 → senaste fastställda året, inte 2018 →: metoden för
+// nettokostnadsavvikelse lades om 2019, och "under mandatperioden" är dessutom
+// det enda tidsspann som hör ihop med löftena från valet 2022. Den längre
+// serien finns på /nyckeltal/.
+
+interface Props {
+  tema: string;
+  rubrik?: string;
+  // När flera Utfall-block står direkt efter varandra (partisidorna) visas
+  // introt bara på det första och spärrnoten bara på det sista.
+  visaIntro?: boolean;
+  visaNot?: boolean;
+}
+const { tema, rubrik = "Hur har det gått hittills?", visaIntro = true, visaNot = true } = Astro.props;
+
+const matt = TEMA_NYCKELTAL[tema] ?? null;
+
+const HÖÖR = koladaData.hoor;
+const skane = koladaData.skane;
+const VALAR = 2022;
+
+type Serie = Record<string, Record<string, number>>;
+const kpi = (id: string) => {
+  const n = koladaData.nyckeltal.find((x) => x.kpi_id === id);
+  if (!n) throw new Error(`Nyckeltal ${id} saknas i kolada.json — kör scripts/hamta-kolada.mjs`);
+  return n;
+};
+const varde = (id: string, kod: string, ar: number): number | null =>
+  (kpi(id).varden as unknown as Serie)[kod]?.[String(ar)] ?? null;
+
+// Huvudår: senaste året som inte är preliminärt — samma logik som /nyckeltal/.
+const preliminaraAr = [
+  ...new Set(koladaData.nyckeltal.map((n) => n.preliminar_fran_ar).filter((a): a is number => a !== null)),
+];
+const huvudar =
+  preliminaraAr.length > 0 ? Math.min(...preliminaraAr) - 1 : koladaData.ar[koladaData.ar.length - 1];
+
+// Egen bearbetning (KOLADA_PLAN.md §2): snittet får inte anges med Kolada som
+// källa och bär det streckade märket under tabellen.
+const snitt = (id: string, ar: number): number | null => {
+  const v = skane.map((k) => varde(id, k, ar)).filter((x): x is number => x !== null);
+  return v.length === 0 ? null : v.reduce((s, x) => s + x, 0) / v.length;
+};
+
+const rader = (matt ?? []).map((m) => {
+  const n = kpi(m.id);
+  return {
+    titel: n.titel,
+    enhet: n.enhet,
+    dec: m.dec,
+    valar: varde(m.id, HÖÖR, VALAR),
+    huvudar: varde(m.id, HÖÖR, huvudar),
+    skaneSnitt: snitt(m.id, huvudar),
+  };
+});
+
+const sv = (v: number | null, d: number) =>
+  v === null ? "–" : v.toLocaleString("sv-SE", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+// Mandaten läses ur partier.json så att noten inte kan glida ifrån datan.
+const styreMandat = partierData.partier
+  .filter((p) => p.block === "styre")
+  .reduce((s, p) => s + p.mandat_2022, 0);
+const totalMandat = partierData.partier.reduce((s, p) => s + p.mandat_2022, 0);
+
+const kallaUrl = `https://api.kolada.se/v3/data/kpi/${(matt ?? []).map((m) => m.id).join(",")}/municipality/${HÖÖR}/year/${VALAR},${huvudar}`;
+---
+
+{matt && (
+  <div class="utfall">
+    <h3>{rubrik}</h3>
+    {visaIntro && (
+      <p>
+        Löften kan läsas mot utfall. Tabellen visar Höörs siffror vid förra valet ({VALAR}) och för{" "}
+        {huvudar}, det senaste året med fastställda värden, med Skånesnittet som jämförelsepunkt. Vad{" "}
+        <a href="/ordlista/#nettokostnadsavvikelse">nettokostnadsavvikelse</a> betyder står i ordlistan.
+      </p>
+    )}
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Mått</th>
+            <th scope="col">Höör {VALAR}</th>
+            <th scope="col">Höör {huvudar}</th>
+            <th scope="col">Snitt Skåne {huvudar}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rader.map((r) => (
+            <tr>
+              <th scope="row">{r.titel} ({r.enhet})</th>
+              <td>{sv(r.valar, r.dec)}</td>
+              <td><strong>{sv(r.huvudar, r.dec)}</strong></td>
+              <td>{sv(r.skaneSnitt, r.dec)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <a class="source-link" href={kallaUrl} target="_blank" rel="noopener noreferrer">
+      Källa: Kolada — Höörs värden {VALAR} och {huvudar}
+    </a>
+    <span class="derived-note">Skånesnittet är uträknat här ur Koladas råvärden</span>
+    {visaNot && (
+      <p class="updated">
+        Siffrorna visar hur det blev — inte vilket parti som orsakat det. Styret har {styreMandat} av{" "}
+        {totalMandat} mandat, och besluten har fattats av hela fullmäktige. Hur varje parti röstade syns
+        under <a href="/arenden/">Ärenden</a>, och fler jämförelser under <a href="/nyckeltal/">Nyckeltal</a>.
+      </p>
+    )}
+  </div>
+)}
+
+<style>
+  .utfall {
+    margin-top: 1.8rem;
+  }
+
+  .utfall table {
+    font-size: 0.92rem;
+  }
+</style>

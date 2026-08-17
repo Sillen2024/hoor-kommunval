@@ -1,66 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Utfall from "../../components/Utfall.astro";
 import partierData from "../../data/partier.json";
-
-// Partiernas egna rubriker (politikomrade i partier.json) är fritext från deras egna
-// sajter och skiljer sig åt även när sakinnehållet är samma tema ("Skola" vs
-// "Skola och elevhälsa" vs "Vård och hälsa" vs "Vård, trygghet och familj" osv).
-// Den här kartan grupperar dem under gemensamma, jämförbara teman utan att röra
-// själva datafilen. Partiets egen rubrik visas fortfarande på varje kort.
-const TEMA_KARTA: Record<string, string> = {
-  "Skola": "Skola och barnomsorg",
-  "Skola och elevhälsa": "Skola och barnomsorg",
-  "Barn och unga": "Skola och barnomsorg",
-
-  "Vård": "Vård och omsorg",
-  "Vård och omsorg": "Vård och omsorg",
-  "Vård och hälsa": "Vård och omsorg",
-  "Vård, trygghet och familj": "Vård och omsorg",
-  "Äldreomsorg": "Vård och omsorg",
-  "Välfärd": "Vård och omsorg",
-
-  "Trygghet": "Trygghet och migration",
-  "Migration": "Trygghet och migration",
-  "Frihet och trygghet": "Trygghet och migration",
-
-  "Vatten och avlopp": "Trafik, infrastruktur och bostäder",
-  "Kollektivtrafik": "Trafik, infrastruktur och bostäder",
-  "Trafik och ekonomi": "Trafik, infrastruktur och bostäder",
-  "Trafik": "Trafik, infrastruktur och bostäder",
-  "Infrastruktur": "Trafik, infrastruktur och bostäder",
-  "Transporter": "Trafik, infrastruktur och bostäder",
-  "Bostäder": "Trafik, infrastruktur och bostäder",
-
-  "Natur och rekreation": "Miljö, klimat och landsbygd",
-  "Natur och friluftsliv": "Miljö, klimat och landsbygd",
-  "Miljö och landsbygd": "Miljö, klimat och landsbygd",
-  "Miljö och VA": "Miljö, klimat och landsbygd",
-  "Landsbygd": "Miljö, klimat och landsbygd",
-  "Klimat och miljö": "Miljö, klimat och landsbygd",
-
-  "Näringsliv": "Näringsliv och ekonomi",
-  "Ekonomi": "Näringsliv och ekonomi",
-  "Ekonomi och skatt": "Näringsliv och ekonomi",
-
-  "Idrott och fritid": "Kultur, fritid och folkhälsa",
-  "Fritid och idrott": "Kultur, fritid och folkhälsa",
-  "Kultur och fritid": "Kultur, fritid och folkhälsa",
-  "Kultur": "Kultur, fritid och folkhälsa",
-  "Folkhälsa och kultur": "Kultur, fritid och folkhälsa",
-
-  "Demokrati": "Demokrati och lokalt inflytande",
-};
-
-const TEMA_ORDNING = [
-  "Skola och barnomsorg",
-  "Vård och omsorg",
-  "Trygghet och migration",
-  "Trafik, infrastruktur och bostäder",
-  "Miljö, klimat och landsbygd",
-  "Näringsliv och ekonomi",
-  "Kultur, fritid och folkhälsa",
-  "Demokrati och lokalt inflytande",
-];
+import { TEMA_KARTA, TEMA_ORDNING } from "../../lib/tema-karta";
 
 // Bygg en karta: tema -> lista av { parti, standpunkt, kalla_url, rå rubrik }
 const temaMap = new Map<string, Array<{ partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string }>>();
@@ -189,6 +131,7 @@ const ersattaText = new Intl.ListFormat("sv", { style: "long", type: "conjunctio
             )}
           </div>
         </div>
+        <Utfall tema={namn} />
       </section>
     );
   })}
