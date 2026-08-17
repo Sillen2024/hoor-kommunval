@@ -129,6 +129,18 @@ function delaNot(not: string | null | undefined): { kort: string | null; resten:
 }
 const manifestNot = delaNot(party.manifest_not);
 
+// ——— Partiets egna kanaler ————————————————————————————————————————————
+// Två partier länkar till riksorganisationens webbplats därför att den lokala
+// saknas: KD:s Höör-sida ligger nere (404) och MED har aldrig haft någon.
+// Det står i respektive metodnot — här sätts bara etiketten så att läsaren
+// inte tror att hen klickar sig till Höör-politik.
+const NATIONELL_HEMSIDA = new Set(["kd", "medborgerlig-samling"]);
+const hemsidaNationell = NATIONELL_HEMSIDA.has(party.id);
+// Visar värdnamn + sökväg, utan protokoll och www — "hoor.liberalerna.se"
+// läses lättare än "https://hoor.liberalerna.se/".
+const visaLank = (url: string) =>
+  url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+
 // ——— "Hur har det gått?" (Kolada etapp 3) ——————————————————————————————
 // De gemensamma teman partiets ståndpunkter faller under, begränsat till dem
 // som har nyckeltal i TEMA_NYCKELTAL. Utfall.astro bär spärren mot
@@ -155,22 +167,31 @@ const utfallTeman = TEMA_ORDNING.filter(
     <a class="source-link" href={party.kalla_mandat} target="_blank" rel="noopener noreferrer">Mandatfördelning, hoor.se</a>
   </p>
 
-  {party.hemsida && (
-    <p>
-      <a class="source-link" href={party.hemsida} target="_blank" rel="noopener noreferrer">{party.hemsida}</a>
-      {party.id === "medborgerlig-samling" && (
-        <span class="updated"> (nationell webbplats — ingen lokal Höör-sida hittad)</span>
+  {(party.hemsida || (party.sociala_medier_hoor?.length ?? 0) > 0) && (
+    <dl class="party-kanaler">
+      {party.hemsida && (
+        <>
+          <dt>{hemsidaNationell ? "Webbplats" : "Lokal webbplats"}</dt>
+          <dd>
+            <a href={party.hemsida} target="_blank" rel="noopener noreferrer">{visaLank(party.hemsida)}</a>
+            {hemsidaNationell && (
+              <span class="party-kanaler__not">Riksorganisationens sida — partiet har ingen lokal Höör-sida i drift.</span>
+            )}
+          </dd>
+        </>
       )}
-    </p>
-  )}
 
-  {party.sociala_medier_hoor && party.sociala_medier_hoor.length > 0 && (
-    <p>
-      <strong>{party.namn} i Höör på sociala medier:</strong>{" "}
-      {party.sociala_medier_hoor.map((sm: { plattform: string; url: string }) => (
-        <a class="source-link" href={sm.url} target="_blank" rel="noopener noreferrer">{sm.plattform}</a>
-      ))}
-    </p>
+      {party.sociala_medier_hoor && party.sociala_medier_hoor.length > 0 && (
+        <>
+          <dt>Sociala medier</dt>
+          <dd>
+            {party.sociala_medier_hoor.map((sm: { plattform: string; url: string }) => (
+              <a href={sm.url} target="_blank" rel="noopener noreferrer">{sm.plattform}</a>
+            ))}
+          </dd>
+        </>
+      )}
+    </dl>
   )}
 
   <h2>Valmanifest 2026</h2>
