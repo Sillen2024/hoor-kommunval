@@ -95,6 +95,7 @@ const rattaMailto = `mailto:${rattaAdress}?subject=${encodeURIComponent(rattaAmn
     <script defer src="https://umami.ibland.nu/script.js" data-website-id="8ecedae6-4356-4d94-b9ce-ed99985647a3"></script>
   </head>
   <body>
+    <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
     <header class="site-header">
       <div class="site-header__inner">
         <a href="/" class="site-header__title">
@@ -114,7 +115,7 @@ const rattaMailto = `mailto:${rattaAdress}?subject=${encodeURIComponent(rattaAmn
         </nav>
       </div>
     </header>
-    <main>
+    <main id="innehall">
       <slot />
     </main>
     <footer class="site-footer">
