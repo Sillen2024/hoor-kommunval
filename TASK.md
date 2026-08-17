@@ -135,7 +135,12 @@ Underlag: `FABEL_GRANSKNING_2_2026-08-17.md` (full revision av UI/UX och målgru
   3. Ärendefiltret flyttat ovanför 35-radersindexet på `/arenden/`.
   4. Skip-länk ("Hoppa till innehållet") på alla sidor, synlig endast vid tangentbordsfokus.
   5. 404-sidans "Kurerad" ersatt + max en Om urvalet-länk i brödtext per sida (svep över alla 29 sidor: ingen över gränsen).
-- [ ] **30b. P2 kvar** (före 13 september, se granskningens §5): TOC på `/om-urvalet/` + KS-dubbleringen, årsgruppering i ärendeindexet, `/valkompass/`-beslutet (länka eller dokumentera som delningssida), `.table-scroll` på tre tabeller, `lix.mjs`-metodnoten (räkna bort tabeller/citat så mätaren blir användbar som grind).
+- [x] **30b. P2 KLAR 2026-08-17** (commits `81b7601`–`f2751ff`, en per delpunkt):
+  1. TOC på `/om-urvalet/` (sidnav-mönstret från `/nyckeltal/`, id på alla h2) + KS-metoddubbleringen: sidans egen paragraf är huvudtexten, JSON-noten kortad till en hänvisning (föredragningslista-detaljen flyttad till sidans text).
+  2. Årsgruppering i ärendeindexet — åren räknas ur datumen, odaterade sist under egen rubrik (alla 35 är daterade i dag, så gruppen renderas inte), filtret döljer tömda årsrubriker.
+  3. `/valkompass/`-beslutet: **länkad** från sidfoten (alla sidor) och `/sa-rostar-du/`:s brödtext — granskningens alternativ B, delningssidan får intern kraft. Kodkommentar om sidans dubbla roll tillagd; övriga `/#valkompass`-länkar står medvetet kvar.
+  4. `.table-scroll` på fyra tabeller: 80-öres + nettokostnader på `/budget/`, resultattabellen på `/historiska-val/`, samt `Votering.astro` (kontrollmätt: ~355 px minimum → overflow under ~390 px; egen 22rem-override så 40rem-minimet inte tvingar scroll). Key/value-tabellerna (budgetens års-details, valdag/valdeltagande) lämnas — de radbryter.
+  5. `lix.mjs` räknar bort `<table>`, `<blockquote>` och `.stance-card`-block före mätningen och markerar sidor med ≥ 30 % borträknat (§ + procent). `/jamforelse/` 58 → 46, `/din-vardag/` 59 → 45, `/vad-bestammer-kommunen/` 53 → 44. Partisidorna ligger kvar 51–58: deras citat står i löptext/listor och går inte att skilja ut maskinellt.
 - [ ] **30c. P3 kvar:** dela `trygghet-migration`-frågan, sidfotens dubbellänkar, "Löftet och pengarna" per parti.
 
 **Byggmiljönot:** `astro build` kraschar nu ofta i allra sista städsteget (EBUSY på `dist/.prerender` — Dropbox låser färska filer; libuv-assertion vid exit). **Alla 29 sidor genereras korrekt ändå**; bara sitemap-steget uteblir lokalt. Deployen påverkas inte — Docker-bygget kör `npm run build` i containern. `dist` och `.astro` är markerade `com.dropbox.ignored` (NTFS-ström) 2026-08-17; hjälper det inte, verifiera med `--outDir` utanför Dropbox.
