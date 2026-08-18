@@ -150,6 +150,32 @@ Underlag: `FABEL_GRANSKNING_2_2026-08-17.md` (full revision av UI/UX och målgru
 
 ---
 
+## Punkt 31. Efterarbete kvällen 2026-08-17 — utanför granskningslistorna
+
+Tolv commits landade efter att punkt 30c bockats av (`f799e97`) och stod länge ologgade här. Ingen av dem kommer ur Opus- eller Fabel-rapporterna; de är egna fynd under genomgången inför lansering. Alla är genomförda och pushade.
+
+- [x] **31a. Partisidornas kanalblock** (`10fbeba`, `0b760c7`, `c54079f`, `69f5648`). Fyra steg på samma yta:
+  - Medborgerlig Samlings logotyp var en trasig, vit fil — ersatt med partiets riktiga, trimmad och webboptimerad, med proveniensen (partiets Facebook-sida) skriven i `partier.json`.
+  - Nytt avsnitt med **Höör-lokala** sociala medier på partisidorna. Bara partiernas egna Höör-avdelningar länkas, verifierade mot de lokala webbplatserna där sådana finns. Inga nationella konton, inga grannkommuners. TikTok/YouTube/X saknas lokalt hos samtliga nio partier; KD har ingen Höör-närvaro alls, så avsnittet renderas inte för dem.
+  - **Gränsdragningen kring det gröna källmärket:** hemsidor och sociala medier renderades med `.source-link` och fick därmed prefixet "✓ Källbelagt —". En länk till partiets Facebook belägger ingenting; den säger var partiet finns. Kanalerna ligger nu i en neutral `dl` med etiketterna "Lokal webbplats" och "Sociala medier", URL:en visad utan protokoll och `www`. Samma princip som `.derived-note` redan vaktar: det gröna märket ska bara betyda att uppgiften står i ett dokument någon annan skrivit under.
+  - **KD:s döda länk:** `wp.kristdemokraterna.se/hoor` svarar 404. Ny rad "Gamla sidan" driven av fältet `hemsida_tidigare` i `partier.json` pekar på Internet Archive i stället — senaste 200-snapshotten är 2026-03-10, den enda från 2026, så sidan togs ned efter dess. Noten säger att sidan är nedtagen och att nyheterna på den var från 2017, så ingen läser den som aktuell Höör-politik. KD och MED länkar i övrigt till riksorganisationen, med not om varför.
+- [x] **31b. GDPR-genomgång och repohygien** (`b7eb181`, `0a51d7e`, `4ed8042`).
+  - Råtranskriptionerna av M:s Facebookvideor är **ute ur det publika repot** och mappen är gitignorad. Obearbetad Whisper-text med namngivna personer hör inte hemma där — samma bedömning som redan gjorts för `M_FACEBOOK_RAADATA.md`. Lokala kopior finns kvar. Se även M3-noten om att egennamn förvanskas systematiskt.
+  - Nytt **personuppgiftsavsnitt** på `/om/`: namn publiceras bara i offentliga uppdrag ur öppna källor (protokoll, Valmyndigheten), publiceringen sker för journalistiskt ändamål, Umami är kakfri, och rättelse begärs via `/ratta/`. LIX 42 på byggd sida.
+  - README:s **driftsdetaljer** (VPS, proxy, SSL) borttagna ur det publika repot; de fanns redan i gitignorade `UPPDATERA_VPS.txt`. Kvar: generisk Docker-byggning och en rad om att compose-filen är miljöspecifik.
+- [x] **31c. Innehåll och siffror** (`ee7333c`, `cc4b908`, `e100915`).
+  - `/budget/` har fått innehållsförteckning med ankarlänkar — samma sidnav-mönster som `/nyckeltal/` och `/om-urvalet/`.
+  - `/styret-vs-oppositionen/` omskriven mot **fullständig röstdata**: svaret först i leaden, rätt datum för 70+-motionen (2025-08-27 enligt protokollet, inte SkD-artikelns 2025-10-14) med 19–19 och SD-sprickan, M:s dokumenterade löften i stället för texten om att M saknar publicerad politik, nytt avsnitt om de tre voteringar där styret förlorade, och slutsatsen kvalificerad — SD har också fällt styret. LIX 45.
+  - `/nyckeltal/` har fått ett eget avsnitt om **äldreomsorgen**: väntetiden till särskilt boende (U23401) låg som en omärkt rad i Övriga nyckeltal och står nu bredvid nettokostnadsavvikelsen — 89 dagar 2024 mot 57 i Skånesnitt, plats 21 av 24 räknat från kortast väntetid. De två hör ihop därför att de mäter samma verksamhet från var sitt håll: pengarna in och vad den som söker plats får ut. Alla tal läses ur `kolada.json`.
+  - **Rättat sakfel i samma commit:** exempelmeningen i vecket om referenskostnaden påstod att Höör har många äldre. Det stämmer inte — andelen 65–79 år är 15,9 % mot Skånesnittets 15,7 %, och andelen 80+ ligger *under* snittet. Meningen gäller nu en kommun i allmänhet, så mekanismen förklaras utan ostött Höör-påstående. **Öppen fråga:** felet låg publicerat på den live-satta sajten och ändrade en sakuppgifts innebörd — det är en kandidat för rättelseloggen i `rattelser.json` enligt policyn i punkt 23. Jonas avgör om förlanseringsperioden räknas.
+- [x] **31d. Ton och proportioner** (`1c049af`, `ad709c3`).
+  - "Om mig" heter nu **"Om sidan"** — rubrik, titel, meta och sidfotslänk. Sidan handlar om sajten; det personliga ligger i en egen sektion "Skapad av" tillsammans med kontaktuppgifterna.
+  - AI-experimentblocket är borta från startsidan. Sajten har vuxit ur det; AI-sidorna nås via sidfoten. Följer samma linje som punkt 24.
+
+**Not om OG-cachen:** ingen av de tolv rör en OG-bild eller en URL, så Sharing Debugger-rundan 2026-08-18 står sig. Enda undantaget är `/om/`, som bytte `og:title` och fick justerad `og:description` — sidan låg inte bland de tio och behöver bara skrapas om den ska delas som egen länk.
+
+---
+
 ## Strukna punkter
 
 - [–] **Geminis punkt 5: accordions i jämförelsevyn.** Bygger på en felaktig premiss. `/jamforelse/` innehåller ingen tabell — det är en `compare-grid` av kort som redan kollapsar till en kolumn på mobil. Sajtens enda horisontellt scrollande tabeller ligger på `/budget/`, `/historiska-val/` och `/arenden/`. **Rör inte jämförelsevyn.** Kvarstående åtgärd var den ursprungliga: sänk `minmax(18rem, 1fr)` till 15rem för skärmar under 350 px — **åtgärdad 2026-08-17** (media query i `global.css`).
