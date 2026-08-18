@@ -61,22 +61,22 @@ Verifierat i koden 2026-08-15 av Session B. Samtliga åtta är åtgärdade:
 
 ## Deploy-checklista (Jonas — kräver inloggning/webbläsare)
 
-**Läget 2026-08-16:** deployen är gjord och verifierad live. `/budget/` ger `og-budget-v1.png`, styret-sidans `og:description` är den nya (frasen "enda dokumenterade" finns bara kvar i MED-meningen, vilket är korrekt enligt punkt 4/B5) och `og-budget-v1.png` svarar med `Cache-Control: public, max-age=86400` utan `immutable` — punkt 10b därmed mätt och bekräftad. **Kvar är bara steg 2–3, som kräver webbläsare med inloggning.**
+**Läget 2026-08-18: checklistan är avslutad.** Alla steg är antingen gjorda eller medvetet strukna — Jonas körde Sharing Debugger på samtliga tio adresser 2026-08-18 och valde bort LinkedIn. Historiken från 2026-08-16 (deploy verifierad live, `og-budget-v1.png` med `Cache-Control: public, max-age=86400` utan `immutable`, punkt 10b mätt och bekräftad) står kvar i stegen nedan.
+
+**Kvar som löpande rutin, inte som punkt:** byts ett OG-motiv igen måste den sidan skrapas om i Sharing Debugger efter deploy. Facebook cachar i ~30 dygn.
 
 1. [x] Deploya. Verifierat 2026-08-16:
    `curl -s https://hoor-kommunval.ibland.nu/budget/ | grep 'og:image'`
    ger `og-budget-v1.png`.
-2. **Facebooks Sharing Debugger** — https://developers.facebook.com/tools/debug/. Kräver Facebook-inloggning, kan inte automatiseras. Klistra in en URL → **Scrape Again** (Facebook cachar första svaret i ~30 dygn, därför måste det göras aktivt, inte bara tittas på). Kör dessa tio:
-   `/`, `/budget/`, `/nyckeltal/`, `/styret-vs-oppositionen/`, `/jamforelse/`, `/arenden/`, `/partier/`, `/valkompass/`, `/historiska-val/`, `/din-vardag/`
-   Viktigast efter 2026-08-17: `/budget/` och `/nyckeltal/` (nya v2-motiv, punkt 27), `/jamforelse/` (87 ståndpunkter) och `/arenden/` (23 ärenden, punkt 19 + 21).
-   Fel att reagera på: "Provided og:image URL could not be processed" (bilden 404:ar eller blockeras) eller att förhandsvisningen visar fel bild.
-3. **LinkedIn Post Inspector** — https://www.linkedin.com/post-inspector/. Egen cache, samma sak igen. Hoppa över om tiden är knapp; Facebook och Messenger är de troliga delningskanalerna i Höör.
+2. [x] **Facebooks Sharing Debugger — KLAR 2026-08-18.** Jonas har kört Scrape Again på samtliga tio adresser: `/`, `/budget/`, `/nyckeltal/`, `/styret-vs-oppositionen/`, `/jamforelse/`, `/arenden/`, `/partier/`, `/valkompass/`, `/historiska-val/`, `/din-vardag/`. Därmed är alla ackumulerade OG-ändringar utrullade i Facebooks cache: v2-motiven på `/budget/` och `/nyckeltal/` (punkt 27), `/jamforelse/`, `/arenden/` (punkt 19 + 21 + 29) och `/valkompass/` (punkt 30c).
+   Verktyget: https://developers.facebook.com/tools/debug/. Kräver Facebook-inloggning, kan inte automatiseras. Fel att reagera på nästa gång: "Provided og:image URL could not be processed" (bilden 404:ar eller blockeras) eller att förhandsvisningen visar fel bild.
+3. [–] **LinkedIn Post Inspector — STRUKEN 2026-08-18 (Jonas beslut).** Facebook och Messenger är delningskanalerna i Höör, så LinkedIns egen cache är inte värd tiden så här nära lansering. Verktyget finns om det behövs senare: https://www.linkedin.com/post-inspector/.
 4. X/Twitter har ingen fungerande card validator längre. Ingen åtgärd.
 5. [x] Mät om OG-bildens cache-header efter deploy (punkt 10b). Gjort 2026-08-16:
    `curl -sI https://hoor-kommunval.ibland.nu/og-budget-v1.png | grep -i cache-control`
    ger `public, max-age=86400` — inget `immutable`.
 
-Verifierat lokalt 2026-08-15: alla åtta bilder är 1200×630 och ligger i `public/`, och samtliga `image`-propar pekar på en fil som finns. Det som återstår kräver en riktig webbläsare med Facebook-session.
+Verifierat lokalt 2026-08-15: alla åtta bilder är 1200×630 och ligger i `public/`, och samtliga `image`-propar pekar på en fil som finns.
 
 ---
 
