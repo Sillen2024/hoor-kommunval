@@ -16,7 +16,7 @@ Opus genomförde en extremt skarp, djupgående datateknisk granskning och agerad
 
 ## 3. Vad Opus missade (Helhetsperspektivet)
 Opus var djupt nere i koden, men missade några övergripande system- och UX-perspektiv:
-* **Nätverks- och DevOps-arkitekturen:** Opus anmärkte på att Gzip saknades i den lokala Nginx-konfigurationen. Eftersom sajten driftsätts bakom Nginx Proxy Manager och Cloudflare, hanteras cache-regler och komprimering (som Brotli) mycket effektivare direkt i Cloudflare. Man behöver inte pilla i den lokala Docker-containern för detta.
+* **Nätverks- och DevOps-arkitekturen:** Opus anmärkte på att Gzip saknades i den lokala Nginx-konfigurationen. Eftersom sajten driftsätts bakom en extern proxy och Cloudflare, hanteras cache-regler och komprimering (som Brotli) mycket effektivare direkt i Cloudflare. Man behöver inte pilla i den lokala Docker-containern för detta.
 * **Viraliteten i djuplänkningen:** Opus tyckte att sajtens statiska Open Graph-metadata var "stark". Men för en politisk sajt räcker det inte med en snygg startsida vid delning. Om en specifik omröstning delas, måste metadata och bild spegla just det beslutet för att driva debatt på sociala medier.
 * **Mönstret för mobila skärmar:** Opus såg att CSS sprack på små skärmar, men föreslog bara kodjusteringar. Det verkliga problemet är gränssnittsmönstret. Att scrolla tabeller horisontellt på mobil fungerar dåligt. Det krävs en helt annan struktur (accordions).
 

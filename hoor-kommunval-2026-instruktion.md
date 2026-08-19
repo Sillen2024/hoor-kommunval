@@ -19,7 +19,7 @@ Syftet med sajten: ge väljare i Höör en saklig bild av vad sittande styre fak
 3. **Källhänvisning på varje datapunkt.** Varje ståndpunkt, beslut och siffra ska länka till originaldokumentet (protokoll, manifest, etc).
 4. **En tydlig metodik-sida ("Om urvalet") är obligatorisk** — se separat avsnitt nedan. Ska vara lätt att hitta (footer + nav), inte gömd.
 5. **Måste vara driftklar innan 26 augusti 2026.**
-6. **Docker-image**, driftsätts på Jonas egen VPS (Ubuntu 24.04, Docker Compose, Nginx Proxy Manager + Cloudflare — samma mönster som övriga ibland.nu-tjänster, t.ex. FilÄtaren).
+6. **Docker-image**, driftsätts på egen server.
 
 ## Omfattning — Fas 1 (det som byggs nu)
 
@@ -101,8 +101,8 @@ Nämn kort på metodik-sidan att detta är en möjlig utbyggnad, men bygg det in
 4. **Generera statiska datafiler**, checka in i repo.
 5. **Bygg statisk frontend** — partisidor, jämförelsevy (styre vs opposition per politikområde), källänkar synliga överallt.
 6. **Metodik-/"Om urvalet"-sida** — se krav nedan. Obligatorisk, inte en eftertanke.
-7. **Dockerize** — nginx som serverar statisk build, samma mönster som övriga ibland.nu-tjänster.
-8. **Driftsätt** på VPS:en.
+7. **Dockerize** — nginx som serverar statisk build.
+8. **Driftsätt** på servern.
 
 ## Metodik-sidan ("Om urvalet") — måste innehålla
 
@@ -123,10 +123,10 @@ Nämn kort på metodik-sidan att detta är en möjlig utbyggnad, men bygg det in
 
 ## Teknik och drift
 
-- Statisk site generator (t.ex. Astro eller Eleventy, Node-baserat — matchar stacken från transit-kartan)
+- Statisk site generator (t.ex. Astro eller Eleventy, Node-baserat)
 - Data som platta JSON-filer, inget backend/databas behövs eftersom inget ändras i drift
 - Docker: nginx:alpine som serverar `dist/`-mappen
-- Deploy: samma VPS, Nginx Proxy Manager + Cloudflare, som övriga tjänster
+- Deploy: egen server via Docker
 
 ## Tidslinje
 

@@ -162,7 +162,7 @@ Tolv commits landade efter att punkt 30c bockats av (`f799e97`) och stod länge 
 - [x] **31b. GDPR-genomgång och repohygien** (`b7eb181`, `0a51d7e`, `4ed8042`).
   - Råtranskriptionerna av M:s Facebookvideor är **ute ur det publika repot** och mappen är gitignorad. Obearbetad Whisper-text med namngivna personer hör inte hemma där — samma bedömning som redan gjorts för `M_FACEBOOK_RAADATA.md`. Lokala kopior finns kvar. Se även M3-noten om att egennamn förvanskas systematiskt.
   - Nytt **personuppgiftsavsnitt** på `/om/`: namn publiceras bara i offentliga uppdrag ur öppna källor (protokoll, Valmyndigheten), publiceringen sker för journalistiskt ändamål, Umami är kakfri, och rättelse begärs via `/ratta/`. LIX 42 på byggd sida.
-  - README:s **driftsdetaljer** (VPS, proxy, SSL) borttagna ur det publika repot; de fanns redan i gitignorade `UPPDATERA_VPS.txt`. Kvar: generisk Docker-byggning och en rad om att compose-filen är miljöspecifik.
+  - README:s **driftsdetaljer** borttagna ur det publika repot; de finns kvar i lokala, gitignorade anteckningar. Kvar: generisk Docker-byggning och en rad om att compose-filen är miljöspecifik.
 - [x] **31c. Innehåll och siffror** (`ee7333c`, `cc4b908`, `e100915`).
   - `/budget/` har fått innehållsförteckning med ankarlänkar — samma sidnav-mönster som `/nyckeltal/` och `/om-urvalet/`.
   - `/styret-vs-oppositionen/` omskriven mot **fullständig röstdata**: svaret först i leaden, rätt datum för 70+-motionen (2025-08-27 enligt protokollet, inte SkD-artikelns 2025-10-14) med 19–19 och SD-sprickan, M:s dokumenterade löften i stället för texten om att M saknar publicerad politik, nytt avsnitt om de tre voteringar där styret förlorade, och slutsatsen kvalificerad — SD har också fällt styret. LIX 45.
@@ -218,9 +218,9 @@ Live-headers 2026-08-15 mot `https://hoor-kommunval.ibland.nu/`:
 | `/_astro/*.css` | `immutable`, `cf-cache-status: HIT` | Korrekt — filerna är innehållshashade. |
 | `/og-image.png` | `immutable`, `HIT`, `Age: 117576` | **Var fel.** Åtgärdat i punkt 10b — mät om efter nästa deploy. |
 
-DNS: `*.ibland.nu` A → Proxied (orange cloud). `hoor-kommunval` faller under wildcarden.
+DNS: domänen är proxied genom CDN:et (orange cloud).
 
-**Varför gzip ändå är kvar (punkt 10a):** `DYNAMIC` betyder att varje sidvisning går hela vägen till origin-containern. Utan gzip skickas 29 KB i stället för 6,6 KB per visning från Jonas egen uppkoppling. Cloudflare skickar `Accept-Encoding: gzip` till origin, så det används direkt. Det är en försäkring mot trafiktopp i valveckan — inte en prestandafix för besökaren.
+**Varför gzip ändå är kvar (punkt 10a):** `DYNAMIC` betyder att varje sidvisning går hela vägen till origin-containern. Utan gzip skickas 29 KB i stället för 6,6 KB per visning från origin-servern. Cloudflare skickar `Accept-Encoding: gzip` till origin, så det används direkt. Det är en försäkring mot trafiktopp i valveckan — inte en prestandafix för besökaren.
 
 ---
 
