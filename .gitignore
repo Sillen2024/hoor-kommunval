@@ -43,6 +43,7 @@ mail till partierna/
 # råskrapade tredjepartsinlägg (upphovsrättslig gråzon i bulk)
 M_FACEBOOK_RAADATA.md
 src/data/transkriptioner/m_facebook/
+src/data/transkriptioner/s_facebook/
 
 # interna AI-utkast och arbetsmaterial från byggfasen
 CLAUDES_VISION_VALET2026.md

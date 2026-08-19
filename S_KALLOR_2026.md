@@ -152,8 +152,8 @@ De fem inläggen:
 | `…/posts/1568671358786911` | — | Valstuga på byn med My Rosell |
 | `…/photo.php?fbid=1572480858405961` | — | "Fråga oss vad du vill" — frågelåda under valrörelsen |
 
-Förskole-videon är transkriberad med KB-Whisper och ligger i
-`src/data/transkriptioner/s_facebook/1571317451855635.vtt`. Den är värd att läsa: det
+Förskole-videon är transkriberad med KB-Whisper; råtranskriptionen förvaras lokalt,
+utanför det publika repot — samma bedömning som för M:s videor. Det
 talade löftet är bredare än inläggstexten. Lucas Nilsson (S) säger "dubbelt så mycket
 på mer resurser till förskolan **och skolan** än vad det borgerliga styret gör i dag",
 medan inläggstexten bara nämner förskolan. Ståndpunktskortet i `partier.json` återger
