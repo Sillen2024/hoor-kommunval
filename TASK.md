@@ -177,6 +177,43 @@ Tolv commits landade efter att punkt 30c bockats av (`f799e97`) och stod länge 
 
 ---
 
+## Punkt 32. Moderaterna publicerade sitt program 2026-08-24 — KLAR samma dag
+
+Upptäckt kvällen före lanseringsveckan: `hoor.moderatweb.se`, som legat tom genom hela
+researchen, har fått en plattformstext. Webbplatsen kontrollerades tom av oss 2026-08-15,
+och Internet Archives enda 2026-kopia (12 februari) visar samma tomma sida — texten gick
+alltså upp mellan 16 och 24 augusti. Servern skickar ingen `Last-Modified`, så exaktare
+än så går det inte att datera.
+
+- [x] **32a. Datan.** Fem punkter ur den nya texten inlagda i `partier.json` med
+  webbplatsen som källa (Bostäder, Näringsliv/Frostavallen, Skola, Äldreomsorg, Ekonomi
+  och skatt). `manifest_status` för M: `sociala_medier` → `hittat`. De 23 reels-baserade
+  punkterna ligger kvar — de är mer konkreta (skattesatser, byggstartsår, belopp) och har
+  egna källänkar. M har nu 28 punkter, sajten 92 totalt.
+  **Not:** stycket om Frostavallen står på deras sida under rubriken "En trygg skola",
+  vilket ser ut som ett förbiseende. Vi redovisar det efter sakinnehållet som näringsliv,
+  och skriver ut det i `manifest_not`.
+- [x] **32b. Följdändringar.** Tre ställen påstod motsatsen och är omskrivna: `/partier/`
+  (M räknas nu bland dem med publicerat program + nytt stycke om att deras kom sist),
+  `/jamforelse/` och `/din-vardag/` (bannrarna säger nu "5 av 28 punkter från webbplatsen"
+  i stället för "saknar publicerat lokalt program"). De gamla grenarna ligger kvar som
+  fallback. LIX på de tre nya styckena: 36, 45, 45.
+- [x] **32c. Rättelseloggen fick sin första post.** Det gamla påståendet hann ligga live,
+  och policyn i punkt 23 säger att en ändrad sakuppgift ska loggas. Posten står under
+  `/ratta/#logg` med `rapporterad_av: "Egen kontroll"`.
+- [x] **32d. Omkontroll av alla nio partier.** Bara M har ändrat sig. SD:s "Det här vill
+  vi" på sd.se/hoor är riksmallen ordagrant (migration, välfärd, trygghet, bränslepriser)
+  — inget Höör-specifikt, status `ersatt` står kvar. C har bara nationella nyheter, KD:s
+  gamla sajt 404:ar fortfarande, MED har ingen lokalavdelning med egen sida.
+- [ ] **32e. Efter deploy:** Sharing Debugger på `/jamforelse/` — `og-jamforelse-v1.png`
+  gick från 87 till 92 ståndpunkter. Samma motiv, så filnamnet behåller `-v1`.
+
+**Kvar att bevaka:** fler partier kan publicera under valrörelsens sista tre veckor.
+Omkontrollen tog tio minuter med `scripts/`-flödet ovan och är värd att köra om varje
+vecka fram till den 13 september.
+
+---
+
 ## Strukna punkter
 
 - [–] **Geminis punkt 5: accordions i jämförelsevyn.** Bygger på en felaktig premiss. `/jamforelse/` innehåller ingen tabell — det är en `compare-grid` av kort som redan kollapsar till en kolumn på mobil. Sajtens enda horisontellt scrollande tabeller ligger på `/budget/`, `/historiska-val/` och `/arenden/`. **Rör inte jämförelsevyn.** Kvarstående åtgärd var den ursprungliga: sänk `minmax(18rem, 1fr)` till 15rem för skärmar under 350 px — **åtgärdad 2026-08-17** (media query i `global.css`).
