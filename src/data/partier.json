@@ -1,5 +1,5 @@
 {
-  "senast_uppdaterad": "2026-08-17",
+  "senast_uppdaterad": "2026-08-24",
   "partier": [
     {
       "id": "m",
@@ -13,9 +13,39 @@
       ],
       "logo": "/logos/m.svg",
       "logo_kalla": "Wikimedia Commons, File:M v1.svg (PD-textlogo)",
-      "manifest_status": "sociala_medier",
-      "manifest_not": "Moderaterna har inget publicerat valmanifest. hoor.moderatweb.se och alla undersidor under 'Vår politik' (trygghet, kultur och fritid, utbildning, äldreomsorg, sjukvård) är innehållslösa platshållare (omkontrollerat 2026-08-15). Partiets valplattform kommuniceras i stället som korta videor på Facebook: 84 reels publicerade mellan 2024-12-01 och 2026-08-15, varav 61 under 2026. Punkterna nedan är hämtade därifrån och bygger på inläggens egen text samt maskinell transkription av talet i videorna. Vi har låtit varje punkt motsvara ett enskilt inlägg i stället för att slå ihop flera, så att den länkade källan alltid går att kontrollera mot påståendet. Urvalet är de mest konkreta utspelen — det är inte hela flödet, och inlägg av typen hälsningar, invigningar och delningar från riksnivån är utelämnade.",
+      "manifest_status": "hittat",
+      "manifest_not": "Moderaterna publicerade en plattformstext på hoor.moderatweb.se någon gång mellan 16 och 24 augusti 2026. Fram till dess låg webbplatsen och alla undersidor under 'Vår politik' som innehållslösa platshållare — kontrollerat av oss 2026-08-15, och Internet Archives enda kopia från 2026, tagen 12 februari, visar samma tomma sida. De fem första punkterna nedan är hämtade ur den nya texten, som partiet självt rubricerar 'Med en stark ekonomi bygger vi ett tryggt Höör'. Stycket om Frostavallen står där under rubriken 'En trygg skola', vilket ser ut som ett förbiseende; vi redovisar det efter sakinnehållet som näringsliv. Resten av punkterna kommer från partiets Facebook-inlägg: 84 reels publicerade mellan 2024-12-01 och 2026-08-15, varav 61 under 2026. De bygger på inläggens egen text samt maskinell transkription av talet i videorna, och de är mer konkreta än webbplatsens text — det är där skattesatser, byggstartsår och belopp finns. Vi har låtit varje punkt motsvara ett enskilt inlägg i stället för att slå ihop flera, så att den länkade källan alltid går att kontrollera mot påståendet. Urvalet är de mest konkreta utspelen — det är inte hela flödet, och inlägg av typen hälsningar, invigningar och delningar från riksnivån är utelämnade.",
       "manifest_2026": [
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Vill att Höör ska vara attraktivt både att bo i och besöka: ett levande centrum, återkommande evenemang och ett rikt kultur- och fritidsutbud. Partiet vill utveckla badplatser och tätortsnära grönområden, och bygga bostäder som passar ortens karaktär. Höör ska enligt partiet växa med en stark lokal identitet.",
+          "kalla_titel": "Moderaterna i Höör, hoor.moderatweb.se (hämtad 2026-08-24)",
+          "kalla_url": "https://hoor.moderatweb.se/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill utveckla Frostavallen till en destination året runt, med vintersport, mountainbikeleder, camping och rekreation. Motivet partiet anger är fler besökare, fler arbetstillfällen och en starkare lokal handel.",
+          "kalla_titel": "Moderaterna i Höör, hoor.moderatweb.se (hämtad 2026-08-24)",
+          "kalla_url": "https://hoor.moderatweb.se/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill ha fler legitimerade lärare och en stärkt elevhälsa, snabba insatser mot hot, våld och mobbning, stöd till elever som behöver hjälp och större utmaningar till elever som vill utvecklas mer. Skolan ska präglas av arbetsro och inspirerande lärmiljöer.",
+          "kalla_titel": "Moderaterna i Höör, hoor.moderatweb.se (hämtad 2026-08-24)",
+          "kalla_url": "https://hoor.moderatweb.se/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill minska den ofrivilliga ensamheten bland äldre genom fler mötesplatser och aktiviteter, och ge äldre bättre möjligheter att vara fysiskt aktiva. Partiet kopplar detta till hälsa, delaktighet och trygghet.",
+          "kalla_titel": "Moderaterna i Höör, hoor.moderatweb.se (hämtad 2026-08-24)",
+          "kalla_url": "https://hoor.moderatweb.se/"
+        },
+        {
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Anser att den som bor i Höör inte ska betala mer skatt än nödvändigt. En ansvarsfull ekonomi ska enligt partiet stärka hushållens köpkraft, öka kommunens attraktivitet och skapa förutsättningar för inflyttning och företagsetableringar.",
+          "kalla_titel": "Moderaterna i Höör, hoor.moderatweb.se (hämtad 2026-08-24)",
+          "kalla_url": "https://hoor.moderatweb.se/"
+        },
         {
           "politikomrade": "Ekonomi och skatt",
           "standpunkt": "Vill sänka kommunalskatten med ytterligare 50 öre 2027, utöver sänkningen på 30 öre som gäller från 2026. Motivet partiet anger är att den som bor i Höör inte ska behöva betala mer i skatt än den som bor i Lund eller Malmö, och att en stark kommunal ekonomi ska komma invånarna till del. Målet är att Höör ska ligga på en för Skåne genomsnittlig skattenivå.",

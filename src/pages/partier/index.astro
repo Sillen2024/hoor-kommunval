@@ -13,6 +13,9 @@ const medLokaltManifest = partierData.partier.filter((p) => p.manifest_status ==
 const baraSocialaMedier = partierData.partier.filter((p) => p.manifest_status === "sociala_medier");
 const nationelltIStallet = partierData.partier.filter((p) => p.manifest_status === "ersatt");
 const heltUtanManifest = partierData.partier.filter((p) => p.manifest_status === "saknas");
+const mParti = partierData.partier.find((p) => p.id === "m");
+const mFranWebbplats =
+  mParti?.manifest_2026.filter((s) => s.kalla_url.includes("moderatweb")).length ?? 0;
 const utanPublicerat = [...baraSocialaMedier, ...nationelltIStallet, ...heltUtanManifest];
 const mandatUtanPublicerat = utanPublicerat.reduce((sum, p) => sum + p.mandat_2022, 0);
 
@@ -43,6 +46,13 @@ const manifestEtikett = (status: string) =>
       valmanifest eller kommunalpolitiskt program för Höör inför 2026: {namnLista(medLokaltManifest)}. Där går det att
       läsa vad partiet vill göra i just den här kommunen.
     </p>
+    {mParti?.manifest_status === "hittat" && mFranWebbplats > 0 && (
+      <p>
+        Moderaternas program kom sist. Partiets webbplats låg tom när vi kontrollerade den den 15 augusti, och
+        texten dök upp först veckan därpå. Den är kort: {mFranWebbplats} punkter. Resten av det vi
+        redovisar för Moderaterna kommer från partiets egna Facebook-inlägg.
+      </p>
+    )}
     <p>
       För de övriga {utanPublicerat.length} finns inget publicerat program att läsa, trots att de tillsammans har
       {" "}{mandatUtanPublicerat} av {mandatTotalt} mandat.

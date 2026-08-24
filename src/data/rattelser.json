@@ -1,6 +1,17 @@
 {
   "kontakt": "hej@ibland.nu",
-  "senast_uppdaterad": "2026-08-16",
+  "senast_uppdaterad": "2026-08-24",
   "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
-  "rattelser": []
+  "rattelser": [
+    {
+      "datum": "2026-08-24",
+      "sida": "Moderaterna i Höör",
+      "sid_url": "/partier/m/",
+      "vad_stod": "Moderaterna har inget publicerat valmanifest. hoor.moderatweb.se och alla undersidor under 'Vår politik' är innehållslösa platshållare.",
+      "vad_star_nu": "Moderaterna publicerade en plattformstext på hoor.moderatweb.se någon gång mellan 16 och 24 augusti 2026. Fem av partiets punkter är hämtade ur den; resten kommer som förut från partiets Facebook-inlägg.",
+      "kalla_url": "https://hoor.moderatweb.se/",
+      "kalla_beskrivning": "Moderaterna i Höörs egen webbplats",
+      "rapporterad_av": "Egen kontroll"
+    }
+  ]
 }

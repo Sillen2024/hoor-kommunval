@@ -53,6 +53,8 @@ const SITUATIONER = [
 // ståndpunkter och sociala medier-källor. Renderas alltid.
 const mParti = partierData.partier.find((p) => p.id === "m");
 const ersattaPartier = partierData.partier.filter((p) => p.manifest_status === "ersatt").map((p) => p.namn);
+const mFranWebbplats =
+  mParti?.manifest_2026.filter((s) => s.kalla_url.includes("moderatweb")).length ?? 0;
 const ersattaText = new Intl.ListFormat("sv", { style: "long", type: "conjunction" }).format(ersattaPartier);
 
 const situationerMedInnehall = SITUATIONER.map((s) => {
@@ -80,6 +82,13 @@ const situationerMedInnehall = SITUATIONER.map((s) => {
       <Fragment>
         För {ersattaText} visar korten <strong>nationella</strong> ståndpunkter — partierna saknar lokalt
         valmanifest för Höör.
+      </Fragment>
+    )}
+    {mParti?.manifest_status === "hittat" && mFranWebbplats > 0 && (
+      <Fragment>
+        {" "}Moderaterna lade ut sitt program i slutet av augusti. {mFranWebbplats} av deras punkter kommer
+        därifrån, resten från partiets egna Facebook-inlägg —{" "}
+        <a href="/partier/m/">så kontrollerade vi det</a>.
       </Fragment>
     )}
     {mParti?.manifest_status === "sociala_medier" && (
