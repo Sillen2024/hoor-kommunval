@@ -263,11 +263,22 @@ Sajten påstod alltså något som inte längre var sant.
       riksavdelningssida länkar bara riksorganisationens konton, och
       `facebook.com/<gissning>` svarar 200 på allt. Be Jonas om länken, kör
       sedan M3-metoden.
-- [ ] **SkD-artikeln "KD om höghus i Höör: 'Det är ju jättehemskt'"**
-      (`skd.se/hoor/kd-om-hoghus-i-hoor-det-ar-ju-jattehemskt/`) ligger bakom
-      betalvägg. Den kan avgöra om KD:s uppgift om att våningsantalet på
-      Maglehill sänktes från 7/5/5 till 6/4/4 stämmer — det är den enda del av
-      partiets påstående vi inte kunnat kontrollera mot protokoll.
+- [x] **Våningsfrågan på Maglehill är avgjord — utan artikeln.** KD:s uppgift
+      stämmer: KSau sänkte de tre punkthusen en våning var den 2 september 2025
+      (§ 204), och KS antog planen den 16 september (§ 200) med 6, 4 och 4
+      våningar. Källan låg redan i repot: `Protokoll_KS_250916.pdf`. Ärendet på
+      sajten slutade vid granskningen och beskrev därför 150 bostäder, sju
+      våningar och 330 invånare — verkligheten är 138, sex och 304, och planen
+      vann laga kraft 2026-02-24 efter avslaget överklagande. Rubriken bytt till
+      utfallet, ankaret uppdaterat på de två ställen som pekar hit.
+      De två SkD-artiklarna är fortfarande låsta och fortfarande läsvärda för
+      Jonas (han har konto): `skd.se/hoor/kd-om-hoghus-i-hoor-det-ar-ju-jattehemskt/`
+      (6 april 2026, KD:s toppnamn om höghusen) och
+      `skd.se/artikel/trots-sovjet-varningen-hoghus-i-hoor-blir-verklighet`
+      (om L:s Sovjet-liknelse, som partiet upprepar i valkompassen).
+- [ ] **KD:s protokollsanteckning till § 200** finns som protokollsbilaga men är
+      inte hämtad. Den skulle ge partiets egna ord om den antagna planen. Hämtas
+      via Ciceron-API:t, se `KALLLUCKOR-RAPPORT.md` § 1.
 - [ ] **Ur mejlet publiceras ingenting.** KD skrev varför den lokala
       webbplatsen är släckt (tid och ork). Utskicket lovade att inte publicera
       svaren utan att fråga först, så uppgiften är inte använd. Allt som ligger
