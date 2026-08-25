@@ -1,6 +1,6 @@
 {
-  "senast_uppdaterad": "2026-08-17",
-  "metod_not": "Detta är en förenklad valkompass, inte en vetenskaplig mätning. Varje påstående är kopplat till konkreta, källbelagda ståndpunkter från partiernas 2026-manifest (se /partier/ och /jamforelse/) eller till dokumenterade beslut under mandatperioden (se /styret-vs-oppositionen/). Grupperingen styre / rödgröna / SD och MED följer samma blockindelning som resten av sajten. Verkligheten är mer splittrad än så — se resultatet för en viktig brasklapp om hur Höör faktiskt röstar. Resultatet räknas som andel av de frågor du faktiskt tagit ställning till, och tre av frågorna är märkta som nationella.",
+  "senast_uppdaterad": "2026-08-25",
+  "metod_not": "Detta är en förenklad valkompass, inte en vetenskaplig mätning. Varje påstående är kopplat till konkreta, källbelagda ståndpunkter från partiernas redovisade program för 2026 (se /partier/ och /jamforelse/) eller till dokumenterade beslut under mandatperioden (se /styret-vs-oppositionen/ och /arenden/). Grupperingen styre / rödgröna / SD och MED följer samma blockindelning som resten av sajten. Verkligheten är mer splittrad än så — se resultatet för en viktig brasklapp om hur Höör faktiskt röstar. Resultatet räknas som andel av de frågor du faktiskt tagit ställning till. Samtliga frågor gäller sådant som avgörs i Höör.",
   "grupper": {
     "styre": {
       "namn": "Styret",
@@ -50,11 +50,11 @@
       "kalla_url": "/partier/l/"
     },
     {
-      "id": "larare-garanti",
-      "text": "Jag tycker kommunen ska garantera behöriga lärare i varje klassrum, som en tydlig kvalitetsgaranti för skolan.",
+      "id": "nattis",
+      "text": "Jag tycker det var rätt av kommunen att lägga ner nattis.",
       "grupp": "styre",
-      "kalla_not": "Centerpartiet lovar behöriga lärare i varje klassrum.",
-      "kalla_url": "/partier/c/"
+      "kalla_not": "Barn- och utbildningsnämnden tog bort natt- och helgomsorgen i januari 2025, sedan fullmäktige skurit nämndens ram. Vid beslutet använde 12 familjer med 20 barn omsorgen på obekväm tid, och 7 av familjerna använde natten. Moderaterna står bakom nedläggningen och uppger att det i snitt var mindre än ett barn per natt. S, V, MP och SD vill återinföra eller erbjuda nattis igen. Hela ärendet med protokoll finns på Ärenden.",
+      "kalla_url": "/arenden/#natt-och-helgomsorgen-forsvann-nar-budgetramen-krympte"
     },
     {
       "id": "personaltathet",
@@ -85,35 +85,32 @@
       "kalla_url": "/partier/v/"
     },
     {
-      "id": "migration",
-      "text": "Jag vill se en mer restriktiv migrationspolitik lokalt.",
+      "id": "maglehill",
+      "text": "Jag tycker det var fel av kommunen att tillåta punkthus på upp till sex våningar på Maglehill.",
       "grupp": "sd_med",
-      "kompetens": "nationell",
-      "kalla_not": "Sverigedemokraterna vill se en restriktiv och seriös migrationspolitik i kommunen, med motivet att motverka segregation och utanförskap.",
+      "kalla_not": "Planen antogs i september 2025 och vann laga kraft i februari 2026, efter att punkthusen sänkts från 7, 5 och 5 våningar till 6, 4 och 4. SD och MED säger nej till flervåningshus på platsen. Splittringen går genom båda blocken: KD ville se högst fyra våningar och L och S lägre hus — men i kommunstyrelsen röstade S och V för planen tillsammans med M och C. Hela turerna finns på Ärenden.",
+      "kalla_url": "/arenden/#maglehills-nasta-etapp-punkthusen-sanktes-med-en-vaning"
+    },
+    {
+      "id": "fritidsgardar",
+      "text": "Jag tror inte att fritidsgårdar är rätt väg att minska ungdomskriminaliteten.",
+      "grupp": "sd_med",
+      "kalla_not": "Sverigedemokraterna och Medborgerlig Samling säger båda nej till att kommunen satsar på fritidsgårdar för att minska kriminaliteten. Socialdemokraterna vill tvärtom bygga en ny fritidsgård som en del av det förebyggande arbetet, och Vänsterpartiet vill se flera olika typer av fritidsgårdar.",
       "kalla_url": "/partier/sd/"
     },
     {
-      "id": "hardare-straff",
-      "text": "Jag vill se hårdare straff för brott.",
+      "id": "forsorjningsstod",
+      "text": "Jag tycker kommunen bör ställa högre krav på den som får försörjningsstöd.",
       "grupp": "sd_med",
-      "kompetens": "nationell",
-      "kalla_not": "Sverigedemokraterna fokuserar på skärpta straff och ökat skydd för laglydiga medborgare.",
-      "kalla_url": "/partier/sd/"
-    },
-    {
-      "id": "bilism",
-      "text": "Jag tycker det ska bli billigare att köra bil på landsbygden.",
-      "grupp": "sd_med",
-      "kompetens": "nationell",
-      "kalla_not": "Sverigedemokraterna driver krav på sänkta bränslepriser för att möjliggöra ett fungerande liv utanför centralorten. Miljöpartiet och Vänsterpartiet prioriterar i stället utbyggd kollektivtrafik.",
-      "kalla_url": "/partier/sd/"
-    },
-    {
-      "id": "vardgaranti",
-      "text": "Jag tycker kommunen bör garantera vård inom 48 timmar, även om det kräver omprioriteringar i budgeten.",
-      "grupp": "sd_med",
-      "kalla_not": "Medborgerlig Samling vill införa skarpa vårdgarantier med vård inom 48 timmar.",
+      "kalla_not": "Sverigedemokraterna och Medborgerlig Samling vill båda att kommunen ställer högre krav på den som får försörjningsstöd. Centerpartiet vill uttryckligen behålla dagens krav: det ska enligt partiet alltid löna sig att arbeta, men kraven räcker som de är.",
       "kalla_url": "/partier/medborgerlig-samling/"
+    },
+    {
+      "id": "vindkraft",
+      "text": "Jag tycker kommunen ska säga nej till nya vindkraftverk.",
+      "grupp": "sd_med",
+      "kalla_not": "Kommunen har vetorätt mot nya vindkraftverk, så frågan avgörs lokalt. SD, MED och C säger nej till nya verk i Höör. MP och V vill tvärtom att kommunen underlättar utbyggnaden av förnybar kraft. Alla nio partiers svar finns i jämförelsen.",
+      "kalla_url": "/jamforelse/"
     }
   ]
 }
