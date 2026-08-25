@@ -1,5 +1,5 @@
 {
-  "senast_uppdaterad": "2026-08-17",
+  "senast_uppdaterad": "2026-08-25",
   "urvalskriterier_not": "Denna lista är ett medvetet urval, inte heltäckande — se metodiksidan för fullständig motivering. Urval har gjorts enligt tre kriterier: (a) ärendet har förekommit i lokal press (främst Skånska Dagbladet) under mandatperioden 2022-2026, vilket indikerar att det varit ett lokalt debatterat ämne, (b) ärendet rör ett politikområde som partierna själva lyfter i sina 2026-manifest (t.ex. skola, bostäder, klimat, äldreomsorg, demokrati/insyn), och/eller (c) ärendet avgjordes genom en protokollförd votering som visar något om hur partierna faktiskt röstar — särskilt de tre voteringar där minoritetsstyret förlorade, och voteringar där partigrupper delade sig. Lokalpress har enbart använts för att identifiera VILKA ärenden som varit debatterade — inte som källa för sakuppgifter. Sakuppgifter är hämtade från kommunens egna officiella dokument: sedan 2026-08 hämtas kommunfullmäktiges protokoll direkt ur mötesportalens underliggande Ciceron-API, vilket gjort att datum, paragrafer och namngivna röstlängder kunnat verifieras och att käll-PDF:erna kunnat publiceras under /kallor/protokoll/. Röstsiffrorna per parti är kontrollräknade mot protokollens egna totalsiffror. Ingen ärendeurval eller beskrivning nedan innehåller värderingar om vad partierna borde ha gjort — endast dokumenterade fakta med källa. Sedan 2026-08-17 ingår även ett urval beslut från facknämnderna (barn- och utbildningsnämnden, socialnämnden och VA-nämnden), hämtade och verifierade på samma sätt som fullmäktigeprotokollen. Samtliga sex facknämnders protokoll 2023–2026 har genomsökts. Alla voteringar med namngiven röstlängd i de tre nämnda nämnderna är med. Två avgränsningar är gjorda: tillstånds- och tillsynsnämndens två bygglovsvoteringar har utelämnats eftersom de rör myndighetsutövning mot enskilda, medan nämnden för kultur, arbete och folkhälsas tre voteringsärenden lades till 2026-08-17 i en andra omgång. Nämndernas röstsiffror redovisas per ärende med namngiven röstlängd i källan; de räknas inte in i partisidornas fullmäktigestatistik, eftersom nämndgrupperna är för små för statistik. Även kommunstyrelsens samtliga protokoll 2023–2026 är genomsökta och alla voteringar kontrollräknade; hur de redovisas beskrivs under Tekniska begränsningar på metodiksidan.",
   "arenden": [
     {
@@ -1324,6 +1324,22 @@
       "kalla_url_2": "/kallor/protokoll/Protokoll_KF_241106.pdf",
       "kalla_url_2_beskrivning": "Kommunfullmäktiges protokoll 2024-11-06, § 133: reglementet antas (PDF).",
       "urvalsmotivering": "Rådens utformning avgör hur äldre- och funktionsrättsföreningar hörs mellan valen. Voteringen är en av fyra där styret förlorade i kommunstyrelsen, och den enda där L och KD fällde avgörandet mot M och C."
+    },
+    {
+      "typ": "arende",
+      "organ": "Nämnden för kultur, arbete och folkhälsa",
+      "titel": "Ferieplats för unga blev en garanti — alliansens eget initiativ",
+      "datum": "2025-06-17",
+      "antagen_paragraf": "§ 45",
+      "politikomrade": "Arbetsmarknad och unga",
+      "forslagsstallare": "Sarah Nystedt (M), Martin Ekstrand (KD) och Ingemar Kristensson (C), med stöd av Emil Nordström (L) — initiativärende från Alliansen",
+      "beskrivning": "Höör erbjuder omkring 150 ferieplatser varje sommar. De går till ungdomar som gått ut nian eller första eller andra året på gymnasiet, och gäller 60 timmars arbete på tre veckor. I juni 2025 lade tre av alliansens ledamöter i nämnden ett initiativärende om att göra platserna till en garanti: varje ungdom som bor i Höör ska få en ferieplats minst en gång under de tre år hen kan söka. Nämnden sa ja utan votering och utan reservation. S, V, MP och SD satt med vid bordet. Garantin gäller om ansökan är komplett och kommer in i tid, och den lovar inget om vilket jobb man får. Förvaltningen räknade med att den kostar cirka 100 000 kronor om året extra — knappt två promille av nämndens egen budget på 58 miljoner. Vid den första årliga redovisningen 2025-11-25 (§ 77) hade 210 ungdomar sökt, varav 125 för första gången. Alla förstagångssökande fick plats, så garantin var uppfylld redan 2025. 147 ungdomar arbetade, 63 tackade nej eller hörde inte av sig, och 44 platser blev outnyttjade.",
+      "resultat": "Ja utan votering 2025-06-17, § 45. Garantin införs stegvis från 2026. Sektorschefen ska varje år visa hur den hålls.",
+      "kalla_url": "/kallor/protokoll/Protokoll_NKAF_250617.pdf",
+      "kalla_beskrivning": "Nämndens protokoll 2025-06-17, § 45: initiativärendet bifalls (PDF).",
+      "kalla_url_2": "/kallor/protokoll/Protokoll_NKAF_251125.pdf",
+      "kalla_url_2_beskrivning": "Nämndens protokoll 2025-11-25, § 77: första årliga redovisningen av garantin (PDF).",
+      "urvalsmotivering": "Sommarjobb för unga är ett löfte i Socialdemokraternas program för 2026–2030. Ärendet visar vad som redan är beslutat i frågan. Moderaternas kommunstyrelseordförande påpekade luckan i ett mejl 2026-08-25, och den kontrollerades mot protokollen samma dag."
     }
   ],
   "exkluderade_kandidater_not": "Vänsterpartiets motion om ökade ramar för barn- och utbildningsnämnden och socialnämnden (fördelning 5:2, Olle Krabbe m.fl.) är fullt dokumenterad — anmäld vid KF 2023-10-11 (§ 113) och avslagen vid KF 2023-12-06 (§ 149) efter omröstning med upprop, där S, V och MP röstade för motionen och alla övriga emot. Den har ändå ingen egen post här: vad partierna ville med budgetramarna står redan i budgetgenomgången och oppositionens egna budgetförslag på /budget/. Den som vill granska voteringen hittar den i protokollet från 2023-12-06 — observera ett skrivfel där: båda röstlängderna rubriceras 'röstar JA', men den andra listan (S-, V- och MP-ledamöterna) är nej-rösterna. Fler verifierade voteringar än de som visas här finns; urvalsprincipen står på Om urvalet."

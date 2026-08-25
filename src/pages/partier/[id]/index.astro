@@ -237,6 +237,14 @@ const utfallTeman = TEMA_ORDNING.filter(
             <a class="source-link" href={m.kalla_url} target="_blank" rel="noopener noreferrer">
               {"kalla_titel" in m ? m.kalla_titel : m.kalla_url}
             </a>
+            {"faktakoll" in m && m.faktakoll && (
+              <div class="not-box">
+                <strong>Faktakoll:</strong> {m.faktakoll.text}{" "}
+                <a class="source-link" href={m.faktakoll.kalla_url} target="_blank" rel="noopener noreferrer">
+                  {m.faktakoll.kalla_titel}
+                </a>
+              </div>
+            )}
           </div>
         ))}
       </div>

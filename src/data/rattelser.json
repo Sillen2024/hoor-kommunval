@@ -1,8 +1,18 @@
 {
   "kontakt": "hej@ibland.nu",
-  "senast_uppdaterad": "2026-08-24",
+  "senast_uppdaterad": "2026-08-25",
   "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
   "rattelser": [
+    {
+      "datum": "2026-08-25",
+      "sida": "Styret vs oppositionen",
+      "sid_url": "/styret-vs-oppositionen/",
+      "vad_stod": "S vill skapa ett ”kulturkvarter” runt Kulturhuset Anders och inför en sommarjobbsgaranti för unga.",
+      "vad_star_nu": "S vill skapa ett ”kulturkvarter” runt Kulturhuset Anders.",
+      "kalla_url": "/kallor/protokoll/Protokoll_NKAF_250617.pdf",
+      "kalla_beskrivning": "Nämnden för kultur, arbete och folkhälsas protokoll 2025-06-17, § 45. Ordet ”inför” var fel: S sitter i opposition och inför ingenting. En garanti om ferieplats är dessutom redan beslutad, på förslag av M, KD och C. Beslutet finns nu som eget ärende under Ärenden och motioner, och som faktakoll på Socialdemokraternas partisida.",
+      "rapporterad_av": "Moderaterna"
+    },
     {
       "datum": "2026-08-24",
       "sida": "Moderaterna i Höör",

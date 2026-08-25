@@ -48,7 +48,7 @@ Höör styrs idag av den s.k. Alliansen (Moderaterna, Liberalerna, Centerpartiet
 **S, V och MP (Det rödgröna alternativet):**
 - **Satsningar på personal och välfärd:** S vill dubbla förskolepengen, bygga ut trygghetsboenden för äldre och stärka stödet enligt LSS. Vänsterpartiet vill höja minimilönen för kommunanställda till över 29 000 kr, och MP vill minska barngrupperna och anställa fler.
 - **Klimat och Miljö:** Miljöpartiet vill ha nära noll utsläpp i kommunens verksamhet senast 2035, vill inte bygga på jordbruksmark, och vill styra kommunens ekonomi enligt "Munkmodellen" (doughnut economics) — ett unikt löfte som inget annat parti har. De vill också införa gratis kollektivtrafik redan från 70 år (samma sak som styret i juni 2026 meddelade att man planerar införa 2027, efter att ha röstat ner en S-motion om samma sak bara månader tidigare). 
-- **Demokrati & Landsbygd:** Vänsterpartiet vill ha "demokratiska investeringsprogram" där zoner på landsbygden får direkta pengar att besluta över (3 miljoner var tredje år). S vill skapa ett "kulturkvarter" runt Kulturhuset Anders och inför en sommarjobbsgaranti för unga.
+- **Demokrati & Landsbygd:** Vänsterpartiet vill ha "demokratiska investeringsprogram" där zoner på landsbygden får direkta pengar att besluta över (3 miljoner var tredje år). S vill skapa ett "kulturkvarter" runt Kulturhuset Anders.
 
 **Sverigedemokraterna (SD) & Medborgerlig Samling (MED):**
 - **SD:** Ett stenhårt fokus på skärpta straff, restriktiv lokal migrationspolitik för att minska segregationen, och krav på att det ska vara billigare att köra bil på landsbygden. 

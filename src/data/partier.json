@@ -1,5 +1,5 @@
 {
-  "senast_uppdaterad": "2026-08-24",
+  "senast_uppdaterad": "2026-08-25",
   "partier": [
     {
       "id": "m",
@@ -539,7 +539,12 @@
           "politikomrade": "Näringsliv",
           "standpunkt": "Vill införa sommarjobbsgaranti för unga.",
           "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
-          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/"
+          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/",
+          "faktakoll": {
+            "text": "En garanti är redan beslutad. Nämnden för kultur, arbete och folkhälsa sa 2025-06-17 ja till att varje ungdom som bor i Höör ska få en kommunal ferieplats minst en gång. Den införs stegvis från 2026. Förslaget kom från M, KD och C, och nämnden var enig. S skriver inte hur partiets garanti skiljer sig från den.",
+            "kalla_titel": "Nämndens protokoll 2025-06-17, § 45 (PDF)",
+            "kalla_url": "/kallor/protokoll/Protokoll_NKAF_250617.pdf"
+          }
         },
         {
           "politikomrade": "Näringsliv",
