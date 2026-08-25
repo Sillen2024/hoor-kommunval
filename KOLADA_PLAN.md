@@ -258,10 +258,15 @@ kan slå upp vad den betyder. ✔
 - [x] **1.2** Tidsserie {2018}–2025 i mnkr för förskola, grundskola och äldreomsorg,
       2025 märkt med asterisk och fastställandedatum.
 - [x] **1.3** Underrubrik "Vad det betyder för oppositionens förslag": största
-      föreslagna höjningen av BUN:s ram under mandatperioden (S inför 2027, +24,6 mnkr)
+      föreslagna höjningen av BUN:s ram under mandatperioden (V inför 2026, +11,5 mnkr)
       ställd mot förskolans och grundskolans samlade avvikelse (−40,2 mnkr, märkt
       `.derived-note` eftersom Kolada inte publicerar summan). Not som säger rakt ut
       att talen **inte** är varandras motsvarighet och inte får subtraheras.
+      **Rättat 2026-08-25:** stod först "S inför 2027, +24,6 mnkr". 24,6 är hela
+      ramökningen mot 2026 i S:s eget förslag, inte skillnaden mot styret — styret
+      föreslog 16,1 av den. Skillnaden är 8,5 mnkr. Talen i `oppositionsbudgetar.json`
+      är alltid partiets nämndram minus styrets nämndram för samma år; kontrollräkna
+      alltid mot budgetramstabellerna innan något av dem används i text.
 - [–] **1.4** OG-bilden lämnad som `og-budget-v1.png`. Motivering: bildens innehåll
       (skattesänkningen 80 öre → "Vad blir det för dig?") är oförändrat sant och
       svarar fortfarande mot sidans första sektion. En versionshöjning utan ändrat
