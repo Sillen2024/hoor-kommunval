@@ -5,6 +5,26 @@
   "rattelser": [
     {
       "datum": "2026-08-25",
+      "sida": "Budgetöversikt och Nyckeltal",
+      "sid_url": "/budget/#oppositionen",
+      "vad_stod": "Det största enskilda förslaget under mandatperioden kom från Socialdemokraterna inför budget 2027: 24,6 mnkr mer till nämnden än styrets förslag.",
+      "vad_star_nu": "Det största enskilda förslaget under mandatperioden kom från Vänsterpartiet inför budget 2026: 11,5 mnkr mer till nämnden än styret ville lägga.",
+      "kalla_url": "/kallor/budget2027/KS_forslag_budget2027.pdf",
+      "kalla_beskrivning": "24,6 mnkr är hela ökningen av barn- och utbildningsnämndens ram mot 2026 i Socialdemokraternas eget budgetförslag — 16,1 mnkr av den föreslog styret också. Skillnaden mellan förslagen är 8,5 mnkr: S sätter nämndens ram till 493 565 tkr, styret till 485 065 tkr. Samma sammanblandning fanns i Miljöpartiets 2027-post (22,5 blev 6,4 mnkr). Vid omräkningen av alla år hittades tre totalsummor till som inte stämde mot källorna: V 2026 (11,7 blev 16,7 mnkr), S 2025 (8,7 blev 8,1) och MP 2025 (−2,1 blev −2,0). Talen 2024–2026 per nämnd var rätt uträknade sedan tidigare.",
+      "rapporterad_av": "Moderaterna"
+    },
+    {
+      "datum": "2026-08-25",
+      "sida": "Styret vs oppositionen",
+      "sid_url": "/styret-vs-oppositionen/",
+      "vad_stod": "Är du nöjd med hur kommunen styrs idag (bantade nämnder för att spara pengar)?",
+      "vad_star_nu": "Är du nöjd med hur kommunen styrs idag — färre sammanträden, inga medborgarförslag?",
+      "kalla_url": "/kallor/protokoll/Protokoll_KF_241106.pdf",
+      "kalla_beskrivning": "Ingen nämnd har lagts ned i Höör under mandatperioden. Beslutet gällde antalet sammanträden i fullmäktige, kommunstyrelsen och arbetsutskottet, som minskades från nio till åtta per år. Protokollen (KF 2024-09-25 § 111 och 2024-11-06 § 129) anger dessutom arbetsmiljön som främsta skäl, inte besparingen: med nio möten hamnar flera sammanträden samma vecka. Den redovisade besparingen är drygt 140 000 kronor om året. Båda skälen står nu utskrivna på sidan och i ärendet.",
+      "rapporterad_av": "Moderaterna"
+    },
+    {
+      "datum": "2026-08-25",
       "sida": "Styret vs oppositionen",
       "sid_url": "/styret-vs-oppositionen/",
       "vad_stod": "S vill skapa ett ”kulturkvarter” runt Kulturhuset Anders och inför en sommarjobbsgaranti för unga.",
