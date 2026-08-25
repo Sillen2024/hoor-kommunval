@@ -37,8 +37,11 @@ const teman = Array.from(temaMap.entries()).sort((a, b) => {
 const mParti = partierData.partier.find((p) => p.id === "m");
 const mStatus = mParti?.manifest_status;
 const mAntalPunkter = mParti?.manifest_2026.length ?? 0;
+const ARVALKOMPASS = (s: { kalla_url: string }) => s.kalla_url.includes("valkompass.svt.se");
 const mFranWebbplats =
   mParti?.manifest_2026.filter((s) => s.kalla_url.includes("moderatweb")).length ?? 0;
+const mFranValkompass = mParti?.manifest_2026.filter(ARVALKOMPASS).length ?? 0;
+const medValkompass = partierData.partier.filter((p) => p.manifest_2026.some(ARVALKOMPASS));
 const ersattaPartier = partierData.partier.filter((p) => p.manifest_status === "ersatt").map((p) => p.namn);
 const listaSv = new Intl.ListFormat("sv", { style: "long", type: "conjunction" });
 const ersattaText = listaSv.format(ersattaPartier);
@@ -66,8 +69,8 @@ const valkompassText = listaSv.format(valkompassPartier);
       <Fragment>
         <strong>Moderaterna publicerade sitt program i slutet av augusti.</strong> Fram till dess låg
         partiets webbplats tom. {mFranWebbplats} av deras {mAntalPunkter} punkter nedan kommer därifrån,
-        resten från partiets egna Facebook-inlägg —{" "}
-        <a href="/partier/m/">så kontrollerade vi det</a>.
+        {" "}{mFranValkompass} från partiets svar i SVT:s valkompass och resten från partiets egna
+        Facebook-inlägg — <a href="/partier/m/">så kontrollerade vi det</a>.
       </Fragment>
     )}
     {mStatus === "sociala_medier" && (
@@ -84,12 +87,15 @@ const valkompassText = listaSv.format(valkompassPartier);
         <a href="/partier/m/">partisidan för Moderaterna</a> för vad kontrollen omfattade.
       </Fragment>
     )}
-    {valkompassPartier.length > 0 && (
+    {medValkompass.length > 0 && (
       <Fragment>
-        {" "}Korten för {valkompassText} kommer från{" "}
-        {valkompassPartier.length === 1 ? "partiets" : "partiernas"} egna svar i{" "}
-        <strong>SVT:s valkompass</strong> för Höör.{" "}
-        {valkompassPartier.length === 1 ? "Partiet har" : "Partierna har"} inget eget valmanifest.
+        {" "}Alla {medValkompass.length} partier har svarat på <strong>SVT:s valkompass</strong> för Höör,
+        och de svaren finns bland korten nedan.
+        {valkompassPartier.length > 0 && (
+          <Fragment>
+            {" "}För {valkompassText} är det allt vi har — de partierna har inget eget valmanifest.
+          </Fragment>
+        )}
       </Fragment>
     )}
     {ersattaPartier.length > 0 && (

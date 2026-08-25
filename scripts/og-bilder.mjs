@@ -133,8 +133,8 @@ const bilder = [
     etikett: "Jämförelsevy",
     rubrik: [`${antalStandpunkter} ståndpunkter`],
     brödtext: [
-      `Ur ${partierMedManifest.length} partiers egna program, grupperade i`,
-      "jämförbara teman — med källa på varje.",
+      `Ur ${antalPartier} partiers egna program och valkompassvar,`,
+      "grupperade i jämförbara teman — med källa på varje.",
     ],
   },
   {

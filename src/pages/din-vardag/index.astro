@@ -53,8 +53,10 @@ const SITUATIONER = [
 // ståndpunkter och sociala medier-källor. Renderas alltid.
 const mParti = partierData.partier.find((p) => p.id === "m");
 const ersattaPartier = partierData.partier.filter((p) => p.manifest_status === "ersatt").map((p) => p.namn);
+const ARVALKOMPASS = (s: { kalla_url: string }) => s.kalla_url.includes("valkompass.svt.se");
 const mFranWebbplats =
   mParti?.manifest_2026.filter((s) => s.kalla_url.includes("moderatweb")).length ?? 0;
+const medValkompass = partierData.partier.filter((p) => p.manifest_2026.some(ARVALKOMPASS));
 const listaSv = new Intl.ListFormat("sv", { style: "long", type: "conjunction" });
 const ersattaText = listaSv.format(ersattaPartier);
 const valkompassPartier = partierData.partier
@@ -91,15 +93,19 @@ const situationerMedInnehall = SITUATIONER.map((s) => {
     )}
     {valkompassPartier.length > 0 && (
       <Fragment>
-        {" "}Korten för {valkompassText} kommer från{" "}
-        {valkompassPartier.length === 1 ? "partiets" : "partiernas"} svar i{" "}
-        <strong>SVT:s valkompass</strong> för Höör.
+        {" "}Alla {medValkompass.length} partier har svarat på <strong>SVT:s valkompass</strong> för Höör,
+        och de svaren finns bland korten nedan.
+        {valkompassPartier.length > 0 && (
+          <Fragment>
+            {" "}För {valkompassText} är det allt vi har.
+          </Fragment>
+        )}
       </Fragment>
     )}
     {mParti?.manifest_status === "hittat" && mFranWebbplats > 0 && (
       <Fragment>
         {" "}Moderaterna lade ut sitt program i slutet av augusti. {mFranWebbplats} av deras punkter kommer
-        därifrån, resten från partiets egna Facebook-inlägg —{" "}
+        därifrån, resten från valkompassen och partiets egna Facebook-inlägg —{" "}
         <a href="/partier/m/">så kontrollerade vi det</a>.
       </Fragment>
     )}

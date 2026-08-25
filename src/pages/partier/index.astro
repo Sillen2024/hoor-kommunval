@@ -15,8 +15,13 @@ const nationelltIStallet = partierData.partier.filter((p) => p.manifest_status =
 const viaValkompass = partierData.partier.filter((p) => p.manifest_status === "valkompass");
 const heltUtanManifest = partierData.partier.filter((p) => p.manifest_status === "saknas");
 const mParti = partierData.partier.find((p) => p.id === "m");
+const ARVALKOMPASS = (s: { kalla_url: string }) => s.kalla_url.includes("valkompass.svt.se");
 const mFranWebbplats =
   mParti?.manifest_2026.filter((s) => s.kalla_url.includes("moderatweb")).length ?? 0;
+const mFranValkompass = mParti?.manifest_2026.filter(ARVALKOMPASS).length ?? 0;
+// Alla nio partier svarade på SVT:s valkompass för Höör. Räknas ur datan så att
+// meningen inte blir kvar om ett parti skulle tas bort ur underlaget.
+const medValkompass = partierData.partier.filter((p) => p.manifest_2026.some(ARVALKOMPASS));
 const utanPublicerat = [...baraSocialaMedier, ...viaValkompass, ...nationelltIStallet, ...heltUtanManifest];
 const mandatUtanPublicerat = utanPublicerat.reduce((sum, p) => sum + p.mandat_2022, 0);
 
@@ -53,7 +58,8 @@ const manifestEtikett = (status: string) =>
       <p>
         Moderaternas program kom sist. Partiets webbplats låg tom när vi kontrollerade den den 15 augusti, och
         texten dök upp först veckan därpå. Den är kort: {mFranWebbplats} punkter. Resten av det vi
-        redovisar för Moderaterna kommer från partiets egna Facebook-inlägg.
+        redovisar för Moderaterna kommer från partiets egna Facebook-inlägg och från partiets svar i
+        SVT:s valkompass.
       </p>
     )}
     <p>
@@ -84,6 +90,13 @@ const manifestEtikett = (status: string) =>
         </>
       )}
     </p>
+    {medValkompass.length > 0 && (
+      <p>
+        Alla {medValkompass.length} partier har svarat på valkompassen, också de fem med eget program.
+        Där tar de ställning till samma 18 påståenden om kommunen och skriver själva varför. Svaren finns
+        med på varje partisida, märkta med valkompassen som källa.
+      </p>
+    )}
     <p>
       Klicka in på partierna här nedanför och läs mer. På varje partisida står det vad vi hittat, var vi hittat det
       och när vi kontrollerade det — och när vi inte hittat något står det också.

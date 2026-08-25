@@ -4,6 +4,26 @@
   "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd — även när partiets egna ord står kvar men fått en faktakoll under sig, eftersom rutan ändrar vad läsaren tar med sig. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
   "rattelser": [
     {
+      "datum": "2026-08-14",
+      "sida": "Medborgerlig Samling i Höör",
+      "sid_url": "/partier/medborgerlig-samling/",
+      "vad_stod": "Vill reformera LSS.",
+      "vad_star_nu": "(Punkten borttagen.)",
+      "kalla_url": "",
+      "kalla_beskrivning": "Vi hittade inget stöd för uppgiften, varken hos partiet lokalt eller nationellt. Posten är efterregistrerad: noteringen stod tidigare i metodnoten på partisidan, och flyttades hit när noten skrevs om den 25 augusti 2026.",
+      "rapporterad_av": "Egen kontroll"
+    },
+    {
+      "datum": "2026-08-25",
+      "sida": "Partierna i Höör",
+      "sid_url": "/partier/#lokala-valmanifest",
+      "vad_stod": "Resten av det vi redovisar för Moderaterna kommer från partiets egna Facebook-inlägg.",
+      "vad_star_nu": "Resten av det vi redovisar för Moderaterna kommer från partiets egna Facebook-inlägg och från partiets svar i SVT:s valkompass.",
+      "kalla_url": "https://valkompass.svt.se/2026/parti/moderaterna-hoor/",
+      "kalla_beskrivning": "Samma upptäckt som gjorde att C, KD, SD och MED fick lokala ståndpunkter: alla nio partier har svarat på SVT:s valkompass för Höör. För de fem som redan hade ett eget program blev svaren ett tillägg, inte en ersättning. Moderaterna har 46 punkter på sin sida, varav 5 från webbplatsen, 18 från valkompassen och resten från Facebook.",
+      "rapporterad_av": "Egen kontroll"
+    },
+    {
       "datum": "2026-08-25",
       "sida": "Centerpartiet i Höör",
       "sid_url": "/partier/c/",
