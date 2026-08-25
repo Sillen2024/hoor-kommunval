@@ -1,8 +1,38 @@
 {
   "kontakt": "hej@ibland.nu",
   "senast_uppdaterad": "2026-08-25",
-  "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
+  "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd — även när partiets egna ord står kvar men fått en faktakoll under sig, eftersom rutan ändrar vad läsaren tar med sig. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
   "rattelser": [
+    {
+      "datum": "2026-08-25",
+      "sida": "Socialdemokraterna i Höör",
+      "sid_url": "/partier/s/",
+      "vad_stod": "Vill införa sommarjobbsgaranti för unga.",
+      "vad_star_nu": "Vill införa sommarjobbsgaranti för unga. (Med faktakoll under: garantin är redan införd, på förslag av M, KD och C.)",
+      "kalla_url": "/kallor/protokoll/Protokoll_NKAF_250617.pdf",
+      "kalla_beskrivning": "Löftet är ordagrant hämtat ur Socialdemokraternas eget handlingsprogram och står kvar som partiet skrivit det. Det som saknades var sammanhanget. Nämnden för kultur, arbete och folkhälsa beslutade om garantin 2025-06-17, § 45, på initiativ av M, KD och C. Vid återrapporteringen 2025-11-25, § 77 var den redan uppfylld: 125 förstagångssökande på 150 platser. S handlingsprogram kom 2026-06-27, ett år efter beslutet.",
+      "rapporterad_av": "Moderaterna"
+    },
+    {
+      "datum": "2026-08-25",
+      "sida": "Miljöpartiet i Höör",
+      "sid_url": "/partier/mp/",
+      "vad_stod": "…samt erbjuda gratis kollektivtrafik för pensionärer från 70 år.",
+      "vad_star_nu": "…samt erbjuda gratis kollektivtrafik för pensionärer från 70 år. (Med faktakoll under: reformen är redan beslutad och gäller från 2027.)",
+      "kalla_url": "/kallor/budget2027/KS_forslag_budget2027.pdf",
+      "kalla_beskrivning": "Hittad vid egen omkontroll av samtliga nio partiers valpunkter mot alla protokollförda beslut — kontrollen som Moderaternas påpekande om sommarjobbsgarantin satte igång. Här gick det åt andra hållet: MP drev frågan med S och V i tre motioner som röstades ner, senast på 19–19 och ordförandens utslagsröst. Därefter tog styret in reformen i budget 2027. Moderaternas och Socialdemokraternas motsvarande punkter hade redan sammanhanget utskrivet.",
+      "rapporterad_av": "Egen kontroll"
+    },
+    {
+      "datum": "2026-08-25",
+      "sida": "Socialdemokraterna i Höör",
+      "sid_url": "/partier/s/",
+      "vad_stod": "Vill satsa \"dubbelt så mycket på förskolan som dagens borgerliga styre\".",
+      "vad_star_nu": "Vill satsa \"dubbelt så mycket på förskolan som dagens borgerliga styre\". (Med faktakoll under: mer än dubbelt räknat på grundbeloppet, en och en halv gång räknat på hela nämndramen.)",
+      "kalla_url": "/kallor/oppositionsbudgetar/S_budget2027.pdf",
+      "kalla_beskrivning": "Båda talen står i budgethandlingarna. Grundbeloppet för förskola och grundskola höjer S med 6,8 mnkr 2027 mot styrets 3,0 — mer än dubbelt. Hela barn- och utbildningsnämndens ram höjer S med 24,6 mnkr mot styrets 16,1 — en och en halv gång. Förskolan för sig går inte att räkna på, eftersom nämndens ram inte delar förskola och grundskola. Sajten valde tidigare inget av talen; nu står båda.",
+      "rapporterad_av": "Moderaterna"
+    },
     {
       "datum": "2026-08-25",
       "sida": "Budgetöversikt och Nyckeltal",
