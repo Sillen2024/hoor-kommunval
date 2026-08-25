@@ -345,14 +345,18 @@ Beslut av Jonas 2026-08-25 ("kör 1–6"):
       2026-08-25, "Egen kontroll".
 - [ ] **34e. SVT-jämförelsevyn** ("så svarade de på samma fråga", nio partier
       × 18 påståenden, öppet märkt SVT-data) — **efter lanseringen**, inte före.
-- [ ] **34f. Samma föräldralösa SD-beskrivning på `/styret-vs-oppositionen/`.**
-      Bifynd under 34c: rad 115 ("stenhårt fokus på skärpta straff, restriktiv
-      lokal migrationspolitik … billigare att köra bil") och rad 258 (samma
-      teman som "centrala i partiets profil") bygger på SD:s raderade
-      rikspunkter — samma klass av fel som kompassens fem frågor. Ej åtgärdat:
-      sidan ligger utanför 34c:s beslut. Skriv om mot SD:s valkompassvar
-      (vuxennärvaro i skolan, näringsrik kost, tillgänglig natur är deras
-      egna tre hjärtefrågor) eller stryk profilmeningarna.
+- [x] **34f. Föräldralösa SD/MED-beskrivningar på `/styret-vs-oppositionen/`.**
+      KLAR 2026-08-25 på Jonas order. Tre ställen byggde på de raderade
+      rikspunkterna: SD-raden (skärpta straff/migration/billigare bil),
+      MED-raden ("(nationellt)" + 48-timmars vårdgaranti, som inte heller
+      finns i MED:s Höör-svar) och läsarfrågan "Trygghet och trafik" (straff
+      och migrationskrav "avgörs i riksdagen"). Alla tre omskrivna mot
+      partiernas dokumenterade Höör-svar: SD:s och MED:s egna tre
+      hjärtefrågor i profilraderna, ny Vibben-rad, och läsarfrågan ställer nu
+      lokala motsättningar (vuxna i skolan/ordningsvakter mot fritidsgårdar;
+      fler bussturer mot gratis seniorbussar). Riksdags-brasklappen behövdes
+      inte längre och utgick. Rättelselogg-post inlagd. LIX 45 (gränsen håller),
+      noll träffar på de gamla formuleringarna i byggd HTML.
 
 ---
 
