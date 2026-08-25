@@ -314,13 +314,130 @@
       },
       "logo": "/logos/kd.svg",
       "logo_kalla": "Wikimedia Commons, File:Kd v1.svg (PD-textlogo)",
-      "manifest_status": "ersatt",
-      "manifest_not": "Inget specifikt valmanifest för Höör publicerat än. Partiets tidigare lokala webbplats (wp.kristdemokraterna.se/hoor) är fortfarande nedtagen (404, omkontrollerat 2026-08-14) och har inte kommit igång igen. Uppgiften nedan är därför partiets nationella politiska inriktning inom vård, trygghet och familj, inte ett Höör-specifikt löfte.",
+      "manifest_status": "valkompass",
+      "manifest_not": "Kristdemokraterna har inget eget valmanifest för Höör. Men partiet har svarat på SVT:s valkompass för kommunen, och punkterna nedan är de svaren. Orden är partiets egna. Partiet tar ställning i 18 frågor och pekar ut sina tre viktigaste. Varje punkt nedan är ett svar, så att länken går att pröva mot det som står. Sista punkten är hämtad ur partiets egen reservation mot översiktsplanen, inte ur valkompassen. Den gamla lokala sidan wp.kristdemokraterna.se/hoor svarar fortfarande 404. Vi kollade den 25 augusti 2026.",
       "manifest_2026": [
         {
-          "politikomrade": "Vård, trygghet och familj",
-          "standpunkt": "Nationell inriktning: vård (bl.a. primärvård, psykiatri), trygghet (brottsbekämpning, polisen) och familjepolitik (föräldraförsäkring, barnbidrag). Inget Höör-specifikt program hittat.",
-          "kalla_url": "https://kristdemokraterna.se/var-politik/politik-a-till-o"
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Vill sänka kommunalskatten till åtminstone Skånesnittet, helst lägre, och pekar på att skatten sänks med ytterligare 50 öre 2027 — från 21,75 kronor per hundralapp 2025 till 20,95. Motivet partiet anger är att pengarna gör bättre nytta i familjernas plånböcker än på kommunens konto, och att Höör har god ekonomi. Partiet skriver samtidigt att en skattesänkning aldrig kan ske på bekostnad av kärnverksamheten. Detta är den första av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Säger nej till höghus av samma slag som de på Kvarnbäck och Fogdaröd, och vill att Höör behåller småstadsprägeln. Partiet uppger att det var drivande i att få ner de föreslagna punkthusen på Maglehill från 7, 5 och 5 våningar till 6, 4 och 4, och att det helst hade sett helt andra hustyper på platsen. Detta är den andra av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/",
+          "faktakoll": {
+            "text": "Protokollet visar hur den striden gick i kommunstyrelsen. George Emilsons (KD) yrkande om återremiss, för att begränsa punkthusen till högst fyra våningar, föll med 8 röster mot 4 den 27 maj 2025. S och V röstade då med M och C för planen; SD röstade med KD. Vad som därefter hände med våningsantalet i granskningsskedet framgår inte av det protokollet.",
+            "arende_text": "Hela ärendet, med röstlängden",
+            "arende_url": "/arenden/#maglehills-nasta-etapp-150-bostader-och-punkthus-pa-sju-vaningar",
+            "kalla_titel": "Kommunstyrelsens protokoll 2025-05-27, § 136 (PDF)",
+            "kalla_url": "/kallor/protokoll/Protokoll_KS_250527.pdf"
+          }
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill att den som får hjälp med intimvård själv ska kunna välja personalens kön. Motivet partiet anger är att motverka missförhållanden och övergrepp och att stärka tryggheten i äldreomsorgen. Detta är den tredje av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill låta privata företag driva äldrevård som komplement till kommunens egen verksamhet, men ställa höga krav på kvalitet och transparens. Skattemedlen ska enligt partiet i första hand gå till omsorg och inte till vinster.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Säger nej till förkortad arbetstid med full lön för äldreomsorgens personal. Partiet menar att det riskerar att bli kostsamt och kräva höjd skatt eller nedskärningar på andra områden, och att det är svårt att motivera varför just den yrkesgruppen ska få förmånen när andra också har krävande villkor.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill på sikt bygga en helt ny skola i Snogeröd, och i ett första steg rusta upp skollokalerna i Gudmuntorp. Motivet partiet anger är att hela Höör ska leva, även söder om Ringsjön. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Anser att Höör ska erbjuda den barnomsorg som behövs för dem som arbetar obekväma tider, men skriver att efterfrågan på nattis inte varit tillräckligt stor för att det ska vara ekonomiskt försvarbart på en ort av Höörs storlek.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/",
+          "faktakoll": {
+            "text": "Protokollet anger en annan grund. Nämnden tog bort natt- och helgomsorgen den 13 januari 2025. Då hade fullmäktiges budget just skurit nämndens ram med 974 000 kronor, med kortare öppettider som skäl. Öppet som förut hade kostat 3,9 miljoner kronor. Budgeten gav 1,5. Vid beslutet använde 12 familjer med 20 barn omsorgen. 7 av dem använde natten.",
+            "arende_text": "Hela ärendet, med underlaget",
+            "arende_url": "/arenden/#natt-och-helgomsorgen-forsvann-nar-budgetramen-krympte",
+            "kalla_titel": "Barn- och utbildningsnämndens protokoll 2025-01-13, § 5 (PDF)",
+            "kalla_url": "/kallor/protokoll/Protokoll_BUN_250113.pdf"
+          }
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill att skollunchen alltid erbjuder kött och säger uttryckligen nej till vegotvång. Inom skolan prioriterar partiet tre saker: kött alla dagar i veckan, striktare ordningsregler och att skolor och förskolor på landsbygden bevaras. Köttfrågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Idrott och fritid",
+          "standpunkt": "Vill att bygget av en ny ishall påbörjas före 2030 och skriver att byggförberedelserna enligt nuvarande tidsplan startar redan 2029.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Ser fritidsgårdar som en möjlig del i arbetet mot kriminalitet, men anser att familjen är den allra viktigaste förebyggande faktorn. Kommunen har enligt partiet ett stödjande ansvar där, inte minst genom familjerådgivningen.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Migration",
+          "standpunkt": "Vill att kommunen uppmuntrar återvandring för invandrare som inte är integrerade, och hjälper den som vill återvända till sitt hemland. Mottagandet av flyktingar vill partiet hålla på samma nivå som i dag — Höör beskrivs som en redan välkomnande kommun.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Välfärd",
+          "standpunkt": "Vill att kommunen ställer högre krav på den som får försörjningsstöd. Stödet är enligt partiet tänkt som tillfällig hjälp, och motkrav ska sporra mottagaren att ta sig ur situationen i stället för att fastna i bidragsberoende.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill inte att kommunen säger blankt nej till nya vindkraftverk. Vindkraften är enligt partiet en viktig del av energimixen tillsammans med kärnkraft, vattenkraft och solkraft, men kommunen behöver vara vaksam på att verken bara byggs på lämpliga platser. Bland kommunens övriga förslag prioriterar partiet solceller på lämpliga kommunala fastigheter.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Har inget principiellt emot att kommunens fordon är eldrivna, men inte heller emot förbränningsmotorer. Klimatnyttan ska enligt partiet vägas mot nackdelarna, och partiet pekar på en beredskapsfördel i att inte alla kommunens fordon drivs med samma drivmedel.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Säger nej till sänkta löner för kommunens toppolitiker. Ingen går enligt partiet in i politiken för att bli rik, och den som axlar kommunens tyngsta uppdrag ska ha lön för mödan.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill inte att kommunen hissar prideflaggan. Den svenska flaggan står enligt partiet redan för alla människors lika värde oavsett kön, sexuell läggning och etnicitet.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Kultur",
+          "standpunkt": "Vill lägga lika mycket pengar på kultur som i dag. Kulturen är enligt partiet viktig, men inget kärnuppdrag för kommunen. Partiet ser inte heller satsningar på minoriteters kulturer och traditioner som en prioriterad fråga: kommunen gör redan vad lagen kräver och beslutade nyligen att därutöver flagga med de nationella minoriteternas flaggor på deras högtidsdagar.",
+          "kalla_titel": "SVT:s valkompass 2026, Kristdemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/kristdemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Miljö och landsbygd",
+          "standpunkt": "Vill spara åkermark från bebyggelse. I sin skriftliga reservation mot översiktsplanen ville partiet stryka två utbyggnadsområden, Kyrkbyn i Tjörnarp och E22–Fogdarp. Skälen partiet anger är att åkermark är en ändlig resurs som inte går att få tillbaka när den väl bebyggts, att livsmedelsberedskapen behöver stärkas och att kulturmiljön i Tjörnarps kyrkby är känslig. Yrkandet föll med 10 röster mot 3.",
+          "kalla_titel": "KD:s reservation, kommunstyrelsen 2026-02-24 § 35 (PDF)",
+          "kalla_url": "/kallor/reservationer/reservation_KD_260224_par35.pdf"
         }
       ],
       "kandidater_2026_status": "hittat",

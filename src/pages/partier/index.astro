@@ -12,11 +12,12 @@ const namnLista = (ps: typeof partierData.partier) => ps.map((p) => p.namn).join
 const medLokaltManifest = partierData.partier.filter((p) => p.manifest_status === "hittat");
 const baraSocialaMedier = partierData.partier.filter((p) => p.manifest_status === "sociala_medier");
 const nationelltIStallet = partierData.partier.filter((p) => p.manifest_status === "ersatt");
+const viaValkompass = partierData.partier.filter((p) => p.manifest_status === "valkompass");
 const heltUtanManifest = partierData.partier.filter((p) => p.manifest_status === "saknas");
 const mParti = partierData.partier.find((p) => p.id === "m");
 const mFranWebbplats =
   mParti?.manifest_2026.filter((s) => s.kalla_url.includes("moderatweb")).length ?? 0;
-const utanPublicerat = [...baraSocialaMedier, ...nationelltIStallet, ...heltUtanManifest];
+const utanPublicerat = [...baraSocialaMedier, ...viaValkompass, ...nationelltIStallet, ...heltUtanManifest];
 const mandatUtanPublicerat = utanPublicerat.reduce((sum, p) => sum + p.mandat_2022, 0);
 
 const manifestEtikett = (status: string) =>
@@ -24,9 +25,11 @@ const manifestEtikett = (status: string) =>
     ? "lokalt manifest"
     : status === "sociala_medier"
       ? "endast sociala medier"
-      : status === "ersatt"
-        ? "endast nationellt"
-        : "inget manifest";
+      : status === "valkompass"
+        ? "svar i SVT:s valkompass"
+        : status === "ersatt"
+          ? "endast nationellt"
+          : "inget manifest";
 ---
 
 <Layout
@@ -60,6 +63,12 @@ const manifestEtikett = (status: string) =>
         <>
           {" "}{namnLista(baraSocialaMedier)} har en innehållslös webbplats, men driver en omfattande och
           Höör-specifik valkommunikation i sociala medier. Den redovisar vi med det enskilda inlägget som källa.
+        </>
+      )}
+      {viaValkompass.length > 0 && (
+        <>
+          {" "}{namnLista(viaValkompass)} har i stället svarat på SVT:s valkompass för Höör. Där skriver partiet
+          själv vad det vill i kommunen, fråga för fråga, och det är de svaren vi redovisar.
         </>
       )}
       {nationelltIStallet.length > 0 && (
