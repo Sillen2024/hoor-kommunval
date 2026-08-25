@@ -287,7 +287,45 @@ Sajten påstod alltså något som inte längre var sant.
 **Möjlig utbyggnad:** valkompassvaren är den mest jämförbara datan på sajten —
 nio partier, samma 18 frågor, samma skala. En egen vy ("så svarade de på samma
 fråga") skulle utnyttja det bättre än korten gör. Inte byggd; korten ligger
-utspridda per parti och tema.
+utspridda per parti och tema. **→ Beslutad som punkt 34e, byggs efter lanseringen.**
+
+---
+
+## Punkt 34. Revision efter valkompass-importen — PÅGÅR 2026-08-25
+
+**Bakgrund:** Jonas bad om en revision av manifest-avsnitten efter punkt 33.
+Två fynd. (1) SVT-svaren lades sist i listorna utan avstämning mot det som
+redan stod där — ca tio punktpar hos M, L, S, V och MP säger samma sak två
+gånger (värst MP, vars klimatpunkt upprepas i tre SVT-punkter). (2) När C:s,
+SD:s och MED:s nationella punkter raderades tappade **fem av valkompassens
+tolv frågor sitt underlag**: `larare-garanti` (C:s löfte finns inte längre),
+`vardgaranti` (MED:s 48-timmarsgaranti borta), `migration`, `hardare-straff`
+och `bilism` (SD:s rikspunkter borta). Kompassidans löfte "varje påstående går
+att spåra" är brutet för dessa fem. **Rör inte `valkompass.json` i parallell
+session — omgörningen pågår här.**
+
+Beslut av Jonas 2026-08-25 ("kör 1–6"):
+
+- [ ] **34a. Dubblettsanering i `partier.json`.** Slå ihop paren till en punkt
+      med båda källänkarna (`kalla_2_titel`/`kalla_2_url`, renderstöd på
+      partisidan + `/jamforelse/` + `/din-vardag/`). Lämnas medvetet: M:s två
+      ishallspunkter (kompletterar varandra), M:s skolpar (SVT-punkten bär en
+      faktakoll och båda har eget innehåll), S:s landsbygdsskolpar (ny skola i
+      Snogeröd ≠ värna befintliga).
+- [ ] **34b. Rubriken "Valmanifest 2026"** byts på partisidorna för de fyra
+      med `manifest_status: "valkompass"` (C, KD, SD, MED) — deras punkter är
+      valkompassvar, inte manifest. De fem med `hittat` behåller rubriken.
+- [ ] **34c. Kompassomgörning enligt facit-linjen.** Behåll formatet (12
+      frågor, blockresultat, vågmästar-brasklappen). De fem trasiga frågorna
+      ersätts med frågor förankrade i dokumenterade beslut/voteringar (nattis,
+      Maglehill, Tjörnarp-kamerorna, de 13 oanvända voteringarna från punkt
+      19). Frågeförslag tas fram och godkänns av Jonas innan koden röres.
+      Medvetet vald riktning: bort från SVT:s löftesfrågor, mot sajtens egen
+      röstdata — inte en SVT-kopia.
+- [ ] **34d. Rättelselogg-post** om de fem obelagda kompassfrågorna, läggs in
+      när 34c är genomförd.
+- [ ] **34e. SVT-jämförelsevyn** ("så svarade de på samma fråga", nio partier
+      × 18 påståenden, öppet märkt SVT-data) — **efter lanseringen**, inte före.
 
 ---
 
