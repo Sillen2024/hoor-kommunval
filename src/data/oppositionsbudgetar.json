@@ -1,6 +1,7 @@
 {
-  "senast_uppdaterad": "2026-08-13",
+  "senast_uppdaterad": "2026-08-25",
   "kalla_metod": "Höörs kommunfullmäktiges sammanträdesportal anropar ett öppet Ciceron-API, vilket gjorde det möjligt att hämta oppositionens egna budgetförslag i fulltext (inte bara det formella motförslaget som blev föremål för votering). PDF-källorna finns även i src/data/protokoll_ksf/oppositionsbudgetar/.",
+  "kalla_metod_tal": "total_diff_mnkr och namnd_diff_tkr är alltid skillnaden mot styrets budgetförslag för samma år — aldrig partiets egen ramökning mot föregående år. De två blandades ihop för 2027 fram till 2026-08-25, då Moderaterna påpekade det; se rattelser.json. Kontrollräkning: partiets nämndram minus styrets nämndram i samma års budgetramstabell.",
   "forslag": [
     {
       "parti_id": "s",
@@ -61,7 +62,7 @@
       "typ": "fullstandig",
       "typ_not": "Fullständigt alternativt budgetförslag med jämförbara nämndramar.",
       "skattesats": "21,75 kr — avslår uttryckligen styrets planerade 30-öres sänkning",
-      "total_diff_mnkr": 8.7,
+      "total_diff_mnkr": 8.1,
       "namnd_diff_tkr": {
         "Kommunstyrelse": 560,
         "Socialnämnd": 2988,
@@ -110,7 +111,7 @@
       "typ": "fullstandig",
       "typ_not": "Fullständigt alternativt budgetförslag — enda oppositionsförslaget för 2025 som landar under styrets totalsumma.",
       "skattesats": "21,75 kr — avslår uttryckligen styrets planerade 30-öres sänkning",
-      "total_diff_mnkr": -2.1,
+      "total_diff_mnkr": -2.0,
       "namnd_diff_tkr": {
         "Kommunstyrelse": -1150,
         "Socialnämnd": -3480,
@@ -181,13 +182,14 @@
       "typ": "fullstandig",
       "typ_not": "Eget förslag, går en annan finanspolitisk väg än S/MP — större skattesänkning kombinerad med riktade satsningar snarare än full skattebibehållning.",
       "skattesats": "21,25 kr — sänker 50 öre totalt (0,20 kr lägre skattesats än styrets 21,45 kr)",
-      "total_diff_mnkr": 11.7,
+      "total_diff_mnkr": 16.7,
       "namnd_diff_tkr": {
         "Kommunstyrelse": 3300,
         "Barn- och utbildningsnämnd": 11500,
         "Socialnämnd": 1100,
         "Nämnden för kultur, arbete och folkhälsa": 800
       },
+      "namnd_diff_not": "Vänsterpartiets handling har en egen rad, \"Vänsterpartiets förstärkning\", i varje nämndtabell — talen är hämtade därifrån. De summerar till 16,7 mnkr, vilket också är skillnaden mellan V:s nämndernas nettokostnader (1 245,2 mnkr) och styrets (1 228,5 mnkr). Utöver det ligger en låglönesatsning på 5,0 mnkr som förslaget inte fördelar per nämnd.",
       "satsningar": [
         "2 speciallärare: 2,2 mnkr",
         "'Skolpliktskommando' (mot skolfrånvaro): 2,0 mnkr",
@@ -207,13 +209,14 @@
       "typ": "fullstandig",
       "typ_not": "Fullständigt alternativt budgetförslag med jämförbara nämndramar.",
       "skattesats": "21,45 kr — oförändrad jämfört med 2026, avvisar styrets sänkning till 20,95 kr (0,50 kr lägre)",
-      "total_diff_mnkr": 44.6,
+      "total_diff_mnkr": 13.8,
       "namnd_diff_tkr": {
-        "Kommunstyrelse": -500,
-        "Socialnämnd": 17400,
-        "Barn- och utbildningsnämnd": 24600,
-        "Nämnden för kultur, arbete och folkhälsa": 3300
+        "Kommunstyrelse": 1100,
+        "Socialnämnd": 3400,
+        "Barn- och utbildningsnämnd": 8500,
+        "Nämnden för kultur, arbete och folkhälsa": 840
       },
+      "namnd_diff_not": "Skillnaden mot styrets förslag för samma år, uträknad ur budgetramstabellerna: S sätter barn- och utbildningsnämndens ram till 493 565 tkr, styret till 485 065 tkr. S:s egen tabell \"Förändrade ramar i samtliga nämnder\" visar 24,6 mnkr för nämnden, men det är hela ramökningen mot 2026 — och 16,1 mnkr av den föreslog styret också. Summan är 1 311 962 tkr mot styrets 1 298 122 tkr.",
       "satsningar": [
         "Trygghetsvärdar/fältassistenter i skolan (t ex socialpedagog/socionom)",
         "Höjt grundbelopp förskola/skola: 6,8 mnkr",
@@ -254,13 +257,14 @@
       "typ": "fullstandig",
       "typ_not": "Fullständigt alternativt budgetförslag med jämförbara nämndramar.",
       "skattesats": "21,45 kr — oförändrad jämfört med 2026, avvisar styrets sänkning till 20,95 kr (0,50 kr lägre)",
-      "total_diff_mnkr": 42.8,
+      "total_diff_mnkr": 12.1,
       "namnd_diff_tkr": {
-        "Kommunstyrelse": 100,
-        "Socialnämnd": 17100,
-        "Barn- och utbildningsnämnd": 22500,
-        "Nämnden för kultur, arbete och folkhälsa": 3300
+        "Kommunstyrelse": 1700,
+        "Socialnämnd": 3100,
+        "Barn- och utbildningsnämnd": 6400,
+        "Nämnden för kultur, arbete och folkhälsa": 800
       },
+      "namnd_diff_not": "Skillnaden mot styrets förslag för samma år. MP:s budgetramstabell är inbäddad som bild och går inte att läsa maskinellt, så talen är räknade ur tabellen \"förändring i ram per nämnd\", som både MP och styret redovisar med 2026 som utgångspunkt: barn- och utbildningsnämnden 22,5 mnkr (MP) minus 16,1 mnkr (styret). Totalen 12,1 mnkr är 42,8 minus 30,7; delposterna summerar till 12,0 eftersom källans tabeller är avrundade till en decimal.",
       "satsningar": [
         "Kommunekolog (naturvård, energiplan, klimathandlingsplan): 0,8 mnkr",
         "Våtmarksprojekt (återskapande/restaurering/skydd av vattenmiljöer): 0,5 mnkr",
