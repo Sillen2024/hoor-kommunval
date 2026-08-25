@@ -214,6 +214,72 @@ vecka fram till den 13 september.
 
 ---
 
+## Punkt 33. SVT:s valkompass — alla nio partier — KLAR 2026-08-25
+
+**Så hittades den:** Kristdemokraterna svarade på utskicket den 25 augusti och
+pekade på sin egen presentation i SVT:s valkompass. Den kände vi inte till.
+Kontrollen visade att **alla nio partier i Höör har svarat** — på samma 18
+påståenden om kommunen, med egna motiveringar, plus tre egna hjärtefrågor och
+fem presentationsfrågor. Sidorna ligger på
+`https://valkompass.svt.se/2026/parti/<parti>-hoor/` och listas på
+`/2026/alla-lokala-valkompasser/`.
+
+**Varför det spelade roll:** C, KD, SD och MED redovisades med *nationella*
+ståndpunkter, eftersom vi konstaterat kontrollerad frånvaro av lokalt material
+(punkt M3). Det stämde för partiernas egna kanaler, men inte för valkompassen.
+Sajten påstod alltså något som inte längre var sant.
+
+**Gjort:**
+
+- [x] Ny `manifest_status: "valkompass"` för C, KD, SD och MED — etikett
+      "svar i SVT:s valkompass" på `/partier/`. Deras nationella punkter är
+      borttagna. Inget parti på sajten redovisas längre nationellt, vilket gör
+      att den brasklappen försvinner av sig själv ur bannrarna.
+- [x] M, L, S, V och MP behåller `hittat` och får valkompassvaren som tillägg
+      sist i sin lista, med en mening om det i metodnoten.
+- [x] 92 → 248 ståndpunkter. Fördelning: M 46, S 48, L 27, C 22, V 22, MP 26,
+      SD 20, KD 19, MED 18.
+- [x] Tre nya faktakollar: KD och MED om nattis mot BUN 2025-01-13 § 5, KD:s
+      Maglehill-anspråk mot röstlängden i KS 2025-05-27 § 136, SD:s prioritering
+      av gratis bussresor mot budget 2027. Plus en om M:s behörighetstal, där
+      poängen är att talet **inte** går att kontrollera mot Koladas serie
+      (som slutar 2025 och mäter hemkommun, inte kommunens egna skolor).
+- [x] `/partier/`, `/jamforelse/`, `/din-vardag/` och `/om-urvalet/` omskrivna.
+      M:s punkter räknas nu i tre källor: 5 webbplats, 18 valkompass, 23 Facebook.
+- [x] Rättelseloggen: fem nya poster (KD, C, SD, MED, Moderaterna-meningen på
+      `/partier/`) plus MED:s LSS-notering som efterregistrerades med sitt
+      ursprungsdatum 2026-08-14 när metodnoten skrevs om.
+- [x] `og-jamforelse-v1.png` omkörd (248 ståndpunkter, ny brödtext). Samma
+      motiv, samma filnamn. `og-arenden-v1.png` låg efter datan och rättades av
+      samma omkörning (35 → 36 ärenden).
+
+**Kvar:**
+
+- [ ] **Sharing Debugger på `/jamforelse/` efter deploy** — samma sak som
+      punkt 32e, nu med ett nytt tal i bilden.
+- [ ] **KD:s Facebook-sida.** Partiet uppger att den finns och att ett inlägg
+      från söndagen 2026-08-23 lyfter två av deras viktigaste frågor. Adressen
+      går inte att hitta utan inloggning: sökmotorerna hittar den inte, KD:s
+      riksavdelningssida länkar bara riksorganisationens konton, och
+      `facebook.com/<gissning>` svarar 200 på allt. Be Jonas om länken, kör
+      sedan M3-metoden.
+- [ ] **SkD-artikeln "KD om höghus i Höör: 'Det är ju jättehemskt'"**
+      (`skd.se/hoor/kd-om-hoghus-i-hoor-det-ar-ju-jattehemskt/`) ligger bakom
+      betalvägg. Den kan avgöra om KD:s uppgift om att våningsantalet på
+      Maglehill sänktes från 7/5/5 till 6/4/4 stämmer — det är den enda del av
+      partiets påstående vi inte kunnat kontrollera mot protokoll.
+- [ ] **Ur mejlet publiceras ingenting.** KD skrev varför den lokala
+      webbplatsen är släckt (tid och ork). Utskicket lovade att inte publicera
+      svaren utan att fråga först, så uppgiften är inte använd. Allt som ligger
+      ute kommer från valkompassen, protokollen och 404-kontrollen.
+
+**Möjlig utbyggnad:** valkompassvaren är den mest jämförbara datan på sajten —
+nio partier, samma 18 frågor, samma skala. En egen vy ("så svarade de på samma
+fråga") skulle utnyttja det bättre än korten gör. Inte byggd; korten ligger
+utspridda per parti och tema.
+
+---
+
 ## Strukna punkter
 
 - [–] **Geminis punkt 5: accordions i jämförelsevyn.** Bygger på en felaktig premiss. `/jamforelse/` innehåller ingen tabell — det är en `compare-grid` av kort som redan kollapsar till en kolumn på mobil. Sajtens enda horisontellt scrollande tabeller ligger på `/budget/`, `/historiska-val/` och `/arenden/`. **Rör inte jämförelsevyn.** Kvarstående åtgärd var den ursprungliga: sänk `minmax(18rem, 1fr)` till 15rem för skärmar under 350 px — **åtgärdad 2026-08-17** (media query i `global.css`).
@@ -394,6 +460,10 @@ partierna citerar rankingar från olika mätningar (Arbetsförmedlingen, Skolver
 SPF Seniorerna) som alla låter som samma sorts fakta men inte går att jämföra.
 
 ## M3. Samma metod på SD, C, KD och Medborgerlig Samling — [x] KLAR 2026-08-17
+
+> **Delvis överspelad 2026-08-25.** Slutsatsen gäller partiernas egna kanaler och står
+> sig där. Men alla fyra hade svarat på SVT:s valkompass, vilket vi inte kände till —
+> se punkt 33. Metoden nedan är fortfarande giltig för sociala medier.
 
 **Utfall:** Jonas har kontrollerat alla fyra. Ingen av SD, C, KD eller MED har
 lokalt innehåll i sina sociala medier likt M:s reels — det finns inget att
