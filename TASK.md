@@ -326,17 +326,33 @@ Beslut av Jonas 2026-08-25 ("kör 1–6"):
       de fyra med `manifest_status: "valkompass"` (C, KD, SD, MED) säger nu
       "Det här vill [partiet] i Höör"; de fem med `hittat` behåller
       "Valmanifest 2026". Verifierat i byggd HTML.
-- [ ] **34c. Kompassomgörning enligt facit-linjen.** Behåll formatet (12
-      frågor, blockresultat, vågmästar-brasklappen). De fem trasiga frågorna
-      ersätts med frågor förankrade i dokumenterade beslut/voteringar (nattis,
-      Maglehill, Tjörnarp-kamerorna, de 13 oanvända voteringarna från punkt
-      19). Frågeförslag tas fram och godkänns av Jonas innan koden röres.
-      Medvetet vald riktning: bort från SVT:s löftesfrågor, mot sajtens egen
-      röstdata — inte en SVT-kopia.
-- [ ] **34d. Rättelselogg-post** om de fem obelagda kompassfrågorna, läggs in
-      när 34c är genomförd.
+- [x] **34c. Kompassomgörning enligt facit-linjen.** KLAR 2026-08-25, fem
+      frågor godkända av Jonas. Ersättare: `nattis` (styre; BUN 2025-01-13
+      § 5, ankare på /arenden/), `maglehill` (sd_med; KS 2025-09-16 § 200,
+      ankare på /arenden/), `fritidsgardar`, `forsorjningsstod`, `vindkraft`
+      (sd_med; partiernas redovisade Höör-svar). Alla tolv frågor är nu
+      kommunala — `kompetens: "nationell"` finns inte längre i datan
+      (koden i `Valkompass.astro` som visar brasklappen står kvar, vilande).
+      **Avvikelse från godkänd text:** nattis-frågan löd "…när det i snitt
+      var mindre än ett barn per natt", men protokollet styrker inte siffran
+      (jfr nattis-rättelsen 2026-08-25) — den är M:s uppgift och står nu
+      attribuerad i käll-noten i stället; frågan lyder "Jag tycker det var
+      rätt av kommunen att lägga ner nattis." `metod_not` och
+      spårbarhetslöftet på `/valkompass/` omskrivna ("det partierna själva
+      säger inför valet 2026" i stället för "valmanifest"). LIX 43 på
+      `/valkompass/`.
+- [x] **34d. Rättelselogg-post** om de fem obelagda kompassfrågorna — inlagd
+      2026-08-25, "Egen kontroll".
 - [ ] **34e. SVT-jämförelsevyn** ("så svarade de på samma fråga", nio partier
       × 18 påståenden, öppet märkt SVT-data) — **efter lanseringen**, inte före.
+- [ ] **34f. Samma föräldralösa SD-beskrivning på `/styret-vs-oppositionen/`.**
+      Bifynd under 34c: rad 115 ("stenhårt fokus på skärpta straff, restriktiv
+      lokal migrationspolitik … billigare att köra bil") och rad 258 (samma
+      teman som "centrala i partiets profil") bygger på SD:s raderade
+      rikspunkter — samma klass av fel som kompassens fem frågor. Ej åtgärdat:
+      sidan ligger utanför 34c:s beslut. Skriv om mot SD:s valkompassvar
+      (vuxennärvaro i skolan, näringsrik kost, tillgänglig natur är deras
+      egna tre hjärtefrågor) eller stryk profilmeningarna.
 
 ---
 

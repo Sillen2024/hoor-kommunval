@@ -5,6 +5,16 @@
   "rattelser": [
     {
       "datum": "2026-08-25",
+      "sida": "Valkompassen",
+      "sid_url": "/valkompass/",
+      "vad_stod": "Frågorna om behöriga lärare, vårdgaranti, migration, hårdare straff och billigare bil hänvisade till partiståndpunkter — bland annat 'Centerpartiet lovar behöriga lärare i varje klassrum' — som togs bort från sajten den 25 augusti, när fyra partiers nationella punkter ersattes av deras svar i SVT:s valkompass. Kompassens löfte att varje påstående går att spåra höll därmed inte för fem frågor av tolv.",
+      "vad_star_nu": "Fem nya frågor förankrade i dokumenterade Höör-beslut och partiernas redovisade lokala politik: nattis-nedläggningen (BUN 2025-01-13 § 5), punkthusen på Maglehill (KS 2025-09-16 § 200), fritidsgårdar mot ungdomskriminalitet, kraven på försörjningsstöd och kommunens vindkraftsveto. Ingen fråga är längre märkt som nationell.",
+      "kalla_url": "",
+      "kalla_beskrivning": "Upptäckt vid en egen revision dagen efter valkompass-importen: kompassens käll-noter kontrollerades mot partisidorna, och fem pekade på ståndpunkter som inte längre fanns kvar.",
+      "rapporterad_av": "Egen kontroll"
+    },
+    {
+      "datum": "2026-08-25",
       "sida": "Ärenden och motioner",
       "sid_url": "/arenden/#maglehills-nasta-etapp-punkthusen-sanktes-med-en-vaning",
       "vad_stod": "Beslutad 2025-05-27, § 136: detaljplanen för Maglehills centrala etapp godkänd för granskning.",
