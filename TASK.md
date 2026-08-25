@@ -306,15 +306,26 @@ session — omgörningen pågår här.**
 
 Beslut av Jonas 2026-08-25 ("kör 1–6"):
 
-- [ ] **34a. Dubblettsanering i `partier.json`.** Slå ihop paren till en punkt
-      med båda källänkarna (`kalla_2_titel`/`kalla_2_url`, renderstöd på
-      partisidan + `/jamforelse/` + `/din-vardag/`). Lämnas medvetet: M:s två
-      ishallspunkter (kompletterar varandra), M:s skolpar (SVT-punkten bär en
-      faktakoll och båda har eget innehåll), S:s landsbygdsskolpar (ny skola i
-      Snogeröd ≠ värna befintliga).
-- [ ] **34b. Rubriken "Valmanifest 2026"** byts på partisidorna för de fyra
-      med `manifest_status: "valkompass"` (C, KD, SD, MED) — deras punkter är
-      valkompassvar, inte manifest. De fem med `hittat` behåller rubriken.
+- [x] **34a. Dubblettsanering i `partier.json`.** KLAR 2026-08-25. Fyra punkter
+      raderade och infogade i sin valkompass-motsvarighet med
+      `kalla_2_titel`/`kalla_2_url` (V minimilön, M Ungdomens hus → Barn och
+      unga, S blandad bebyggelse, L anropsstyrd trafik); MP:s klimat- och
+      friluftspunkter trimmade så SVT-punkterna bär innehållet en gång; S:s
+      kulturkvarterspunkt av med fritidsgårdsledet som nu bor i SVT-punkten.
+      Renderstöd för andra källan på partisidan + `/jamforelse/` +
+      `/din-vardag/` (8 dubbelkällor i byggd HTML). Metodnoterna för M, L, S,
+      V, MP förklarar ihopslagningen. **Bifynd rättat:** L:s metodnot sa "18
+      sista punkterna" men redan före ändringen var de 20 sista från
+      valkompassen — nu står det 20. 248 → 244 punkter,
+      `og-jamforelse-v1.png` omgenererad (**Sharing Debugger på
+      `/jamforelse/` efter deploy**). LIX ≤ 45 håller på alla sidor.
+      Lämnas medvetet: M:s två ishallspunkter (kompletterar varandra), M:s
+      skolpar (SVT-punkten bär en faktakoll och båda har eget innehåll), S:s
+      landsbygdsskolpar (ny skola i Snogeröd ≠ värna befintliga).
+- [x] **34b. Rubriken "Valmanifest 2026"** — KLAR 2026-08-25. Partisidorna för
+      de fyra med `manifest_status: "valkompass"` (C, KD, SD, MED) säger nu
+      "Det här vill [partiet] i Höör"; de fem med `hittat` behåller
+      "Valmanifest 2026". Verifierat i byggd HTML.
 - [ ] **34c. Kompassomgörning enligt facit-linjen.** Behåll formatet (12
       frågor, blockresultat, vågmästar-brasklappen). De fem trasiga frågorna
       ersätts med frågor förankrade i dokumenterade beslut/voteringar (nattis,
