@@ -541,7 +541,7 @@
           "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
           "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/arbetsmarknad-och-naringsliv/",
           "faktakoll": {
-            "text": "En garanti är redan beslutad. Nämnden för kultur, arbete och folkhälsa sa 2025-06-17 ja till att varje ungdom som bor i Höör ska få en kommunal ferieplats minst en gång. Den införs stegvis från 2026. Förslaget kom från M, KD och C, och nämnden var enig. S skriver inte hur partiets garanti skiljer sig från den.",
+            "text": "Garantin är redan beslutad. Nämnden för kultur, arbete och folkhälsa sa ja 2025-06-17 (§ 45) till att varje ungdom i Höör ska få en kommunal ferieplats minst en gång. Förslaget kom från M, KD och C. Ingen begärde votering och ingen reserverade sig — S satt med vid bordet. Garantin införs stegvis från 2026, och den var uppfylld redan 2025. S:s eget handlingsprogram kom ut ett år efter beslutet, den 27 juni 2026. Det lovar att införa garantin, men säger inte vad partiet vill utöver den.",
             "kalla_titel": "Nämndens protokoll 2025-06-17, § 45 (PDF)",
             "kalla_url": "/kallor/protokoll/Protokoll_NKAF_250617.pdf"
           }
@@ -711,7 +711,12 @@
         {
           "politikomrade": "Transporter",
           "standpunkt": "Vill öka turtäthet för buss och järnväg, bygga fler pendlarparkeringar, ordna hyrbara cykelgarage med laddning vid stationen, bygga klart cykelvägen på gamla Hörbyvägen mot Hörby, samt erbjuda gratis kollektivtrafik för pensionärer från 70 år.",
-          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
+          "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/",
+          "faktakoll": {
+            "text": "Sista punkten är redan beslutad. Busskort för alla över 70 år ingår i budget 2027, som fullmäktige antog 2026-06-10, och gäller från 2027. MP drev frågan tillsammans med S och V i motioner som röstades ner tre gånger. Senast föll den 2025-08-27 på 19–19 och ordförandens utslagsröst. Därefter bytte styret ståndpunkt.",
+            "kalla_titel": "Kommunstyrelsens budgetförslag för 2027, sid. 28 (PDF)",
+            "kalla_url": "/kallor/budget2027/KS_forslag_budget2027.pdf"
+          }
         },
         {
           "politikomrade": "Bostäder",
