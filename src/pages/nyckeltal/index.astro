@@ -333,6 +333,14 @@ const bunHojningar = oppositionsbudgetar.forslag
   }))
   .sort((a, b) => b.mnkr - a.mnkr);
 const storstaBunHojning = bunHojningar[0];
+// Skattesänkningens årseffekt, samma tal som budgetsidan visar: resultaträkningens
+// egen rad för 50-öressteget uppräknad till hela 80 öre.
+const skattesankningRad = (budgetData.beslut.find((b) => b.ar === 2027) as {
+  skattesankning_resultatrakning?: { mnkr_per_ar: Record<string, number> };
+})?.skattesankning_resultatrakning;
+const skattesankningMnkr = skattesankningRad
+  ? Math.round((Math.abs(skattesankningRad.mnkr_per_ar["2027"]) * 80) / 50)
+  : null;
 const budgetVoteringar = budgetData.beslut.filter((b) => b.rostning);
 const jaRoster = [...new Set(budgetVoteringar.map((b) => b.rostning!.ja))];
 const nejRoster = [...new Set(budgetVoteringar.map((b) => b.rostning!.nej))];
@@ -625,9 +633,10 @@ const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "nume
           <dd>
             Flera oppositionspartier har föreslagit högre ramar för barn- och utbildningsnämnden i sina
             egna budgetar — störst var {storstaBunHojning.parti} med {sv(storstaBunHojning.mnkr)} miljoner
-            kronor mer än styret inför {storstaBunHojning.ar}. Styret har prioriterat sänkt skatt, som
-            kostar kommunen i samma storleksordning per år — räkningen står på{" "}
-            <a href="/budget/#vad-kostar-80-ore">budgetsidan</a>.
+            kronor mer än styret ville lägga inför {storstaBunHojning.ar}. Styret valde i stället sänkt
+            skatt{skattesankningMnkr !== null
+              ? `, som kostar kommunen i storleksordningen ${skattesankningMnkr} miljoner kronor om året`
+              : ""} — räkningen står på <a href="/budget/#vad-kostar-80-ore">budgetsidan</a>.
           </dd>
           <dt>Handlingen</dt>
           <dd>

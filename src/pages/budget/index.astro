@@ -159,6 +159,11 @@ const bunHojningar = oppositionsbudgetar.forslag
   }))
   .sort((a, b) => b.mnkr - a.mnkr);
 const storstaBunHojning = bunHojningar[0];
+// Största BUN-förslaget mätt mot skolans avvikelse. Andelen räknas fram i stället
+// för att påstås, och påståendet om att inget förslag täcker avståndet renderas
+// bara om det faktiskt stämmer i datan.
+const bunAndelProcent = Math.round((storstaBunHojning.mnkr / Math.abs(skolaSamlatMnkr)) * 100);
+const ingetForslagTackerAvstandet = bunHojningar.every((h) => h.mnkr < Math.abs(skolaSamlatMnkr));
 
 const koladaKallaUrl = (kpiIds: string[], ar: number[]) =>
   `https://api.kolada.se/v3/data/kpi/${kpiIds.join(",")}/municipality/${HÖÖR}/year/${ar.join(",")}`;
@@ -638,8 +643,8 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       Det här är bakgrunden till att flera oppositionspartier föreslagit högre ramar för barn- och
       utbildningsnämnden. Det största enskilda förslaget under mandatperioden kom från{" "}
       {storstaBunHojning.parti} inför budget {storstaBunHojning.ar}: {sv(storstaBunHojning.mnkr)} mnkr mer till
-      nämnden än styrets förslag. Förskolans och grundskolans sammanlagda avvikelse {huvudar} var
-      {" "}{sv(skolaSamlatMnkr)} mnkr.
+      nämnden än styret ville lägga. Det är ungefär {bunAndelProcent} procent av det avstånd till
+      referenskostnaden som förskolan och grundskolan tillsammans hade {huvudar}: {sv(skolaSamlatMnkr)} mnkr.
     </p>
     <span class="derived-note">
       {sv(skolaSamlatMnkr)} mnkr är summan av två råvärden ur Kolada (förskola {sv(koladaVarde("N11038", huvudar) ?? 0)}
@@ -648,9 +653,10 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
     <div class="not-box">
       <strong>De två talen är inte varandras motsvarighet och ska inte subtraheras.</strong> Nämndens ram
       omfattar mer än förskola och grundskola, förslagen gäller kommande år medan avvikelsen är ett utfall, och
-      en höjd ram styr inte automatiskt vilken verksamhet pengarna hamnar i. Storleksordningen är ändå det som
-      gör förslagen begripliga: de rör sig i samma härad som avståndet till referenskostnaden. Vad varje parti
-      konkret ville lägga pengarna på står nedan och på partiernas egna sidor.
+      en höjd ram styr inte automatiskt vilken verksamhet pengarna hamnar i. Talen står bredvid varandra för
+      att visa storleksordning{ingetForslagTackerAvstandet
+        ? " — och inget av oppositionens förslag når hela vägen till referenskostnaden"
+        : ""}. Vad varje parti konkret ville lägga pengarna på står nedan och på partiernas egna sidor.
     </div>
     <p>
       Hur Höörs avvikelser ser ut bredvid andra kommuners — Skånes {koladaData.skane.length}, grannkommunerna
@@ -666,6 +672,10 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       som gick till votering. Förslagen är hämtade i fulltext direkt ur kommunens mötesportal och jämförs
       nedan mot styrets antagna budget, år för år. Hur voteringarna gick står på{" "}
       <a href="/styret-vs-oppositionen/">Styret vs oppositionen</a>.
+    </p>
+    <p>
+      Talen är skillnaden mot styret. Partiernas egna handlingar visar i stället hela ökningen mot året
+      innan — och i den ingår allt styret också ville lägga.
     </p>
     <div class="not-box">
       Budget 2024: S och MP:s förslag var kortare prioritetslistor utan fullständiga nämndramar och går inte att
@@ -685,7 +695,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
               <tr>
                 <th>Förslag</th>
                 <th>Skattesats</th>
-                <th>Diff mot styret (nettokostnad)</th>
+                <th>Mer än styret ville lägga</th>
                 <th>Källa</th>
               </tr>
             </thead>
