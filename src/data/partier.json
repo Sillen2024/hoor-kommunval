@@ -14,7 +14,7 @@
       "logo": "/logos/m.svg",
       "logo_kalla": "Wikimedia Commons, File:M v1.svg (PD-textlogo)",
       "manifest_status": "hittat",
-      "manifest_not": "Moderaterna publicerade en plattformstext på hoor.moderatweb.se någon gång mellan 16 och 24 augusti 2026. Fram till dess låg webbplatsen och alla undersidor under 'Vår politik' som innehållslösa platshållare — kontrollerat av oss 2026-08-15, och Internet Archives enda kopia från 2026, tagen 12 februari, visar samma tomma sida. De fem första punkterna nedan är hämtade ur den nya texten, som partiet självt rubricerar 'Med en stark ekonomi bygger vi ett tryggt Höör'. Stycket om Frostavallen står där under rubriken 'En trygg skola', vilket ser ut som ett förbiseende; vi redovisar det efter sakinnehållet som näringsliv. Resten av punkterna kommer från partiets Facebook-inlägg: 84 reels publicerade mellan 2024-12-01 och 2026-08-15, varav 61 under 2026. De bygger på inläggens egen text samt maskinell transkription av talet i videorna, och de är mer konkreta än webbplatsens text — det är där skattesatser, byggstartsår och belopp finns. Vi har låtit varje punkt motsvara ett enskilt inlägg i stället för att slå ihop flera, så att den länkade källan alltid går att kontrollera mot påståendet. Urvalet är de mest konkreta utspelen — det är inte hela flödet, och inlägg av typen hälsningar, invigningar och delningar från riksnivån är utelämnade. Efter det har Moderaterna också svarat på SVT:s valkompass för Höör. De 18 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa.",
+      "manifest_not": "Moderaterna publicerade en plattformstext på hoor.moderatweb.se någon gång mellan 16 och 24 augusti 2026. Fram till dess låg webbplatsen och alla undersidor under 'Vår politik' som innehållslösa platshållare — kontrollerat av oss 2026-08-15, och Internet Archives enda kopia från 2026, tagen 12 februari, visar samma tomma sida. De fem första punkterna nedan är hämtade ur den nya texten, som partiet självt rubricerar 'Med en stark ekonomi bygger vi ett tryggt Höör'. Stycket om Frostavallen står där under rubriken 'En trygg skola', vilket ser ut som ett förbiseende; vi redovisar det efter sakinnehållet som näringsliv. Resten av punkterna kommer från partiets Facebook-inlägg: 84 reels publicerade mellan 2024-12-01 och 2026-08-15, varav 61 under 2026. De bygger på inläggens egen text samt maskinell transkription av talet i videorna, och de är mer konkreta än webbplatsens text — det är där skattesatser, byggstartsår och belopp finns. Vi har låtit varje punkt motsvara ett enskilt inlägg i stället för att slå ihop flera, så att den länkade källan alltid går att kontrollera mot påståendet. Urvalet är de mest konkreta utspelen — det är inte hela flödet, och inlägg av typen hälsningar, invigningar och delningar från riksnivån är utelämnade. Efter det har Moderaterna också svarat på SVT:s valkompass för Höör. De 18 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa. Där partiets eget material och valkompassvaret sade samma sak har vi slagit ihop dem till en punkt med båda källorna.",
       "manifest_2026": [
         {
           "politikomrade": "Bostäder",
@@ -155,12 +155,6 @@
           "kalla_url": "https://www.facebook.com/reel/1598188775215199/"
         },
         {
-          "politikomrade": "Barn och unga",
-          "standpunkt": "Har tillsammans med Alliansen föreslagit ett nytt Ungdomens hus i Höör, med större lokaler där ungdomar kan träffas, ha aktiviteter och caféverksamhet.",
-          "kalla_titel": "Moderaterna i Höör på Facebook, 2026-07-24",
-          "kalla_url": "https://www.facebook.com/reel/27588822874105672/"
-        },
-        {
           "politikomrade": "Trafik",
           "standpunkt": "Vill att kommunen tar över huvudmannaskapet för Landsvägen i Tjörnarp från Trafikverket. Kommunen ansvarar i dag för de flesta gator i Tjörnarp men inte för Landsvägen, vilket enligt partiet gör det svårt att genomföra trafiksäkerhetsåtgärder. Ett övertagande skulle möjliggöra en gång- och cykelväg längs vägen.",
           "kalla_titel": "Moderaterna i Höör på Facebook, 2026-04-07",
@@ -288,10 +282,12 @@
           "kalla_url": "https://valkompass.svt.se/2026/parti/moderaterna-hoor/"
         },
         {
-          "politikomrade": "Trygghet",
-          "standpunkt": "Vill satsa på ett nytt ungdomens hus i det nuvarande bibliotekets lokaler, när biblioteket flyttar upp till Södergatan. Det ger enligt partiet större ytor för ungdomarna, bättre samverkan med skolan och ett mer levande centrum. Frågan är märkt som extra viktig av partiet.",
+          "politikomrade": "Barn och unga",
+          "standpunkt": "Vill satsa på ett nytt Ungdomens hus i det nuvarande bibliotekets lokaler, när biblioteket flyttar upp till Södergatan — större ytor där ungdomar kan träffas, ha aktiviteter och caféverksamhet, bättre samverkan med skolan och ett mer levande centrum. Förslaget har partiet lagt tillsammans med Alliansen. Frågan är märkt som extra viktig av partiet.",
           "kalla_titel": "SVT:s valkompass 2026, Moderaterna Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/moderaterna-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/moderaterna-hoor/",
+          "kalla_2_titel": "Moderaterna i Höör på Facebook, 2026-07-24",
+          "kalla_2_url": "https://www.facebook.com/reel/27588822874105672/"
         },
         {
           "politikomrade": "Infrastruktur",
@@ -324,7 +320,7 @@
       "logo": "/logos/l.svg",
       "logo_kalla": "Wikimedia Commons, File:L v1.svg (PD-textlogo/PD-self)",
       "manifest_status": "hittat",
-      "manifest_not": "Lokal webbplats med sidor per politikområde, senast uppdaterad 2026-07-29. Liberalerna har dessutom svarat på SVT:s valkompass för Höör. De 18 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa.",
+      "manifest_not": "Lokal webbplats med sidor per politikområde, senast uppdaterad 2026-07-29. Liberalerna har dessutom svarat på SVT:s valkompass för Höör. De 20 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa. Där partiets eget material och valkompassvaret sade samma sak har vi slagit ihop dem till en punkt med båda källorna.",
       "manifest_2026": [
         {
           "politikomrade": "Skola",
@@ -352,11 +348,6 @@
           "kalla_url": "https://hoor.liberalerna.se/politik/vatten-avlopp/"
         },
         {
-          "politikomrade": "Kollektivtrafik",
-          "standpunkt": "Vill öka turtäthet för buss och tåg, undersöka samordnad anropsstyrd trafik (kombinera skolskjuts, kollektivtrafik, turism), och att en framtida stambana förläggs nära befintlig central infrastruktur så Höörs stationsläge bevaras.",
-          "kalla_url": "https://hoor.liberalerna.se/politik/kollektivtrafik/"
-        },
-        {
           "politikomrade": "Natur och rekreation",
           "standpunkt": "Vill marknadsföra Höör som naturkommun och stötta utomhusturism. Vill utöka antalet odlingslotter för medborgare, inklusive tillfälliga odlingsytor på mark som väntar på exploatering.",
           "kalla_url": "https://hoor.liberalerna.se/politik/natur-rekreation/"
@@ -369,9 +360,11 @@
         },
         {
           "politikomrade": "Kollektivtrafik",
-          "standpunkt": "Vill ha flexibel, avropsstyrd kollektivtrafik som samordnar persontrafik, skolskjuts, turism och rekreation i hela kommunen. Partiet vill också verka för gratis kollektivtrafik för äldre lokalt. Detta är den andra av partiets tre viktigaste frågor.",
+          "standpunkt": "Vill ha flexibel, anropsstyrd kollektivtrafik som samordnar persontrafik, skolskjuts, turism och rekreation i hela kommunen, och öka turtätheten för buss och tåg. Partiet vill också verka för gratis kollektivtrafik för äldre lokalt, och att en framtida stambana förläggs nära befintlig central infrastruktur så att Höörs stationsläge bevaras. Detta är den andra av partiets tre viktigaste frågor.",
           "kalla_titel": "SVT:s valkompass 2026, Liberalerna Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/liberalerna-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/liberalerna-hoor/",
+          "kalla_2_titel": "Liberalerna i Höör, hoor.liberalerna.se",
+          "kalla_2_url": "https://hoor.liberalerna.se/politik/kollektivtrafik/"
         },
         {
           "politikomrade": "Vatten och avlopp",
@@ -822,7 +815,7 @@
       "logo": "/logos/s.svg",
       "logo_kalla": "Wikimedia Commons, File:2022 Stockholm City Council election (cropped).svg (CC BY 4.0, av Quinnnnnby)",
       "manifest_status": "hittat",
-      "manifest_not": "Socialdemokraterna är det parti i Höör som publicerar mest om sin egen politik. Underlaget nedan är hämtat 2026-08-17 från tre källor på socialdemokraternahoor.se: de nio ämnessidorna under \"Vår politik 2026–2030\", det tryckta kommunalpolitiska handlingsprogrammet \"För ett Höör som håller ihop\" (PDF, publicerad 2026-06-27), och partiets egen presentation av sitt budgetförslag för 2027 (2026-05-28). Webbsidorna och PDF:en har ordagrant samma innehåll; webbsidorna uppdaterades senast 2026-08-07. Några av URL:erna har kvar slugg-namn från 2022 års sajt och stämmer därför inte alltid med rubriken — sidan /var-politik/gymnasieskolan-och-vuxenutbildningen/ innehåller i dag avsnittet \"Demokrati & förvaltning\". Två punkter kommer från partiets motion respektive initiativärende till fullmäktige i juli 2026, och en från Facebook. Punkterna är hämtade ordagrant ur programmets egna att-satser och sammanfogade högst några stycken i taget inom samma ämnessida, så att den länkade källan alltid går att kontrollera mot påståendet. Partiets budgetförslag redovisas dessutom med nämndramar och siffror under Budget. Partiet har dessutom svarat på SVT:s valkompass för Höör. De 14 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa.",
+      "manifest_not": "Socialdemokraterna är det parti i Höör som publicerar mest om sin egen politik. Underlaget nedan är hämtat 2026-08-17 från tre källor på socialdemokraternahoor.se: de nio ämnessidorna under \"Vår politik 2026–2030\", det tryckta kommunalpolitiska handlingsprogrammet \"För ett Höör som håller ihop\" (PDF, publicerad 2026-06-27), och partiets egen presentation av sitt budgetförslag för 2027 (2026-05-28). Webbsidorna och PDF:en har ordagrant samma innehåll; webbsidorna uppdaterades senast 2026-08-07. Några av URL:erna har kvar slugg-namn från 2022 års sajt och stämmer därför inte alltid med rubriken — sidan /var-politik/gymnasieskolan-och-vuxenutbildningen/ innehåller i dag avsnittet \"Demokrati & förvaltning\". Två punkter kommer från partiets motion respektive initiativärende till fullmäktige i juli 2026, och en från Facebook. Punkterna är hämtade ordagrant ur programmets egna att-satser och sammanfogade högst några stycken i taget inom samma ämnessida, så att den länkade källan alltid går att kontrollera mot påståendet. Partiets budgetförslag redovisas dessutom med nämndramar och siffror under Budget. Partiet har dessutom svarat på SVT:s valkompass för Höör. De 14 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa. Där partiets eget material och valkompassvaret sade samma sak har vi slagit ihop dem till en punkt med båda källorna.",
       "manifest_2026": [
         {
           "politikomrade": "Skola",
@@ -916,12 +909,6 @@
           "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/bostad-och-byggande/"
         },
         {
-          "politikomrade": "Bostäder",
-          "standpunkt": "Vill säkerställa att nybyggnation av bostäder är blandad — villor, bostadsrätter och hyresrätter anpassade för olika inkomster och olika faser i livet.",
-          "kalla_titel": "Handlingsprogram 2026–2030: Samhällsbyggnad",
-          "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/bostad-och-byggande/"
-        },
-        {
           "politikomrade": "Infrastruktur",
           "standpunkt": "Vill verka för att de nya stambanorna dras i anslutning till kommunens två tågstationer, för att säkra Höörs position som pendlarkommun.",
           "kalla_titel": "Handlingsprogram 2026–2030: Arbete & näringsliv",
@@ -971,7 +958,7 @@
         },
         {
           "politikomrade": "Kultur och fritid",
-          "standpunkt": "Vill göra kvarteret runt Kulturhuset Anders till ett kulturkvarter och verka för en fritidsgård som komplement till Kulturgården.",
+          "standpunkt": "Vill göra kvarteret runt Kulturhuset Anders till ett kulturkvarter.",
           "kalla_titel": "Handlingsprogram 2026–2030: Kultur & föreningsliv",
           "kalla_url": "https://www.socialdemokraternahoor.se/var-politik/kultur-och-upplevelser/"
         },
@@ -1056,9 +1043,11 @@
         },
         {
           "politikomrade": "Bostäder",
-          "standpunkt": "Vill ha blandad bebyggelse på Maglehill med både villor och lägenheter, så att man kan bo i Höör oavsett inkomst och fas i livet. Höghus vill partiet dock inte se där, utan hus på två eller tre våningar.",
+          "standpunkt": "Vill att nybyggda bostäder är blandade — villor, bostadsrätter och hyresrätter för olika inkomster och olika faser i livet. På Maglehill vill partiet se både villor och lägenheter, men inga höghus: hus på två eller tre våningar.",
           "kalla_titel": "SVT:s valkompass 2026, Socialdemokraterna Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/socialdemokraterna-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/socialdemokraterna-hoor/",
+          "kalla_2_titel": "Handlingsprogram 2026–2030: Samhällsbyggnad",
+          "kalla_2_url": "https://www.socialdemokraternahoor.se/var-politik/bostad-och-byggande/"
         },
         {
           "politikomrade": "Fritid och idrott",
@@ -1080,9 +1069,11 @@
         },
         {
           "politikomrade": "Trygghet",
-          "standpunkt": "Vill satsa på mer barn- och ungdomsverksamhet och stärka det förebyggande arbetet, där en ny fritidsgård är en del. Frågan är märkt som extra viktig av partiet.",
+          "standpunkt": "Vill satsa på mer barn- och ungdomsverksamhet och stärka det förebyggande arbetet, där en ny fritidsgård — som komplement till Kulturgården — är en del. Frågan är märkt som extra viktig av partiet.",
           "kalla_titel": "SVT:s valkompass 2026, Socialdemokraterna Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/socialdemokraterna-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/socialdemokraterna-hoor/",
+          "kalla_2_titel": "Handlingsprogram 2026–2030: Kultur & föreningsliv",
+          "kalla_2_url": "https://www.socialdemokraternahoor.se/var-politik/kultur-och-upplevelser/"
         },
         {
           "politikomrade": "Klimat och miljö",
@@ -1320,7 +1311,7 @@
       "logo": "/logos/v.svg",
       "logo_kalla": "Wikimedia Commons, File:Vänsterpartiet logo.svg (PD-textlogo)",
       "manifest_status": "hittat",
-      "manifest_not": "Lokalt 2026 valprogram publicerat på hoor.vansterpartiet.se. Partiet har dessutom svarat på SVT:s valkompass för Höör. De 16 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa.",
+      "manifest_not": "Lokalt 2026 valprogram publicerat på hoor.vansterpartiet.se. Partiet har dessutom svarat på SVT:s valkompass för Höör. De 16 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa. Där partiets eget material och valkompassvaret sade samma sak har vi slagit ihop dem till en punkt med båda källorna.",
       "manifest_2026": [
         {
           "politikomrade": "Skola",
@@ -1335,11 +1326,6 @@
         {
           "politikomrade": "Trafik",
           "standpunkt": "Vill bygga ut cykelvägnätet med säkrare cykelvägar, ordna cykelparkering vid tågstationen, och erbjuda gratis kollektivtrafikkort för gymnasieelever. Vill att järnvägen mellan Lund och Hässleholm byggs ut med nya spår längs befintlig sträckning, utan höghastighetsjärnväg genom Mellanskåne.",
-          "kalla_url": "https://hoor.vansterpartiet.se/"
-        },
-        {
-          "politikomrade": "Ekonomi",
-          "standpunkt": "Vill se en minimilön på 29 690 kr/månad för kommunanställda.",
           "kalla_url": "https://hoor.vansterpartiet.se/"
         },
         {
@@ -1365,10 +1351,12 @@
           "kalla_url": "https://valkompass.svt.se/2026/parti/vansterpartiet-hoor/"
         },
         {
-          "politikomrade": "Demokrati",
+          "politikomrade": "Ekonomi",
           "standpunkt": "Vill införa en kommunal minimilön på 29 690 kronor i månaden, och höja de lägsta lönerna för alla kommunalt anställda till minst 30 000 kronor. Man ska enligt partiet kunna försörja sig på sin heltidslön. Detta är den tredje av partiets tre viktigaste frågor.",
           "kalla_titel": "SVT:s valkompass 2026, Vänsterpartiet Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/vansterpartiet-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/vansterpartiet-hoor/",
+          "kalla_2_titel": "Vänsterpartiet i Höör, hoor.vansterpartiet.se",
+          "kalla_2_url": "https://hoor.vansterpartiet.se/"
         },
         {
           "politikomrade": "Skola",
@@ -1472,11 +1460,11 @@
       "logo": "/logos/mp.svg",
       "logo_kalla": "mp.se (partiets egen officiella webbplats)",
       "manifest_status": "hittat",
-      "manifest_not": "Fullständigt valmanifest 2026 för Höör, publicerat på mp.se/hoor, uppdaterat 2026-05-29. Partiet har dessutom svarat på SVT:s valkompass för Höör. De 19 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa.",
+      "manifest_not": "Fullständigt valmanifest 2026 för Höör, publicerat på mp.se/hoor, uppdaterat 2026-05-29. Partiet har dessutom svarat på SVT:s valkompass för Höör. De 19 sista punkterna nedan är de svaren, med partiets egna motiveringar. De är märkta med valkompassen som källa. Där partiets eget material och valkompassvaret sade samma sak har vi slagit ihop dem till en punkt med båda källorna.",
       "manifest_2026": [
         {
           "politikomrade": "Klimat och miljö",
-          "standpunkt": "Vill att kommunens verksamheter ska ha nära noll koldioxidutsläpp 2035, solceller på lämpliga kommunala fastigheter, en plan för återställande av våtmarker, utbyggd förnybar energiproduktion så kommunen blir självförsörjande, samt beredskapsåtgärder för extremväder (mat, vatten, reservkraft). Vill införa 'Munkmodellen' för att styra ekonomin med hänsyn till sociala behov och planetära gränser.",
+          "standpunkt": "Vill ha en plan för återställande av våtmarker och beredskap för extremväder (mat, vatten, reservkraft). Vill införa 'Munkmodellen' för att styra ekonomin med hänsyn till sociala behov och planetära gränser.",
           "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
         },
         {
@@ -1508,7 +1496,7 @@
         },
         {
           "politikomrade": "Folkhälsa och kultur",
-          "standpunkt": "Vill göra Höör till 'Sveriges bästa friluftskommun', bygga fler utegym och cykel-/promenadstråk, utrusta fler badplatser, ordna fler replokaler, samt utveckla kulturhuset Anders (bl.a. skiljevägg mellan café och salong för fler samtida arrangemang).",
+          "standpunkt": "Vill bygga fler utegym och cykel-/promenadstråk, utrusta fler badplatser, ordna fler replokaler, samt utveckla kulturhuset Anders (bl.a. skiljevägg mellan café och salong för fler samtida arrangemang).",
           "kalla_url": "https://www.mp.se/hoor/politik/valmanifest/"
         },
         {
@@ -1520,7 +1508,9 @@
           "politikomrade": "Klimat och miljö",
           "standpunkt": "Vill att kommunens koldioxidutsläpp är nära noll 2035. Klimatförändringarna är enligt partiet ett faktum, och stormar, jorderosion, översvämningar och torka hotar både den biologiska mångfalden och vår egen välfärd. Detta är den första av partiets tre viktigaste frågor.",
           "kalla_titel": "SVT:s valkompass 2026, Miljöpartiet Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/miljopartiet-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/miljopartiet-hoor/",
+          "kalla_2_titel": "Miljöpartiet i Höör, valmanifest 2026",
+          "kalla_2_url": "https://www.mp.se/hoor/politik/valmanifest/"
         },
         {
           "politikomrade": "Transporter",
@@ -1532,7 +1522,9 @@
           "politikomrade": "Natur och friluftsliv",
           "standpunkt": "Vill göra Höör till Sveriges bästa friluftskommun, med bättre naturvård, fler naturreservat, ökad tillgänglighet, fler attraktiva destinationer och mer naturpedagogik i skolan. Detta är den tredje av partiets tre viktigaste frågor.",
           "kalla_titel": "SVT:s valkompass 2026, Miljöpartiet Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/miljopartiet-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/miljopartiet-hoor/",
+          "kalla_2_titel": "Miljöpartiet i Höör, valmanifest 2026",
+          "kalla_2_url": "https://www.mp.se/hoor/politik/valmanifest/"
         },
         {
           "politikomrade": "Skola",
@@ -1568,7 +1560,9 @@
           "politikomrade": "Klimat och miljö",
           "standpunkt": "Vill inte att kommunen säger nej till nya vindkraftverk, utan underlätta utbyggnaden av förnybar kraft så att Höör på sikt blir självförsörjande. Mer vind- och solkraft med goda lagringslösningar är enligt partiet det snabbaste och billigaste sättet att säkra elproduktion i södra Sverige. Partiet prioriterar också solceller på lämpliga kommunala fastigheter.",
           "kalla_titel": "SVT:s valkompass 2026, Miljöpartiet Höör (hämtad 2026-08-25)",
-          "kalla_url": "https://valkompass.svt.se/2026/parti/miljopartiet-hoor/"
+          "kalla_url": "https://valkompass.svt.se/2026/parti/miljopartiet-hoor/",
+          "kalla_2_titel": "Miljöpartiet i Höör, valmanifest 2026",
+          "kalla_2_url": "https://www.mp.se/hoor/politik/valmanifest/"
         },
         {
           "politikomrade": "Klimat och miljö",

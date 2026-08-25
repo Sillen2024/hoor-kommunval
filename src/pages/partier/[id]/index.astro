@@ -211,7 +211,9 @@ const utfallTeman = TEMA_ORDNING.filter(
     </dl>
   )}
 
-  <h2>Valmanifest 2026</h2>
+  {/* "Valmanifest" vore fel rubrik för de fyra partier vars punkter är
+      valkompassvar, inte ett manifest (TASK punkt 34b). */}
+  <h2>{party.manifest_status === "valkompass" ? `Det här vill ${party.namn} i Höör` : "Valmanifest 2026"}</h2>
 
   {party.manifest_status === "saknas" ? (
     <div class="banner">
@@ -236,7 +238,9 @@ const utfallTeman = TEMA_ORDNING.filter(
             <p>{m.standpunkt}</p>
             <a class="source-link" href={m.kalla_url} target="_blank" rel="noopener noreferrer">
               {"kalla_titel" in m ? m.kalla_titel : m.kalla_url}
-            </a>
+            </a>{"kalla_2_url" in m && m.kalla_2_url && (
+              <> · <a class="source-link" href={m.kalla_2_url} target="_blank" rel="noopener noreferrer">{"kalla_2_titel" in m ? m.kalla_2_titel : m.kalla_2_url}</a></>
+            )}
             {"faktakoll" in m && m.faktakoll && (
               <div class="not-box">
                 <strong>Faktakoll:</strong> {m.faktakoll.text}{" "}

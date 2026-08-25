@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import partierData from "../../data/partier.json";
 import { TEMA_KARTA } from "../../lib/tema-karta";
 
-type Stance = { partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string };
+type Stance = { partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string; kalla_2_url?: string; kalla_2_titel?: string };
 
 const temaMap = new Map<string, Stance[]>();
 for (const party of partierData.partier) {
@@ -18,6 +18,8 @@ for (const party of partierData.partier) {
       standpunkt: stance.standpunkt,
       kalla_url: stance.kalla_url,
       kalla_titel: "kalla_titel" in stance ? (stance as { kalla_titel?: string }).kalla_titel : undefined,
+      kalla_2_url: "kalla_2_url" in stance ? (stance as { kalla_2_url?: string }).kalla_2_url : undefined,
+      kalla_2_titel: "kalla_2_titel" in stance ? (stance as { kalla_2_titel?: string }).kalla_2_titel : undefined,
     });
   }
 }
@@ -141,7 +143,9 @@ const situationerMedInnehall = SITUATIONER.map((s) => {
                   <div class="stance-card__header"><a href={`/partier/${st.partiId}/`}>{st.partiNamn}</a></div>
                   <p class="stance-card__label">{st.radRubrik}</p>
                   <p>{st.standpunkt}</p>
-                  <a class="source-link" href={st.kalla_url} target="_blank" rel="noopener noreferrer">{st.kalla_titel ?? "Källa →"}</a>
+                  <a class="source-link" href={st.kalla_url} target="_blank" rel="noopener noreferrer">{st.kalla_titel ?? "Källa →"}</a>{st.kalla_2_url && (
+                    <> · <a class="source-link" href={st.kalla_2_url} target="_blank" rel="noopener noreferrer">{st.kalla_2_titel ?? "Källa 2 →"}</a></>
+                  )}
                 </div>
               ))}
             </div>
@@ -158,7 +162,9 @@ const situationerMedInnehall = SITUATIONER.map((s) => {
                   <div class="stance-card__header"><a href={`/partier/${st.partiId}/`}>{st.partiNamn}</a></div>
                   <p class="stance-card__label">{st.radRubrik}</p>
                   <p>{st.standpunkt}</p>
-                  <a class="source-link" href={st.kalla_url} target="_blank" rel="noopener noreferrer">{st.kalla_titel ?? "Källa →"}</a>
+                  <a class="source-link" href={st.kalla_url} target="_blank" rel="noopener noreferrer">{st.kalla_titel ?? "Källa →"}</a>{st.kalla_2_url && (
+                    <> · <a class="source-link" href={st.kalla_2_url} target="_blank" rel="noopener noreferrer">{st.kalla_2_titel ?? "Källa 2 →"}</a></>
+                  )}
                 </div>
               ))}
             </div>

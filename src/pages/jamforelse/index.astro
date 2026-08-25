@@ -5,7 +5,7 @@ import partierData from "../../data/partier.json";
 import { TEMA_KARTA, TEMA_ORDNING } from "../../lib/tema-karta";
 
 // Bygg en karta: tema -> lista av { parti, standpunkt, kalla_url, rå rubrik }
-const temaMap = new Map<string, Array<{ partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string }>>();
+const temaMap = new Map<string, Array<{ partiId: string; partiNamn: string; block: string; radRubrik: string; standpunkt: string; kalla_url: string; kalla_titel?: string; kalla_2_url?: string; kalla_2_titel?: string }>>();
 
 for (const party of partierData.partier) {
   for (const stance of party.manifest_2026) {
@@ -19,6 +19,8 @@ for (const party of partierData.partier) {
       standpunkt: stance.standpunkt,
       kalla_url: stance.kalla_url,
       kalla_titel: "kalla_titel" in stance ? (stance as { kalla_titel?: string }).kalla_titel : undefined,
+      kalla_2_url: "kalla_2_url" in stance ? (stance as { kalla_2_url?: string }).kalla_2_url : undefined,
+      kalla_2_titel: "kalla_2_titel" in stance ? (stance as { kalla_2_titel?: string }).kalla_2_titel : undefined,
     });
   }
 }
@@ -134,7 +136,9 @@ const valkompassText = listaSv.format(valkompassPartier);
                     </div>
                     <p class="stance-card__label">{s.radRubrik}</p>
                     <p>{s.standpunkt}</p>
-                    <a class="source-link" href={s.kalla_url} target="_blank" rel="noopener noreferrer">{s.kalla_titel ?? "Källa →"}</a>
+                    <a class="source-link" href={s.kalla_url} target="_blank" rel="noopener noreferrer">{s.kalla_titel ?? "Källa →"}</a>{s.kalla_2_url && (
+                    <> · <a class="source-link" href={s.kalla_2_url} target="_blank" rel="noopener noreferrer">{s.kalla_2_titel ?? "Källa 2 →"}</a></>
+                  )}
                   </div>
                 ))}
               </div>
@@ -153,7 +157,9 @@ const valkompassText = listaSv.format(valkompassPartier);
                     </div>
                     <p class="stance-card__label">{s.radRubrik}</p>
                     <p>{s.standpunkt}</p>
-                    <a class="source-link" href={s.kalla_url} target="_blank" rel="noopener noreferrer">{s.kalla_titel ?? "Källa →"}</a>
+                    <a class="source-link" href={s.kalla_url} target="_blank" rel="noopener noreferrer">{s.kalla_titel ?? "Källa →"}</a>{s.kalla_2_url && (
+                    <> · <a class="source-link" href={s.kalla_2_url} target="_blank" rel="noopener noreferrer">{s.kalla_2_titel ?? "Källa 2 →"}</a></>
+                  )}
                   </div>
                 ))}
               </div>
