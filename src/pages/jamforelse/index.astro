@@ -86,8 +86,10 @@ const valkompassText = listaSv.format(valkompassPartier);
     )}
     {valkompassPartier.length > 0 && (
       <Fragment>
-        {" "}Korten för {valkompassText} kommer från partiets egna svar i{" "}
-        <strong>SVT:s valkompass</strong> för Höör. Partiet har inget eget valmanifest.
+        {" "}Korten för {valkompassText} kommer från{" "}
+        {valkompassPartier.length === 1 ? "partiets" : "partiernas"} egna svar i{" "}
+        <strong>SVT:s valkompass</strong> för Höör.{" "}
+        {valkompassPartier.length === 1 ? "Partiet har" : "Partierna har"} inget eget valmanifest.
       </Fragment>
     )}
     {ersattaPartier.length > 0 && (

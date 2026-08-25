@@ -270,23 +270,140 @@
       ],
       "logo": "/logos/c.svg",
       "logo_kalla": "Wikimedia Commons, File:C v1.svg (PD-textlogo)",
-      "manifest_status": "ersatt",
-      "manifest_not": "Inget lokalt valmanifest för Höör publicerat, och partiets lokala Höör-sida saknar sakpolitiskt innehåll (kontrollerat 2026-08-14). Punkterna nedan är därför inte Höör-specifika utan partiets nationella ståndpunkter inför valet 2026, som gäller lokalt i den mån de påverkar kommunal politik.",
+      "manifest_status": "valkompass",
+      "manifest_not": "Centerpartiet har inget eget valmanifest för Höör. Men partiet har svarat på SVT:s valkompass för kommunen, och punkterna nedan är de svaren. Orden är partiets egna. Partiet tar ställning i 18 frågor och pekar ut sina tre viktigaste. Varje punkt nedan är ett svar, så att länken går att pröva mot det som står. Partiets lokala sida på centerpartiet.se saknar fortfarande sakpolitiskt innehåll. Vi kollade den 25 augusti 2026.",
       "manifest_2026": [
         {
           "politikomrade": "Skola",
-          "standpunkt": "Lovar behöriga lärare i varje klassrum (nationellt löfte: alla lärare behöriga inom tio år).",
-          "kalla_url": "https://www.vilarare.se/nyheter/vi-larare-debatt/vi-lovar-behoriga-larare-i-varje-klassrum/"
+          "standpunkt": "Vill ge varje barn en ärlig chans, med mindre klasser, fler lärare, mer studiero, tydliga kunskapskrav och stärkt elevhälsa. Målet partiet anger är att fler ska lämna grundskolan med fullständiga betyg. Inom skolan prioriterar partiet tre saker: mindre klasser, mer resurser till elevhälsan och att skolor och förskolor på landsbygden bevaras. Detta är den första av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
         },
         {
-          "politikomrade": "Vård och hälsa",
-          "standpunkt": "Vill stärka primärvården (nära vård) och satsa på ungas psykiska hälsa (nationellt valmanifest 'Sverige kan mer').",
-          "kalla_url": "https://val2026.centerpartiet.se/"
+          "politikomrade": "Skola",
+          "standpunkt": "Kan tänka sig en ny skola i Snogeröd längre fram, men tycker att Gudmuntorpsskolan fungerar bra i dag. Det viktiga för partiet är att byaskolorna finns kvar i hela kommunen. Partiet kallar det en hjärtefråga.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
         },
         {
-          "politikomrade": "Miljö och landsbygd",
-          "standpunkt": "Prioriterar minskade utsläpp och att vård, skola och infrastruktur ska fungera i hela landet, inklusive landsbygden (nationellt valmanifest 'Sverige kan mer').",
-          "kalla_url": "https://val2026.centerpartiet.se/"
+          "politikomrade": "Skola",
+          "standpunkt": "Kan tänka sig barnomsorg på kvällar, nätter och helger om behovet blir tillräckligt stort. Så är det inte i dag, enligt partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill inte att skollunchen alltid måste erbjuda kött. Skolköken ska enligt partiet servera god, varierad och näringsriktig mat, där kött, fisk och vegetariskt kan vara olika alternativ.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Vård och omsorg",
+          "standpunkt": "Vill att vård och omsorg ska finnas i hela kommunen, nära och tillgänglig. Partiet lyfter fram familjecentralen som snart öppnar i Höör och säger att den kom till på Centerpartiets ursprungliga initiativ.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill att både kommunen och privata företag ska kunna driva äldrevård. Det viktiga är enligt partiet att invånarna har tillgång till trygg äldrevård med hög kvalitet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Säger nej till förkortad arbetstid med full lön i äldreomsorgen. Partiet vill i stället ge personalen rätt förutsättningar och en bra arbetsmiljö. Bland kommunens övriga förslag prioriterar partiet att ta bort minutstyrningen i hemtjänsten.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Säger ja till flervåningshus på Maglehill. Partiet vill ha blandad bebyggelse i samma område — villor, radhus och flerfamiljshus — och tycker att husen ska utformas med balkonger och grönområden för att bli attraktiva.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Vill möjliggöra fortsatt bostadsbyggande och göra Höör till det självklara valet för den som vill pendla utan att ge upp närheten till naturen. Detta är den andra av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Infrastruktur",
+          "standpunkt": "Vill ha fler tågavgångar, bättre bussförbindelser och fiber på landsbygden. Partiet ser det som förutsättningar för ett bra liv i hela kommunen.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Idrott och fritid",
+          "standpunkt": "Vill bygga en ny ishall och en ny handbollsarena, med planeringsstart 2030. Partiet säger sig ha drivit båda frågorna länge tillsammans med Alliansen, och kallar investeringen en satsning på att fler barn och unga ska kunna idrotta. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Vill att kommunen erbjuder en meningsfull fritid åt alla barn och ungdomar, från idrott och kultur till annat. Partiet planerar tillsammans med Alliansen ett Ungdomens Hus under nästa mandatperiod. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Vill sänka kommunalskatten lite till, för att närma sig genomsnittet för Skånes kommuner. Partiet pekar på att Alliansen sänkt skatten två år i rad — från 21,75 kronor per hundralapp 2025 till 20,95 från 2027 — samtidigt som verksamheterna fått ökade resurser. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Näringsliv",
+          "standpunkt": "Vill att jobben blir fler och utsläppen mindre. Partiet vill stärka småföretagarna, de gröna näringarna och turistnäringen, och göra det enkelt att investera i ny teknik som solceller. Detta är den tredje av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Säger nej till nya vindkraftverk i Höör. Partiet är i grunden positivt till vindkraft, men anser att kommunen inte har de bästa förutsättningarna. I stället vill partiet bygga ut den havsbaserade vindkraften.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill att kommunens bilar inte ska vara fossildrivna framöver, och ser elbilar som ett bra alternativ. Bland kommunens övriga förslag prioriterar partiet solceller på lämpliga kommunala fastigheter och mer satsningar på klimatomställningen.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Välfärd",
+          "standpunkt": "Vill behålla dagens krav på den som får försörjningsstöd. Det ska enligt partiet alltid löna sig att arbeta, men kommunen och samhället måste finnas där för den som av olika skäl inte klarar av att arbeta.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Migration",
+          "standpunkt": "Säger nej till att kommunen uppmuntrar återvandring för invandrare som inte är integrerade. Målet ska enligt partiet vara att invånarna kan arbeta och bidra, och pengarna bör gå till fler lärare och fler arbetstillfällen i stället för till återvandringsbidrag. Mottagandet av flyktingar vill partiet hålla på samma nivå som i dag.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill att kommunen hissar prideflaggan och kallar det en oerhört viktig fråga. Alla människors lika rätt och värde är enligt partiet en grundbult, och partiet säger sig ha varit drivande i att flaggan hissas i Höör. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill inte sänka lönerna för kommunens toppolitiker. Ersättningarna i Höör är enligt partiet inte högre än i andra kommuner, och skälig ersättning behövs för att folk ska vara beredda att ta på sig politiska uppdrag.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Styr Höör tillsammans med Moderaterna, Kristdemokraterna och Liberalerna och säger att samarbetet fungerar mycket bra. Samtidigt skriver partiet att det är tråkigt att M, L och KD på riksnivå har övergett de mänskliga värderingarna i borgerligheten och liberalismen. Sverigedemokraterna vill partiet inte se styra kommunen efter valet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
+        },
+        {
+          "politikomrade": "Kultur",
+          "standpunkt": "Vill lägga lite mer pengar på kultur och säger att Alliansen ökat kultursatsningarna under mandatperioden. Partiet vill också satsa mer på att bevara minoriteters kulturer och traditioner, och säger sig ha fått igenom att kommunen flaggar för de fem nationella minoriteterna. Kulturfrågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Centerpartiet Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/centerpartiet-hoor/"
         }
       ],
       "kandidater_2026_status": "hittat",
@@ -723,28 +840,135 @@
       ],
       "logo": "/logos/sd.svg",
       "logo_kalla": "Wikimedia Commons, File:Sweden Democrats textlogo.svg (PD-textlogo)",
-      "manifest_status": "ersatt",
-      "manifest_not": "Saknar specifikt publicerat valmanifest för Höör. Utgår från partiets lokala plattform och riksnivåns inriktning inför 2026.",
+      "manifest_status": "valkompass",
+      "manifest_not": "Sverigedemokraterna har inget eget valmanifest för Höör. Men partiet har svarat på SVT:s valkompass för kommunen, och punkterna nedan är de svaren. Orden är partiets egna. Partiet tar ställning i 18 frågor och pekar ut sina tre viktigaste. Varje punkt nedan är ett svar, så att länken går att pröva mot det som står. Partiet svarar kort: på tio av frågorna anger det bara sin ståndpunkt utan att skriva varför. Texten på hoor.sd.se är fortfarande riksmallen ordagrant. Vi kollade den 25 augusti 2026.",
       "manifest_2026": [
         {
-          "politikomrade": "Trygghet",
-          "standpunkt": "Fokuserar på skärpta straff och ökat skydd för laglydiga medborgare lokalt.",
-          "kalla_url": "https://www.sd.se/hoor/"
+          "politikomrade": "Skola",
+          "standpunkt": "Vill ha ökad vuxennärvaro i skolorna, för mer trygghet och studiero. Detta är den första av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
         },
         {
-          "politikomrade": "Migration",
-          "standpunkt": "Vill se en restriktiv och seriös migrationspolitik i kommunen för att motverka segregation och utanförskap.",
-          "kalla_url": "https://www.sd.se/hoor/"
+          "politikomrade": "Skola",
+          "standpunkt": "Säger ja till en ny skola i Snogeröd. Partiet uppger att det arbetar aktivt för att bevara skolor och förskolor på landsbygden. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill att Höör erbjuder barnomsorg på kvällar, nätter och helger. Partiet kallar det en väldigt viktig fråga och har märkt den som extra viktig.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill att skollunchen alltid erbjuder kött. Inom skolan prioriterar partiet tre saker: kött alla dagar i veckan, striktare ordningsregler och att skolor och förskolor på landsbygden bevaras.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Vård och omsorg",
+          "standpunkt": "Vill införa ett måltidskoncept med näringsrik kost i alla kommunens verksamheter. Detta är den andra av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill att privata företag ska få driva äldrevård. Partiet är positivt till valfrihet och privata utförare så länge de uppfyller höga kvalitetskrav. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Säger nej till förkortad arbetstid med full lön i äldreomsorgen. Partiet vill i stället satsa på en bättre arbetsmiljö med fler anställda. Bland kommunens övriga förslag prioriterar partiet att ta bort minutstyrningen i hemtjänsten.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Kollektivtrafik",
+          "standpunkt": "Vill införa gratis bussresor för seniorer. Det är ett av två förslag partiet prioriterar bland kommunens övriga frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/",
+          "faktakoll": {
+            "text": "Den reformen är redan beslutad. Busskort för alla över 70 år ingår i budgeten för 2027, som fullmäktige antog den 10 juni 2026. Frågan drevs dessförinnan av S, V och MP i tre motioner som röstades ner. Senast föll den på 19–19 och ordförandens utslagsröst. Sedan tog styret in reformen i sin egen budget.",
+            "arende_text": "Hela ärendet, med röstlängderna",
+            "arende_url": "/arenden/#fri-kollektivtrafik-for-pensionarer-70",
+            "kalla_titel": "Kommunstyrelsens budgetförslag för 2027, sid. 28 (PDF)",
+            "kalla_url": "/kallor/budget2027/KS_forslag_budget2027.pdf"
+          }
+        },
+        {
+          "politikomrade": "Natur och friluftsliv",
+          "standpunkt": "Vill öka tillgängligheten till kommunens natur, skogar och sjöar. Detta är den tredje av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Säger nej till flervåningshus på Maglehill. Platsen är enligt partiet inte förenlig med flervåningshus.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Idrott och fritid",
+          "standpunkt": "Säger ja till att bygget av en ny ishall påbörjas före 2030.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill att kommunen säger nej till nya vindkraftverk.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Kan tänka sig att kommunens fordon är eldrivna, men anser att båda typer av fordon behövs.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Säger nej till att kommunen satsar på fritidsgårdar för att minska kriminaliteten.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
         },
         {
           "politikomrade": "Välfärd",
-          "standpunkt": "Fokus på att välfärden ska fungera lokalt oberoende av individens ekonomiska förutsättningar.",
-          "kalla_url": "https://www.sd.se/hoor/"
+          "standpunkt": "Vill att kommunen ställer högre krav på den som får försörjningsstöd.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
         },
         {
-          "politikomrade": "Trafik och ekonomi",
-          "standpunkt": "Driver krav på sänkta bränslepriser för att möjliggöra ett fungerande liv även utanför centralorten.",
-          "kalla_url": "https://www.sd.se/hoor/"
+          "politikomrade": "Migration",
+          "standpunkt": "Vill att kommunen uppmuntrar återvandring för invandrare som inte är integrerade. Mottagandet av flyktingar vill partiet hålla på samma nivå som i dag: de kommunen är ålagd att ta emot.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Vill att invånarna betalar lite mindre i kommunalskatt än i dag. Skatten sänks redan från 21,75 kronor per hundralapp 2025 till 20,95 från 2027.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Kultur",
+          "standpunkt": "Vill lägga lite mer pengar på kultur än i dag. Däremot säger partiet nej till att kommunen satsar mer på att bevara minoriteters kulturer och traditioner.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill inte att kommunen hissar prideflaggan, och vill inte sänka lönerna för kommunens toppolitiker.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill inte se Miljöpartiet eller Vänsterpartiet styra kommunen efter valet. Partiet placerar sig något till höger och uppger att det inte har någon fråga där man lokalt tycker annorlunda än partiet på riksnivå.",
+          "kalla_titel": "SVT:s valkompass 2026, Sverigedemokraterna Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna-hoor/"
         }
       ],
       "kandidater_2026_status": "hittat",
@@ -894,18 +1118,123 @@
       ],
       "logo": "/logos/medborgerlig-samling.png",
       "logo_kalla": "Medborgerlig Samlings officiella Facebook-sida (partiets logotyp)",
-      "manifest_status": "ersatt",
-      "manifest_not": "Inget lokalt publicerat valmanifest för Höör. Uppgifterna nedan är partiets nationella inriktning, inte Höör-specifika löften. Ett tidigare påstående om att partiet vill 'reformera LSS' har tagits bort eftersom vi inte kunnat hitta stöd för det, varken lokalt eller nationellt (kontrollerat 2026-08-14).",
+      "manifest_status": "valkompass",
+      "manifest_not": "Medborgerlig Samling har inget eget valmanifest för Höör. Men partiet har svarat på SVT:s valkompass för kommunen, och punkterna nedan är de svaren. Orden är partiets egna. Partiet tar ställning i 18 frågor och pekar ut sina tre viktigaste. Varje punkt nedan är ett svar, så att länken går att pröva mot det som står. Partiet har ingen egen lokalavdelning med webbplats. Vi kollade den 25 augusti 2026.",
       "manifest_2026": [
         {
-          "politikomrade": "Vård",
-          "standpunkt": "Vill införa skarpa vårdgarantier: vård inom 48 timmar, i hela landet.",
-          "kalla_url": "https://med.se"
+          "politikomrade": "Ekonomi",
+          "standpunkt": "Vill stoppa det partiet kallar skatteslöseri och motarbetar allt spenderande som inte hör till kärnverksamheten. Det är enligt partiet för frestande för en del politiker att göra av med medborgarnas pengar frikostigt. Detta är den första av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
         },
         {
-          "politikomrade": "Landsbygd",
-          "standpunkt": "Vill satsa på landsbygden: bl.a. sänkta skatter för jordbruk, satsningar på vägar/järnväg/laddinfrastruktur och ökad självförsörjningsgrad.",
-          "kalla_url": "https://med.se/politik/landsbygd-infrastruktur"
+          "politikomrade": "Ekonomi och skatt",
+          "standpunkt": "Vill sänka kommunalskatten mycket. Höör har enligt partiet länge haft en av Skånes högsta skattesatser, och med god ekonomi finns utrymme för mer än de sänkningar som redan gjorts — från 21,75 kronor per hundralapp 2025 till 20,95 från 2027. Detta är den andra av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Vill ha fler patrullerande ordningsvakter eller poliser i kommunen. Partiet noterar att det sätts upp övervakningskameror på de mest utsatta platserna, men anser att det behövs mer. Detta är den tredje av partiets tre viktigaste frågor.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Trygghet",
+          "standpunkt": "Säger nej till att kommunen satsar på fritidsgårdar för att minska kriminaliteten. Det finns enligt partiet inga belägg för att fritidsgårdar minskar brottsligheten, och partiet menar att de tvärtom används av kriminella för att rekrytera ungdomar.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill att Höör erbjuder barnomsorg på kvällar, nätter och helger, men skriver att efterfrågan är mycket begränsad: senast ett nattis drevs var det oftast inga barn där.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/",
+          "faktakoll": {
+            "text": "Protokollet säger något annat. När barn- och utbildningsnämnden tog bort natt- och helgomsorgen den 13 januari 2025 använde 12 familjer med 20 barn omsorgen. 7 av familjerna använde natten, och alla barnen hade någon gång använt helgen. Skälet i protokollet är budgeten: fullmäktige hade skurit nämndens ram med 974 000 kronor, med kortare öppettider som angiven grund.",
+            "arende_text": "Hela ärendet, med underlaget",
+            "arende_url": "/arenden/#natt-och-helgomsorgen-forsvann-nar-budgetramen-krympte",
+            "kalla_titel": "Barn- och utbildningsnämndens protokoll 2025-01-13, § 5 (PDF)",
+            "kalla_url": "/kallor/protokoll/Protokoll_BUN_250113.pdf"
+          }
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Kan tänka sig en ny skola i Snogeröd om elevunderlaget finns. Partiet har sett stora variationer i underlaget och vill se det innan man tar ställning.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Skola",
+          "standpunkt": "Vill att skollunchen alltid erbjuder kött. Barn behöver enligt partiet mycket energi under skoldagen, och då räcker inte vegetariska måltider. Inom skolan prioriterar partiet kött alla dagar i veckan och att skolor och förskolor på landsbygden bevaras — landsbygdsskolor ger enligt partiet både närhet och mindre klasser. Köttfrågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Bostäder",
+          "standpunkt": "Säger nej till flervåningshus på Maglehill. Partiet menar att en del partier vill att kommunen ska växa som ett självändamål, och vill i stället låta Höör växa organiskt: finns underlaget kommer någon aktör att vilja bygga.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Idrott och fritid",
+          "standpunkt": "Säger nej till att en ny ishall börjar byggas före 2030. Partiet är tveksamt till om efterfrågan verkligen finns.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Vill att privata företag ska få driva äldrevård. Valfrihet är enligt partiet alltid av godo. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Äldreomsorg",
+          "standpunkt": "Säger nej till förkortad arbetstid med full lön i äldreomsorgen. Arbetsuppgifterna ska ändå utföras, och det skulle enligt partiet kräva fler anställda och högre kostnader. Bland kommunens övriga förslag prioriterar partiet i stället att ta bort minutstyrningen i hemtjänsten: lita på att vuxna människor kan sköta sitt arbete efter eget omdöme.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Välfärd",
+          "standpunkt": "Vill att kommunen ställer högre krav på den som får försörjningsstöd. Den som är arbetsför bör enligt partiet ge en motprestation för bidraget. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Migration",
+          "standpunkt": "Vill att kommunen uppmuntrar återvandring för invandrare som inte är integrerade, om det inte finns asyl- eller andra skyddsskäl. Flyktingmottagandet vill partiet minska något: Sverige har enligt partiet haft en generös politik som lett till problem som behöver redas ut först. Återvandringsfrågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Vill att kommunen säger nej till nya vindkraftverk. Vindkraft är enligt partiet otillförlitlig och olönsam, och partiet hänvisar till studier som man menar visar negativ inverkan på hälsan hos både människor och djur.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Klimat och miljö",
+          "standpunkt": "Säger nej till att kommunens fordon ska vara eldrivna. Leasade kommunfordon slits enligt partiet hårdare än normalt, och elbilar är dyrare att reparera än hybrider och bensin- eller dieselbilar.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Kultur",
+          "standpunkt": "Vill lägga mycket mindre pengar på kultur. Var och en ska enligt partiet få behålla mer av sina egna pengar och själv välja vilken kultur man betalar för — politiker och tjänstemän ska inte avgöra det åt folket. Partiet vill också dra in bidragen till kultur- och idrottsföreningar för vuxna, och säger nej till att kommunen satsar mer på minoriteters kulturer och traditioner.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill sänka lönerna för kommunens toppolitiker. Höga löner uppmuntrar enligt partiet yrkespolitiker — partiet beskriver sig självt som politiker med yrken, inte yrkespolitiker. Frågan är märkt som extra viktig av partiet.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
+        },
+        {
+          "politikomrade": "Demokrati",
+          "standpunkt": "Vill införa regelbundna medborgarenkäter om kommunens utveckling, som ett sätt att få återkoppling på det politiska arbetet. Partiet vill inte att kommunen hissar prideflaggan: var och en får gärna göra det, men kommunen bör hålla sig till kommunens och den svenska flaggan. Socialdemokraterna, Vänsterpartiet och Miljöpartiet vill partiet inte se styra efter valet.",
+          "kalla_titel": "SVT:s valkompass 2026, Medborgerlig Samling Höör (hämtad 2026-08-25)",
+          "kalla_url": "https://valkompass.svt.se/2026/parti/medborgerlig-samling-hoor/"
         }
       ],
       "kandidater_2026_status": "hittat",

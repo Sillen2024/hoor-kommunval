@@ -67,8 +67,9 @@ const manifestEtikett = (status: string) =>
       )}
       {viaValkompass.length > 0 && (
         <>
-          {" "}{namnLista(viaValkompass)} har i stället svarat på SVT:s valkompass för Höör. Där skriver partiet
-          själv vad det vill i kommunen, fråga för fråga, och det är de svaren vi redovisar.
+          {" "}{namnLista(viaValkompass)} har i stället svarat på SVT:s valkompass för Höör. Där skriver
+          {viaValkompass.length === 1 ? " partiet själv vad det vill" : " partierna själva vad de vill"} i
+          kommunen, fråga för fråga, och det är de svaren vi redovisar.
         </>
       )}
       {nationelltIStallet.length > 0 && (
