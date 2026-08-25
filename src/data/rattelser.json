@@ -4,6 +4,16 @@
   "_instruktion": "En post per rättelse som ändrat en sakuppgifts innebörd — även när partiets egna ord står kvar men fått en faktakoll under sig, eftersom rutan ändrar vad läsaren tar med sig. Rena stavfel och layoutfixar loggas inte. Fälten: datum (ISO), sida (läsbart namn), sid_url (intern länk, gärna med ankare), vad_stod (ordagrant det felaktiga), vad_star_nu (ordagrant det rättade), kalla_url + kalla_beskrivning (dokumentet som avgjorde saken, tomma strängar om ingen), rapporterad_av ('Läsare' om anonymt, partinamn om ett parti hört av sig, 'Egen kontroll' om vi hittade det själva).",
   "rattelser": [
     {
+      "datum": "2026-08-25",
+      "sida": "Ärenden och motioner",
+      "sid_url": "/arenden/#maglehills-nasta-etapp-punkthusen-sanktes-med-en-vaning",
+      "vad_stod": "Beslutad 2025-05-27, § 136: detaljplanen för Maglehills centrala etapp godkänd för granskning.",
+      "vad_star_nu": "Antagen 2025-09-16, § 200. Punkthusen blev 6, 4 och 4 våningar och planen ger 138 bostäder. Överklagandet avslogs, och planen vann laga kraft 2026-02-24.",
+      "kalla_url": "/kallor/protokoll/Protokoll_KS_250916.pdf",
+      "kalla_beskrivning": "Ärendet slutade vid granskningen och beskrev därför en plan som inte längre gällde: cirka 150 bostäder, punkthus på upp till sju våningar och 330 nya invånare. Inför antagandet tog arbetsutskottet bort en våning på vart och ett av de tre punkthusen, vilket kostade fyra lägenheter per hus. Kristdemokraterna uppger i SVT:s valkompass att våningsantalet sänktes från 7, 5 och 5 till 6, 4 och 4. Kontrollen mot protokollet bekräftar det.",
+      "rapporterad_av": "Kristdemokraterna"
+    },
+    {
       "datum": "2026-08-14",
       "sida": "Medborgerlig Samling i Höör",
       "sid_url": "/partier/medborgerlig-samling/",

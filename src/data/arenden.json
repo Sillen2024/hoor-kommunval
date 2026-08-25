@@ -1211,13 +1211,13 @@
     {
       "typ": "arende",
       "organ": "Kommunstyrelsen",
-      "titel": "Maglehills nästa etapp: 150 bostäder och punkthus på sju våningar",
+      "titel": "Maglehills nästa etapp: punkthusen sänktes med en våning",
       "datum": "2025-05-27",
       "antagen_paragraf": "§ 136",
       "politikomrade": "Bostäder",
       "forslagsstallare": "Kommunstyrelsens arbetsutskott",
-      "beskrivning": "Detaljplanen för Maglehills centrala etapp gick vidare till granskning: cirka 150 bostäder i blandad skala, från villor till punkthus på fem till sju våningar, beräknade att ge Höör runt 330 nya invånare. Voteringen slutade 8–4, med MP:s ledamot som avstod. Skiljelinjen var ovanlig: S och V röstade med M och C för planen, medan KD och SD röstade emot. KD:s skriftliga reservation vill begränsa punkthusen till högst fyra våningar — partiet säger sig driva förtätning för att spara åkermark, men tycker att sju våningar blir för storskaligt och ger \"ett trist första intryck av Höör\" för den som kommer norrifrån på väg 13. SD reserverade sig muntligen utan protokollförd motivering.",
-      "resultat": "Beslutad 2025-05-27, § 136: detaljplanen för Maglehills centrala etapp godkänd för granskning.",
+      "beskrivning": "Detaljplanen för Maglehills centrala etapp gick vidare till granskning: cirka 150 bostäder i blandad skala, från villor till punkthus på fem till sju våningar. Voteringen slutade 8–4, med MP:s ledamot som avstod. Skiljelinjen var ovanlig: S och V röstade med M och C för planen, medan KD och SD röstade emot. KD:s skriftliga reservation vill begränsa punkthusen till högst fyra våningar — partiet säger sig driva förtätning för att spara åkermark, men tycker att sju våningar blir för storskaligt och ger \"ett trist första intryck av Höör\" för den som kommer norrifrån på väg 13. SD reserverade sig muntligen utan protokollförd motivering. Sedan sänktes husen. Inför antagandet beslutade arbetsutskottet den 2 september 2025 (§ 204) att ta bort en våning på vart och ett av de tre punkthusen: 7, 5 och 5 våningar blev 6, 4 och 4. Det kostade fyra lägenheter per hus, så planen ger nu 138 bostäder och beräknas ge Höör omkring 304 nya invånare i stället för 330. Kommunstyrelsen antog planen den 16 september 2025. Där yrkade Stefan Liljenberg (SD) på högst fyra våningar även på det sista huset. Ordföranden ställde yrkandet mot arbetsutskottets förslag och fann att styrelsen gick på arbetsutskottets linje. Ingen votering begärdes. George Emilson (KD) lämnade en protokollsanteckning och Jack Ljungberg (SD) reserverade sig muntligen. Planen överklagades till mark- och miljödomstolen i Växjö, som avslog överklagandet den 14 november 2025. Mark- och miljööverdomstolen gav inte prövningstillstånd, och planen vann laga kraft den 24 februari 2026. Sju våningar var för övrigt vad kommunstyrelsen bestämde redan 2020, när stadsdelsprogrammet för västra Höör antogs.",
+      "resultat": "Antagen 2025-09-16, § 200, med punkthus på 6, 4 och 4 våningar och 138 bostäder. Laga kraft 2026-02-24 sedan överklagandet avslagits. Beslutet om granskning togs 2025-05-27, § 136.",
       "rostning": [
         {
           "datum": "2025-05-27",
@@ -1245,7 +1245,9 @@
       "kalla_beskrivning": "Kommunstyrelsens protokoll 2025-05-27, § 136, med namngiven röstlängd (PDF).",
       "kalla_url_2": "/kallor/reservationer/reservation_KD_250527_par136.pdf",
       "kalla_url_2_beskrivning": "KD:s skriftliga reservation om våningshöjden, bilaga § 136 (PDF).",
-      "urvalsmotivering": "Maglehill är kommunens största byggområde, och 330 nya invånare är runt två procent av Höörs befolkning. Voteringen bryter blocken: S och V med styret, KD och SD emot. Samma fråga om skala går igen i ärendet om översiktsplanen."
+      "kalla_url_3": "/kallor/protokoll/Protokoll_KS_250916.pdf",
+      "kalla_url_3_beskrivning": "Kommunstyrelsens protokoll 2025-09-16, § 200: antagandet, den sänkta våningshöjden och SD:s yrkande (PDF).",
+      "urvalsmotivering": "Maglehill är kommunens största byggområde, och 304 nya invånare är knappt två procent av Höörs befolkning. Voteringen bryter blocken: S och V med styret, KD och SD emot. Ärendet visar också vad en förlorad votering kan vara värd — de som röstade emot fick till slut en våning avbyggd på varje punkthus. Samma fråga om skala går igen i ärendet om översiktsplanen."
     },
     {
       "typ": "arende",
