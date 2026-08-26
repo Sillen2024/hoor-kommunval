@@ -205,8 +205,10 @@ alltså upp mellan 16 och 24 augusti. Servern skickar ingen `Last-Modified`, så
   vi" på sd.se/hoor är riksmallen ordagrant (migration, välfärd, trygghet, bränslepriser)
   — inget Höör-specifikt, status `ersatt` står kvar. C har bara nationella nyheter, KD:s
   gamla sajt 404:ar fortfarande, MED har ingen lokalavdelning med egen sida.
-- [ ] **32e. Efter deploy:** Sharing Debugger på `/jamforelse/` — `og-jamforelse-v1.png`
+- [x] **32e. Efter deploy:** Sharing Debugger på `/jamforelse/` — `og-jamforelse-v1.png`
   gick från 87 till 92 ståndpunkter. Samma motiv, så filnamnet behåller `-v1`.
+  KLAR 2026-08-26: Jonas körde Scrape Again efter deployen av punkt 34 —
+  cachen bär nu den senaste bilden (244 punkter), vilket täcker även detta.
 
 **Kvar att bevaka:** fler partier kan publicera under valrörelsens sista tre veckor.
 Omkontrollen tog tio minuter med `scripts/`-flödet ovan och är värd att köra om varje
@@ -255,8 +257,8 @@ Sajten påstod alltså något som inte längre var sant.
 
 **Kvar:**
 
-- [ ] **Sharing Debugger på `/jamforelse/` efter deploy** — samma sak som
-      punkt 32e, nu med ett nytt tal i bilden.
+- [x] **Sharing Debugger på `/jamforelse/` efter deploy** — samma sak som
+      punkt 32e, nu med ett nytt tal i bilden. KLAR 2026-08-26 (se 32e).
 - [ ] **KD:s Facebook-sida.** Partiet uppger att den finns och att ett inlägg
       från söndagen 2026-08-23 lyfter två av deras viktigaste frågor. Adressen
       går inte att hitta utan inloggning: sökmotorerna hittar den inte, KD:s
@@ -291,7 +293,11 @@ utspridda per parti och tema. **→ Beslutad som punkt 34e, byggs efter lanserin
 
 ---
 
-## Punkt 34. Revision efter valkompass-importen — PÅGÅR 2026-08-25
+## Punkt 34. Revision efter valkompass-importen — KLAR FÖRE LANSERING, driftsatt 2026-08-26
+
+**Läget 2026-08-26:** 34a–34d och 34f klara, pushade och driftsatta på VPS:en;
+Sharing Debugger körd på `/jamforelse/`. Kvar är bara 34e, som enligt beslut
+byggs efter lanseringen.
 
 **Bakgrund:** Jonas bad om en revision av manifest-avsnitten efter punkt 33.
 Två fynd. (1) SVT-svaren lades sist i listorna utan avstämning mot det som
@@ -301,8 +307,8 @@ SD:s och MED:s nationella punkter raderades tappade **fem av valkompassens
 tolv frågor sitt underlag**: `larare-garanti` (C:s löfte finns inte längre),
 `vardgaranti` (MED:s 48-timmarsgaranti borta), `migration`, `hardare-straff`
 och `bilism` (SD:s rikspunkter borta). Kompassidans löfte "varje påstående går
-att spåra" är brutet för dessa fem. **Rör inte `valkompass.json` i parallell
-session — omgörningen pågår här.**
+att spåra" är brutet för dessa fem. (Låset på `valkompass.json` är släppt —
+omgörningen blev klar 2026-08-25.)
 
 Beslut av Jonas 2026-08-25 ("kör 1–6"):
 
@@ -317,8 +323,8 @@ Beslut av Jonas 2026-08-25 ("kör 1–6"):
       V, MP förklarar ihopslagningen. **Bifynd rättat:** L:s metodnot sa "18
       sista punkterna" men redan före ändringen var de 20 sista från
       valkompassen — nu står det 20. 248 → 244 punkter,
-      `og-jamforelse-v1.png` omgenererad (**Sharing Debugger på
-      `/jamforelse/` efter deploy**). LIX ≤ 45 håller på alla sidor.
+      `og-jamforelse-v1.png` omgenererad (Sharing Debugger körd av Jonas
+      2026-08-26 efter deployen). LIX ≤ 45 håller på alla sidor.
       Lämnas medvetet: M:s två ishallspunkter (kompletterar varandra), M:s
       skolpar (SVT-punkten bär en faktakoll och båda har eget innehåll), S:s
       landsbygdsskolpar (ny skola i Snogeröd ≠ värna befintliga).
