@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Staplar from "../../components/Staplar.astro";
 import historiskaValData from "../../data/historiska_val.json";
+import { PARTI_ID_AV_NAMN, partifarg } from "../../lib/partifarger";
 
 const val = [...historiskaValData.val].sort((a, b) => b.ar - a.ar);
 
@@ -27,6 +29,23 @@ const maktskifte = forra && storst(senaste).parti !== storst(forra).parti;
 
 const pe = (n: number) =>
   `${n >= 0 ? "+" : "−"}${Math.abs(n).toLocaleString("sv-SE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}`;
+
+// Diagramrader: partiets färg slås upp via namnet. Partier som bara ställde
+// upp i det ena valet (FI 2018) finns med i sitt vals staplar men kan inte få
+// någon förändringsrad.
+const fargAvNamn = (namn: string) => partifarg(PARTI_ID_AV_NAMN[namn] ?? "");
+const resultatRader = (v: (typeof val)[number]) =>
+  v.resultat.map((r) => ({
+    etikett: r.parti,
+    varde: andel(r.andel),
+    farg: fargAvNamn(r.parti),
+    detalj: r.mandat !== null && r.mandat !== undefined ? `— ${r.mandat} mandat` : undefined,
+  }));
+const skiftesRader = skiften.map((s) => ({
+  etikett: s.parti,
+  varde: s.diff,
+  farg: fargAvNamn(s.parti),
+}));
 ---
 
 <Layout
@@ -52,6 +71,20 @@ const pe = (n: number) =>
     )}
   </p>
 
+  {forra && skiftesRader.length > 0 && (
+    <section class="policy-block" id="forandring">
+      <h2>Vilka vann och förlorade på valet {senaste.ar}?</h2>
+      <Staplar
+        rubrik={`Upp eller ner, ${forra.ar} → ${senaste.ar}`}
+        enhet="procentenheter"
+        rader={skiftesRader}
+        decimaler={1}
+        plustecken={true}
+        fotnot="Bara partier som var med i båda valen syns här. Talen är uträknade ur andelarna nedan."
+      />
+    </section>
+  )}
+
   {val.map((v) => (
     <section class="policy-block" id={`val-${v.ar}`}>
       <h2>{v.typ} {v.ar}</h2>
@@ -71,6 +104,15 @@ const pe = (n: number) =>
         </tbody>
       </table>
 
+      <Staplar
+        rubrik={`Andel av rösterna ${v.ar}`}
+        enhet="procent"
+        rader={resultatRader(v)}
+        decimaler={1}
+      />
+
+      <details class="not-box">
+        <summary>Tabellen: röster, andelar och mandat</summary>
       <div class="table-scroll">
         <table>
           <thead>
@@ -99,6 +141,7 @@ const pe = (n: number) =>
           </tbody>
         </table>
       </div>
+      </details>
 
       {v.styre_efter_valet && <p><strong>Styre efter valet:</strong> {v.styre_efter_valet}</p>}
 

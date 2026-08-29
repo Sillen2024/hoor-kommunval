@@ -1,0 +1,214 @@
+---
+// Liggande staplar för godtyckliga rader (partier, nämnder, år) — syskon
+// till Jamforelse.astro, som är låst till kommunlistor. Samma tre krav:
+// ingen JavaScript, ingen horisontell scroll, och stapeln är dekoration —
+// namn och siffra står alltid i klartext, spåret är aria-hidden.
+//
+// Skalan spänner över datan men nollan ritas alltid ut när den ligger i
+// intervallet, så negativa värden (t.ex. förändring i procentenheter)
+// växer åt vänster från en synlig nollinje.
+
+interface Rad {
+  etikett: string;
+  varde: number | null;
+  /** Stapelns färg, t.ex. ur partifarger.ts. Utan färg: neutral blågrå. */
+  farg?: string;
+  /** Kort text efter värdet, t.ex. "11 mandat". */
+  detalj?: string;
+  /** Fetstil på namn och siffra. */
+  markerad?: boolean;
+}
+
+interface Props {
+  rubrik: string;
+  enhet: string;
+  rader: Rad[];
+  decimaler?: number;
+  /** Skriv ut plustecken på positiva värden (för förändringsdiagram). */
+  plustecken?: boolean;
+  beskrivning?: string;
+  kallaUrl?: string;
+  kallaText?: string;
+  bearbetning?: string;
+  fotnot?: string;
+}
+
+const {
+  rubrik,
+  enhet,
+  rader,
+  decimaler = 1,
+  plustecken = false,
+  beskrivning,
+  kallaUrl,
+  kallaText,
+  bearbetning,
+  fotnot,
+} = Astro.props;
+
+const tal = (v: number) =>
+  (plustecken && v > 0 ? "+" : "") +
+  v.toLocaleString("sv-SE", { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler });
+
+const varden = rader.map((r) => r.varde).filter((v): v is number => v !== null);
+const max = varden.length > 0 ? Math.max(...varden, 0) : 0;
+const min = varden.length > 0 ? Math.min(...varden, 0) : 0;
+const spann = max - min || 1;
+const pct = (v: number) => Math.round(((v / spann) * 100 + Number.EPSILON) * 100) / 100;
+const nollPct = pct(0 - min);
+
+const stapel = (v: number) => {
+  const bredd = pct(Math.abs(v));
+  return v >= 0
+    ? { left: nollPct, width: bredd }
+    : { left: nollPct - bredd, width: bredd };
+};
+---
+
+<figure class="stpl">
+  <figcaption class="stpl__rubrik">
+    {rubrik}{" "}
+    <span class="stpl__enhet">{enhet}</span>
+  </figcaption>
+  {beskrivning && <p class="stpl__beskrivning">{beskrivning}</p>}
+
+  <ol class="stpl__rader">
+    {rader.map((rad) => {
+      const s = rad.varde === null ? null : stapel(rad.varde);
+      return (
+        <li class:list={["stpl__rad", { "stpl__rad--markerad": rad.markerad }]}>
+          <span class="stpl__namn">{rad.etikett}</span>
+          <span class="stpl__spar" aria-hidden="true">
+            {nollPct > 0 && nollPct < 100 && <span class="stpl__noll" style={`left:${nollPct}%`} />}
+            {s && (
+              <span
+                class="stpl__fyll"
+                style={`left:${s.left}%;width:${s.width}%;background:${rad.farg ?? "#9bb3c4"}`}
+              />
+            )}
+          </span>
+          <span class="stpl__varde">
+            {rad.varde === null ? "–" : tal(rad.varde)}
+            {rad.detalj && <span class="stpl__detalj"> {rad.detalj}</span>}
+          </span>
+        </li>
+      );
+    })}
+  </ol>
+
+  {fotnot && <p class="stpl__fotnot">{fotnot}</p>}
+  {kallaUrl && (
+    <a class="source-link" href={kallaUrl} target="_blank" rel="noopener noreferrer">{kallaText ?? "Källa"}</a>
+  )}
+  {bearbetning && <span class="derived-note">{bearbetning}</span>}
+</figure>
+
+<style>
+  .stpl {
+    margin: 1.6rem 0;
+    padding: 0;
+  }
+
+  .stpl__rubrik {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .stpl__enhet {
+    font-weight: 400;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .stpl__enhet::before { content: "("; }
+  .stpl__enhet::after { content: ")"; }
+
+  .stpl__beskrivning {
+    margin: 0 0 0.7rem;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  .stpl__rader {
+    list-style: none;
+    margin: 0.6rem 0 0.7rem;
+    padding: 0;
+  }
+
+  .stpl__rad {
+    display: grid;
+    grid-template-columns: 10rem 1fr 8.5rem;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.18rem 0;
+    font-size: 0.92rem;
+  }
+
+  .stpl__namn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .stpl__varde {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .stpl__detalj {
+    color: var(--color-muted);
+    font-variant-numeric: normal;
+  }
+
+  .stpl__spar {
+    position: relative;
+    display: block;
+    height: 1.1rem;
+    background: #f4f4f4;
+    border-radius: 2px;
+  }
+
+  .stpl__noll {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    width: 1px;
+    background: var(--color-border);
+  }
+
+  .stpl__fyll {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 2px;
+    min-width: 1px;
+  }
+
+  .stpl__rad--markerad .stpl__namn,
+  .stpl__rad--markerad .stpl__varde {
+    font-weight: 700;
+  }
+
+  .stpl__fotnot {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 40rem) {
+    .stpl__rad {
+      grid-template-columns: 1fr auto;
+      gap: 0.15rem 0.6rem;
+      padding: 0.3rem 0;
+    }
+    .stpl__namn { grid-column: 1; }
+    .stpl__varde { grid-column: 2; text-align: right; }
+    .stpl__spar { grid-column: 1 / -1; height: 0.85rem; }
+  }
+</style>
