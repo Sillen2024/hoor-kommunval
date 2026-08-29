@@ -2,10 +2,11 @@
 // sajtens egen prosa). Mäter innehållet i <main> — sidhuvud och sidfot
 // räknas inte.
 //
-// Tre slags innehåll räknas bort före mätningen, eftersom regel 3 bara
+// Fyra slags innehåll räknas bort före mätningen, eftersom regel 3 bara
 // gäller sajtens egen prosa: <table> (celler är etiketter och tal, inte
-// meningar), <blockquote> (citat ur protokoll och manifest) och styckena i
-// .stance-card (partiernas egna formuleringar). Poängen är inte en bättre
+// meningar), <blockquote> (citat ur protokoll och manifest), styckena i
+// .stance-card (partiernas egna formuleringar) och diagramblocken
+// (<figure> samt utfallsfigurens rader — etiketter och tal, inte meningar). Poängen är inte en bättre
 // siffra utan en användbar grind — innan exkluderingen varnade mätaren på
 // 21 av 29 sidor, vilket lärde alla att ignorera varningen. Sidor där det
 // borträknade är en stor andel av orden markeras i utskriften: där mäter
@@ -80,6 +81,8 @@ function text(html) {
   const [utanKort, kortHtml] = utanStanceCards(main);
   let bort = kortHtml;
   const prosa = utanKort
+    .replace(/<figure[\s\S]*?<\/figure>/g, (m2) => ((bort += " " + m2), " "))
+    .replace(/<ol[^>]*class="[^"]*utfall__rader[^"]*"[\s\S]*?<\/ol>/g, (m2) => ((bort += " " + m2), " "))
     .replace(/<table[\s\S]*?<\/table>/g, (m2) => ((bort += " " + m2), " "))
     .replace(/<blockquote[\s\S]*?<\/blockquote>/g, (m2) => ((bort += " " + m2), " "));
   return { prosa: tillText(prosa), bortraknat: tillText(bort) };
@@ -115,7 +118,7 @@ for (const fil of htmlFiler(distDir)) {
 rader.sort((a, b) => b.lix - a.lix);
 
 console.log("LIX per sida, mätt på egen prosa (mål ≤ 45; ⚠ = över 45).");
-console.log("Tabeller, blockcitat och stance-card-stycken är borträknade;");
+console.log("Tabeller, blockcitat, stance-card-stycken och diagramblock är borträknade;");
 console.log("§ = citat-/tabelldominerad sida (≥ 30 % borträknat) — siffran");
 console.log("gäller den kvarvarande prosan, inte sidan som helhet.\n");
 for (const r of rader) {

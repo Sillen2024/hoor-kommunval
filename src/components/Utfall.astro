@@ -70,6 +70,24 @@ const rader = (matt ?? []).map((m) => {
 const sv = (v: number | null, d: number) =>
   v === null ? "–" : v.toLocaleString("sv-SE", { minimumFractionDigits: d, maximumFractionDigits: d });
 
+// Hantelfiguren: varje mått får en egen skala som spänner över radens tre
+// värden med luft i kanterna — måtten har olika enheter och kan inte dela
+// axel. Figuren är aria-hidden dekoration; siffrorna står i klartext i
+// samma rad och i tabellen under.
+const lage = (r: (typeof rader)[number]) => {
+  const v = [r.valar, r.huvudar, r.skaneSnitt].filter((x): x is number => x !== null);
+  if (v.length < 2) return null;
+  const lo = Math.min(...v);
+  const hi = Math.max(...v);
+  const marg = (hi - lo || Math.abs(hi) || 1) * 0.12;
+  const pos = (x: number) => ((x - lo + marg) / (hi - lo + 2 * marg)) * 100;
+  return {
+    valar: r.valar === null ? null : pos(r.valar),
+    huvudar: r.huvudar === null ? null : pos(r.huvudar),
+    snitt: r.skaneSnitt === null ? null : pos(r.skaneSnitt),
+  };
+};
+
 // Mandaten läses ur partier.json så att noten inte kan glida ifrån datan.
 const styreMandat = partierData.partier
   .filter((p) => p.block === "styre")
@@ -89,6 +107,40 @@ const kallaUrl = `https://api.kolada.se/v3/data/kpi/${(matt ?? []).map((m) => m.
         <a href="/ordlista/#nettokostnadsavvikelse">nettokostnadsavvikelse</a> betyder står i ordlistan.
       </p>
     )}
+    <p class="utfall__legend">
+      <span class="utfall__legendpost"><span class="utfall__prick utfall__prick--valar" aria-hidden="true" />Höör {VALAR}</span>
+      <span class="utfall__legendpost"><span class="utfall__prick utfall__prick--nu" aria-hidden="true" />Höör {huvudar}</span>
+      <span class="utfall__legendpost"><span class="utfall__streck" aria-hidden="true" />Snitt Skåne {huvudar}</span>
+    </p>
+    <ol class="utfall__rader">
+      {rader.map((r) => {
+        const p = lage(r);
+        return (
+          <li class="utfall__rad">
+            <span class="utfall__namn">{r.titel} <span class="utfall__enhet">({r.enhet})</span></span>
+            {p && (
+              <span class="utfall__spar" aria-hidden="true">
+                {p.valar !== null && p.huvudar !== null && (
+                  <span
+                    class="utfall__lina"
+                    style={`left:${Math.min(p.valar, p.huvudar)}%;width:${Math.abs(p.huvudar - p.valar)}%`}
+                  />
+                )}
+                {p.snitt !== null && <span class="utfall__snitt" style={`left:${p.snitt}%`} />}
+                {p.valar !== null && <span class="utfall__prick utfall__prick--valar" style={`left:${p.valar}%`} />}
+                {p.huvudar !== null && <span class="utfall__prick utfall__prick--nu" style={`left:${p.huvudar}%`} />}
+              </span>
+            )}
+            <span class="utfall__siffror">
+              {sv(r.valar, r.dec)} → <strong>{sv(r.huvudar, r.dec)}</strong>
+              <span class="utfall__snittext"> · snitt {sv(r.skaneSnitt, r.dec)}</span>
+            </span>
+          </li>
+        );
+      })}
+    </ol>
+    <details class="utfall__tabell">
+      <summary>Samma siffror som tabell</summary>
     <div class="table-scroll">
       <table>
         <thead>
@@ -111,6 +163,7 @@ const kallaUrl = `https://api.kolada.se/v3/data/kpi/${(matt ?? []).map((m) => m.
         </tbody>
       </table>
     </div>
+    </details>
     <a class="source-link" href={kallaUrl} target="_blank" rel="noopener noreferrer">
       Källa: Kolada — Höörs värden {VALAR} och {huvudar}
     </a>
@@ -132,5 +185,127 @@ const kallaUrl = `https://api.kolada.se/v3/data/kpi/${(matt ?? []).map((m) => m.
 
   .utfall table {
     font-size: 0.92rem;
+  }
+
+  .utfall__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.1rem;
+    margin: 0.6rem 0 0.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+  }
+
+  .utfall__legendpost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .utfall__rader {
+    list-style: none;
+    margin: 0.4rem 0 0.5rem;
+    padding: 0;
+  }
+
+  .utfall__rad {
+    display: grid;
+    grid-template-columns: 13rem 1fr 11rem;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.28rem 0;
+    font-size: 0.92rem;
+  }
+
+  .utfall__namn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .utfall__enhet {
+    color: var(--color-muted);
+  }
+
+  .utfall__siffror {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .utfall__snittext {
+    color: var(--color-muted);
+  }
+
+  .utfall__spar {
+    position: relative;
+    display: block;
+    height: 1.15rem;
+    background: #f4f4f4;
+    border-radius: 2px;
+  }
+
+  .utfall__lina {
+    position: absolute;
+    top: calc(50% - 1px);
+    height: 2px;
+    background: #c2cfd8;
+  }
+
+  .utfall__snitt {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    width: 2px;
+    margin-left: -1px;
+    background: #767676;
+  }
+
+  .utfall__prick {
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+  }
+
+  .utfall__prick--valar { background: #9bb3c4; }
+  .utfall__prick--nu { background: var(--color-accent); }
+
+  /* Legenden återanvänder prick/streck utan absolut positionering. */
+  .utfall__legend .utfall__prick,
+  .utfall__legend .utfall__streck {
+    position: static;
+    margin: 0;
+    flex: none;
+  }
+
+  .utfall__streck {
+    display: inline-block;
+    width: 2px;
+    height: 0.9rem;
+    background: #767676;
+  }
+
+  .utfall__tabell {
+    margin: 0.3rem 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .utfall__tabell summary {
+    cursor: pointer;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 46rem) {
+    .utfall__rad {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+      padding: 0.4rem 0;
+    }
   }
 </style>
