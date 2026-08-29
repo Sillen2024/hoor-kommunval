@@ -47,3 +47,11 @@ export const partifarg = (id: string): string => PARTIFARG[id] ?? NEUTRAL_STAPEL
 // partifärgerna. Medvetet skilda från partipaletten så en verksamhetslinje
 // aldrig ser ut som ett parti.
 export const SERIEFARG = ["#1c6ea8", "#c2571f", "#7a4fb5"];
+
+// Polaritetsfärger för voteringar: kall för JA, varm för NEJ, neutral grå
+// för AVSTOD. Medvetet skilda från partifärgerna så ett segment aldrig ser
+// ut som ett parti. Blått/orange-paret är samma kontrollerade par som i
+// SERIEFARG; grå är avsiktligt färglös — att avstå är inte en sida.
+export const FARG_JA = "#1c6ea8";
+export const FARG_NEJ = "#c2571f";
+export const FARG_AVSTOD = "#767676";

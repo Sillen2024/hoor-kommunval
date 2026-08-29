@@ -7,6 +7,8 @@
 // voteringen; frånvaro är inte detsamma som att avstå och renderas
 // därför inte som en nolla.
 import partierData from "../data/partier.json";
+import Fordelning from "./Fordelning.astro";
+import { FARG_JA, FARG_NEJ, FARG_AVSTOD } from "../lib/partifarger";
 
 interface PartiRoster {
   ja: number;
@@ -55,9 +57,25 @@ const rader = partierData.partier
     <strong>NEJ</strong> betydde: {rostning.nej_betyder}
   </p>
   <p class="votering__resultat">
-    <strong>{rostning.ja} ja – {rostning.nej} nej{rostning.avstar > 0 ? ` – ${rostning.avstar} avstod` : ""}.</strong>
+    <strong>
+      <span class="votering__prick" style={`background:${FARG_JA}`} aria-hidden="true" />{rostning.ja} ja
+      {" – "}
+      <span class="votering__prick" style={`background:${FARG_NEJ}`} aria-hidden="true" />{rostning.nej} nej{rostning.avstar > 0 ? (
+        <>
+          {" – "}
+          <span class="votering__prick" style={`background:${FARG_AVSTOD}`} aria-hidden="true" />{rostning.avstar} avstod
+        </>
+      ) : null}.
+    </strong>
     {" "}{rostning.utfall}
   </p>
+  <Fordelning
+    delar={[
+      { etikett: "ja", antal: rostning.ja, farg: FARG_JA },
+      { etikett: "nej", antal: rostning.nej, farg: FARG_NEJ },
+      { etikett: "avstod", antal: rostning.avstar, farg: FARG_AVSTOD },
+    ]}
+  />
   <div class="table-scroll votering__scroll">
     <table class="votering__tabell">
       <thead>
@@ -87,3 +105,14 @@ const rader = partierData.partier
     Protokollet {rostning.datum} {rostning.paragraf}, med namngiven röstlängd (PDF)
   </a>
 </div>
+
+<style>
+  .votering__prick {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 2px;
+    margin-right: 0.25rem;
+    vertical-align: baseline;
+  }
+</style>
