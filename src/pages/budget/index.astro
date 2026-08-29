@@ -386,6 +386,20 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       år efter att avgifter och statsbidrag räknats bort. Det är hämtat ur resultaträkningen i respektive års egen
       budgethandling — inte ur senare års omräknade siffror.
     </p>
+    <Staplar
+      rubrik="Verksamhetens nettokostnader, budgetår för budgetår"
+      enhet="mnkr"
+      rader={totalRader
+        .filter((r) => r.total != null)
+        .map((r) => ({
+          etikett: String(r.ar),
+          varde: r.total,
+          detalj: r.diffProcent != null ? `(${r.diffProcent >= 0 ? "+" : ""}${sv(r.diffProcent)} %)` : undefined,
+        }))}
+      beskrivning="Skalan börjar på noll. Procenttalet är förändringen mot året före."
+    />
+    <details class="not-box">
+      <summary>Tabellen: belopp och förändring per år</summary>
     <div class="table-scroll">
       <table>
         <thead>
@@ -412,6 +426,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
         </tbody>
       </table>
     </div>
+    </details>
   </section>
 
   <section class="policy-block">
@@ -425,6 +440,21 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       inte samma sak som "Nettokostnad" i tabellen ovan, som även innehåller andra centrala poster (till exempel
       avskrivningar och pensioner) som inte fördelas ut per nämnd.
     </p>
+    <Linjediagram
+      rubrik="De tre stora nämndernas ramar"
+      enhet="mnkr"
+      ar={budgetData.beslut.map((b) => b.ar)}
+      serier={["Barn- och utbildningsnämnd", "Socialnämnd", "Kommunstyrelse"].map((namnd, i) => ({
+        namn: namnd.replace("Barn- och utbildningsnämnd", "Barn och utbildning").replace("Socialnämnd", "Socialnämnden").replace("Kommunstyrelse", "Kommunstyrelsen"),
+        farg: SERIEFARG[i],
+        varden: budgetData.beslut.map(
+          (b) => ((b.namndfordelning_tkr as Record<string, number> | null)?.[namnd] ?? null) && (b.namndfordelning_tkr as Record<string, number>)[namnd] / 1000
+        ),
+      }))}
+      beskrivning="Övriga nämnder är småposter i jämförelse — alla står i tabellen under."
+    />
+    <details class="not-box">
+      <summary>Alla nämnder och poster, år för år (tabell)</summary>
     <div class="table-scroll">
       <table>
         <thead>
@@ -450,6 +480,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
         </tbody>
       </table>
     </div>
+    </details>
     {oronmarktaBeslut.length > 0 && (
       <div class="banner oronmarkta">
         <p>
@@ -660,6 +691,19 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       Talen är skillnaden mot styret. Partiernas egna handlingar visar i stället hela ökningen mot året
       innan — och i den ingår allt styret också ville lägga.
     </p>
+    <Staplar
+      rubrik="Mer än styret ville lägga, förslag för förslag"
+      enhet="mnkr"
+      rader={oppositionsbudgetar.forslag
+        .filter((f) => f.total_diff_mnkr != null && !(f.parti_id === "mp" && f.gemensamt_med === "s"))
+        .map((f) => ({
+          etikett: `${f.gemensamt_med ? `${partyName(f.parti_id)} + ${partyName(f.gemensamt_med)}` : partyName(f.parti_id)} ${f.ar}`,
+          varde: f.total_diff_mnkr as number,
+          farg: partifarg(f.parti_id),
+        }))}
+      plustecken={true}
+      beskrivning="Sorterat efter budgetår. Förslag utan fullständiga nämndramar kan inte visas — de står i tabellerna under."
+    />
     <div class="not-box">
       Budget 2024: S och MP:s förslag var kortare prioritetslistor utan fullständiga nämndramar och går inte att
       sifferjämföra rakt av mot styrets budget. Vänsterpartiet hade en fullständig alternativbudget, men med lägre
