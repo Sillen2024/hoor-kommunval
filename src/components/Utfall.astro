@@ -138,9 +138,11 @@ const kallaUrl = `https://api.kolada.se/v3/data/kpi/${(matt ?? []).map((m) => m.
       <p>
         Löften kan läsas mot utfall. Varje rad visar var Höör låg vid förra valet ({VALAR}), var Höör
         ligger {huvudar} — det senaste året med fastställda värden — och snittet för Skånes kommuner.
-        "Mindre än väntat" betyder att verksamheten kostade mindre än vad en kommun med Höörs
-        förutsättningar väntas lägga; måttet heter{" "}
-        <a href="/ordlista/#nettokostnadsavvikelse">nettokostnadsavvikelse</a> och förklaras i ordlistan.
+        Den väntade nivån är{" "}
+        <a href="/ordlista/#referenskostnad">referenskostnaden</a>: vad verksamheten beräknas kosta i
+        just Höör, utifrån hur många barn, elever och äldre som bor här. Beräkningen görs på samma
+        sätt för alla Sveriges kommuner och hämtas ur statistikdatabasen Kolada. Den är ingen
+        rekommendation — bara en jämförelsepunkt.
       </p>
     )}
     <p class="utfall__legend">
