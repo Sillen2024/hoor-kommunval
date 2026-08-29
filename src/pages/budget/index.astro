@@ -693,7 +693,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       innan — och i den ingår allt styret också ville lägga.
     </p>
     <Staplar
-      rubrik="Mer än styret ville lägga, förslag för förslag"
+      rubrik="Oppositionens förslag: skillnaden mot styrets budget"
       enhet="mnkr"
       rader={oppositionsbudgetar.forslag
         .filter((f) => f.total_diff_mnkr != null && !(f.parti_id === "mp" && f.gemensamt_med === "s"))
@@ -703,7 +703,7 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
           farg: partifarg(f.parti_id),
         }))}
       plustecken={true}
-      beskrivning="Sorterat efter budgetår. Förslag utan fullständiga nämndramar kan inte visas — de står i tabellerna under."
+      beskrivning="Plus = partiet ville lägga mer än styrets budget, minus = mindre. Sorterat efter budgetår. Förslag utan fullständiga nämndramar kan inte visas — de står i tabellerna under."
     />
     <div class="not-box">
       Budget 2024: S och MP:s förslag var kortare prioritetslistor utan fullständiga nämndramar och går inte att
