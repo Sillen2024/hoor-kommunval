@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Votering from "../../components/Votering.astro";
+import Staplar from "../../components/Staplar.astro";
 import arendenData from "../../data/arenden.json";
 
 function slug(titel: string) {
@@ -177,6 +178,16 @@ const sistaAret = datum[0]?.slice(0, 4);
     <span><strong>{antalNamnd}</strong> utanför fullmäktige</span>
     <span><strong>{forstaAret}–{sistaAret}</strong></span>
   </p>
+
+  <Staplar
+    rubrik="Ärenden per tema"
+    enhet="antal"
+    rader={[...teman]
+      .sort((a, b) => b.antal - a.antal)
+      .map((t) => ({ etikett: t.namn, varde: t.antal }))}
+    decimaler={0}
+    beskrivning="Sorterat efter antal. Temana är sajtens egen gruppering — ärendets politikområde står på varje ärende."
+  />
 
   <div class="arende-filter" id="arende-filter" hidden>
     <div class="arende-filter__teman" role="group" aria-label="Filtrera på tema">
