@@ -14,18 +14,26 @@ interface Del {
 
 interface Props {
   delar: Del[];
+  /**
+   * Kompakt läge för små grupper (partisidornas track record): stapelns
+   * längd sätts av antalet röster med fast bredd per röst, så ett parti
+   * med två ledamöter får en kort stapel i stället för två jättesegment,
+   * och frånvaro syns som en kortare stapel.
+   */
+  kompakt?: boolean;
 }
 
-const { delar } = Astro.props;
+const { delar, kompakt = false } = Astro.props;
 const synliga = delar.filter((d) => d.antal > 0);
 const total = synliga.reduce((s, d) => s + d.antal, 0);
+const breddRem = kompakt ? Math.min(total * 0.95, 36) : null;
 // Siffran ritas i segmentet först när det är brett nog att rymma den med
 // luft på båda sidor — annars klipps den eller sväller ut ur färgen.
 const MINSTA_ANDEL_MED_SIFFRA = 0.09;
 ---
 
 {total > 0 && (
-  <span class="frd" aria-hidden="true">
+  <span class="frd" aria-hidden="true" style={breddRem !== null ? `width:${breddRem}rem;max-width:100%` : undefined}>
     {synliga.map((d) => (
       <span
         class="frd__del"

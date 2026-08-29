@@ -1,6 +1,9 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Utfall from "../../../components/Utfall.astro";
+import Fordelning from "../../../components/Fordelning.astro";
+import Staplar from "../../../components/Staplar.astro";
+import { FARG_JA, FARG_NEJ, FARG_AVSTOD, partifarg } from "../../../lib/partifarger";
 import partierData from "../../../data/partier.json";
 import arendenData from "../../../data/arenden.json";
 import budgetData from "../../../data/budget.json";
@@ -320,6 +323,14 @@ const utfallTeman = TEMA_ORDNING.filter(
                 {partiSplittrad(r) && <span class="votering__splittrat"> Gruppen delade sig.</span>}
                 {" "}{r.utfall}
               </p>
+              <Fordelning
+                delar={[
+                  { etikett: "ja", antal: r.per_parti[party.id].ja, farg: FARG_JA },
+                  { etikett: "nej", antal: r.per_parti[party.id].nej, farg: FARG_NEJ },
+                  { etikett: "avstod", antal: r.per_parti[party.id].avstar, farg: FARG_AVSTOD },
+                ]}
+                kompakt={true}
+              />
               <a class="source-link" href={r.kalla_protokoll} target="_blank" rel="noopener noreferrer">
                 Protokollet {r.datum} {r.paragraf}, med namngiven röstlängd (PDF)
               </a>
@@ -364,13 +375,16 @@ const utfallTeman = TEMA_ORDNING.filter(
         i sitt senaste fullständiga budgetförslag (budget {senasteMedRamar.ar}
         {senasteMedRamar.gemensamt_med ? `, gemensamt med ${partyName(senasteMedRamar.gemensamt_med)}` : ""}):
       </p>
-      <ul>
-        {ramDiffar.map((d) => (
-          <li>
-            <strong>{d.mnkr > 0 ? "+" : "−"}{sv(Math.abs(d.mnkr))} mnkr</strong> — {d.namnd.toLowerCase()}
-          </li>
-        ))}
-      </ul>
+      <Staplar
+        rubrik={`Skillnad mot styrets budget ${senasteMedRamar.ar}, per nämnd`}
+        enhet="mnkr"
+        rader={ramDiffar.map((d) => ({
+          etikett: d.namnd,
+          varde: d.mnkr,
+          farg: partifarg(party.id),
+        }))}
+        plustecken={true}
+      />
       {forskolaAvvikelse !== null && (
         <p>
           Som jämförelsepunkt: förskolans avstånd till sin referenskostnad {koladaHuvudar} var
