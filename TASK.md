@@ -366,6 +366,57 @@ Beslut av Jonas 2026-08-25 ("kör 1–6"):
 
 ---
 
+## Punkt 35. Diagraminventeringen — KLAR 2026-08-29
+
+Jonas bad om en inventering av var siffror presenteras mer pedagogiskt som
+diagram, och godkände hela listan ("jag vill ha allt") inklusive partifärger
+efter SVT:s förlaga. Sju byggsteg, en commit per steg (`8c9d0f5`–`786ab75`
+plus marginalfixen). Allt byggtidsrenderat, ingen JavaScript, siffran alltid
+i klartext, stapeln/SVG:n aria-hidden — samma doktrin som `Jamforelse.astro`.
+
+- [x] **35a. Partifärger** i `src/lib/partifarger.ts` (presentationsval, inte
+      källdata — därför inte i `partier.json`). SVT:s partimärken som
+      utgångspunkt, justerade för kontrast; MED har ingen SVT-färg och fick
+      egen petrolblå. Paletten maskinellt validerad (dataviz-skillens
+      OKLab-validator: CVD-avstånd, ljushetsband, kontrast) i båda valens
+      storleksordningar. M/SD/MP ligger under 3:1 mot vitt — tillåtet
+      eftersom namn+siffra alltid står i klartext. Där ligger också
+      `SERIEFARG` (verksamhetstrion, medvetet skild från partipaletten) och
+      `FARG_JA/NEJ/AVSTOD` (polaritetsfärger för voteringar).
+- [x] **35b. `/historiska-val/`**: förändringsdiagram 2018→2022 (divergerande
+      staplar, nollinje) + röstandelsstaplar per val; tabellerna kvar som
+      belägg i `<details>`. Ny generisk komponent `Staplar.astro`.
+- [x] **35c. Linjediagram** (`Linjediagram.astro`, byggtids-SVG med rena
+      tick-steg, nollinje, ändetiketter med kollisionsknuff, tabellen i
+      `<details>`): förskolans avvikelse på `/nyckeltal/`, verksamheterna
+      2018–2025 och de tre stora nämndramarna på `/budget/`.
+- [x] **35d. Voteringsstaplar**: `Fordelning.astro` — delad ja/nej/avstod-
+      stapel på alla 33 voteringar i `Votering.astro` (med färgprickar i
+      resultatraden) och per votering på partisidornas track record
+      (kompakt läge: fast bredd per röst, frånvaro syns som kortare stapel).
+- [x] **35e. `Utfall.astro`** omgjord till hantelfigur (2022 → senaste året,
+      Skånesnittet som lodrätt streck), per-radskala eftersom måtten har
+      olika enheter; tabellen kvar i `<details>`. Slår igenom på
+      `/jamforelse/` och alla nio partisidorna.
+- [x] **35f. `/budget/`**: totalen 2023–2027 som staplar (skala från noll),
+      oppositionens "mer än styret" som divergerande partifärgade staplar.
+- [x] **35g. `/arenden/`**: temastaplar i översikten. Partisidornas
+      nämnddiffar ("Löftet och pengarna") som divergerande staplar i
+      partiets färg i stället för punktlista.
+- [x] **LIX-skriptet** räknar numera bort `<figure>`-diagramblock och
+      utfallsfigurens rader, samma princip som tabeller (30b.5). Alla sidor
+      ligger på eller under sina nivåer före ändringen.
+- [x] **Visuellt verifierat** i headless Chrome (skärmbilder av
+      /historiska-val/, /budget/, /partier/m/): en etikettklippning hittades
+      och fixades (dynamisk högermarginal i linjediagrammet).
+
+**Medvetet inte byggt:** aggregerad ja/nej-profil per parti — vad JA betyder
+växlar per votering, så en summerad fördelning vore vilseledande; per-
+voteringsstaplarna bär i stället splittringarna visuellt. Sparklines i
+startsidans nyckelfynd stod inte på den godkända listan.
+
+---
+
 ## Strukna punkter
 
 - [–] **Geminis punkt 5: accordions i jämförelsevyn.** Bygger på en felaktig premiss. `/jamforelse/` innehåller ingen tabell — det är en `compare-grid` av kort som redan kollapsar till en kolumn på mobil. Sajtens enda horisontellt scrollande tabeller ligger på `/budget/`, `/historiska-val/` och `/arenden/`. **Rör inte jämförelsevyn.** Kvarstående åtgärd var den ursprungliga: sänk `minmax(18rem, 1fr)` till 15rem för skärmar under 350 px — **åtgärdad 2026-08-17** (media query i `global.css`).
