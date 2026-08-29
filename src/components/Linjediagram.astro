@@ -69,7 +69,16 @@ for (let t = tickLo; t <= tickHi + steg / 2; t += steg) ticks.push(Math.round(t 
 // ——— Geometri ─————————————————————————————————————————————————————————
 const B = 560;
 const H = 250;
-const M = { topp: 12, hoger: 108, botten: 26, vanster: 46 };
+// Högermarginalen rymmer serienamnen vid linjeändarna — den mäts på det
+// längsta namnet (≈6,6 px per tecken vid 12,5 px semibold) så inget klipps
+// av viewBoxens kant.
+const langstaNamn = Math.max(...serier.map((s) => s.namn.length));
+const M = {
+  topp: 12,
+  hoger: Math.min(150, Math.max(80, Math.round(langstaNamn * 6.6) + 16)),
+  botten: 26,
+  vanster: 46,
+};
 const inreB = B - M.vanster - M.hoger;
 const inreH = H - M.topp - M.botten;
 const x = (i: number) => M.vanster + (ar.length === 1 ? inreB / 2 : (i / (ar.length - 1)) * inreB);
