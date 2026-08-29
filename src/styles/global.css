@@ -1587,7 +1587,8 @@ details.not-box p {
 }
 
 /* 41-prickarsfiguren (Fabel-granskningen §1.5): fullmäktiges mandat som
-   prickar i tre färger. Ren HTML/CSS, ingen bild. */
+   prickar i partifärger (src/lib/partifarger.ts, inline per prick).
+   Ren HTML/CSS, ingen bild. */
 .mandatprickar {
   display: flex;
   flex-wrap: wrap;
@@ -1601,10 +1602,6 @@ details.not-box p {
   height: 1.05rem;
   border-radius: 50%;
 }
-
-.prick--styre { background: var(--color-styre-border); }
-.prick--sd { background: var(--color-note-border); }
-.prick--ovriga { background: var(--color-opp-border); }
 
 .mandatprickar__legend {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

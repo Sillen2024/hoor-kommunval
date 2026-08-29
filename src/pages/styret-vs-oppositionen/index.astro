@@ -2,17 +2,30 @@
 import Layout from "../../layouts/Layout.astro";
 import budgetData from "../../data/budget.json";
 import partierData from "../../data/partier.json";
+import { partifarg } from "../../lib/partifarger";
 
 const budget2027 = budgetData.beslut.find((b) => b.ar === 2027);
 
 // 41-prickarsfiguren: mandaten läses ur partier.json så att figuren följer
-// datan i stället för att rita ett hårdkodat antal prickar.
+// datan i stället för att rita ett hårdkodat antal prickar. Sedan
+// diagraminventeringen (TASK punkt 35) färgas prickarna per parti med samma
+// palett som övriga vyer; ordningen bär fortfarande blockens berättelse:
+// styret först, sedan SD, sedan resten av oppositionen.
 const mandatStyre = partierData.partier
   .filter((p) => p.block === "styre")
   .reduce((s, p) => s + p.mandat_2022, 0);
 const mandatSD = partierData.partier.find((p) => p.id === "sd")?.mandat_2022 ?? 0;
 const mandatTotalt = partierData.partier.reduce((s, p) => s + p.mandat_2022, 0);
 const mandatOvriga = mandatTotalt - mandatStyre - mandatSD;
+
+const kort = (p: (typeof partierData.partier)[number]) =>
+  p.id === "medborgerlig-samling" ? "MED" : p.id.toUpperCase();
+const prickPartier = [
+  ...partierData.partier.filter((p) => p.block === "styre"),
+  ...["sd", "s", "v", "mp", "medborgerlig-samling"].map(
+    (id) => partierData.partier.find((p) => p.id === id)!,
+  ),
+];
 ---
 
 <Layout
@@ -150,15 +163,19 @@ const mandatOvriga = mandatTotalt - mandatStyre - mandatSD;
     role="img"
     aria-label={`Fullmäktiges ${mandatTotalt} mandat: ${mandatStyre} styret, ${mandatSD} SD, ${mandatOvriga} övriga oppositionen. Styret plus SD är ${mandatStyre + mandatSD} — en majoritet.`}
   >
-    {Array.from({ length: mandatStyre }).map(() => <span class="prick--styre" />)}
-    {Array.from({ length: mandatSD }).map(() => <span class="prick--sd" />)}
-    {Array.from({ length: mandatOvriga }).map(() => <span class="prick--ovriga" />)}
+    {prickPartier.map((p) =>
+      Array.from({ length: p.mandat_2022 }).map(() => (
+        <span style={`background:${partifarg(p.id)}`} />
+      )),
+    )}
   </div>
   <p class="mandatprickar__legend" aria-hidden="true">
-    <span class="prick-inline prick--styre"></span>Styret (M, L, C, KD): {mandatStyre} &nbsp;
-    <span class="prick-inline prick--sd"></span>SD: {mandatSD} &nbsp;
-    <span class="prick-inline prick--ovriga"></span>S, V, MP och MED: {mandatOvriga} &nbsp;—&nbsp;
-    {mandatStyre} + {mandatSD} = {mandatStyre + mandatSD} av {mandatTotalt}
+    {prickPartier.map((p) => (
+      <>
+        <span class="prick-inline" style={`background:${partifarg(p.id)}`}></span>{kort(p)} {p.mandat_2022}&nbsp;&nbsp;
+      </>
+    ))}
+    —&nbsp;styret {mandatStyre} + SD {mandatSD} = {mandatStyre + mandatSD} av {mandatTotalt}
   </p>
   <p>
     Styret har bara 17 av 41 mandat i fullmäktige. Ändå landar styrets förslag på exakt
