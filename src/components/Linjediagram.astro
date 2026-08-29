@@ -1,0 +1,295 @@
+---
+// Linjediagram för tidsserier — sajtens första. Samma doktrin som
+// Jamforelse.astro och Staplar.astro: ingen JavaScript, allt ritas vid
+// byggtid som ren SVG, och siffrorna finns alltid i klartext — här i en
+// utfällbar tabell direkt under figuren, så skärmläsare och utskrift
+// förlorar ingenting (SVG:n är aria-hidden).
+//
+// Skalan: rena tick-steg (1/2/2,5/5 × tiopotens). Nollan tas alltid med i
+// skalan när serierna korsar eller tangerar den, och ritas då som en egen
+// linje så läsaren ser var över går i under.
+
+interface Serie {
+  namn: string;
+  /** Ett värde per år i `ar`, null = lucka (linjen bryts). */
+  varden: (number | null)[];
+  farg?: string;
+  /** Streckad linje + egen-bearbetning-stil. För uträknade snitt. */
+  harledd?: boolean;
+}
+
+interface Props {
+  rubrik: string;
+  enhet: string;
+  ar: number[];
+  serier: Serie[];
+  decimaler?: number;
+  /** År från och med detta märks med * (preliminära värden). */
+  preliminarFran?: number | null;
+  beskrivning?: string;
+  fotnot?: string;
+  kallaUrl?: string;
+  kallaText?: string;
+  bearbetning?: string;
+}
+
+const {
+  rubrik,
+  enhet,
+  ar,
+  serier,
+  decimaler = 1,
+  preliminarFran = null,
+  beskrivning,
+  fotnot,
+  kallaUrl,
+  kallaText,
+  bearbetning,
+} = Astro.props;
+
+const tal = (v: number) =>
+  v.toLocaleString("sv-SE", { minimumFractionDigits: decimaler, maximumFractionDigits: decimaler });
+
+// ——— Skala ————————————————————————————————————————————————————————————
+const alla = serier.flatMap((s) => s.varden).filter((v): v is number => v !== null);
+let lo = Math.min(...alla);
+let hi = Math.max(...alla);
+if (lo > 0 && lo < (hi - lo) * 0.6) lo = 0; // nära noll: börja på noll i stället för att kapa
+if (hi < 0 && -hi < (hi - lo) * 0.6) hi = 0;
+if (hi === lo) { hi += 1; lo -= 1; }
+
+const grovsteg = (hi - lo) / 4;
+const pot = Math.pow(10, Math.floor(Math.log10(grovsteg)));
+const steg = [1, 2, 2.5, 5, 10].map((m) => m * pot).find((s) => s >= grovsteg) ?? pot * 10;
+const tickLo = Math.floor(lo / steg) * steg;
+const tickHi = Math.ceil(hi / steg) * steg;
+const ticks: number[] = [];
+for (let t = tickLo; t <= tickHi + steg / 2; t += steg) ticks.push(Math.round(t * 1e6) / 1e6);
+
+// ——— Geometri ─————————————————————————————————————————————————————————
+const B = 560;
+const H = 250;
+const M = { topp: 12, hoger: 108, botten: 26, vanster: 46 };
+const inreB = B - M.vanster - M.hoger;
+const inreH = H - M.topp - M.botten;
+const x = (i: number) => M.vanster + (ar.length === 1 ? inreB / 2 : (i / (ar.length - 1)) * inreB);
+const y = (v: number) => M.topp + inreH - ((v - tickLo) / (tickHi - tickLo)) * inreH;
+const r2 = (n: number) => Math.round(n * 100) / 100;
+
+// Linjen som path, bruten vid null-luckor.
+const linjePath = (varden: (number | null)[]) => {
+  let d = "";
+  let penna = false;
+  varden.forEach((v, i) => {
+    if (v === null) { penna = false; return; }
+    d += `${penna ? "L" : "M"}${r2(x(i))} ${r2(y(v))} `;
+    penna = true;
+  });
+  return d.trim();
+};
+
+// Sista punkten per serie: ändpunkt + namnetikett. Etiketterna knuffas isär
+// vertikalt i höjdled om de kolliderar (minst 15 px mellanrum).
+const sista = serier.map((s) => {
+  let i = s.varden.length - 1;
+  while (i >= 0 && s.varden[i] === null) i--;
+  return { serie: s, i, varde: i >= 0 ? (s.varden[i] as number) : null };
+});
+const etiketter = sista
+  .filter((s) => s.varde !== null)
+  .map((s) => ({ ...s, ey: y(s.varde as number) }))
+  .sort((a, b) => a.ey - b.ey);
+for (let k = 1; k < etiketter.length; k++) {
+  if (etiketter[k].ey - etiketter[k - 1].ey < 15) etiketter[k].ey = etiketter[k - 1].ey + 15;
+}
+for (let k = etiketter.length - 1; k >= 0; k--) {
+  const tak = H - M.botten - 2 - (etiketter.length - 1 - k) * 15;
+  if (etiketter[k].ey > tak) etiketter[k].ey = tak;
+}
+
+const arEtikett = (a: number) => `${a}${preliminarFran !== null && a >= preliminarFran ? "*" : ""}`;
+const glesa = ar.length > 9 ? 2 : 1; // fler än nio år: vartannat årtal
+---
+
+<figure class="linje">
+  <figcaption class="linje__rubrik">
+    {rubrik}{" "}
+    <span class="linje__enhet">{enhet}</span>
+  </figcaption>
+  {beskrivning && <p class="linje__beskrivning">{beskrivning}</p>}
+
+  {serier.length > 1 && (
+    <p class="linje__legend">
+      {serier.map((s) => (
+        <span class="linje__legendpost">
+          <span
+            class="linje__swatch"
+            style={`background:${s.harledd ? "transparent" : (s.farg ?? "#0b4a6f")};${s.harledd ? `border-top:2px dashed ${s.farg ?? "#7a4f1a"};height:0;` : ""}`}
+          />
+          {s.namn}
+        </span>
+      ))}
+    </p>
+  )}
+
+  <svg viewBox={`0 0 ${B} ${H}`} class="linje__svg" aria-hidden="true">
+    {ticks.map((t) => (
+      <>
+        <line
+          x1={M.vanster} x2={B - M.hoger} y1={r2(y(t))} y2={r2(y(t))}
+          stroke={t === 0 ? "#b5b5b5" : "#e8e8e8"} stroke-width="1"
+        />
+        <text x={M.vanster - 6} y={r2(y(t)) + 4} text-anchor="end" class="linje__tick">
+          {t.toLocaleString("sv-SE")}
+        </text>
+      </>
+    ))}
+    {ar.map((a, i) => (
+      i % glesa === 0 && (
+        <text x={r2(x(i))} y={H - M.botten + 16} text-anchor="middle" class="linje__tick">
+          {arEtikett(a)}
+        </text>
+      )
+    ))}
+    {serier.map((s) => (
+      <path
+        d={linjePath(s.varden)}
+        fill="none"
+        stroke={s.farg ?? "#0b4a6f"}
+        stroke-width="2"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-dasharray={s.harledd ? "5 4" : undefined}
+      />
+    ))}
+    {etiketter.map((e) => (
+      <>
+        <circle
+          cx={r2(x(e.i))} cy={r2(y(e.varde as number))} r="4"
+          fill={e.serie.farg ?? "#0b4a6f"} stroke="#ffffff" stroke-width="2"
+        />
+        <text x={B - M.hoger + 10} y={e.ey + 4} class="linje__etikett">
+          {e.serie.namn}
+        </text>
+      </>
+    ))}
+  </svg>
+
+  <details class="linje__tabell">
+    <summary>Siffrorna bakom linjerna</summary>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">År</th>
+            {serier.map((s) => <th scope="col">{s.namn}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {ar.map((a, i) => (
+            <tr>
+              <th scope="row">{arEtikett(a)}</th>
+              {serier.map((s) => (
+                <td>{s.varden[i] === null ? "–" : tal(s.varden[i] as number)}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  {fotnot && <p class="linje__fotnot">{fotnot}</p>}
+  {kallaUrl && (
+    <a class="source-link" href={kallaUrl} target="_blank" rel="noopener noreferrer">{kallaText ?? "Källa"}</a>
+  )}
+  {bearbetning && <span class="derived-note">{bearbetning}</span>}
+</figure>
+
+<style>
+  .linje {
+    margin: 1.6rem 0;
+    padding: 0;
+  }
+
+  .linje__rubrik {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .linje__enhet {
+    font-weight: 400;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .linje__enhet::before { content: "("; }
+  .linje__enhet::after { content: ")"; }
+
+  .linje__beskrivning {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  .linje__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.1rem;
+    margin: 0.4rem 0 0.2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+  }
+
+  .linje__legendpost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .linje__swatch {
+    display: inline-block;
+    width: 1rem;
+    height: 0.6rem;
+    border-radius: 2px;
+  }
+
+  .linje__svg {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+  }
+
+  .linje__tick {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    fill: var(--color-muted);
+  }
+
+  .linje__etikett {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    fill: var(--color-text);
+  }
+
+  .linje__tabell {
+    margin: 0.3rem 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .linje__tabell summary {
+    cursor: pointer;
+    color: var(--color-muted);
+  }
+
+  .linje__fotnot {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+</style>

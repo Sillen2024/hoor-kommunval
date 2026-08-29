@@ -1,5 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Linjediagram from "../../components/Linjediagram.astro";
+import Staplar from "../../components/Staplar.astro";
+import { SERIEFARG, partifarg } from "../../lib/partifarger";
 import budgetData from "../../data/budget.json";
 import oppositionsbudgetar from "../../data/oppositionsbudgetar.json";
 import partierData from "../../data/partier.json";
@@ -587,37 +590,17 @@ const gymnasieKronor = gymnasieTkr !== null ? (gymnasieTkr / hundralappBas) * 10
       Avvikelsen i miljoner kronor, år för år. Ett enskilt år kan bero på tillfälligheter; riktningen över en
       mandatperiod gör det sällan.
     </p>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Verksamhet</th>
-            {koladaAr.map((ar) => (
-              <th>{ar}{arPreliminart(ar) ? "*" : ""}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {tidsserie.map((v) => (
-            <tr>
-              <th scope="row">{v.namn}</th>
-              {koladaAr.map((ar) => {
-                const varde = koladaVarde(v.mnkr, ar);
-                return (
-                  <td>
-                    {varde != null ? (
-                      <>{varde >= 0 ? "+" : ""}{sv(varde)}</>
-                    ) : (
-                      <span class="no-data">–</span>
-                    )}
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Linjediagram
+      rubrik="Avvikelse mot referenskostnaden, år för år"
+      enhet="mnkr"
+      ar={koladaAr}
+      serier={tidsserie.map((v, i) => ({
+        namn: v.namn,
+        farg: SERIEFARG[i],
+        varden: koladaAr.map((ar) => koladaVarde(v.mnkr, ar)),
+      }))}
+      preliminarFran={preliminaraAr.length > 0 ? Math.min(...preliminaraAr) : null}
+    />
     <a
       class="source-link"
       href={koladaKallaUrl(tidsserie.map((v) => v.mnkr), koladaAr)}

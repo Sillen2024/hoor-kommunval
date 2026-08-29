@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Linjediagram from "../../components/Linjediagram.astro";
 import Jamforelse from "../../components/Jamforelse.astro";
 import koladaData from "../../data/kolada.json";
 import budgetData from "../../data/budget.json";
@@ -519,6 +520,15 @@ const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "nume
         Avvikelsen är inte ett enskilt år. Kostnaden per barn stiger i Höör — men långsammare än i resten av
         Skåne, år efter år, vilket är vad den växande avvikelsen mäter.
       </p>
+      <Linjediagram
+        rubrik="Förskolans avvikelse mot referenskostnaden"
+        enhet="procent"
+        ar={forskolaSerie.map((r) => r.ar)}
+        serier={[{ namn: "Höör", varden: forskolaSerie.map((r) => r.procent) }]}
+        preliminarFran={forskolaSerie.find((r) => r.preliminar)?.ar ?? null}
+      />
+      <details class="not-box">
+        <summary>Alla fyra måtten, år för år</summary>
       <div class="table-scroll">
         <table>
           <thead>
@@ -543,6 +553,7 @@ const novusManad = new Intl.DateTimeFormat("sv-SE", { month: "long", year: "nume
           </tbody>
         </table>
       </div>
+      </details>
       <a
         class="source-link"
         href={kallaUrl(["N11024", "N11038", KOSTNAD_BARN, BARN_ARSARB], [HÖÖR], forskolaSerie.map((r) => r.ar))}

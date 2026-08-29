@@ -41,3 +41,9 @@ export const PARTI_ID_AV_NAMN: Record<string, string> = {
 export const NEUTRAL_STAPEL = "#9bb3c4";
 
 export const partifarg = (id: string): string => PARTIFARG[id] ?? NEUTRAL_STAPEL;
+
+// Färger för serier som inte är partier (verksamheter, mått), i fast
+// ordning. Maskinellt kontrollerade mot vit yta 2026-08-29, precis som
+// partifärgerna. Medvetet skilda från partipaletten så en verksamhetslinje
+// aldrig ser ut som ett parti.
+export const SERIEFARG = ["#1c6ea8", "#c2571f", "#7a4fb5"];
